@@ -1,7 +1,15 @@
 import * as React from "react";
 import { PageProps, graphql } from "gatsby";
-import Header from "../components/Header";
 import Hero from "../components/Hero";
+import Layout from "../components/Layout";
+import Clients from "../components/Clients";
+import About from "../components/About";
+import Success from "../components/Success";
+import Service from "../components/Services";
+import Process from "../components/Process";
+import Testimonial from "../components/Testimonial";
+import Solution from "../components/Solution";
+import "../styles/global.css"
 
 export type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">;
 
@@ -13,18 +21,25 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
 export const IndexPageTemplate = ({ markdownRemark }: IndexPageType) => {
   const pageObj = markdownRemark?.frontmatter;
   return (
-    <>
-      <Header />
-
-      <main>
-        <Hero title={pageObj?.title} image={pageObj?.image} />
-      </main>
-    </>
+    <div className="main">
+      <Layout>
+        {/* title={pageObj?.title} image={pageObj?.image} */}
+        <Hero />
+        <Clients />
+        <About />
+        <Success />
+        <Service />
+        <Process />
+        <Testimonial />
+        <Success />
+        <Solution />
+      </Layout>
+    </div>
   );
 };
 
 // You'll learn about this in the next task, just copy it for now
-export const Head = () => <title>Home Page</title>;
+export { Head } from "../components/Head"
 
 // Step 3: Export your component
 export default IndexPage;

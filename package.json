@@ -1,8 +1,8 @@
 {
-  "name": "teerex_store",
+  "name": "vibrant-it-solutions",
   "version": "1.0.0",
   "private": true,
-  "description": "teerex_store",
+  "description": "vibrant-it-solutions",
   "author": "Subrato-oid",
   "keywords": [
     "gatsby"
@@ -21,6 +21,7 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@types/react-helmet": "^6.1.11",
     "decap-cms-app": "^3.1.0-beta.2",
     "framer-motion": "^10.16.16",
     "gatsby": "^5.13.0",
@@ -37,12 +38,17 @@
     "postcss": "^8.4.32",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.12.0"
   },
   "devDependencies": {
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^9.1.0",
     "typescript": "^5.1.6"
   }
 }
