@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from "react"
 
-type ClientsProps = {};
+// type ClientsProps = { unknown }
 
-const Clients = ({}: ClientsProps) => (
+const Clients = (): React.ReactElement => (
   <>
     <div className="clients">
       <p>Clients who trust us</p>
@@ -74,6 +74,6 @@ const Clients = ({}: ClientsProps) => (
       </div>
     </div>
   </>
-);
+)
 
-export default Clients;
+export default Clients

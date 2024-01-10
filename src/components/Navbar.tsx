@@ -1,9 +1,9 @@
-import * as React from "react";
+import * as React from "react"
 import "../styles/global.css"
 
-type HeaderProps = {};
+// type HeaderProps = { unknown }
 
-const Navbar = ({}: HeaderProps) => (
+const Navbar = (): React.ReactElement => (
   <header>
     <img src="/images/Group 20.svg" alt="Logo" />
     <nav>
@@ -37,5 +37,5 @@ const Navbar = ({}: HeaderProps) => (
       </div>
     </div>
   </header>
-);
-export default Navbar;
+)
+export default Navbar

@@ -1,19 +1,18 @@
-import * as React from "react";
-import { Helmet } from "react-helmet";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import * as React from "react"
+import Footer from "./Footer"
+import Navbar from "./Navbar"
 
 type LayoutProp = {
-    children: React.ReactNode
+  children: React.ReactNode
 }
-const TemplateWrapper = ({ children }: LayoutProp) => {
+const TemplateWrapper = ({ children }: LayoutProp): React.ReactElement => {
   return (
-    <div className="main">
+    <div id="main">
       <Navbar />
       <div>{children}</div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default TemplateWrapper;
+export default TemplateWrapper

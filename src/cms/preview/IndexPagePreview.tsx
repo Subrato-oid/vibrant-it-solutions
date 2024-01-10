@@ -1,25 +1,21 @@
-import * as React from "react";
-import IndexPage, { IndexPageTemplate, IndexPageType } from "../../pages";
-import { ChakraProvider } from "@chakra-ui/react";
+// import * as React from "react"
+// import { IndexPageTemplate, type IndexPageType } from "../../pages"
 
-type Prop = {
-  entry: {
-    getIn: Function;
-  };
-  getAsset: Function;
-};
-const IndexPagePreview = ({ entry, getAsset }: Prop) => {
-  const data = entry.getIn(["data"]).toJS() as unknown as IndexPageType;
+// type Prop = {
+//   entry: {
+//     getIn: ([]: string[]) => any
+//   }
+// }
+// const IndexPagePreview = ({ entry }: Prop) => {
+//   const data = entry.getIn(["data"]).toJS() as unknown as IndexPageType
 
-  console.log(data);
+//   console.log(data)
 
-  if (data) {
-    return (
-        <IndexPageTemplate markdownRemark={data.markdownRemark} />
-    );
-  } else {
-    return <div>Loading...</div>;
-  }
-};
+//   if (data) {
+//     return <IndexPageTemplate markdownRemark={data.markdownRemark} />
+//   } else {
+//     return <div>Loading...</div>
+//   }
+// }
 
-export default IndexPagePreview;
+// export default IndexPagePreview

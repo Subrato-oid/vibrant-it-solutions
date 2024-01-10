@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from "react"
 
-type SuccessProps = {};
+// type SuccessProps = { unknown }
 
-const Success = ({}: SuccessProps) => (
+const Success = (): React.ReactElement => (
   <div className="container2">
     <div className="success">
       <h2>
@@ -30,6 +30,6 @@ const Success = ({}: SuccessProps) => (
       </div>
     </div>
   </div>
-);
+)
 
-export default Success;
+export default Success

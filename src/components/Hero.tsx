@@ -1,9 +1,8 @@
-import { defaultTo } from "lodash";
-import React from "react";
+import React from "react"
 
-type HeroProps = {};
+// type HeroProps = { unknown }
 
-const Hero = ({}: HeroProps) => (
+const Hero = (): React.ReactElement => (
   <div className="container">
     <div className="content">
       <h1 id="wH1">
@@ -32,6 +31,6 @@ const Hero = ({}: HeroProps) => (
       <img src="images/Homepage/HeroImg.svg" alt="Description of your image" />
     </div>
   </div>
-);
+)
 
-export default Hero;
+export default Hero

@@ -1,9 +1,9 @@
-import * as React from "react";
-import "../styles/global.css";
+import * as React from "react"
+import "../styles/global.css"
 
-type FooterProps = {};
+// type FooterProps = { unknown }
 
-const Footer = ( {} : FooterProps) => (
+const Footer = (): React.ReactElement => (
   <footer>
     <div className="footer-section">
       <div className="footer-column1">
@@ -66,6 +66,6 @@ const Footer = ( {} : FooterProps) => (
       <p id="fn">Terms & Conditions | Privacy Policy | Cookie Preferences</p>
     </div>
   </footer>
-);
+)
 
-export default Footer;
+export default Footer

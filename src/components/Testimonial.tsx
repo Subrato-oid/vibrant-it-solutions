@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from "react"
 
-type TestimonialProps = {};
+// type TestimonialProps = { unknown }
 
-const Testimonial = ({}: TestimonialProps) => (
+const Testimonial = (): React.ReactElement => (
   <div className="testimonial">
     <div className="testimonial-text">
       <img src="images/Isolation_Mode.svg" alt="" />
@@ -27,6 +27,6 @@ const Testimonial = ({}: TestimonialProps) => (
       </div>
     </div>
   </div>
-);
+)
 
-export default Testimonial;
+export default Testimonial

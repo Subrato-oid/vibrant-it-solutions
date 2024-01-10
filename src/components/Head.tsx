@@ -1,9 +1,9 @@
-import * as React from "react";
-import useSiteMetadata from "./SiteMetadata";
-import { withPrefix } from "gatsby";
+import * as React from "react"
+import useSiteMetadata from "./SiteMetadata"
+import { withPrefix } from "gatsby"
 
-export const Head = () => {
-  const { title, description } = useSiteMetadata();
+export const Head = (): React.ReactElement => {
+  const { title, description } = useSiteMetadata()
   return (
     <>
       <html lang="en" />
@@ -43,5 +43,5 @@ export const Head = () => {
         content={`${withPrefix("/")}img/og-image.jpg`}
       />
     </>
-  );
-};
+  )
+}

@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from "react"
 
-type AboutProps = {};
+// type AboutProps = { unknown }
 
-const About = ({}: AboutProps) => (
+const About = (): React.ReactElement => (
   <div className="about">
     <div className="left">
       <img src="images/about.webp" alt="" />
@@ -30,6 +30,6 @@ const About = ({}: AboutProps) => (
       </div>
     </div>
   </div>
-);
+)
 
-export default About;
+export default About

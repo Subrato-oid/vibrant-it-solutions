@@ -550,8 +550,7 @@ h2 .head2 {
   margin-top: 4rem;
   display: flex;
   width: 100%;
-  /* width: 82.9375rem;
-      height: 66.5rem; */
+  /* width: 82.9375rem; height: 66.5rem; */
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 2rem;
@@ -747,7 +746,6 @@ h2 .head2 {
   margin-right: 10rem;
 }
 
-/* <!---- SOLUTION SECTION ----> */
 .solution {
   width: 100%;
   display: flex;
@@ -1045,8 +1043,7 @@ footer {
     width: 100%;
     height: auto;
   }
-  /* .a-content {
-      /* max-width: 27.81vw; */
+  /* .a-content { max-width: 27.81vw; } */
 }
 */ .right h2 .head2 {
   font-size: 2.5vw;

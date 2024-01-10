@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from "react"
 
-type SolutionProps = {};
+// type SolutionProps = { unknown }
 
-const Solution = ({}: SolutionProps) => (
+const Solution = (): React.ReactElement => (
   <div className="solution">
     <div className="sleft">
       <img src="images/obejct.svg" alt="" />
@@ -20,6 +20,6 @@ const Solution = ({}: SolutionProps) => (
       </a>
     </div>
   </div>
-);
+)
 
-export default Solution;
+export default Solution
