@@ -36,8 +36,8 @@ client:
     - logo: /images/birla-sugar-1.svg
 about:
   titleUp: "About US: "
-  titleHighlight: "Innovate"
-  titleDown: "with Impact"
+  titleHighlight: Innovate
+  titleDown: with Impact
   image: /images/about.webp
   description: >-
     Dive into our world, where innovation isn't just a buzzword; it's a way of
@@ -71,7 +71,7 @@ services:
         end-to-end development that involves everything from business analysis
         to software delivery and support.
       title: Software Development
-    - icon: /images/wd.svg
+    - icon: /images/wdi.svg
       title: Web Development
       description: VibrantIT solutions professionally create, design, and continuously
         provide customer support. We make different kinds of web software that
