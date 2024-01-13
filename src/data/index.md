@@ -10,7 +10,7 @@ header:
     - item: Blog
     - item: Contact us
 hero:
-  titleUp: Techify Your
+  titleUp: "Techify Your "
   titleHighlight: "Business "
   titleDown: With Us
   image: /images/23001008_coworking 2.svg
