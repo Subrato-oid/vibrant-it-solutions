@@ -6,7 +6,7 @@ type ServiceProps = NonNullable<IndexPageFrontmatterType>["services"]
 const Service = (props: NonNullable<ServiceProps>): React.ReactElement => (
   <div className="services">
     <h2>
-      <span className="head1">{props.title}</span>
+      <span className="head1">{props.title}</span>&nbsp;
       <span className="head2">{props.titleHighlight}</span>
     </h2>
     <div className="Scontainer">

@@ -10,7 +10,7 @@ const Solution = (props: SolutionProps): React.ReactElement => (
     </div>
     <div className="sright">
       <h2>
-        <span className="head1">{props?.title}</span>
+        <span className="head1">{props?.title}</span>&nbsp;
         <span className="head2">{props?.titleHighlight}</span>
       </h2>
       <p>{props?.description}</p>
