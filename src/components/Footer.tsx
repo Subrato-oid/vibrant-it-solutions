@@ -8,20 +8,20 @@ const Footer = (): React.ReactElement => (
     <div className="footer-section">
       <div className="footer-column1">
         <img
-          src="images/Group 20.svg"
+          src="/images/Group 20.svg"
           alt="Website Logo"
           className="footer-logo"
         />
         <p>1/301 Vikrant Khand, Gomti Nagar, Lucknow 201307, India</p>
         <div className="footer-social">
           <a href="#">
-            <img src="images/insta.svg" alt="Social Media Icon" />
+            <img src="/images/insta.svg" alt="Social Media Icon" />
           </a>
           <a href="#">
-            <img src="images/twitter.svg" alt="Social Media Icon" />
+            <img src="/images/twitter.svg" alt="Social Media Icon" />
           </a>
           <a href="#">
-            <img src="images/fb.svg" alt="Social Media Icon" />
+            <img src="/images/fb.svg" alt="Social Media Icon" />
           </a>
         </div>
       </div>

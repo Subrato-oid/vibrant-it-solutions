@@ -1,32 +1,23 @@
 import * as React from "react"
+import { type IndexPageFrontmatterType } from "../pages"
 
-// type SuccessProps = { unknown }
+type SuccessProps = NonNullable<IndexPageFrontmatterType>["success"]
 
-const Success = (): React.ReactElement => (
+const Success = (props: SuccessProps): React.ReactElement => (
   <div className="container2">
     <div className="success">
       <h2>
-        <span className="head1">Fueling Success: Our</span>
+        <span className="head1">{props?.titleUp}</span>
         <br />
-        <span className="head2">Impact Snapshot</span>
+        <span className="head2">{props?.titleHighlight}</span>
       </h2>
       <div className="boxes">
-        <div className="sbox">
-          <h1>40+</h1>
-          <p>Employees</p>
-        </div>
-        <div className="sbox">
-          <h1>12</h1>
-          <p>Years in IT</p>
-        </div>
-        <div className="sbox">
-          <h1>20+</h1>
-          <p>Mobile Apps</p>
-        </div>
-        <div className="sbox">
-          <h1>350+</h1>
-          <p>Success Stories</p>
-        </div>
+        {props?.boxes?.map((item, index) => (
+          <div key={index} className="sbox">
+            <h1>{item?.title}</h1>
+            <p>{item?.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   </div>

@@ -30,10 +30,10 @@ const Navbar = (): React.ReactElement => (
     </nav>
     <div className="ham">
       <div className="menu">
-        <img src="media/menu.svg" alt="" />
+        <img src="/images/menu.svg" alt="" />
       </div>
       <div className="close">
-        <img src="media/x.svg" alt="" />
+        <img src="/images/x.svg" alt="" />
       </div>
     </div>
   </header>

@@ -11,3 +11,211 @@ backend:
 local_backend: true
 media_folder: static/images
 public_folder: /images
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/data/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+
+          - {
+              label: "Header",
+              name: "header",
+              widget: "object",
+              fields:
+                [
+                  { label: Logo, name: logo, widget: image},
+                  { label: NavItems, name: navItems, widget: list,
+                    fields: 
+                      [
+                        { label: Item, name: item, widget: string }
+                      ]
+                  }
+                ]
+            }
+
+
+          - {
+              label: "Hero",
+              name: "hero",
+              widget: "object",
+              fields:
+                [
+                  { label: TitleUp, name: titleUp, widget: string },
+                  { label: TitleHighlight, name: titleHighlight, widget: string },
+                  { label: TitleDown, name: titleDown, widget: string },
+                  { label: Image, name: image, widget: image },
+                  { label: Description, name: description, widget: text },
+                  { lable: Button, name: button, widget: object,
+                    fields: 
+                      [
+                        { label: ButtonText, name: buttonText, widget: string },
+                        { label: Icon, name: icon, widget: image },
+                      ]
+                  },
+                ],
+            }
+
+          - {
+              label: "Client",
+              name: "client",
+              widget: "object",
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { lable: Logos, name: logos, widget: list, 
+                    fields: 
+                      [
+                         { label: Logo, name: logo, widget: image },
+                      ]
+                  }
+                ],
+            }
+
+          - {
+              label: "About",
+              name: "about",
+              widget: "object",
+              fields:
+                [
+                  { label: TitleUp, name: titleUp, widget: string },
+                  { label: TitleHighlight, name: titleHighlight, widget: string },
+                  { label: TitleDown, name: titleDown, widget: string },
+                  { label: Image, name: image, widget: image },
+                  { label: Description, name: description, widget: text },
+                  { lable: Button, name: button, widget: object,
+                    fields: 
+                      [
+                        { label: ButtonText, name: buttonText, widget: string },
+                        { label: Icon, name: icon, widget: image },
+                      ]
+                  },
+                ],
+            }
+
+          - {
+              label: "Success",
+              name: "success",
+              widget: "object",
+              fields:
+                [
+                  { label: TitleUp, name: titleUp, widget: string },
+                  { label: TitleHighlight, name: titleHighlight, widget: string },
+                  { label: Boxes, name: boxes, widget: list,
+                    fields:
+                      [
+                        { label: Title, name: title, widget: string},
+                        { label: Description, name: description, widget: string }
+                      ]
+                  }                  
+                ],
+            }
+
+          - {
+              label: "Services",
+              name: "services",
+              widget: "object",
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: TitleHighlight, name: titleHighlight, widget: string },
+                  { label: Service, name: service, widget: list,
+                    fields:
+                      [
+                        { label: Icon, name: icon, widget: image},
+                        { label: Title, name: title, widget: string},
+                        { label: Description, name: description, widget: text}
+                      ]
+                  }                  
+                ],
+            }
+
+          - {
+              label: "Process",
+              name: "process",
+              widget: "object",
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: TitleHighlight, name: titleHighlight, widget: string },
+                  { label: Description, name: description, widget: text },
+                  { lable: Button, name: button, widget: object,
+                    fields: 
+                      [
+                        { label: ButtonText, name: buttonText, widget: string },
+                        { label: Icon, name: icon, widget: image },
+                      ]
+                  },
+                  { label: Phases, name: phases, widget: list,
+                    fields:
+                      [
+                        { label: Title, name: title, widget: string},
+                        { label: Description, name: description, widget: text}
+                      ]
+                  }                  
+                ],
+            }
+
+          - {
+              label: "Testimonial",
+              name: "testimonial",
+              widget: "object",
+              fields:
+                [
+                  { label: Testimony, name: testimony, widget: text },
+                  { label: Name, name: name, widget: string },
+                  { label: Bio, name: bio, widget: string },
+                  { label: Image, name: image, widget: image }
+                ],
+            }
+
+          - {
+              label: "Solution",
+              name: "solution",
+              widget: "object",
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: TitleHighlight, name: titleHighlight, widget: string },
+                  { label: Image, name: image, widget: image },
+                  { label: Description, name: description, widget: text },
+                  { lable: Button, name: button, widget: object,
+                    fields: 
+                      [
+                        { label: ButtonText, name: buttonText, widget: string },
+                        { label: Icon, name: icon, widget: image },
+                      ]
+                  },
+                ],
+            }
+
+          - {
+              label: "Footer",
+              name: "footer",
+              widget: "object",
+              fields:
+                [
+                  { label: Column, name: column, widget: list,
+                    fields: 
+                      [
+                        { label: Heading, name: heading, widget: string },
+                        { label: Elements, name: elemnets, widget: list,
+                          fields:
+                            [
+                              { label: Text, name: text, widget: string}
+                            ]
+                        }
+                      ],
+                  }
+                ]
+            }
+          

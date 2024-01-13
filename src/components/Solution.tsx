@@ -1,22 +1,21 @@
 import * as React from "react"
+import { type IndexPageFrontmatterType } from "../pages"
 
-// type SolutionProps = { unknown }
+type SolutionProps = NonNullable<IndexPageFrontmatterType>["solution"]
 
-const Solution = (): React.ReactElement => (
+const Solution = (props: SolutionProps): React.ReactElement => (
   <div className="solution">
     <div className="sleft">
-      <img src="images/obejct.svg" alt="" />
+      <img src={props?.image!} alt="" />
     </div>
     <div className="sright">
       <h2>
-        <span className="head1">Reach for</span>
-        <span className="head2">Solution</span>
+        <span className="head1">{props?.title}</span>
+        <span className="head2">{props?.titleHighlight}</span>
       </h2>
-      <p>
-        Get solutions for your business from the most innovative hands in tech.
-      </p>
+      <p>{props?.description}</p>
       <a href="#" className="Cbutton">
-        Contact Now <img src="images/phone.svg" />
+        {props?.button?.buttonText} <img src={props?.button?.icon!} alt="" />
       </a>
     </div>
   </div>

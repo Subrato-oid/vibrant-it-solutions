@@ -13,37 +13,50 @@ import "../styles/global.css"
 
 export type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">
 
+export type IndexPageFrontmatterType = NonNullable<
+Queries.IndexPageQuery["markdownRemark"]
+>["frontmatter"]
+
 // Step 2: Define your component
 const IndexPage = ({
   data,
 }: PageProps<Queries.IndexPageQuery>): React.ReactElement => {
-  return <IndexPageTemplate markdownRemark={data.markdownRemark} />
+  return <IndexPageTemplate frontmatter={data.markdownRemark?.frontmatter!} />
 }
 
 export const IndexPageTemplate = ({
-  markdownRemark,
-}: IndexPageType): React.ReactElement => {
-  // const pageObj = markdownRemark?.frontmatter
+  frontmatter,
+}: {
+  frontmatter: IndexPageFrontmatterType
+}): React.ReactElement => {
+  console.log("data", frontmatter)
+
+  const {
+    hero,
+    client,
+    about,
+    success,
+    services,
+    process,
+    testimonial,
+    solution,
+  } = frontmatter!
   return (
     <Layout>
-      {/* title={pageObj?.title} image={pageObj?.image} */}
-      <Hero />
-      <Clients />
-      <About />
-      <Success />
-      <Service />
-      <Process />
-      <Testimonial />
-      <Success />
-      <Solution />
+      <Hero {...hero!} />
+      <Clients {...client!} />
+      <About {...about!} />
+      <Success {...success!} />
+      <Service {...services!} />
+      <Process {...process!} />
+      <Testimonial {...testimonial!} />
+      <Solution {...solution!} />
     </Layout>
   )
 }
 
-// You'll learn about this in the next task, just copy it for now
 export { Head } from "../components/Head"
 
-// Step 3: Export your component
 export default IndexPage
 
 export const query = graphql`
@@ -51,7 +64,94 @@ export const query = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       id
       frontmatter {
-        title
+        header {
+          logo
+          navItems {
+            item
+          }
+        }
+        hero {
+          titleUp
+          titleHighlight
+          titleDown
+          image
+          description
+          button {
+            buttonText
+            icon
+          }
+        }
+        client {
+          title
+          logos {
+            logo
+          }
+        }
+        about {
+          titleUp
+          titleHighlight
+          titleDown
+          image
+          description
+          button {
+            buttonText
+            icon
+          }
+        }
+        success {
+          titleUp
+          titleHighlight
+          boxes {
+            title
+            description
+          }
+        }
+        process {
+          title
+          titleHighlight
+          description
+          button {
+            buttonText
+            icon
+          }
+          phases {
+            title
+            description
+          }
+        }
+        services {
+          title
+          titleHighlight
+          service {
+            icon
+            description
+            title
+          }
+        }
+        testimonial {
+          testimony
+          name
+          bio
+          image
+        }
+        solution {
+          title
+          titleHighlight
+          image
+          description
+          button {
+            buttonText
+            icon
+          }
+        }
+        footer {
+          column {
+            heading
+            elemnets {
+              text
+            }
+          }
+        }
       }
     }
   }

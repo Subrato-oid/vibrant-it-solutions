@@ -1,34 +1,30 @@
 import React from "react"
+import { type IndexPageFrontmatterType } from "../pages"
 
-// type HeroProps = { unknown }
+type HeroProps = NonNullable<IndexPageFrontmatterType>["hero"]
 
-const Hero = (): React.ReactElement => (
+const Hero = (props: NonNullable<HeroProps>): React.ReactElement => (
   <div className="container">
     <div className="content">
       <h1 id="wH1">
-        <span className="line1">Techify Your</span>
+        <span className="line1">{props.titleUp}</span>
         <br />
-        <span className="line2">Business</span>
-        <span className="line1">With Us</span>
+        <span className="line2">{props.titleHighlight}</span>
+        <span className="line1">{props.titleDown}</span>
       </h1>
       <h1 id="mH1">
-        <span className="line1">Techify Your</span>
-        <span className="line2">Business</span>
+        <span className="line1">{props.titleUp}</span>
+        <span className="line2">{props.titleHighlight}</span>
         <br />
-        <span className="line1">With Us</span>
+        <span className="line1">{props.titleDown}</span>
       </h1>
-      <p>
-        Vibrant IT Solutions guides its clients in identifying each client's
-        mistakes in their IT plans. We build actionable plans for advancement
-        and optimize ITSM processes and infrastructures for the ultimate
-        efficiency of your business.
-      </p>
+      <p>{props?.description}</p>
       <a href="#" className="button">
-        Get Solution Now <img src="images/Button Icon.svg" alt="" />
+        {props?.button?.buttonText} <img src={props?.button?.icon!} alt="" />
       </a>
     </div>
     <div className="image">
-      <img src="images/Homepage/HeroImg.svg" alt="Description of your image" />
+      <img src={props?.image!} alt="Description of your image" />
     </div>
   </div>
 )
