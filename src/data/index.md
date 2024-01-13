@@ -13,7 +13,7 @@ hero:
   titleUp: "Techify Your "
   titleHighlight: "Business "
   titleDown: With Us
-  image: /images/23001008_coworking 2.svg
+  image: /images/Homepage/HeroImg.svg
   description: Vibrant IT Solutions guides its clients in identifying each
     client's mistakes in their IT plans. We build actionable plans for
     advancement and optimize ITSM processes and infrastructures for the ultimate
@@ -35,14 +35,15 @@ client:
     - logo: /images/mawana-sugar-1.svg
     - logo: /images/birla-sugar-1.svg
 about:
-  titleUp: "About Us: "
-  titleHighlight: Innovate
-  titleDown: with Impact
+  titleUp: "About US: "
+  titleHighlight: "Innovate"
+  titleDown: "with Impact"
   image: /images/about.webp
   description: >-
     Dive into our world, where innovation isn't just a buzzword; it's a way of
     life. As an IT Solution Company, we go beyond conventional approaches,
     redefining what's possible in the digital realm.
+
 
 
     We're more than an IT Solutions Company; we infuse every project with passion and purpose. Join us in creating a future where technology harmonizes with humanity.

@@ -1,7 +1,7 @@
 import type { GatsbyConfig } from "gatsby"
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: "Teerex_Store",
+    title: "Vibrant_IT_Solutions",
     siteUrl: "https://www.yourdomain.tld",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -14,6 +14,25 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Bruno Ace SC`,
+          `Cormorant Garamond`,
+          `Balsamiq Sans`,
+          `Delicious Handrawn`,
+          `Golos Text:400,500,600,700`,
+          `Lato:300`,
+          `Lora`,
+          `Open Sans`,
+          `Poppins:300,400,500,600,700,800,900`,
+          `Prompt:200,300,400`,
+          `Sacramento`,
+        ],
+        display: "swap",
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

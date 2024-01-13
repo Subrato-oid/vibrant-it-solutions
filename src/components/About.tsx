@@ -17,7 +17,12 @@ const About = (props: AboutProps): React.ReactElement => (
           <span className="head1">{props?.titleDown}</span>
         </h2>
         <p>
-          {/* have to implemnt break}
+          {props?.description
+            ?.split("\n")
+            .map((text, i) => text || <br key={`br-about-${i}`} />)}
+        </p>
+        {/* <p dangerouslySetInnerHTML={{ __html: ! }} /> */}
+        {/* have to implemnt break}
           {/* Dive into our world, where innovation isn't just a buzzword; it's a
           way of life. As an IT Solution Company, we go beyond conventional
           approaches, redefining what's possible in the digital realm. <br />
@@ -25,8 +30,7 @@ const About = (props: AboutProps): React.ReactElement => (
           We're more than an IT Solutions Company; we infuse every project with
           passion and purpose. Join us in creating a future where technology
           harmonizes with humanity. */}
-          {props?.description}
-        </p>
+
         <a href="#" className="button">
           {props?.button?.buttonText} <img src={props?.button?.icon!} alt="" />
         </a>

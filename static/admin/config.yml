@@ -91,7 +91,7 @@ collections:
                   { label: TitleHighlight, name: titleHighlight, widget: string },
                   { label: TitleDown, name: titleDown, widget: string },
                   { label: Image, name: image, widget: image },
-                  { label: Description, name: description, widget: text },
+                  { label: Description, name: description, widget: markdown },
                   { lable: Button, name: button, widget: object,
                     fields: 
                       [
