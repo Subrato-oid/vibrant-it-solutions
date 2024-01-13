@@ -102,7 +102,7 @@ services:
       description: At Vibrant Solutions Pvt Ltd, we specialize in using new technology
         to make special software and apps for the food and drink industry.
 process:
-  title: "Our "
+  title: Our
   titleHighlight: Process
   description: As a Co-founder, I’m impressed by the infinite potential of the
     Vibrant Team. It’s not just about tech, it’s about helping businesses and
