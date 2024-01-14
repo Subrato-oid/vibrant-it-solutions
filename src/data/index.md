@@ -35,7 +35,7 @@ client:
     - logo: /images/mawana-sugar-1.svg
     - logo: /images/birla-sugar-1.svg
 about:
-  titleUp: "About US: "
+  titleUp: "About Us: "
   titleHighlight: Innovate
   titleDown: with Impact
   image: /images/about.webp
