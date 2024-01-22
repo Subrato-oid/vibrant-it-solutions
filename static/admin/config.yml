@@ -218,4 +218,75 @@ collections:
                   }
                 ]
             }
-          
+
+  - name: "services"
+    label: "Services"
+    folder: "src/data/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "service-page",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Hero",
+          name: "hero",
+          widget: "object",
+          fields:
+            [
+              { label: TitleBefore, name: titleBefore, widget: string },
+              { label: TitleHighlight, name: titleHighlight, widget: string },
+              { label: TitleAfter, name: titleAfter, widget: string },
+              { label: Image, name: image, widget: image },
+              { label: Description, name: description, widget: text },
+              { lable: Button, name: button, widget: object,
+                fields: 
+                  [
+                    { label: ButtonText, name: buttonText, widget: string },
+                    { label: Icon, name: icon, widget: image },
+                  ]
+              },
+            ],
+        }
+      - {
+          label: "Expertise",
+          name: "expertise",
+          widget: "object",
+          fields:
+            [
+              { label: Title Before, name: titleBefore, widget: string },
+              { label: Title Highlight, name: titleHighlight, widget: string },
+              { label: Title After, name: titleAfter, widget: string },
+              { label: Expertises, name: expertises, widget: list,
+                fields: 
+                  [
+                    { label: Title, name: title, widget: string},
+                    { label: Description, name: description, widget: text}
+                  ]
+              },
+            ],
+        }
+
+      - {
+          label: "Project",
+          name: "project",
+          widget: "object",
+          fields:
+            [
+              { label: Title Before, name: titleBefore, widget: string },
+              { label: Title Highlight, name: titleHighlight, widget: string },
+              { label: Title After, name: titleAfter, widget: string },
+              { label: Projects, name: projects, widget: list,
+                fields: 
+                  [
+                    { label: Title, name: title, widget: string },
+                    { label: Description, name: description, widget: text },
+                    { labe: Image, name: image, widget: image }
+                  ]
+              },
+            ],
+        }
