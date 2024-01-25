@@ -9,66 +9,31 @@ import {
   viewProject,
   projectImage
 } from "./Projects.module.css"
+import { type ServicePageNodeType } from "../template/service"
 
-// type ProjectProp = {}
+type ProjectProp = NonNullable<
+NonNullable<ServicePageNodeType>["frontmatter"]
+>["project"]
 
-const Project = (): React.ReactElement => (
+const Project = (props: ProjectProp): React.ReactElement => (
   <div className={RPsection}>
     <h2>
-      Recent <span className={line2}>Software Development</span> projects
+      {props?.titleBefore}{" "}
+      <span className={line2}>{props?.titleHighlight}</span> {props?.titleAfter}
     </h2>
     <div className={RSlide}>
-      <div className={RleftSection}>
-        <div>
-          <h3 className={subheading}>Wonde</h3>
-          <p className={paragraph}>
-            We're more than an IT Solutions Company; we infuse every project
-            with passion and purpose.
-          </p>
-          <span className={viewProject}>
-            View Project <img src="/images/arrow-right.svg" alt="" />
-          </span>
+      {props?.projects?.map((item, index) => (
+        <div key={index} className={RleftSection}>
+          <div>
+            <h3 className={subheading}>{item?.title}</h3>
+            <p className={paragraph}>{item?.description}</p>
+            <span className={viewProject}>
+              View Project <img src="/images/arrow-right.svg" alt="" />
+            </span>
+          </div>
+          <img src={item?.image!} alt="Image 1" className={projectImage} />
         </div>
-        <img
-          src="/images/softwareDev/Frame 71.svg"
-          alt="Image 1"
-          className={projectImage}
-        />
-      </div>
-      <div className={RleftSection}>
-        <div>
-          <h3 className={subheading}>Termgrid</h3>
-          <p className={paragraph}>
-            We're more than an IT Solutions Company; we infuse every project
-            with passion and purpose.
-          </p>
-          <span className={viewProject}>
-            View Project <img src="/images/arrow-right.svg" alt="" />
-          </span>
-        </div>
-        <img
-          src="/images/softwareDev/Frame 74.svg"
-          alt="Image 2"
-          className={projectImage}
-        />
-      </div>
-      <div className={RleftSection}>
-        <div>
-          <h3 className={subheading}>Descartes</h3>
-          <p className={paragraph}>
-            We're more than an IT Solutions Company; we infuse every project
-            with passion and purpose.
-          </p>
-          <span className={viewProject}>
-            View Project <img src="/images/arrow-right.svg" alt="" />
-          </span>
-        </div>
-        <img
-          src="/images/softwareDev/Frame 76.svg"
-          alt="Image 3"
-          className={projectImage}
-        />
-      </div>
+      ))}
     </div>
   </div>
 )

@@ -1,5 +1,7 @@
 import * as React from "react"
 import { type IndexPageFrontmatterType } from "../pages"
+// import { Link } from "gatsby"
+// const _ = require("lodash")
 
 type ServiceProps = NonNullable<IndexPageFrontmatterType>["services"]
 
@@ -11,6 +13,7 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => (
     </h2>
     <div className="Scontainer">
       {props?.service?.map((item, index) => (
+        // <Link to={`/services/${_.kebabCase(item?.title!)}`}>
         <div key={index} className="box">
           <img className="slogo" src={item?.icon!} alt="Logo 1" />
           <h2>
@@ -18,6 +21,7 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => (
           </h2>
           <p>{item?.description}</p>
         </div>
+        // </Link>
       ))}
     </div>
   </div>

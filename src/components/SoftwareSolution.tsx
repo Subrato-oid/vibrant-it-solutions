@@ -6,26 +6,24 @@ import {
   button,
   softwareDev
 } from "./SoftwareSolution.module.css"
+import { type ServicePageNodeType } from "../template/service"
 
-// type SoftwareSolution = {}
+type SoftwareSolutionProps = NonNullable<
+NonNullable<ServicePageNodeType>["frontmatter"]
+>["hero"]
 
-const SoftwareSolution = (): React.ReactElement => (
+const SoftwareSolution = (props: SoftwareSolutionProps): React.ReactElement => (
   <div className={softwareSolution}>
     <h1>
-      <span className={line1}>Excellent</span>&nbsp;
-      <span className={line2}>App Development</span>&nbsp;
-      <span className={line1}>Solutions</span>
+      <span className={line1}>{props?.titleBefore}</span>&nbsp;
+      <span className={line2}>{props?.titleHighlight}</span>&nbsp;
+      <span className={line1}>{props?.titleAfter}</span>
     </h1>
-    <p>
-      We offer end-to-end development that involves everything from business
-      analysis to software delivery and support. We are there for you to help
-      plan, design, develop, integrate, test, manage, and evolve software
-      solutions.
-    </p>
+    <p>{props?.description}</p>
     <a href="#" className={button}>
-      Book A Consultation <img src="/images/Button Icon.svg" alt="" />{" "}
+      {props?.button?.buttonText} <img src={props?.button?.icon!} alt="" />{" "}
     </a>
-    <img src="/images/services/AD.svg" alt="" id={softwareDev} />
+    <img src={props?.image!} alt="" id={softwareDev} />
   </div>
 )
 
