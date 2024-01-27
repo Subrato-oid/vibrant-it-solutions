@@ -14,6 +14,8 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-transformer-json",
+    "gatsby-transformer-remark",
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -60,10 +62,6 @@ const config: GatsbyConfig = {
         jsxPragma: "jsx", // defaults to "React"
         allExtensions: true, // defaults to false
       },
-    },
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {},
     },
     "gatsby-plugin-netlify", // make sure to keep it last in the array
   ],

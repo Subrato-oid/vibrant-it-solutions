@@ -11,7 +11,7 @@ type Prop = {
   }
 }
 const ServicePagePreview = ({ entry }: Prop): React.ReactElement => {
-  const serviceData = entry.getIn(["data"]).toJS() as ServicePageNodeType
+  const serviceData = entry.getIn(["data"]).toJS()
   // const IndexData = entry.getIn(["data"]).toJS() as ServicePageFrontmatterType
 
   console.log(serviceData)

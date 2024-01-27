@@ -315,15 +315,15 @@ collections:
                       ] 
                   },              
                   {
-                    label: Column,
-                    name: column,
+                    label: Columns,
+                    name: columns,
                     widget: list,
                     fields:
                       [
                         { label: Heading, name: heading, widget: string },
                         {
                           label: Elements,
-                          name: elemnets,
+                          name: elements,
                           widget: list,
                           fields: [{ label: Text, name: text, widget: string }],
                         },

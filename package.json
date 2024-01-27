@@ -31,6 +31,7 @@
     "gatsby-plugin-sharp": "^5.13.0",
     "gatsby-plugin-sitemap": "^6.13.0",
     "gatsby-source-filesystem": "^5.13.0",
+    "gatsby-transformer-json": "^5.13.1",
     "gatsby-transformer-remark": "^6.13.0",
     "gatsby-transformer-sharp": "^5.13.0",
     "graphql": "16.8.1",
@@ -42,6 +43,7 @@
     "react-icons": "^4.12.0"
   },
   "devDependencies": {
+    "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",

@@ -96,7 +96,8 @@
 
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
+    "resolveJsonModule": true,
   },
-  "include": ["./src/**/*", "./gatsby-node.ts", "./gatsby-config.ts", "./plugins/**/*", ".eslintrc.js"]
+  "include": ["./src/**/*", "gatsby-node.tjs", "./gatsby-config.ts", "./plugins/**/*", ".eslintrc.js"]
 }

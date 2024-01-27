@@ -1,9 +1,10 @@
 {
+  "__type": "header",
   "header": {
     "logo": "/images/Group 20.svg",
     "navItems": [
       {
-        "item": "About Us"
+        "item": "About"
       },
       {
         "item": "Services"

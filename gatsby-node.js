@@ -1,19 +1,17 @@
-import { type GatsbyNode, type CreatePagesArgs } from "gatsby"
-
 const _ = require("lodash")
 const path = require("path")
 // const { createFilePath } = require("gatsby-source-filesystem")
 
-type MarkdownRemarkNode = {
-  id: string
-  frontmatter: {
-    title: string
-  }
-}
-export const createPages: GatsbyNode["createPages"] = async ({
+// type MarkdownRemarkNode = {
+//   id: string
+//   frontmatter: {
+//     title: string
+//   }
+// }
+exports.createPages = async ({
   actions,
   graphql,
-}: CreatePagesArgs) => {
+}) => {
   const { createPage } = actions
 
   const result = await graphql(`
@@ -32,9 +30,9 @@ export const createPages: GatsbyNode["createPages"] = async ({
         }
       }
     }
-  `)
+  `);
   if (result.errors !== undefined && result.errors !== null) {
-    result.errors.forEach((e: Error) => {
+    result.errors.forEach((e) => {
       console.error(e.toString())
     })
     await Promise.reject(result.errors); return
@@ -43,7 +41,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   // const services = result.data?.services?.edges || []
   const services = result.data?.allMarkdownRemark?.edges
 
-  services.forEach((edge: { node: MarkdownRemarkNode }) => {
+  services.forEach((edge) => {
     const id = edge.node.id
     createPage({
       path: `services/${_.kebabCase(edge.node.frontmatter.title)}`,

@@ -1,7 +1,7 @@
 import * as React from "react"
 import { type IndexPageFrontmatterType } from "../pages"
 
-type SolutionProps = NonNullable<IndexPageFrontmatterType>["solution"]
+type SolutionProps = NonNullable<Queries.CommonJsonSolution>
 
 const Solution = (props: SolutionProps): React.ReactElement => (
   <div className="solution">

@@ -1,7 +1,6 @@
 import * as React from "react"
 import { type PageProps, graphql } from "gatsby"
 import Hero from "../components/Hero"
-import Layout from "../components/Layout"
 import Clients from "../components/Clients"
 import About from "../components/About"
 import Success from "../components/Success"
@@ -38,20 +37,16 @@ export const IndexPageTemplate = ({
     success,
     services,
     process,
-    testimonial,
-    solution,
-  } = frontmatter!
+  } = frontmatter
   return (
-    <Layout>
-      <Hero {...hero!} />
-      <Clients {...client!} />
-      <About {...about!} />
-      <Success {...success!} />
-      <Service {...services!} />
-      <Process {...process!} />
-      <Testimonial {...testimonial!} />
-      <Solution {...solution!} />
-    </Layout>
+    <CommonLayout>
+      <Hero {...hero} />
+      <Clients {...client} />
+      <About {...about} />
+      <Success {...success} />
+      <Service {...services} />
+      <Process {...process} />
+    </CommonLayout>
   )
 }
 

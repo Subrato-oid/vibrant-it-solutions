@@ -7,21 +7,23 @@ import "../styles/services.css"
 import SoftwareSolution from "../components/SoftwareSolution"
 import Project from "../components/Projects"
 import Expertise from "../components/Expertise"
+import CommonLayout from "../components/CommonLayout"
+import "../styles/global.css"
 
 // export type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">
 
 export type ServicePageFrontmatterType = NonNullable<
-Queries.ServicePageQuery["common"]
+  Queries.ServicePageQuery["common"]
 >["frontmatter"]
 
 export type ServicePageType = NonNullable<Queries.ServicePageQuery["services"]>
 
 export type ServicePageEdgeType = NonNullable<
-NonNullable<Queries.ServicePageQuery["services"]>["edges"]
+  NonNullable<Queries.ServicePageQuery["services"]>["edges"]
 >
 
 export type ServicePageNodeType = NonNullable<
-NonNullable<Queries.ServicePageQuery["services"]>["edges"]
+  NonNullable<Queries.ServicePageQuery["services"]>["edges"]
 >[0]["service"]
 
 // Step 2: Define your component
@@ -32,42 +34,30 @@ const ServicePage = ({
   data: Queries.ServicePageQuery
   pageContext: { id: string }
 }): React.ReactElement => {
-  console.log(data)
   const service = data.services.edges.filter(
     (edge) => edge.service.id === pageContext.id
   )[0]
 
   console.log("service", service)
   console.log("pageContext", pageContext)
-  return (
-    <ServicePageTemplate
-      serviceNode={service}
-      frontmatter={data.common?.frontmatter!}
-    />
-  )
+  return <ServicePageTemplate serviceNode={service} />
 }
 
 export const ServicePageTemplate = ({
   serviceNode,
-  frontmatter,
 }: {
   serviceNode: ServicePageNodeType
-  frontmatter: ServicePageFrontmatterType
 }): React.ReactElement => {
-  console.log("data", frontmatter)
   console.log("services", serviceNode)
 
-  const { testimonial, solution } = frontmatter
   const { hero, expertise, project } = serviceNode.service.frontmatter!
 
   return (
-    <Layout>
+    <CommonLayout>
       <SoftwareSolution {...hero} />
       <Expertise {...expertise} />
       <Project {...project} />
-      <Testimonial {...testimonial} />
-      <Solution {...solution} />
-    </Layout>
+    </CommonLayout>
   )
 }
 
@@ -121,12 +111,6 @@ export const query = graphql`
     common: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       id
       frontmatter {
-        header {
-          logo
-          navItems {
-            item
-          }
-        }
         testimonial {
           testimony
           name
@@ -141,14 +125,6 @@ export const query = graphql`
           button {
             buttonText
             icon
-          }
-        }
-        footer {
-          column {
-            heading
-            elemnets {
-              text
-            }
           }
         }
       }

@@ -1,9 +1,6 @@
 import * as React from "react"
-import { type IndexPageFrontmatterType } from "../pages"
 
-type TestimonialProps = NonNullable<IndexPageFrontmatterType>["testimonial"]
-
-const Testimonial = (props: TestimonialProps): React.ReactElement => (
+const Testimonial = (props: Queries.CommonJsonTestimonialsTestimonial): React.ReactElement => (
   <div className="testimonial">
     <div className="testimonial-text">
       <img src="/images/Isolation_Mode.svg" alt="" />

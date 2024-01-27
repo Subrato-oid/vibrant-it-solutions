@@ -5,7 +5,7 @@ import Navbar from "./Navbar"
 type LayoutProp = {
   children: React.ReactNode
 }
-const TemplateWrapper = ({ children }: LayoutProp): React.ReactElement => {
+const BaseLayout = ({ children }: LayoutProp): React.ReactElement => {
   return (
     <div id="main">
       <Navbar />
@@ -15,4 +15,4 @@ const TemplateWrapper = ({ children }: LayoutProp): React.ReactElement => {
   )
 }
 
-export default TemplateWrapper
+export default BaseLayout
