@@ -6,9 +6,8 @@ import About from "../components/About"
 import Success from "../components/Success"
 import Service from "../components/Services"
 import Process from "../components/Process"
-import Testimonial from "../components/Testimonial"
-import Solution from "../components/Solution"
 import "../styles/index.css"
+import CommonLayout from "../components/CommonLayout"
 
 export type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">
 
@@ -59,12 +58,6 @@ export const query = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       id
       frontmatter {
-        header {
-          logo
-          navItems {
-            item
-          }
-        }
         hero {
           titleUp
           titleHighlight
@@ -121,30 +114,6 @@ export const query = graphql`
             icon
             description
             title
-          }
-        }
-        testimonial {
-          testimony
-          name
-          bio
-          image
-        }
-        solution {
-          title
-          titleHighlight
-          image
-          description
-          button {
-            buttonText
-            icon
-          }
-        }
-        footer {
-          column {
-            heading
-            elemnets {
-              text
-            }
           }
         }
       }

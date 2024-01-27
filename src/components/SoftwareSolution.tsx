@@ -2,11 +2,11 @@ import React from "react"
 import { type ServicePageNodeType } from "../templates/service"
 
 type SoftwareSolutionProps = NonNullable<
-NonNullable<ServicePageNodeType>["frontmatter"]
+  NonNullable<ServicePageNodeType>["frontmatter"]
 >["hero"]
 
 const SoftwareSolution = (props: SoftwareSolutionProps): React.ReactElement => (
-  <div className={"softwareSolution"}>
+  <div className={"software-solution"}>
     <h1>
       <span className={"line1"}>{props?.titleBefore}</span>&nbsp;
       <span className={"line2"}>{props?.titleHighlight}</span>&nbsp;

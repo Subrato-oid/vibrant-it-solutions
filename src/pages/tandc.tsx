@@ -1,8 +1,8 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
 import "../styles/tandc.css"
 import TandC from "../components/TnadC"
+import BaseLayout from "../components/BaseLayout"
 
 export type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">
 
@@ -12,9 +12,9 @@ const TandCPage = (): React.ReactElement => {
 
 export const TandCPageTemplate = (): React.ReactElement => {
   return (
-    <Layout>
+    <BaseLayout>
       <TandC />
-    </Layout>
+    </BaseLayout>
   )
 }
 

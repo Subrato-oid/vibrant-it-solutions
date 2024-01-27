@@ -1,8 +1,8 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
 import "../styles/contact.css"
 import ContactForm from "../components/ContactForm"
+import BaseLayout from "../components/BaseLayout"
 
 export type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">
 
@@ -12,9 +12,9 @@ const ContactPage = (): React.ReactElement => {
 
 export const ContactPageTemplate = (): React.ReactElement => {
   return (
-    <Layout>
+    <BaseLayout>
       <ContactForm />
-    </Layout>
+    </BaseLayout>
   )
 }
 

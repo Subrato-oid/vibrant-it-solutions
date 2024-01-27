@@ -1,14 +1,10 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import Testimonial from "../components/Testimonial"
-import Solution from "../components/Solution"
 import "../styles/services.css"
 import SoftwareSolution from "../components/SoftwareSolution"
 import Project from "../components/Projects"
 import Expertise from "../components/Expertise"
 import CommonLayout from "../components/CommonLayout"
-import "../styles/global.css"
 
 // export type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">
 
