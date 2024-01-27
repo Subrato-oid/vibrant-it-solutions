@@ -1,0 +1,201 @@
+.apply-now {
+  width: 100%;
+  background-image: url(/images/Career/Group.svg);
+  background-color: #080f1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4.69rem 9.31rem;
+  margin-top: 8rem;
+}
+.apply-now h2 {
+  width: 50%;
+  flex-shrink: 0;
+}
+.apply-now h2 .head1 {
+  color: #fff;
+  font-family: Golos Text;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 3.25rem */
+}
+.line {
+  width: 0.0625rem;
+  height: 23.625rem;
+  color: #ffffff57;
+  background: rgba(255, 255, 255, 0.34);
+}
+.apply {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-left: 4rem;
+}
+.apply h3 {
+  color: #fff;
+  font-family: Golos Text;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.625rem; /* 131.25% */
+}
+.apply p {
+  color: rgba(255, 255, 255, 0.64);
+  font-family: Golos Text;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.9375rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.apply .button {
+  display: flex;
+  width: fit-content;
+  padding: 1.12rem 2.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  background: var(--Colors-Brand-Primary, #4070ea);
+  font-family: Golos Text;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 1rem */
+  letter-spacing: -0.01rem;
+  text-transform: capitalize;
+}
+.button img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* -----------for small screen devices------------ */
+@media screen and (max-width: 1440px) and (min-width: 781px) {
+  .apply-now {
+    width: 100%;
+    background-image: url(/images/Career/Group.svg);
+    padding: 4.69vw 9.31vw;
+    margin-top: 8vw;
+  }
+  .apply-now h2 {
+    width: 50%;
+    flex-shrink: 0;
+  }
+  .apply-now h2 .head1 {
+    font-size: 2.5vw;
+  }
+  .line {
+    width: 0.0625vw;
+    height: 23.625vw;
+    color: #ffffff57;
+    background: rgba(255, 255, 255, 0.34);
+  }
+  .apply {
+    width: 50%;
+    padding-left: 4vw;
+  }
+  .apply h3 {
+    font-size: 2vw;
+    line-height: 2.625vw; /* 131.25% */
+  }
+  .apply p {
+    font-size: 1.25vw;
+    line-height: 1.9375vw;
+    margin-top: 1.5vw;
+    margin-bottom: 2.5vw;
+  }
+  .apply .button {
+    padding: 1.12vw 2.5vw;
+    gap: 0.5vw;
+    font-size: 1vw;
+    letter-spacing: -0.01vw;
+  }
+  .button img {
+    width: 1.25vw;
+    height: 1.25vw;
+  }
+}
+
+/* -----------for small screen devices------------ */
+@media only screen and (max-width: 780px) {
+  .apply-now {
+    width: 100%;
+    height: 33.625rem;
+    background-image: url(/images/Career/Group_m.svg);
+    background-color: #080f1f;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4rem 1rem;
+    margin-top: 4rem;
+  }
+  .apply-now h2 {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  .apply-now h2 .head1 {
+    color: #fff;
+    font-family: Golos Text;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.625rem;
+  }
+  .line {
+    display: none;
+  }
+  .apply {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0;
+  }
+  .apply h3 {
+    color: #fff;
+    font-family: Golos Text;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.625rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.34);
+    padding-top: 2.5rem;
+    margin-top: 2.5rem;
+  }
+  .apply p {
+    color: rgba(255, 255, 255, 0.64);
+    font-family: Golos Text;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  .apply .button {
+    display: flex;
+    padding: 0.875rem 1.875rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-family: Golos Text;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.00875rem;
+    text-transform: capitalize;
+  }
+  .button img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
