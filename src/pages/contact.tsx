@@ -1,79 +1,24 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import Testimonial from "../components/Testimonial"
-import Solution from "../components/Solution"
-import "../styles/global.css"
-import AboutUs from "../components/AboutUs"
-import AboutImage from "../components/AboutImage"
-import Mission from "../components/Mission"
-import Milestones from "../components/Milestones"
+import "../styles/contact.css"
+import ContactForm from "../components/ContactForm"
 
 export type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">
 
-export type ServicePageFrontmatterType = NonNullable<
-Queries.ServicePageQuery["common"]
->["frontmatter"]
-
-// export type ServicePageType = NonNullable<Queries.ServicePageQuery["services"]>
-
-// export type ServicePageEdgeType = NonNullable<
-// NonNullable<Queries.ServicePageQuery["services"]>["edges"]
-// >
-
-// export type ServicePageNodeType = NonNullable<
-// NonNullable<Queries.ServicePageQuery["services"]>["edges"]
-// >[0]["service"]
-
-// Step 2: Define your component
-const AboutPage = ({
-  data,
-  pageContext,
-}: {
-  data: Queries.ServicePageQuery
-  pageContext: { id: string }
-}): React.ReactElement => {
-  console.log(data)
-  // const service = data.services.edges.filter(
-  //   (edge) => edge.service.id === pageContext.id
-  // )[0]
-
-  // console.log("service", service)
-  console.log("pageContext", pageContext)
-  return (
-    <AboutPageTemplate
-      // serviceNode={service}
-      frontmatter={data.common?.frontmatter!}
-    />
-  )
+const ContactPage = (): React.ReactElement => {
+  return <ContactPageTemplate />
 }
 
-export const AboutPageTemplate = ({
-  // serviceNode,
-  frontmatter,
-}: {
-  // serviceNode: ServicePageNodeType
-  frontmatter: ServicePageFrontmatterType
-}): React.ReactElement => {
-  console.log("data", frontmatter)
-  // console.log("services", serviceNode)
-
-  const { testimonial, solution } = frontmatter
-  // const { hero, expertise, project } = serviceNode.service.frontmatter!
-
+export const ContactPageTemplate = (): React.ReactElement => {
   return (
     <Layout>
-      <AboutUs />
-      <AboutImage />
-      <Mission />
-      <Milestones />
-      <Testimonial {...testimonial} />
-      <Solution {...solution} />
+      <ContactForm />
     </Layout>
   )
 }
 
-export default AboutPage
+export default ContactPage
 
 export const query = graphql`
   query ServicePage {

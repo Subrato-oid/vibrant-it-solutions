@@ -1,22 +1,13 @@
 import * as React from "react"
-import {
-  whyJoin,
-  head1,
-  head2,
-  VDetails,
-  left,
-  vIt,
-  right
-} from "./JoinSection.module.css"
 
 // type JoinSectionProps = NonNullable<IndexPageFrontmatterType>["JoinSection"]
 
 const JoinSection = (): React.ReactElement => (
   <>
-    <div className={whyJoin}>
+    <div className={"why-join"}>
       <h2>
-        <span className={head1}>Why Join</span>
-        <span className={head2}>Vibrant IT Solutions</span>
+        <span className={"head1"}>Why Join</span>
+        <span className={"head2"}>Vibrant IT Solutions</span>
       </h2>
       <p>
         We emphasize people, whether they are employees, partners, or clients,
@@ -25,9 +16,9 @@ const JoinSection = (): React.ReactElement => (
         promoting constant growth for you, our company, and our clients.
       </p>
     </div>
-    <div className={VDetails}>
-      <div className={left}>
-        <div className={vIt}>
+    <div className={"V-details"}>
+      <div className={"left"}>
+        <div className={"v-it"}>
           <h3>International Clients</h3>
           <p>
             We help clients worldwide, so you'll have the chance to collaborate
@@ -35,14 +26,14 @@ const JoinSection = (): React.ReactElement => (
             offering IT solutions.
           </p>
         </div>
-        <div className={vIt}>
+        <div className={"v-it"}>
           <h3>Chill Environment</h3>
           <p>
             We are fitness freaks, but sometimes our love for burgers leads us
             to have a cheat day at the office.
           </p>
         </div>
-        <div className={vIt}>
+        <div className={"v-it"}>
           <h3>Professional Growth</h3>
           <p>
             We don't restrict you to just your job. We make sure you keep
@@ -51,8 +42,8 @@ const JoinSection = (): React.ReactElement => (
           </p>
         </div>
       </div>
-      <div className={right}>
-        <img src="media/Career/Frame 65.svg" alt="" />
+      <div className={"right"}>
+        <img src="/images/Career/Frame 65.svg" alt="" />
       </div>
     </div>
   </>

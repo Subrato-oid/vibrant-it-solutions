@@ -4,7 +4,7 @@ title: Ecommerce Solutions
 hero:
   titleBefore: Grow With
   titleHighlight: Ecommerce Solutions
-  titleAfter: "  ."
+  titleAfter: " "
   image: /images/es.svg
   button:
     buttonText: Book A Consultation

@@ -3,12 +3,11 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Testimonial from "../components/Testimonial"
 import Solution from "../components/Solution"
-import "../styles/career.css"
-import JobOpening from "../components/JobOpening"
-import JoinSection from "../components/JoinSection"
-import Career from "../components/Career"
-import CareerImage from "../components/CareerImage"
-import Apply from "../components/Apply"
+import "../styles/about.css"
+import AboutUs from "../components/AboutUs"
+import AboutImage from "../components/AboutImage"
+import Mission from "../components/Mission"
+import Milestones from "../components/Milestones"
 
 export type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">
 
@@ -27,7 +26,7 @@ Queries.ServicePageQuery["common"]
 // >[0]["service"]
 
 // Step 2: Define your component
-const CareerPage = ({
+const AboutPage = ({
   data,
   pageContext,
 }: {
@@ -42,14 +41,14 @@ const CareerPage = ({
   // console.log("service", service)
   console.log("pageContext", pageContext)
   return (
-    <CareerPageTemplate
+    <AboutPageTemplate
       // serviceNode={service}
       frontmatter={data.common?.frontmatter!}
     />
   )
 }
 
-export const CareerPageTemplate = ({
+export const AboutPageTemplate = ({
   // serviceNode,
   frontmatter,
 }: {
@@ -64,18 +63,17 @@ export const CareerPageTemplate = ({
 
   return (
     <Layout>
-      <Career />
-      <CareerImage />
-      <JobOpening />
-      <JoinSection />
-      <Apply />
+      <AboutUs />
+      <AboutImage />
+      <Mission />
+      <Milestones />
       <Testimonial {...testimonial} />
       <Solution {...solution} />
     </Layout>
   )
 }
 
-export default CareerPage
+export default AboutPage
 
 export const query = graphql`
   query ServicePage {

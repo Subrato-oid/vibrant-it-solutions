@@ -1,17 +1,16 @@
 import * as React from "react"
-import { inspire, inspiration, line1, line2 } from "./Career.module.css"
 
 // type CareerProps = NonNullable<IndexPageFrontmatterType>["Career"]
 
 const Career = (): React.ReactElement => (
-  <div className={inspire}>
-    <div className={inspiration}>
+  <div className={"inspire"}>
+    <div className={"inspiration"}>
       <h5>Careers</h5>
       <h1>
-        <span className={line1}>Join Our</span>
+        <span className={"line1"}>Join Our</span>
         <br />
-        <span className={line1}>Innovative</span>
-        <span className={line2}>Folks</span>
+        <span className={"line1"}>Innovative</span>
+        <span className={"line2"}>Folks</span>
       </h1>
       <p>
         We're a talented group of software developers who create new things

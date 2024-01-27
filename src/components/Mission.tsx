@@ -1,10 +1,9 @@
 import * as React from "react"
-import { ourMission } from "./Mission.module.css"
 
 // type MissionProps = NonNullable<IndexPageFrontmatterType>["Mission"]
 
 const Mission = (): React.ReactElement => (
-  <div className={ourMission}>
+  <div className={"our-mission"}>
     <h2>Our Mission</h2>
     <p>
       Our mission is to help businesses in adopting new technologies more

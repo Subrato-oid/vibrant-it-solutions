@@ -280,7 +280,7 @@ nav a:hover {
 
 /* <!---- TESTIMONIAL SECTION ----> */
 .testimonial {
-  background-image: url(media/tesimonialbg.svg);
+  background-image: url(/images/tesimonialbg.svg);
   background-color: #080f1f;
   background-position: center;
   align-items: center;
@@ -897,7 +897,7 @@ footer {
     font-weight: 400;
     line-height: 160%;
   }
-  .social-media {
+  .social-/images {
     display: flex;
     align-items: flex-start;
     gap: 1.5rem;

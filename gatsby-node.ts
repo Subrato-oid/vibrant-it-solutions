@@ -40,14 +40,14 @@ export const createPages: GatsbyNode["createPages"] = async ({
     await Promise.reject(result.errors); return
   }
 
-  // const services = result.data?.allMarkdownRemark?.edges || []
+  // const services = result.data?.services?.edges || []
   const services = result.data?.allMarkdownRemark?.edges
 
   services.forEach((edge: { node: MarkdownRemarkNode }) => {
     const id = edge.node.id
     createPage({
       path: `services/${_.kebabCase(edge.node.frontmatter.title)}`,
-      component: path.resolve("src/template/service.tsx"),
+      component: path.resolve("src/templates/service.tsx"),
       // additional data can be passed via context
       context: {
         id,

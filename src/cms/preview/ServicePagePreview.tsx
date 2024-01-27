@@ -3,7 +3,7 @@ import {
   type ServicePageNodeType,
   ServicePageTemplate
   // type ServicePageFrontmatterType
-} from "../../template/service"
+} from "../../templates/service"
 
 type Prop = {
   entry: {

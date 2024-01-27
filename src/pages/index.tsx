@@ -9,7 +9,7 @@ import Service from "../components/Services"
 import Process from "../components/Process"
 import Testimonial from "../components/Testimonial"
 import Solution from "../components/Solution"
-import "../styles/global.css"
+import "../styles/index.css"
 
 export type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">
 
