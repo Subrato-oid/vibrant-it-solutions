@@ -187,15 +187,9 @@ collections:
             [
               { label: Title highlight, name: titleHighlight, widget: string },
               { label: Title, name: title, widget: string },
-              { label: Projects, name: projects, widget: relation, collection: works, value_field: title}
-              # { label: Projects, name: projects, widget: list,
-              #   fields: 
-              #     [
-              #       { label: Title, name: title, widget: string },
-              #       { label: Description, name: description, widget: text },
-              #       { labe: Image, name: image, widget: image },
-              #     ]
-              # },
+              { label: Projects, name: projects, widget: relation, collection: works, value_field: "title",
+                search_fields: ["title"],
+              }
             ]
         }
 
@@ -224,8 +218,8 @@ collections:
             [
               {label: Kicker, name: kicker, widget: string },
               {label: Title Top, name: titleTop, widget: string },
-              {label: Title Down, name: titleTop, widget: string },
-              {label: Title Highlight, name: titleTop, widget: string },
+              {label: Title Down, name: titleDown, widget: string },
+              {label: Title Highlight, name: titleHighlight, widget: string },
               { label: Description, name: description, widget: text },
               {
                 label: "Details",
@@ -233,12 +227,18 @@ collections:
                 widget: "object",
                 fields:
                   [
-                    {label: Author, name: author, widget: string },
-                    {label: Published Date, name: publishDate, widget: datetime },
-                    {label: Topic, name: topic, widget: string },
+                    { label: Author, name: author, widget: string },
+                    { 
+                      label: Published Date, 
+                      name: publishDate, 
+                      widget: datetime, 
+                      default: "",
+                      date_format: "DD.MM.YYYY",
+                      time_format: "false",
+                    },
+                    { label: Topic, name: topic, widget: string },
                   ]
-              }
-
+              },
               { label: Image, name: image, widget: image },
             ]
         }
@@ -260,7 +260,7 @@ collections:
             [
               { label: Title, name: title, widget: string },
               { label: Title highlight, name: titleHighlight, widget: string },
-              { label: BLogList, name: blogsList, widget: relation, collection: blogs, value_field: title}
+              { label: BLogList, name: blogsList, widget: relation, collection: blogs, value_field: "title", search_fields: ["title"] },
               # { label: Blogs, name: blogs, widget: list,
               #   fields: 
               #     [
@@ -409,7 +409,6 @@ collections:
     label: "Pages"
     files:
       - file: "src/data/index.md"
-
         label: "Landing Page"
         name: "index"
         fields:
@@ -673,50 +672,33 @@ collections:
               widget: "hidden",
               default: "about-page",
             }
-
-          # - {
-          #     label: "Header",
-          #     name: "header",
-          #     widget: "object",
-          #     fields:
-          #       [
-          #         { label: Logo, name: logo, widget: image },
-          #         {
-          #           label: NavItems,
-          #           name: navItems,
-          #           widget: list,
-          #           fields: [{ label: Item, name: item, widget: string }],
-          #         },
-          #       ],
-          #   }
-
           - {
               label: "About",
               name: "about",
               widget: "object",
               fields:
                 [
-                  { label: Kicker, name: kicker, widget: string}
+                  { label: Kicker, name: kicker, widget: string},
                   { label: Title, name: title, widget: string },
                   { label: Title Highlight, name: titleHighlight, widget: string },
                   { label: Description, name: description, widget: text },
                 ]
             }
 
-            - {
-                label: "AboutCollage",
-                name: "aboutCollage",
-                widget: "object",
-                fields:
-                  [
-                    {
-                      lable: Images,
-                      name: images,
-                      widget: list,
-                      fields: [{ label: Image, name: image, widget: image }],
-                    },
-                  ],
-              }
+          - {
+              label: "AboutCollage",
+              name: "aboutCollage",
+              widget: "object",
+              fields:
+                [
+                  {
+                    lable: Images,
+                    name: images,
+                    widget: list,
+                    fields: [{ label: Image, name: image, widget: image }],
+                  },
+                ],
+            }
 
           - {
               label: "Mission",
@@ -885,28 +867,28 @@ collections:
                 ],
             }
 
-        - {
-            label: "Apply Now",
-            name: "applyNow",
-            widget: "object",
-            fields:
-              [
-                { label: Title, name: title, widget: string },
-                { label: Title Highlight, name: titleHighlight, widget: string },
-                { label: Heading, name: heading, widget: string },
-                { label: Description, name: description, widget: text },
-                {
-                  lable: Button,
-                  name: button,
-                  widget: object,
-                  fields:
-                    [
-                      { label: ButtonText, name: buttonText, widget: string },
-                      { label: Icon, name: icon, widget: image },
-                    ],
-                },
-              ],
-          }
+          - {
+              label: "Apply Now",
+              name: "applyNow",
+              widget: "object",
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Title Highlight, name: titleHighlight, widget: string },
+                  { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: text },
+                  {
+                    lable: Button,
+                    name: button,
+                    widget: object,
+                    fields:
+                      [
+                        { label: ButtonText, name: buttonText, widget: string },
+                        { label: Icon, name: icon, widget: image },
+                      ],
+                  },
+                ],
+            }
 
       - file: "src/data/T&C.md"
         label: "Terms & Conditions Page"
@@ -947,11 +929,10 @@ collections:
               widget: "hidden",
               default: "contact-page",
             }
-
-          - { label: Kicker, name: kicker, widget: string },
-          - { label: Title, name: title, widget: string },
-          - { label: Title Highlight, name: titleHighlight, widget: string },
-          - { label: Description, name: description, widget: text },
+          - { label: Kicker, name: kicker, widget: string }
+          - { label: Title, name: title, widget: string }
+          - { label: Title Highlight, name: titleHighlight, widget: string }
+          - { label: Description, name: description, widget: text }
           - {
               label: "Contact Details",
               name: "contactDeatils",
@@ -962,14 +943,7 @@ collections:
                   { label: Email, name: email, widget: string },
                   { label: Industry, name: industry, widget: select, 
                     options: 
-                      [
-                        "Commmerce", 
-                        "Construction", 
-                        "Education",
-                        "Food Processing",
-                        "Health Care",
-                        "Media"
-                      ] 
+                      [ "Commmerce", "Construction", "Education", "Food Processing", "Health Care", "Media", ] 
                   },
                 ],
             }
@@ -985,7 +959,7 @@ collections:
               default: "blog-page",
             }
 
-          - { label: Kicker, name: kicker, widget: string },
-          - { label: Title, name: title, widget: string },
-          - { label: Title Highlight, name: titleHighlight, widget: string },
-          - { label: Description, name: description, widget: text },
+          - { label: Kicker, name: kicker, widget: string }
+          - { label: Title, name: title, widget: string }
+          - { label: Title Highlight, name: titleHighlight, widget: string }
+          - { label: Description, name: description, widget: text }
