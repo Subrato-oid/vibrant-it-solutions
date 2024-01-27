@@ -1,0 +1,25 @@
+{
+  "header": {
+    "logo": "/images/Group 20.svg",
+    "navItems": [
+      {
+        "item": "About Us"
+      },
+      {
+        "item": "Services"
+      },
+      {
+        "item": "Our Works"
+      },
+      {
+        "item": "Career"
+      },
+      {
+        "item": "Blog"
+      },
+      {
+        "item": "Contact Us"
+      }
+    ]
+  }
+}

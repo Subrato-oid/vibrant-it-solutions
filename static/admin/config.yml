@@ -305,6 +305,15 @@ collections:
               widget: "object",
               fields:
                 [
+                  { label: Logo, name: logo, widget: image },
+                  { label: Address, name: address, widget: string },
+                  { label: Social, name: social, widget: list, 
+                    fields: 
+                      [
+                        { label: Icon, name: icon, widget: image }, 
+                        { label: Link, name: link, widget: string, required: false },
+                      ] 
+                  },              
                   {
                     label: Column,
                     name: column,
@@ -328,15 +337,20 @@ collections:
         name: "testimonial"
         fields:
           - {
-              label: "Testimonial",
-              name: "testimonial",
+              label: "Testimonials",
+              name: "testimonials",
               widget: "object",
               fields:
                 [
-                  { label: Testimony, name: testimony, widget: text },
-                  { label: Name, name: name, widget: string },
-                  { label: Bio, name: bio, widget: string },
-                  { label: Image, name: image, widget: image },
+                  { label: Testimonial, name: testimonial, widget: list,
+                    fields:
+                      [
+                        { label: Testimony, name: testimony, widget: text },
+                        { label: Name, name: name, widget: string },
+                        { label: Bio, name: bio, widget: string },
+                        { label: Image, name: image, widget: image },
+                      ]
+                  },
                 ],
             }
 
@@ -420,22 +434,6 @@ collections:
             }
 
           - {
-              label: "Header",
-              name: "header",
-              widget: "object",
-              fields:
-                [
-                  { label: Logo, name: logo, widget: image },
-                  {
-                    label: NavItems,
-                    name: navItems,
-                    widget: list,
-                    fields: [{ label: Item, name: item, widget: string }],
-                  },
-                ],
-            }
-
-          - {
               label: "Hero",
               name: "hero",
               widget: "object",
@@ -508,35 +506,6 @@ collections:
             }
 
           - {
-              label: "Success",
-              name: "success",
-              widget: "object",
-              fields:
-                [
-                  { label: TitleUp, name: titleUp, widget: string },
-                  {
-                    label: TitleHighlight,
-                    name: titleHighlight,
-                    widget: string,
-                  },
-                  {
-                    label: Boxes,
-                    name: boxes,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Title, name: title, widget: string },
-                        {
-                          label: Description,
-                          name: description,
-                          widget: string,
-                        },
-                      ],
-                  },
-                ],
-            }
-
-          - {
               label: "Services",
               name: "services",
               widget: "object",
@@ -598,70 +567,6 @@ collections:
                 ],
             }
 
-          - {
-              label: "Testimonial",
-              name: "testimonial",
-              widget: "object",
-              fields:
-                [
-                  { label: Testimony, name: testimony, widget: text },
-                  { label: Name, name: name, widget: string },
-                  { label: Bio, name: bio, widget: string },
-                  { label: Image, name: image, widget: image },
-                ],
-            }
-
-          - {
-              label: "Solution",
-              name: "solution",
-              widget: "object",
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  {
-                    label: TitleHighlight,
-                    name: titleHighlight,
-                    widget: string,
-                  },
-                  { label: Image, name: image, widget: image },
-                  { label: Description, name: description, widget: text },
-                  {
-                    lable: Button,
-                    name: button,
-                    widget: object,
-                    fields:
-                      [
-                        { label: ButtonText, name: buttonText, widget: string },
-                        { label: Icon, name: icon, widget: image },
-                      ],
-                  },
-                ],
-            }
-
-          - {
-              label: "Footer",
-              name: "footer",
-              widget: "object",
-              fields:
-                [
-                  {
-                    label: Column,
-                    name: column,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Heading, name: heading, widget: string },
-                        {
-                          label: Elements,
-                          name: elemnets,
-                          widget: list,
-                          fields: [{ label: Text, name: text, widget: string }],
-                        },
-                      ],
-                  },
-                ],
-            }
-
       - file: "src/data/about.md"
         label: "About Page"
         name: "about"
@@ -710,100 +615,6 @@ collections:
                   { label: Description, name: description, widget: text },
                 ],
             }
-
-          - {
-              label: "Milestone",
-              name: "milestone",
-              widget: "object",
-              fields:
-                [
-                  { label: TitleUp, name: titleUp, widget: string },
-                  {
-                    label: TitleHighlight,
-                    name: titleHighlight,
-                    widget: string,
-                  },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Boxes,
-                    name: boxes,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Title, name: title, widget: string },
-                        {
-                          label: Description,
-                          name: description,
-                          widget: string,
-                        },
-                      ],
-                  },
-                ],
-            }
-
-          # - {
-          #     label: "Testimonial",
-          #     name: "testimonial",
-          #     widget: "object",
-          #     fields:
-          #       [
-          #         { label: Testimony, name: testimony, widget: text },
-          #         { label: Name, name: name, widget: string },
-          #         { label: Bio, name: bio, widget: string },
-          #         { label: Image, name: image, widget: image },
-          #       ],
-          #   }
-
-          # - {
-          #     label: "Solution",
-          #     name: "solution",
-          #     widget: "object",
-          #     fields:
-          #       [
-          #         { label: Title, name: title, widget: string },
-          #         {
-          #           label: TitleHighlight,
-          #           name: titleHighlight,
-          #           widget: string,
-          #         },
-          #         { label: Image, name: image, widget: image },
-          #         { label: Description, name: description, widget: text },
-          #         {
-          #           lable: Button,
-          #           name: button,
-          #           widget: object,
-          #           fields:
-          #             [
-          #               { label: ButtonText, name: buttonText, widget: string },
-          #               { label: Icon, name: icon, widget: image },
-          #             ],
-          #         },
-          #       ],
-          #   }
-
-          # - {
-          #     label: "Footer",
-          #     name: "footer",
-          #     widget: "object",
-          #     fields:
-          #       [
-          #         {
-          #           label: Column,
-          #           name: column,
-          #           widget: list,
-          #           fields:
-          #             [
-          #               { label: Heading, name: heading, widget: string },
-          #               {
-          #                 label: Elements,
-          #                 name: elemnets,
-          #                 widget: list,
-          #                 fields: [{ label: Text, name: text, widget: string }],
-          #               },
-          #             ],
-          #         },
-          #       ],
-          #   }
 
       - file: "src/data/career.md"
         label: "Career Page"

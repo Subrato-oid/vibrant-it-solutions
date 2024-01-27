@@ -1,0 +1,79 @@
+{
+  "footer": {
+    "logo": "/images/Group 20.svg",
+    "address": "1/301 Vikrant Khand, Gomti Nagar, Lucknow 201307, India",
+    "social": [
+      {
+        "icon": "/images/insta.svg",
+        "link": "https://www.instagram.com/"
+      },
+      {
+        "icon": "/images/twitter.svg",
+        "link": "https://www.twitter.com/"
+      },
+      {
+        "icon": "/images/fb.svg",
+        "link": "https://www.facebook.com/"
+      }
+    ],
+    "column": [
+      {
+        "heading": "Company",
+        "elemnets": [
+          {
+            "text": "About Us"
+          },
+          {
+            "text": "Contact"
+          },
+          {
+            "text": "Clients"
+          }
+        ]
+      },
+      {
+        "heading": "Services",
+        "elemnets": [
+          {
+            "text": "Software Development"
+          },
+          {
+            "text": "Web Development"
+          },
+          {
+            "text": "IT Outsourcing"
+          },
+          {
+            "text": "Software Testing"
+          },
+          {
+            "text": "IVRS and QSMS"
+          },
+          {
+            "text": "Mobile App Development"
+          },
+          {
+            "text": "E-Commerce Solutions"
+          },
+          {
+            "text": "Food tech Service"
+          }
+        ]
+      },
+      {
+        "heading": "Products",
+        "elemnets": [
+          {
+            "text": "Easy Invoice Generator"
+          },
+          {
+            "text": "Pharma X"
+          },
+          {
+            "text": "GST Billing POS"
+          }
+        ]
+      }
+    ]
+  }
+}
