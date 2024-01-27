@@ -1,9 +1,7 @@
 import React from "react"
-import { type ServicePageNodeType } from "../templates/service"
+import { type ServicePageFrontmatterType } from "../templates/service"
 
-type ExpertiseProp = NonNullable<
-NonNullable<ServicePageNodeType>["frontmatter"]
->["expertise"]
+type ExpertiseProp = NonNullable<ServicePageFrontmatterType>["expertise"]
 
 const Expertise = (props: NonNullable<ExpertiseProp>): React.ReactElement => (
   <div className={"section"}>

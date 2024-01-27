@@ -18,13 +18,13 @@ const Hero = (props: NonNullable<HeroProps>): React.ReactElement => (
         <br />
         <span className="line1">{props.titleDown}</span>
       </h1>
-      <p>{props?.description}</p>
+      <p>{props.description}</p>
       <a href="#" className="button">
-        {props?.button?.buttonText} <img src={props?.button?.icon!} alt="" />
+        {props.button?.buttonText} <img src={props.button?.icon!} alt="" />
       </a>
     </div>
     <div className="image">
-      <img src={props?.image!} alt="Description of your image" />
+      <img src={props.image!} alt="Description of your image" />
     </div>
   </div>
 )

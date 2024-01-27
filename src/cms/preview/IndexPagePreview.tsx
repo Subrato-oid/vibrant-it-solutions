@@ -7,9 +7,8 @@ type Prop = {
   }
 }
 const IndexPagePreview = ({ entry }: Prop): React.ReactElement => {
-  const data = entry.getIn(["data"]).toJS()
+  const data: IndexPageFrontmatterType = entry.getIn(["data"]).toJS()
 
-  console.log(data)
   if (!data) return <div>Loading...</div>
   return <IndexPageTemplate frontmatter={data} />
 }

@@ -1,126 +1,77 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { type PageProps, graphql } from "gatsby"
 import "../styles/services.css"
 import SoftwareSolution from "../components/SoftwareSolution"
 import Project from "../components/Projects"
 import Expertise from "../components/Expertise"
-import CommonLayout from "../components/CommonLayout"
+import CommonLayout from "../layouts/CommonLayout"
 
-// export type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">
+// Step 1: Define Types
+type ServicePageType =
+  NonNullable<Queries.ServicePageByIdQuery>["service"]
 
-export type ServicePageFrontmatterType = NonNullable<
-  Queries.ServicePageQuery["common"]
->["frontmatter"]
+export type ServicePageFrontmatterType = NonNullable<ServicePageType>["frontmatter"]
 
-export type ServicePageType = NonNullable<Queries.ServicePageQuery["services"]>
-
-export type ServicePageEdgeType = NonNullable<
-  NonNullable<Queries.ServicePageQuery["services"]>["edges"]
->
-
-export type ServicePageNodeType = NonNullable<
-  NonNullable<Queries.ServicePageQuery["services"]>["edges"]
->[0]["service"]
-
-// Step 2: Define your component
+// Step 2: Define your Page
 const ServicePage = ({
   data,
-  pageContext,
-}: {
-  data: Queries.ServicePageQuery
-  pageContext: { id: string }
-}): React.ReactElement => {
-  const service = data.services.edges.filter(
-    (edge) => edge.service.id === pageContext.id
-  )[0]
-
-  console.log("service", service)
-  console.log("pageContext", pageContext)
-  return <ServicePageTemplate serviceNode={service} />
+}: PageProps<Queries.ServicePageByIdQuery>): React.ReactElement => {
+  console.log("service", data.service)
+  return <ServicePageTemplate service={data.service} />
 }
+export default ServicePage
 
+// Step 3: Define your Page Template
 export const ServicePageTemplate = ({
-  serviceNode,
+  service,
 }: {
-  serviceNode: ServicePageNodeType
+  service: ServicePageType
 }): React.ReactElement => {
-  console.log("services", serviceNode)
-
-  const { hero, expertise, project } = serviceNode.service.frontmatter!
-
+  const { hero, expertise, project } = service?.frontmatter!
   return (
     <CommonLayout>
-      <SoftwareSolution {...hero} />
-      <Expertise {...expertise} />
-      <Project {...project} />
+      <SoftwareSolution {...hero!} />
+      <Expertise {...expertise!} />
+      <Project {...project!} />
     </CommonLayout>
   )
 }
 
-export default ServicePage
-
-export const query = graphql`
-  query ServicePage {
-    services: allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "service-page" } } }
-    ) {
-      edges {
-        service: node {
-          id
-          fileAbsolutePath
-          frontmatter {
-            title
-            hero {
-              titleHighlight
-              titleBefore
-              titleAfter
-              image
-              description
-              button {
-                buttonText
-                icon
-              }
-            }
-            expertise {
-              titleBefore
-              titleHighlight
-              titleAfter
-              expertises {
-                title
-                description
-              }
-            }
-            project {
-              titleBefore
-              titleHighlight
-              titleAfter
-              projects {
-                title
-                description
-                image
-              }
-            }
-          }
-        }
-      }
-    }
-    common: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+// Step 4: Define your Page Query
+export const pageQuery = graphql`
+  query ServicePageById($id: String!) {
+    service: markdownRemark(id: { eq: $id }) {
       id
       frontmatter {
-        testimonial {
-          testimony
-          name
-          bio
-          image
-        }
-        solution {
-          title
+        title
+        hero {
           titleHighlight
+          titleBefore
+          titleAfter
           image
           description
           button {
             buttonText
             icon
+          }
+        }
+        expertise {
+          titleBefore
+          titleHighlight
+          titleAfter
+          expertises {
+            title
+            description
+          }
+        }
+        project {
+          titleBefore
+          titleHighlight
+          titleAfter
+          projects {
+            title
+            description
+            image
           }
         }
       }

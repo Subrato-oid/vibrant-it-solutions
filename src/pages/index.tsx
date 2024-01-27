@@ -7,21 +7,24 @@ import Success from "../components/Success"
 import Service from "../components/Services"
 import Process from "../components/Process"
 import "../styles/index.css"
-import CommonLayout from "../components/CommonLayout"
+import CommonLayout from "../layouts/CommonLayout"
 
-export type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">
+// Step 1: Define Types
+type IndexPageType = Pick<Queries.IndexPageQuery, "markdownRemark">
 
 export type IndexPageFrontmatterType = NonNullable<
-Queries.IndexPageQuery["markdownRemark"]
+IndexPageType["markdownRemark"]
 >["frontmatter"]
 
-// Step 2: Define your component
+// Step 2: Define your Page
 const IndexPage = ({
   data,
 }: PageProps<Queries.IndexPageQuery>): React.ReactElement => {
   return <IndexPageTemplate frontmatter={data.markdownRemark?.frontmatter!} />
 }
+export default IndexPage
 
+// Step 3: Define your Page Template
 export const IndexPageTemplate = ({
   frontmatter,
 }: {
@@ -29,31 +32,21 @@ export const IndexPageTemplate = ({
 }): React.ReactElement => {
   console.log("data", frontmatter)
 
-  const {
-    hero,
-    client,
-    about,
-    success,
-    services,
-    process,
-  } = frontmatter
+  const { hero, client, about, success, services, process } = frontmatter!
   return (
     <CommonLayout>
-      <Hero {...hero} />
-      <Clients {...client} />
-      <About {...about} />
-      <Success {...success} />
-      <Service {...services} />
-      <Process {...process} />
+      <Hero {...hero!} />
+      <Clients {...client!} />
+      <About {...about!} />
+      <Success {...success!} />
+      <Service {...services!} />
+      <Process {...process!} />
     </CommonLayout>
   )
 }
 
-export { Head } from "../components/Head"
-
-export default IndexPage
-
-export const query = graphql`
+// Step 4: Define your Page Query
+export const pageQuery = graphql`
   query IndexPage {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       id

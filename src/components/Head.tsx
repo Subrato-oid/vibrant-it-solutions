@@ -1,6 +1,6 @@
 import * as React from "react"
-import useSiteMetadata from "./SiteMetadata"
 import { withPrefix } from "gatsby"
+import useSiteMetadata from "../hooks/useSiteMetadata"
 
 export const Head = (): React.ReactElement => {
   const { title, description } = useSiteMetadata()

@@ -13,10 +13,10 @@ const Footer = (): React.ReactElement => {
           />
           <p>{footer.address}</p>
           <div className="footer-social">
-            {footer.social?.map((el) => {
+            {footer.social?.map((el, i) => {
               const { link, icon } = el!
               return (
-                <a href={link!} target="__blank">
+                <a key={`footer-social-${i}`} href={link!} target="__blank">
                   <img src={icon!} alt="Social Media Icon" />
                 </a>
               )
@@ -28,11 +28,11 @@ const Footer = (): React.ReactElement => {
           {footer.columns?.map((col, index) => {
             const { heading, elements } = col!
             return (
-              <div className={"footer-column" + (index + 2)}>
+              <div key={`footer-column-${heading}`} className={"footer-column" + (index + 2)}>
                 <div className="footer-heading">{heading}</div>
                 <ul className="footer-list">
-                  {elements?.map((el) => (
-                    <li className="footer-list-item">{el?.text}</li>
+                  {elements?.map((el, i) => (
+                    <li key={`footer-list-item-${i}`} className="footer-list-item">{el?.text}</li>
                   ))}
                 </ul>
               </div>

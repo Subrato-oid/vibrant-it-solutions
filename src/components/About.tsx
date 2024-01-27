@@ -3,21 +3,21 @@ import { type IndexPageFrontmatterType } from "../pages"
 
 type AboutProps = NonNullable<IndexPageFrontmatterType>["about"]
 
-const About = (props: AboutProps): React.ReactElement => (
+const About = (props: NonNullable<AboutProps>): React.ReactElement => (
   <div className="about">
     <div className="left">
-      <img src={props?.image!} alt="" />
+      <img src={props.image!} alt="" />
     </div>
     <div className="right">
       <div className="a-content">
         <h2>
-          <span className="head1">{props?.titleUp}</span>
-          <span className="head2">{props?.titleHighlight}</span>
+          <span className="head1">{props.titleUp}</span>
+          <span className="head2">{props.titleHighlight}</span>
           <br />
-          <span className="head1">{props?.titleDown}</span>
+          <span className="head1">{props.titleDown}</span>
         </h2>
         <p>
-          {props?.description
+          {props.description
             ?.split("\n")
             .map((text, i) => text || <br key={`br-about-${i}`} />)}
         </p>
@@ -32,7 +32,7 @@ const About = (props: AboutProps): React.ReactElement => (
           harmonizes with humanity. */}
 
         <a href="#" className="button">
-          {props?.button?.buttonText} <img src={props?.button?.icon!} alt="" />
+          {props.button?.buttonText} <img src={props.button?.icon!} alt="" />
         </a>
       </div>
     </div>

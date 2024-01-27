@@ -1,19 +1,16 @@
 import React from "react"
-import { type ServicePageNodeType } from "../templates/service"
+import { type ServicePageFrontmatterType } from "../templates/service"
 
-type ProjectProp = NonNullable<
-NonNullable<ServicePageNodeType>["frontmatter"]
->["project"]
+type ProjectProp = NonNullable<ServicePageFrontmatterType>["project"]
 
-const Project = (props: ProjectProp): React.ReactElement => (
+const Project = (props: NonNullable<ProjectProp>): React.ReactElement => (
   <div className={"RPsection"}>
     <h2>
-      {props?.titleBefore}{" "}
-      <span className={"line2"}>{props?.titleHighlight}</span>{" "}
-      {props?.titleAfter}
+      {props.titleBefore}{" "}
+      <span className={"line2"}>{props.titleHighlight}</span> {props.titleAfter}
     </h2>
     <div className={"RSlide"}>
-      {props?.projects?.map((item, index) => (
+      {props.projects?.map((item, index) => (
         <div key={index} className={"Rleft-section"}>
           <div>
             <h3 className={"subheading"}>{item?.title}</h3>

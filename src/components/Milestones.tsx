@@ -1,7 +1,5 @@
 import * as React from "react"
 
-// type MilestonesProps = NonNullable<IndexPageFrontmatterType>["Milestones"]
-
 const Milestones = (): React.ReactElement => (
   <div className={"milestones"}>
     <h2>

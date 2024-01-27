@@ -1,7 +1,7 @@
 import React from "react"
 import BaseLayout from "./BaseLayout"
-import Solution from "./Solution"
-import Testimonial from "./Testimonial"
+import Solution from "../components/Solution"
+import Testimonial from "../components/Testimonial"
 import useCommon from "../hooks/useCommon"
 
 type LayoutProp = {

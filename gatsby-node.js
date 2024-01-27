@@ -1,21 +1,11 @@
 const _ = require("lodash")
 const path = require("path")
-// const { createFilePath } = require("gatsby-source-filesystem")
 
-// type MarkdownRemarkNode = {
-//   id: string
-//   frontmatter: {
-//     title: string
-//   }
-// }
-exports.createPages = async ({
-  actions,
-  graphql,
-}) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
   const result = await graphql(`
-    {
+    query serviceList {
       allMarkdownRemark(
         limit: 1000
         filter: { frontmatter: { templateKey: { eq: "service-page" } } }
@@ -30,16 +20,16 @@ exports.createPages = async ({
         }
       }
     }
-  `);
+  `)
   if (result.errors !== undefined && result.errors !== null) {
     result.errors.forEach((e) => {
       console.error(e.toString())
     })
-    await Promise.reject(result.errors); return
+    await Promise.reject(result.errors)
+    return
   }
 
-  // const services = result.data?.services?.edges || []
-  const services = result.data?.allMarkdownRemark?.edges
+  const services = result.data?.allMarkdownRemark?.edges || []
 
   services.forEach((edge) => {
     const id = edge.node.id
@@ -53,16 +43,3 @@ exports.createPages = async ({
     })
   })
 }
-
-// exports.onCreateNode = ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions
-
-//   if (node.internal.type === `MarkdownRemark`) {
-//     const value = createFilePath({ node, getNode })
-//     createNodeField({
-//       name: `slug`,
-//       node,
-//       value,
-//     })
-//   }
-// }

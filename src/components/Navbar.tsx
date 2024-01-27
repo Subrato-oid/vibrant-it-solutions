@@ -2,7 +2,9 @@ import * as React from "react"
 import useCommon from "../hooks/useCommon"
 
 const Navbar = (): React.ReactElement => {
-  const { header } = useCommon()
+  const { header, services } = useCommon()
+  // TODO: User services list in header
+  console.log(services)
 
   return (
     <header>
