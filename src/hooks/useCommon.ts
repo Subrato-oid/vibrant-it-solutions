@@ -52,6 +52,10 @@ const useCommon = (): CommonType => {
             title
             titleHighlight
             image
+            button {
+              buttonText
+              icon
+            }
             description
           }
         }

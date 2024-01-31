@@ -9,7 +9,7 @@ const Project = (props: NonNullable<ProjectProp>): React.ReactElement => (
       {props.titleBefore}{" "}
       <span className={"line2"}>{props.titleHighlight}</span> {props.titleAfter}
     </h2>
-    <div className={"RSlide"}>
+    <div className={"R-slide"}>
       {props.projects?.map((item, index) => (
         <div key={index} className={"Rleft-section"}>
           <div>
@@ -19,7 +19,11 @@ const Project = (props: NonNullable<ProjectProp>): React.ReactElement => (
               View Project <img src="/images/arrow-right.svg" alt="" />
             </span>
           </div>
-          <img src={item?.image!} alt="Image 1" className={"project-image"} />
+          <img
+            className={"project-image"}
+            src={item?.image!}
+            alt={`Image ${index + 1}`}
+          />
         </div>
       ))}
     </div>

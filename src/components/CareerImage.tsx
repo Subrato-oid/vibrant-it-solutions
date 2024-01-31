@@ -1,10 +1,17 @@
 import * as React from "react"
+import { type CareerPageFrontmatterType } from "../pages/career"
 
-// type CareerImageProps = NonNullable<IndexPageFrontmatterType>["CareerImage"]
+type CareerImageProps = NonNullable<
+NonNullable<CareerPageFrontmatterType>["career"]
+>["image"]
 
-const CareerImage = (): React.ReactElement => (
+const CareerImage = ({
+  image,
+}: {
+  image: CareerImageProps
+}): React.ReactElement => (
   <div className={"career-image"}>
-    <img src="/images/Career/Frame 69.svg" alt="" />
+    <img src={image!} alt="" />
   </div>
 )
 

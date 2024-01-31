@@ -45,5 +45,6 @@ module.exports = {
     "@typescript-eslint/no-non-null-assertion": 0,
     "@typescript-eslint/no-non-null-asserted-optional-chain": 0,
     "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/naming-convention": 0,
   },
 }

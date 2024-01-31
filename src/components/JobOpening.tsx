@@ -1,29 +1,25 @@
 import * as React from "react"
+import { type CareerPageFrontmatterType } from "../pages/career"
+import { Link } from "gatsby"
 
-// type JobOpeningProps = NonNullable<IndexPageFrontmatterType>["JobOpening"]
+type JobOpeningProps = NonNullable<CareerPageFrontmatterType>["openings"]
 
-const JobOpening = (): React.ReactElement => (
+const JobOpening = (props: JobOpeningProps): React.ReactElement => (
   <div className={"job-opening"}>
     <h2>
-      <span className={"head2"}>Job</span>
-      <span className={"head1"}>Openings</span>
+      <span className={"head2"}>{props?.title}</span>
+      <span className={"head1"}>{props?.titleHighlight}</span>
     </h2>
     <div className={"post"}>
-      <div className={"role"}>
-        <h4>Front-End Developer</h4>
-        <p>Learn by developing meaningful products</p>
-        <img src="media/Career/arrow-right.svg" alt="" />
-      </div>
-      <div className={"role"}>
-        <h4>UX/UI Designer</h4>
-        <p>Grow as a designer that design schools doesn’t teach you</p>
-        <img src="media/Career/arrow-right.svg" alt="" />
-      </div>
-      <div className={"role"} id={"last-post"}>
-        <h4>Software Tester</h4>
-        <p>Grow as a designer that design schools doesn’t teach you</p>
-        <img src="media/Career/arrow-right.svg" alt="" />
-      </div>
+      {props?.opening?.map((item, i) => (
+        <div key={i} className={"role"}>
+          <h4>{item?.title}</h4>
+          <p>{item?.description}</p>
+          <Link to={item?.link!}>
+            <img src="/images/Career/arrow-right.svg" alt="" />
+          </Link>
+        </div>
+      ))}
     </div>
   </div>
 )

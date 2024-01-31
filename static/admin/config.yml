@@ -109,6 +109,8 @@ collections:
           default: "work-page",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
       - {
           label: "Introduction",
           name: "introduction",
@@ -127,12 +129,11 @@ collections:
       - {
           label: "Details",
           name: "details",
-          widget: "list",
-          max: 2,
-          min: 2,
+          widget: "object",
           fields:
             [
-              {label: Image, name: image, widget: image},
+              {label: Web Image, name: webImage, widget: image},
+              {label: Mob Image, name: mobImage, widget: image},
             ]
         }
 
@@ -179,19 +180,19 @@ collections:
             ]
         }
 
-      - {
-          label: "More Project",
-          name: "moreProject",
-          widget: "object",
-          fields:
-            [
-              { label: Title highlight, name: titleHighlight, widget: string },
-              { label: Title, name: title, widget: string },
-              { label: Projects, name: projects, widget: relation, collection: works, value_field: "title",
-                search_fields: ["title"],
-              }
-            ]
-        }
+      # - {
+      #     label: "More Project",
+      #     name: "moreProject",
+      #     widget: "object",
+      #     fields:
+      #       [
+      #         { label: Title highlight, name: titleHighlight, widget: string },
+      #         { label: Title, name: title, widget: string },
+      #         { label: Projects, name: projects, widget: relation, collection: works, value_field: "title",
+      #           search_fields: ["title"],
+      #         }
+      #       ]
+      #   }
 
   - name: "blogs"
     label: "Blogs"
@@ -207,9 +208,9 @@ collections:
           default: "blog-page",
         }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Tag", name: "tag", widget: "list", options: ["Dev", "Design", "Research", "People", "Company", "Branding"] }
+      - { label: "Tag", name: "tag", widget: "select", options: ["Dev", "Design", "Research", "People", "Company", "Branding"] }
       - { label: "Featured", name: "featured", widget: "boolean" }
-
+      - { label: Thumbnail, name: thumbnail, widget: image }
       - {
           label: "Overview",
           name: "overview",
@@ -218,7 +219,7 @@ collections:
             [
               {label: Kicker, name: kicker, widget: string },
               {label: Title Top, name: titleTop, widget: string },
-              {label: Title Down, name: titleDown, widget: string },
+              {label: Title Down, name: titleDown, widget: string, required: false, },
               {label: Title Highlight, name: titleHighlight, widget: string },
               { label: Description, name: description, widget: text },
               {
@@ -228,6 +229,7 @@ collections:
                 fields:
                   [
                     { label: Author, name: author, widget: string },
+                    { label: Profile, name: profile, widget: image }, 
                     { 
                       label: Published Date, 
                       name: publishDate, 
@@ -239,7 +241,6 @@ collections:
                     { label: Topic, name: topic, widget: string },
                   ]
               },
-              { label: Image, name: image, widget: image },
             ]
         }
       - {
@@ -252,25 +253,25 @@ collections:
             ]
         }
 
-      - {
-          label: "More Blogs",
-          name: "moreblogs",
-          widget: "object",
-          fields:
-            [
-              { label: Title, name: title, widget: string },
-              { label: Title highlight, name: titleHighlight, widget: string },
-              { label: BLogList, name: blogsList, widget: relation, collection: blogs, value_field: "title", search_fields: ["title"] },
-              # { label: Blogs, name: blogs, widget: list,
-              #   fields: 
-              #     [
-              #       { label: Title, name: title, widget: string },
-              #       { label: Details, name: details, widget: string },
-              #       { labe: Image, name: image, widget: image },
-              #     ]
-              # },
-            ]
-        }
+      # - {
+      #     label: "More Blogs",
+      #     name: "moreblogs",
+      #     widget: "object",
+      #     fields:
+      #       [
+      #         { label: Title, name: title, widget: string },
+      #         { label: Title highlight, name: titleHighlight, widget: string },
+      #         { label: BLogList, name: blogsList, widget: relation, collection: blogs, value_field: "title", search_fields: ["title"] },
+      #         # { label: Blogs, name: blogs, widget: list,
+      #         #   fields: 
+      #         #     [
+      #         #       { label: Title, name: title, widget: string },
+      #         #       { label: Details, name: details, widget: string },
+      #         #       { labe: Image, name: image, widget: image },
+      #         #     ]
+      #         # },
+      #       ]
+      #   }
      
   - name: "common"
     label: "Common"
@@ -633,7 +634,9 @@ collections:
               widget: "object",
               fields:
                 [
+                  { label: Kicker, name: kicker, widget: string},
                   { label: TitleUp, name: titleUp, widget: string },
+                  { label: TitleDown, name: titleDown, widget: string },
                   { label: Title Highlight, name: titleHighlight, widget: string },
                   { label: Description, name: description, widget: string },
                   { label: Image, name: image, widget: image },
@@ -653,6 +656,7 @@ collections:
                       [
                         { label: Title, name: title, widget: string },
                         { label: Description, name: description, widget: text },
+                        { label: Link, name: link, widget: string },
                       ]
                   },
                 ],
@@ -714,7 +718,7 @@ collections:
 
           - {
               label: "Terms & Conditions",
-              name: "terms&Conditions",
+              name: "terms_Conditions",
               widget: "object",
               fields:
                 [
@@ -750,12 +754,20 @@ collections:
               widget: "object",
               fields:
                 [
-                  { label: Name, name: name, widget: string },
-                  { label: Email, name: email, widget: string },
-                  { label: Industry, name: industry, widget: select, 
-                    options: 
-                      [ "Commmerce", "Construction", "Education", "Food Processing", "Health Care", "Media", ] 
-                  },
+                  { label: Field1, name: field1, widget: string },
+                  { label: Field2, name: field2, widget: string },
+                  { label: Field3, name: field3, widget: string }, 
+                  { label: Field4, name: field4, widget: string },
+                ],
+            }
+          - {
+              lable: Button,
+              name: button,
+              widget: object,
+              fields:
+                [
+                  { label: ButtonText, name: buttonText, widget: string },
+                  { label: Icon, name: icon, widget: image },
                 ],
             }
 
@@ -767,7 +779,7 @@ collections:
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "blog-page",
+              default: "blog-listing-page",
             }
 
           - { label: Kicker, name: kicker, widget: string }

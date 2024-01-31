@@ -17,17 +17,14 @@ const Milestones = (): React.ReactElement => (
         <p>Employees</p>
       </div>
       <div className={"sbox"}>
-        {" "}
         <h1>12</h1>
         <p>Years in IT</p>
       </div>
       <div className={"sbox"}>
-        {" "}
         <h1>20+</h1>
         <p>Mobile Apps</p>
       </div>
       <div className={"sbox"}>
-        {" "}
         <h1>350+</h1>
         <p>Success Stories</p>
       </div>

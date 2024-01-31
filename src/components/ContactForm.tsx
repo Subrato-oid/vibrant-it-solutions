@@ -1,18 +1,18 @@
 import * as React from "react"
+import { type ContactPageFrontmatterType } from "../pages/contact"
 
-const ContactForm = (): React.ReactElement => (
+type ContactFormProps = NonNullable<ContactPageFrontmatterType>
+
+const ContactForm = (props: ContactFormProps): React.ReactElement => (
   <>
     <div className="tech-tales">
       <div className="tales">
-        <h5>Contact Us</h5>
+        <h5>{props.kicker}</h5>
         <h1>
-          <span className="line1">Always On-hand</span> <br />
-          <span className="line2">Contact Us</span>
+          <span className="line1">{props.title}</span> <br />
+          <span className="line2">{props.titleHighlight}</span>
         </h1>
-        <p>
-          We're excited to be your go-to for all your IT needs. Whether you need
-          advice, support or a tech upgrade, we're here to help.
-        </p>
+        <p>{props.description}</p>
       </div>
     </div>
 
@@ -21,26 +21,24 @@ const ContactForm = (): React.ReactElement => (
         <form>
           <div className="container-1">
             <div className="form" id="name">
-              Name
+              {props.contactDeatils?.field1}
             </div>
             <div className="form" id="email">
-              Email*
+              {props.contactDeatils?.field2}
             </div>
           </div>
 
           <div className="container-2">
             {" "}
-            <p>YOUR INDUSTRY</p>
+            <p>{props.contactDeatils?.field3}</p>
             <div className="form">Select an option</div>
           </div>
 
-          <div className="form">
-            What else we should know before responding?
-          </div>
+          <div className="form">{props.contactDeatils?.field4}</div>
         </form>
         <a href="#" className="button">
-          Get a quote
-          <img src="/images/Button Icon.svg" alt="" />{" "}
+          {props.button?.buttonText}
+          <img src={props.button?.icon!} alt="" />{" "}
         </a>
       </div>
 

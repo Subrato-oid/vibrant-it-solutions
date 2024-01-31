@@ -1,22 +1,19 @@
 import * as React from "react"
+import { type CareerPageFrontmatterType } from "../pages/career"
 
-// type CareerProps = NonNullable<IndexPageFrontmatterType>["Career"]
+type CareerProps = NonNullable<CareerPageFrontmatterType>["career"]
 
-const Career = (): React.ReactElement => (
+const Career = (props: CareerProps): React.ReactElement => (
   <div className={"inspire"}>
     <div className={"inspiration"}>
-      <h5>Careers</h5>
+      <h5>{props?.kicker}</h5>
       <h1>
-        <span className={"line1"}>Join Our</span>
+        <span className={"line1"}>{props?.titleUp}</span>
         <br />
-        <span className={"line1"}>Innovative</span>
-        <span className={"line2"}>Folks</span>
+        <span className={"line1"}>{props?.titleDown}</span>
+        <span className={"line2"}>{props?.titleHighlight}</span>
       </h1>
-      <p>
-        We're a talented group of software developers who create new things
-        using innovative ideas and modern technology. Join us for more
-        opportunities to advance in your career.
-      </p>
+      <p>{props?.description}</p>
     </div>
   </div>
 )

@@ -1,7 +1,5 @@
 import * as React from "react"
-import {
-  ServicePageTemplate
-} from "../../templates/service"
+import { ServicePageTemplate } from "../../templates/service"
 
 type Prop = {
   entry: {
@@ -12,9 +10,7 @@ const ServicePagePreview = ({ entry }: Prop): React.ReactElement => {
   const serviceData = entry.getIn(["data"]).toJS()
   console.log(serviceData)
   if (serviceData === null) return <div>Loading...</div>
-  return (
-    <ServicePageTemplate serviceNode={serviceData} />
-  )
+  return <ServicePageTemplate serviceNode={serviceData} />
 }
 
 export default ServicePagePreview

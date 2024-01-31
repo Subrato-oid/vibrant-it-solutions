@@ -28,11 +28,19 @@ const Footer = (): React.ReactElement => {
           {footer.columns?.map((col, index) => {
             const { heading, elements } = col!
             return (
-              <div key={`footer-column-${heading}`} className={"footer-column" + (index + 2)}>
+              <div
+                key={`footer-column-${heading}`}
+                className={"footer-column" + (index + 2)}
+              >
                 <div className="footer-heading">{heading}</div>
                 <ul className="footer-list">
                   {elements?.map((el, i) => (
-                    <li key={`footer-list-item-${i}`} className="footer-list-item">{el?.text}</li>
+                    <li
+                      key={`footer-list-item-${i}`}
+                      className="footer-list-item"
+                    >
+                      {el?.text}
+                    </li>
                   ))}
                 </ul>
               </div>

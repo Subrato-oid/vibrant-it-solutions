@@ -1,24 +1,28 @@
 import * as React from "react"
+import { type CareerPageFrontmatterType } from "../pages/career"
 
-// type JoinSectionProps = NonNullable<IndexPageFrontmatterType>["JoinSection"]
+type JoinSectionProps = NonNullable<CareerPageFrontmatterType>["perks"]
 
-const JoinSection = (): React.ReactElement => (
+const JoinSection = (
+  props: NonNullable<JoinSectionProps>
+): React.ReactElement => (
   <>
     <div className={"why-join"}>
       <h2>
-        <span className={"head1"}>Why Join</span>
-        <span className={"head2"}>Vibrant IT Solutions</span>
+        <span className={"head1"}>{props.title}</span>
+        <span className={"head2"}>{props.titleHighlight}</span>
       </h2>
-      <p>
-        We emphasize people, whether they are employees, partners, or clients,
-        and we constantly consider their development. We grow along with you.
-        Our key principles focus on Work Freedom, Growth, and Excellence,
-        promoting constant growth for you, our company, and our clients.
-      </p>
+      <p>{props.description}</p>
     </div>
     <div className={"V-details"}>
       <div className={"left"}>
-        <div className={"v-it"}>
+        {props.perk?.map((item, i) => (
+          <div key={i} className={"v-it"}>
+            <h3>{item?.title}</h3>
+            <p>{item?.description}</p>
+          </div>
+        ))}
+        {/* <div className={"v-it"}>
           <h3>International Clients</h3>
           <p>
             We help clients worldwide, so you'll have the chance to collaborate
@@ -40,10 +44,10 @@ const JoinSection = (): React.ReactElement => (
             learning and gaining experience in what you love, so work always
             stays interesting.
           </p>
-        </div>
+        </div> */}
       </div>
       <div className={"right"}>
-        <img src="/images/Career/Frame 65.svg" alt="" />
+        <img src={props.image!} alt="" />
       </div>
     </div>
   </>

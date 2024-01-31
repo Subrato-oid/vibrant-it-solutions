@@ -1,18 +1,15 @@
 import * as React from "react"
+import { type AboutPageFrontmatterType } from "../pages/about"
 
-// type MissionProps = NonNullable<IndexPageFrontmatterType>["Mission"]
+type MissionProps = NonNullable<AboutPageFrontmatterType>["mission"]
 
-const Mission = (): React.ReactElement => (
+const Mission = (props: NonNullable<MissionProps>): React.ReactElement => (
   <div className={"our-mission"}>
-    <h2>Our Mission</h2>
+    <h2>{props.title}</h2>
     <p>
-      Our mission is to help businesses in adopting new technologies more
-      efficiently, resolve complex challenges that arise during digital
-      expansion, IT consulting, and consistently generate fresh ideas.
-      <br></br>
-      Whether it's developing an app for the general public or implementing a
-      comprehensive solution for large enterprises, we guide you throughout the
-      entire process, from ideation to completion.
+      {props.description
+        ?.split("\n")
+        .map((text, i) => text || <br key={`br-about-${i}`} />)}
     </p>
   </div>
 )

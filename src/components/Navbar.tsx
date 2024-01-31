@@ -13,7 +13,7 @@ const Navbar = (): React.ReactElement => {
         <ul>
           {header.navItems!.map((el) => (
             <li key={`navitem-${el!.item}`}>
-              <a href="#">{el!.item}</a>
+              <a href={`/${el!.item?.toLowerCase()}`}>{el!.item}</a>
             </li>
           ))}
         </ul>
