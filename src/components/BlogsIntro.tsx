@@ -4,8 +4,8 @@ import { type BlogsFrontmatterType } from "../pages/blogs"
 type BlogsIntroProps = NonNullable<BlogsFrontmatterType>
 
 const BlogsIntro = (props: BlogsIntroProps): React.ReactElement => (
-  <div className="tech-tales">
-    <div className="tales">
+  <div className="blogs-tech-tales">
+    <div className="blogs-tales">
       <h5>{props.kicker}</h5>
       <h1>
         <span className="line1">{props.title}</span>

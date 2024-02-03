@@ -7,9 +7,15 @@ const Mission = (props: NonNullable<MissionProps>): React.ReactElement => (
   <div className={"our-mission"}>
     <h2>{props.title}</h2>
     <p>
-      {props.description
-        ?.split("\n")
-        .map((text, i) => text || <br key={`br-about-${i}`} />)}
+      {props.description?.split("\n").map(
+        (text, i) =>
+          text || (
+            <div key={`br-mission-${i}`}>
+              <br />
+              <br />
+            </div>
+          )
+      )}
     </p>
   </div>
 )

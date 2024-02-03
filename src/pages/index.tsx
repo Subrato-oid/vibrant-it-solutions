@@ -32,13 +32,13 @@ export const IndexPageTemplate = ({
 }): React.ReactElement => {
   console.log("data", frontmatter)
 
-  const { hero, client, about, success, services, process } = frontmatter!
+  const { hero, client, about, services, process } = frontmatter!
   return (
     <CommonLayout>
       <Hero {...hero!} />
       <Clients {...client!} />
       <About {...about!} />
-      <Success {...success!} />
+      <Success />
       <Service {...services!} />
       <Process {...process!} />
     </CommonLayout>

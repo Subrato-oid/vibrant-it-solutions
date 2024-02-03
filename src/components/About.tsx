@@ -32,7 +32,8 @@ const About = (props: NonNullable<AboutProps>): React.ReactElement => (
           harmonizes with humanity. */}
 
         <a href="#" className="button">
-          {props.button?.buttonText} <img src={props.button?.icon!} alt="" />
+          {props.button?.buttonText}
+          <img src={props.button?.icon!} alt="" />
         </a>
       </div>
     </div>

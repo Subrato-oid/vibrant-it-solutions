@@ -97,14 +97,14 @@ nav a:hover {
 }
 
 /* <!---- CAREERS SECTION ----> */
-.tech-tales {
+.tc-tech-tales {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 6.75rem;
   padding: 0 6rem;
 }
-.tales {
+.tc-tales {
   text-align: center;
   width: 44.18rem;
   display: flex;
@@ -163,7 +163,7 @@ h1 .line2 {
   font-weight: 600;
   line-height: 120%;
 }
-.tales p {
+.tc-tales p {
   width: 34rem;
   color: var(--Colors-Gray-Secondary-Text, #676a70);
   font-family: Golos Text;
@@ -202,7 +202,16 @@ p {
   font-weight: 400;
   line-height: 160%;
 }
-.background {
+/* Added CSS for list*/
+.tc-background ul {
+  color: var(--Colors-Gray-Secondary-Text, #676a70);
+  font-family: Golos Text;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+.tc-background {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -326,11 +335,11 @@ footer {
   }
 
   /* <!---- CAREERS SECTION ----> */
-  .tech-tales {
+  .tc-tech-tales {
     margin-top: 6.75vw;
     padding: 0 6vw;
   }
-  .tales {
+  .tc-tales {
     width: 44.18vw;
   }
   h5 {
@@ -344,7 +353,7 @@ footer {
   h1 .line2 {
     font-size: 3.5vw;
   }
-  .tales p {
+  .tc-tales p {
     width: 34vw;
     font-size: 1vw;
     margin-top: 1.5vw;
@@ -362,7 +371,7 @@ footer {
   p {
     font-size: 0.875vw;
   }
-  .background {
+  .tc-background {
     gap: 1.5vw;
   }
 
@@ -521,14 +530,14 @@ margin-top: 1rem;
 } */
 
   /* <!---- CAREERS SECTION ----> */
-  .tech-tales {
+  .tc-tech-tales {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 2.54rem;
     padding: 0;
   }
-  .tales {
+  .tc-tales {
     text-align: center;
     width: 100%;
     display: flex;
@@ -587,7 +596,7 @@ margin-top: 1rem;
     font-weight: 600;
     line-height: 2.625rem;
   }
-  .tales p {
+  .tc-tales p {
     width: 100%;
     color: var(--Colors-Gray-Secondary-Text, #676a70);
     font-family: Golos Text;
@@ -626,7 +635,7 @@ margin-top: 1rem;
     font-weight: 400;
     line-height: 160%;
   }
-  .background {
+  .tc-background {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;

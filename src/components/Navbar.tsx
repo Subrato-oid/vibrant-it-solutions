@@ -1,19 +1,31 @@
 import * as React from "react"
 import useCommon from "../hooks/useCommon"
+import { Link } from "gatsby"
+import Dropdown from "./Dropdown"
 
 const Navbar = (): React.ReactElement => {
-  const { header, services } = useCommon()
+  const { header, services, milestone } = useCommon()
   // TODO: User services list in header
+
   console.log(services)
+  console.log(milestone)
 
   return (
     <header>
-      <img src={header.logo!} alt="Logo" />
+      <Link to="/">
+        <img src={header.logo!} alt="Logo" />
+      </Link>
       <nav>
         <ul>
           {header.navItems!.map((el) => (
             <li key={`navitem-${el!.item}`}>
-              <a href={`/${el!.item?.toLowerCase()}`}>{el!.item}</a>
+              {el?.item === "Services" ? (
+                <Dropdown items={services} />
+              ) : (
+                <a href={`/${el!.item?.toLowerCase()}`}>{el!.item}</a>
+              )}
+              {/* <a href={`/${el!.item?.toLowerCase()}`}>{el!.item}</a>
+              {el?.item === "Services" && <Dropdown items={services} />} */}
             </li>
           ))}
         </ul>

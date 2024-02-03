@@ -9,6 +9,10 @@ export type TermsConditionsPageFrontmatterType = NonNullable<
 Queries.TermsConditionsPageQuery["markdownRemark"]
 >["frontmatter"]
 
+export type TermsConditionsPageBodyType = NonNullable<
+Queries.TermsConditionsPageQuery["markdownRemark"]
+>["html"]
+
 // Step 2: Define your Page
 const TermsConditionsPage = ({
   data,
@@ -16,6 +20,7 @@ const TermsConditionsPage = ({
   return (
     <TermsConditionsPageTemplate
       frontmatter={data.markdownRemark?.frontmatter!}
+      body={data.markdownRemark?.html!}
     />
   )
 }
@@ -24,13 +29,15 @@ export default TermsConditionsPage
 // Step 3: Define your Page Template
 export const TermsConditionsPageTemplate = ({
   frontmatter,
+  body,
 }: {
   frontmatter: TermsConditionsPageFrontmatterType
+  body: TermsConditionsPageBodyType
 }): React.ReactElement => {
-  const { terms_Conditions } = frontmatter
+  const { terms_Conditions } = frontmatter!
   return (
     <BaseLayout>
-      <TandC {...terms_Conditions} />
+      <TandC {...terms_Conditions!} body={body!} />
     </BaseLayout>
   )
 }
@@ -40,6 +47,7 @@ export const pageQuery = graphql`
   query TermsConditionsPage {
     markdownRemark(frontmatter: { templateKey: { eq: "tandc-page" } }) {
       id
+      html
       frontmatter {
         title
         terms_Conditions {
@@ -47,7 +55,6 @@ export const pageQuery = graphql`
           title
           titleHighlight
           lastUpdate
-          content
         }
       }
     }

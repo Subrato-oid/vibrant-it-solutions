@@ -39,17 +39,17 @@ project:
     - title: Wonde
       description: We're more than an IT Solutions Company; we infuse every project
         with passion and purpose.
-      image: /images/image-10.svg
+      image: /images/frame-71.svg
     - title: Termgrid
       description: >+
         We're more than an IT Solutions Company; we infuse every project with
         passion and purpose.
 
-      image: /images/image-11.svg
+      image: /images/frame-74.svg
     - title: Descartes
       description: >+
         We're more than an IT Solutions Company; we infuse every project with
         passion and purpose.
 
-      image: /images/image-12.svg
+      image: /images/frame-76.svg
 ---

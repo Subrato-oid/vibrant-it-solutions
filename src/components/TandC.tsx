@@ -1,25 +1,34 @@
 import * as React from "react"
-import { type TermsConditionsPageFrontmatterType } from "../pages/terms-and-conditions"
+import {
+  type TermsConditionsPageBodyType,
+  type TermsConditionsPageFrontmatterType
+} from "../pages/terms-and-conditions"
+import { HTMLContent } from "./Content"
 
 type TandCProps =
-  NonNullable<TermsConditionsPageFrontmatterType>["terms_Conditions"]
+  NonNullable<TermsConditionsPageFrontmatterType>["terms_Conditions"] & {
+    body: NonNullable<TermsConditionsPageBodyType>
+  }
 
-const TandC = (props: TandCProps): React.ReactElement => (
-  <>
-    <div className="tech-tales">
-      <div className="tales">
-        <h5>{props?.kicker}</h5>
-        <h1>
-          <span className="line1">{props?.title}</span>
-          <span className="line2">{props?.titleHighlight}</span>
-        </h1>
-        <p>{props?.lastUpdate}</p>
+const TandC = (props: TandCProps): React.ReactElement => {
+  return (
+    <>
+      <div className="tc-tech-tales">
+        <div className="tc-tales">
+          <h5>{props?.kicker}</h5>
+          <h1>
+            <span className="line1">{props?.title}</span>
+            <span className="line2">{props?.titleHighlight}</span>
+          </h1>
+          <p>{props?.lastUpdate}</p>
+        </div>
       </div>
-    </div>
-    <div className="tnc-details">
-      {props?.content
-        ?.split("\n")
-        .map((text: any, i: any) => text ?? <br key={`br-tc-${i}`} />)}
+      <div className="tnc-details">
+        <HTMLContent
+          className="tc-background"
+          content={props.body}
+        ></HTMLContent>
+      </div>
 
       {/* <p>
         The original version of our staging system can be traced back to the
@@ -129,8 +138,8 @@ const TandC = (props: TandCProps): React.ReactElement => (
           IT Solution or its Users, as needed.
         </p>
       </div> */}
-    </div>
-  </>
-)
+    </>
+  )
+}
 
 export default TandC

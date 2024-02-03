@@ -365,7 +365,13 @@ collections:
               widget: "object",
               fields:
                 [
-                  { label: TitleUp, name: titleUp, widget: string },
+                  { label: Index Title Up, name: indexTitleUp, widget: string },
+                  {
+                    label: Index TitleHighlight,
+                    name: indexTitleHighlight,
+                    widget: string,
+                  },
+                  { label: Title, name: title, widget: string },
                   {
                     label: TitleHighlight,
                     name: titleHighlight,
@@ -715,7 +721,6 @@ collections:
               widget: "hidden",
               default: "t&c-page",
             }
-
           - {
               label: "Terms & Conditions",
               name: "terms_Conditions",
@@ -726,13 +731,9 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Title Highlight, name: titleHighlight, widget: string },
                   { label: Last Update, name: lastUpdate, widget: string },
-                  {
-                    label: Content,
-                    name: content,
-                    widget: markdown,
-                  },
                 ],
             }
+          - { label: "Body", name: "body", widget: "markdown" }
 
       - file: "src/data/contact.md"
         label: "Contact Page"

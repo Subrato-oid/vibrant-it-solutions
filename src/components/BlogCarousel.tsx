@@ -1,5 +1,9 @@
 import * as React from "react"
 import { type BlogListType } from "../templates/blog"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Pagination, Autoplay } from "swiper/modules"
+import "swiper/css"
+import "swiper/css/autoplay"
 
 type BlogCarouselProps = NonNullable<BlogListType>
 
@@ -8,18 +12,24 @@ const BlogCarousel = ({
 }: {
   data: BlogCarouselProps
 }): React.ReactElement => (
-  <div className="staging-future">
-    <img src="/images/blog-listing/image 2139.svg" alt="" />
-    <h2>
-      <span className="head1">
-        Staging the future; our path to secure and efficient deployments
-      </span>
-    </h2>
-    <p>
-      We're more than an IT Solutions Company; we infuse every project with
-      passion and purpose.
-    </p>
-  </div>
+  <Swiper
+    modules={[Pagination, Autoplay]}
+    slidesPerView={1}
+    pagination={{ clickable: true }}
+    autoplay={{ delay: 3000, disableOnInteraction: false }}
+  >
+    {data.slice(0, 3).map((item, index) => (
+      <SwiperSlide key={index}>
+        <div className="staging-future">
+          <img src={item.node.frontmatter?.thumbnail!} alt="" />
+          <h2>
+            <span className="head1">{item.node.frontmatter?.title}</span>
+          </h2>
+          <p>{item.node.frontmatter?.overview?.description}</p>
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
 )
 
 export default BlogCarousel

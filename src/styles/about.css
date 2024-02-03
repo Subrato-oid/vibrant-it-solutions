@@ -222,7 +222,7 @@ h1 .line2 {
 }
 
 /* <!---- VIBRANT'S MILESTONES SECTION ----> */
-.milestones {
+.about-milestones {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -270,7 +270,7 @@ h2 .head2 {
   font-weight: 600;
   line-height: 130%;
 }
-.milestones p {
+.about-milestones p {
   width: 34rem;
   color: var(--Colors-Gray-Secondary-Text, #676a70);
   text-align: center;
@@ -281,7 +281,7 @@ h2 .head2 {
   line-height: 160%;
   margin-top: 1.5rem;
 }
-.boxes {
+.about-boxes {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -289,7 +289,7 @@ h2 .head2 {
   flex-wrap: wrap;
   gap: 2rem;
 }
-.boxes .sbox {
+.about-boxes .sbox {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -785,7 +785,7 @@ footer {
   }
 
   /* <!---- VIBRANT'S MILESTONES SECTION ----> */
-  .milestones {
+  .about-milestones {
     margin-top: 8.75vw;
   }
   h2 .head1 {
@@ -794,15 +794,15 @@ footer {
   h2 .head2 {
     font-size: 2.5vw;
   }
-  .milestones p {
+  .about-milestones p {
     width: 34vw;
     font-size: 1vw;
     margin-top: 1.5vw;
   }
-  .boxes {
+  .about-boxes {
     gap: 2vw;
   }
-  .boxes .sbox {
+  .about-boxes .sbox {
     width: 16.75vw;
     height: 11.1875vw;
     flex-shrink: 0;
@@ -1151,7 +1151,7 @@ footer {
   }
 
   /* <!---- VIBRANT'S MILESTONES SECTION ----> */
-  .milestones {
+  .about-milestones {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1200,7 +1200,7 @@ footer {
     font-weight: 600;
     line-height: 2.625rem;
   }
-  .milestones p {
+  .about-milestones p {
     width: 100%;
     color: var(--Colors-Gray-Secondary-Text, #676a70);
     text-align: center;
@@ -1211,7 +1211,7 @@ footer {
     line-height: 160%;
     margin-top: 1rem;
   }
-  .boxes {
+  .about-boxes {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1221,7 +1221,7 @@ footer {
     column-gap: 1rem;
     margin-top: 3rem;
   }
-  .boxes .sbox {
+  .about-boxes .sbox {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

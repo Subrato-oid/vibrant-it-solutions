@@ -93,14 +93,14 @@ nav a:hover {
 }
 
 /* <!---- CAREERS SECTION ----> */
-.tech-tales {
+.contact-tech-tales {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 6.75rem;
   padding: 0 6rem;
 }
-.tales {
+.contact-tales {
   text-align: center;
   width: 44.18rem;
   display: flex;
@@ -159,7 +159,7 @@ h1 .line2 {
   font-weight: 600;
   line-height: 120%;
 }
-.tales p {
+.contact-tales p {
   width: 34rem;
   color: var(--Colors-Gray-Secondary-Text, #676a70);
   font-family: Golos Text;
@@ -359,11 +359,11 @@ footer {
   }
 
   /* <!---- CAREERS SECTION ----> */
-  .tech-tales {
+  .contact-tech-tales {
     margin-top: 6.75vw;
     padding: 0 6vw;
   }
-  .tales {
+  .contact-tales {
     text-align: center;
     width: 44.18vw;
     display: flex;
@@ -422,7 +422,7 @@ footer {
     font-weight: 600;
     line-height: 120%;
   }
-  .tales p {
+  .contact-tales p {
     width: 34vw;
     color: var(--Colors-Gray-Secondary-Text, #676a70);
     font-family: Golos Text;
@@ -592,14 +592,14 @@ footer {
   }
 
   /* <!---- CAREERS SECTION ----> */
-  .tech-tales {
+  .contact-tech-tales {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 2.54rem;
     padding: 0 1rem;
   }
-  .tales {
+  .contact-tales {
     text-align: center;
     width: 100%;
     display: flex;
@@ -658,7 +658,7 @@ footer {
     font-weight: 600;
     line-height: 2.625rem;
   }
-  .tales p {
+  .contact-tales p {
     width: 100%;
     color: var(--Colors-Gray-Secondary-Text, #676a70);
     font-family: Golos Text;

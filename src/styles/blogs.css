@@ -43,6 +43,27 @@ body {
   margin: 0 auto;
 }
 
+.swiper-pagination-bullet {
+  width: 40px;
+  height: 5px;
+  background-color: black;
+  opacity: 0.2;
+  border-radius: 20%;
+  display: inline-block;
+  margin: 0 4px;
+  margin-top: 30px;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: var(--colors-brand-primary);
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+}
+
 /* <!---- HEADER SECTION ----> */
 header {
   color: #fff;
@@ -93,14 +114,14 @@ nav a:hover {
 }
 
 /* <!---- CAREERS SECTION ----> */
-.tech-tales {
+.blogs-tech-tales {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin-top: 6.75rem;
   padding: 0 6rem;
 }
-.tales {
+.blogs-tales {
   text-align: left;
   width: 41rem;
   display: flex;
@@ -159,7 +180,7 @@ h1 .line2 {
   font-weight: 600;
   line-height: 120%;
 }
-.tales p {
+.blogs-tales p {
   width: 34rem;
   color: var(--Colors-Gray-Secondary-Text, #676a70);
   font-family: Golos Text;
@@ -606,11 +627,11 @@ footer {
   }
 
   /* <!---- CAREERS SECTION ----> */
-  .tech-tales {
+  .blogs-tech-tales {
     margin-top: 6.75vw;
     padding: 0 6vw;
   }
-  .tales {
+  .blogs-tales {
     width: 41vw;
   }
   h5 {
@@ -624,7 +645,7 @@ footer {
   h1 .line2 {
     font-size: 3.5vw;
   }
-  .tales p {
+  .blogs-tales p {
     width: 34vw;
     font-size: 1vw;
     margin-top: 1.5vw;
@@ -915,14 +936,14 @@ footer {
   }
 
   /* <!---- CAREERS SECTION ----> */
-  .tech-tales {
+  .blogs-tech-tales {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-top: 2.54rem;
     padding: 0 1rem;
   }
-  .tales {
+  .blogs-tales {
     text-align: center;
     width: 100%;
     display: flex;
@@ -981,7 +1002,7 @@ footer {
     font-weight: 600;
     line-height: 2.625rem;
   }
-  .tales p {
+  .blogs-tales p {
     width: 100%;
     color: var(--Colors-Gray-Secondary-Text, #676a70);
     font-family: Golos Text;

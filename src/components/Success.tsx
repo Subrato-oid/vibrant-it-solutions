@@ -1,26 +1,28 @@
 import * as React from "react"
-import { type IndexPageFrontmatterType } from "../pages"
+import useCommon from "../hooks/useCommon"
 
-type SuccessProps = NonNullable<IndexPageFrontmatterType>["success"]
+const Success = (): React.ReactElement => {
+  const { milestone } = useCommon()
 
-const Success = (props: NonNullable<SuccessProps>): React.ReactElement => (
-  <div className="container2">
-    <div className="success">
-      <h2>
-        <span className="head1">{props.titleUp}</span>
-        <br />
-        <span className="head2">{props.titleHighlight}</span>
-      </h2>
-      <div className="boxes">
-        {props.boxes?.map((item, index) => (
-          <div key={index} className="sbox">
-            <h1>{item?.title}</h1>
-            <p>{item?.description}</p>
-          </div>
-        ))}
+  return (
+    <div className="container2">
+      <div className="success">
+        <h2>
+          <span className="head1">{milestone.indexTitleUp}</span>
+          <br />
+          <span className="head2">{milestone.indexTitleHighlight}</span>
+        </h2>
+        <div className="boxes">
+          {milestone.boxes?.map((item, index) => (
+            <div key={index} className="sbox">
+              <h1>{item?.title}</h1>
+              <p>{item?.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default Success

@@ -40,7 +40,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "react-icons": "^4.12.0"
+    "react-horizontal-scrolling-menu": "^4.1.4",
+    "react-icons": "^4.12.0",
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "@graphql-eslint/eslint-plugin": "^3.20.1",

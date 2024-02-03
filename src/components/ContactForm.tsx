@@ -5,8 +5,8 @@ type ContactFormProps = NonNullable<ContactPageFrontmatterType>
 
 const ContactForm = (props: ContactFormProps): React.ReactElement => (
   <>
-    <div className="tech-tales">
-      <div className="tales">
+    <div className="contact-tech-tales">
+      <div className="contact-tales">
         <h5>{props.kicker}</h5>
         <h1>
           <span className="line1">{props.title}</span> <br />

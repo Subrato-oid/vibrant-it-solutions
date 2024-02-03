@@ -6,11 +6,12 @@ type CommonType = {
   solution: Queries.CommonJsonSolution
   testimonials: NonNullable<Queries.CommonJsonTestimonialsTestimonial[]>
   services: string[]
+  milestone: Queries.CommonJsonMilestone
 }
 
 const useCommon = (): CommonType => {
-  const { header, footer, solution, testimonials, services } = useStaticQuery(
-    graphql`
+  const { header, footer, solution, testimonials, services, milestone } =
+    useStaticQuery(graphql`
       query commonJson {
         services: allMarkdownRemark(
           filter: { frontmatter: { templateKey: { eq: "service-page" } } }
@@ -69,15 +70,28 @@ const useCommon = (): CommonType => {
             }
           }
         }
+        milestone: commonJson(_xtype: { eq: "milestone" }) {
+          node: milestone {
+            indexTitleUp
+            indexTitleHighlight
+            title
+            titleHighlight
+            description
+            boxes {
+              title
+              description
+            }
+          }
+        }
       }
-    `
-  )
+    `)
   return {
     header: header.node,
     footer: footer.node,
     testimonials: testimonials.node.testimonial,
     solution: solution.node,
     services: services.edges.map((item: any) => item.node.frontmatter.title),
+    milestone: milestone.node,
   }
 }
 
