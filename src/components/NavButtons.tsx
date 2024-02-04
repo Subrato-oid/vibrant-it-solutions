@@ -1,32 +1,31 @@
 import * as React from "react"
-import { useSwiper } from "swiper/react"
 
-// type NavButtonsProps = {}
+type NavButtonsProps = {
+  clickPrev: Function
+  clickNext: Function
+}
 
-const NavButtons: React.FC = () => {
-  const swiper = useSwiper()
+const NavButtons: React.FC<NavButtonsProps> = ({ clickPrev, clickNext }) => {
   return (
     <div
       style={{
         width: "100%",
         display: "flex",
         justifyContent: "flex-end",
-        gap: "10px",
+        gap: "20px",
         position: "relative",
-        top: "0",
+        marginTop: "20px",
       }}
     >
       <button
-        onClick={() => {
-          swiper.slidePrev()
-        }}
+        style={{ border: "none", background: "white" }}
+        onClick={() => clickPrev()}
       >
         <img src="/images/work/arrow-left.svg" />
       </button>
       <button
-        onClick={() => {
-          swiper.slideNext()
-        }}
+        style={{ border: "none", background: "white" }}
+        onClick={() => clickNext()}
       >
         <img src="/images/work/arrow-right.svg" />
       </button>

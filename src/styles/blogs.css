@@ -240,12 +240,18 @@ h4 {
   line-height: 130%;
 }
 
+.H-story-slide::-webkit-scrollbar {
+  display: none;
+}
+
 .H-story-slide {
   display: flex;
   flex-direction: row;
   gap: 2rem;
   overflow-x: auto;
-  padding: 0 0 0 6rem;
+  padding: 0 0 0 0rem;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .H-story img {
   width: 22.3125rem;
@@ -319,7 +325,7 @@ h4 {
   flex-direction: row;
   gap: 1rem;
 }
-.filter-by h6 {
+/* .filter-by h6 {
   padding: 0.625rem 1rem;
   color: var(--Colors-Gray-Secondary-Text, #676a70);
   font-family: Golos Text;
@@ -331,16 +337,39 @@ h4 {
 .filter-by h6:hover {
   color: var(--Colors-Brand-Primary, #4070ea);
   background: #f0f4fe;
+} */
+
+.filter-by button {
+  border: none;
+  background-color: white;
+  padding: 0.625rem 1rem;
+  color: var(--Colors-Gray-Secondary-Text, #676a70);
+  font-family: Golos Text;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.9375rem;
+}
+.filter-by button:hover {
+  color: var(--Colors-Brand-Primary, #4070ea);
+  background: #f0f4fe;
+}
+
+.filter-by button:focus,
+.filter-by button.active {
+  color: var(--Colors-Brand-Primary, #4070ea);
+  background: #f0f4fe;
 }
 .story-slide {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
 }
 .story img {
-  width: 22.3125rem;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  width: 100%;
 }
-
 .story {
   display: flex;
   flex-direction: column;
@@ -683,7 +712,7 @@ footer {
   .H-story-slide {
     gap: 2vw;
     overflow-x: auto;
-    padding: 0 0 0 6vw;
+    padding: 0 0 0 0vw;
   }
   .H-story img {
     width: 25.3125vw;
@@ -735,6 +764,8 @@ footer {
     background: #f0f4fe;
   }
   .story-slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     gap: 2vw;
   }
@@ -1165,12 +1196,12 @@ footer {
     gap: 2rem;
     overflow-x: auto;
   }
-  .story img {
-    width: 19.5rem;
-  }
+  /* .story img {
+    width: 100%;
+  } */
 
   .story {
-    width: 19.5rem;
+    /* width: 19.5rem; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;

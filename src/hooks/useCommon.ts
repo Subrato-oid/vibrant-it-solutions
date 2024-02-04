@@ -40,6 +40,7 @@ const useCommon = (): CommonType => {
               heading
               elements {
                 text
+                link
               }
             }
             social {

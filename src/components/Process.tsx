@@ -1,6 +1,6 @@
 import * as React from "react"
 import { type IndexPageFrontmatterType } from "../pages"
-import { Swiper, SwiperSlide } from "swiper/react"
+import { Swiper, type SwiperRef, SwiperSlide } from "swiper/react"
 import { Pagination, Navigation } from "swiper/modules"
 import "swiper/css"
 import NavButtons from "./NavButtons"
@@ -11,6 +11,18 @@ type ProcessProps = NonNullable<IndexPageFrontmatterType>["process"]
 
 const Process = (props: NonNullable<ProcessProps>): React.ReactElement => {
   const processes = props.phases!
+  const sliderRef = React.useRef<SwiperRef>(null)
+
+  const clickPrev = React.useCallback(() => {
+    if (!sliderRef.current) return
+    sliderRef.current.swiper.slidePrev()
+  }, [])
+
+  const clickNext = React.useCallback(() => {
+    if (!sliderRef.current) return
+    sliderRef.current.swiper.slideNext()
+  }, [])
+
   return (
     <section>
       <div className="process">
@@ -23,13 +35,15 @@ const Process = (props: NonNullable<ProcessProps>): React.ReactElement => {
           {props.button?.buttonText}{" "}
         </a>
       </div>
-      <div className="process-container">
-        <Swiper
-          modules={[Pagination, Navigation]}
-          slidesPerView={2.3}
-          spaceBetween={"50rem"}
-          pagination={{ type: "progressbar" }}
-        >
+
+      <Swiper
+        ref={sliderRef}
+        modules={[Pagination, Navigation]}
+        slidesPerView={2.1}
+        spaceBetween={50}
+        pagination={{ type: "progressbar" }}
+      >
+        <div className="process-container">
           {processes?.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="p-container">
@@ -41,9 +55,10 @@ const Process = (props: NonNullable<ProcessProps>): React.ReactElement => {
               </div>
             </SwiperSlide>
           ))}
-          <NavButtons />
-        </Swiper>
-      </div>
+        </div>
+      </Swiper>
+
+      <NavButtons clickPrev={clickPrev} clickNext={clickNext} />
     </section>
   )
 }

@@ -12,7 +12,7 @@ const CommonLayout = ({ children }: LayoutProp): React.ReactElement => {
   return (
     <BaseLayout>
       {children}
-      <Testimonial {...testimonials?.at(0)!} />
+      <Testimonial data={testimonials} />
       <Solution {...solution} />
     </BaseLayout>
   )

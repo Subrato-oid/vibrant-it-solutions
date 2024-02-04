@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import _ from "lodash"
+import { Link } from "gatsby"
 
 type DropdownProps = {
   items: string[]
@@ -44,16 +46,22 @@ const Dropdown: React.FC<DropdownProps> = ({ items }) => {
               }}
             >
               {items.map((item, index) => (
-                <li key={index} className="dropdown-item">
-                  {item}
-                  <img
-                    className="dropdown-arrow"
-                    src="/images/down-right 1.svg"
-                    width={1}
-                    height={1}
-                    alt="down-arrow"
-                  />
-                </li>
+                <Link
+                  key={index}
+                  activeClassName="dropdown-item"
+                  to={`/services/${_.kebabCase(item)}`}
+                >
+                  <li className="dropdown-item">
+                    {item}
+                    <img
+                      className="dropdown-arrow"
+                      src="/images/down-right 1.svg"
+                      width={1}
+                      height={1}
+                      alt="down-arrow"
+                    />
+                  </li>
+                </Link>
               ))}
             </ul>
           </div>

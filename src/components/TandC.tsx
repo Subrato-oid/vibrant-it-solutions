@@ -4,6 +4,7 @@ import {
   type TermsConditionsPageFrontmatterType
 } from "../pages/terms-and-conditions"
 import { HTMLContent } from "./Content"
+import he from "he"
 
 type TandCProps =
   NonNullable<TermsConditionsPageFrontmatterType>["terms_Conditions"] & {
@@ -23,12 +24,7 @@ const TandC = (props: TandCProps): React.ReactElement => {
           <p>{props?.lastUpdate}</p>
         </div>
       </div>
-      <div className="tnc-details">
-        <HTMLContent
-          className="tc-background"
-          content={props.body}
-        ></HTMLContent>
-      </div>
+      <HTMLContent className="tnc-details" content={he.decode(props.body)} />
 
       {/* <p>
         The original version of our staging system can be traced back to the

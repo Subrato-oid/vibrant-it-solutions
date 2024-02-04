@@ -18,30 +18,78 @@ const ContactForm = (props: ContactFormProps): React.ReactElement => (
 
     <div className="container">
       <div className="form-container">
-        <form>
-          <div className="container-1">
-            <div className="form" id="name">
-              {props.contactDeatils?.field1}
-            </div>
-            <div className="form" id="email">
-              {props.contactDeatils?.field2}
-            </div>
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          className="flex flex-col max-w-md mx-auto"
+        >
+          <div className="relative z-0 w-full mb-5 group">
+            <input
+              type="text"
+              name="Name"
+              className="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              // for="floating_password"
+              className="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Name
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-5 group">
+            <input
+              type="email"
+              name="Email"
+              className="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              // for="floating_email"
+              className="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Email address
+            </label>
           </div>
 
-          <div className="container-2">
-            {" "}
-            <p>{props.contactDeatils?.field3}</p>
-            <div className="form">Select an option</div>
+          <div className="relative z-0 w-full mb-5 group">
+            <input
+              type="text"
+              name="Industry"
+              className="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              // for="floating_first_name"
+              className="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Your Industry
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-5 group">
+            <textarea
+              name="Message"
+              placeholder=""
+              className="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            ></textarea>
+            <label
+              // for="floating_last_name"
+              className="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Message
+            </label>
           </div>
 
-          <div className="form">{props.contactDeatils?.field4}</div>
+          <button type="submit" className="button">
+            {props.button?.buttonText}
+            <img src={props.button?.icon!} alt="" />
+          </button>
         </form>
-        <a href="#" className="button">
-          {props.button?.buttonText}
-          <img src={props.button?.icon!} alt="" />{" "}
-        </a>
       </div>
-
       <div className="image-container">
         <img src="/images/contact-us/Group 34685.svg" alt="Image" />
       </div>

@@ -21,9 +21,14 @@ const Navbar = (): React.ReactElement => {
             <li key={`navitem-${el!.item}`}>
               {el?.item === "Services" ? (
                 <Dropdown items={services} />
-              ) : (
-                <a href={`/${el!.item?.toLowerCase()}`}>{el!.item}</a>
-              )}
+              ) // <Example items={services}/>
+                : el?.item === "Our Works" ? (
+                <Link to="/works/tuple">{el.item}</Link>
+                ) : el?.item === "Contact Us" ? (
+                <Link to="/contact">{el.item}</Link>
+                ) : (
+                <Link to={`/${el!.item?.toLowerCase()}`}>{el!.item}</Link>
+                )}
               {/* <a href={`/${el!.item?.toLowerCase()}`}>{el!.item}</a>
               {el?.item === "Services" && <Dropdown items={services} />} */}
             </li>

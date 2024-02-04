@@ -8,31 +8,33 @@ const MoreProject = ({
   data,
 }: {
   data: NonNullable<MoreProjectProps>
-}): React.ReactElement => (
-  <div className="more-projects">
-    <h2>
-      <span className="head2">More</span>
-      <span className="head1">Projects</span>
-    </h2>
-    <div className="project">
-      {data?.map((item, i) => (
-        <Link
-          key={`wrok-${i}`}
-          to={`/works/${item.node.frontmatter?.title!.toLowerCase()}`}
-        >
-          <div className="recent-projects">
-            <img src={item.node.frontmatter?.thumbnail!} alt="" />
-            <h3>
-              {item.node.frontmatter?.title}
-              <img src="/images/work/arrow-right.svg" alt="" />
-            </h3>
-            <p>{item.node.frontmatter?.description}</p>
-          </div>
-        </Link>
-      ))}
+}): React.ReactElement => {
+  return (
+    <div className="more-projects">
+      <h2>
+        <span className="head2">More</span>
+        <span className="head1">Projects</span>
+      </h2>
+      <div className="project">
+        {data?.slice(0, 3).map((item, i) => (
+          <Link
+            key={`wrok-${i}`}
+            to={`/works/${item.node.frontmatter?.title!.toLowerCase()}`}
+          >
+            <div className="recent-projects">
+              <img src={item.node.frontmatter?.thumbnail!} alt="" />
+              <h3>
+                {item.node.frontmatter?.title}
+                <img src="/images/work/arrow-right.svg" alt="" />
+              </h3>
+              <p>{item.node.frontmatter?.description}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default MoreProject
 

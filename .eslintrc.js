@@ -1,5 +1,5 @@
 module.exports = {
-  ignorePatterns: ["gatsby-node.js"],
+  ignorePatterns: ["gatsby-node.js", "tailwind.config.ts"],
   env: {
     browser: true,
     es2021: true,
@@ -46,5 +46,6 @@ module.exports = {
     "@typescript-eslint/no-non-null-asserted-optional-chain": 0,
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/naming-convention": 0,
+    "@typescript-eslint/ban-types": 0,
   },
 }

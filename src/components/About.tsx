@@ -31,7 +31,7 @@ const About = (props: NonNullable<AboutProps>): React.ReactElement => (
           passion and purpose. Join us in creating a future where technology
           harmonizes with humanity. */}
 
-        <a href="#" className="button">
+        <a href="/about" className="button">
           {props.button?.buttonText}
           <img src={props.button?.icon!} alt="" />
         </a>

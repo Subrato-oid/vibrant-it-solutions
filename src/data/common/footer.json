@@ -22,13 +22,16 @@
         "heading": "Company",
         "elements": [
           {
-            "text": "About Us"
+            "text": "About Us",
+            "link": "/about"
           },
           {
-            "text": "Contact"
+            "text": "Contact",
+            "link": "/contact"
           },
           {
-            "text": "Clients"
+            "text": "Clients",
+            "link": "/"
           }
         ]
       },
@@ -36,28 +39,36 @@
         "heading": "Services",
         "elements": [
           {
-            "text": "Software Development"
+            "text": "Software Development",
+            "link": "/services/software-development"
           },
           {
-            "text": "Web Development"
+            "text": "Web Development",
+            "link": "/services/web-development"
           },
           {
-            "text": "IT Outsourcing"
+            "text": "IT Outsourcing",
+            "link": "/services/it-outsourcing"
           },
           {
-            "text": "Software Testing"
+            "text": "Software Testing",
+            "link": "/services/software-testing"
           },
           {
-            "text": "IVRS and QSMS"
+            "text": "IVRS and QSMS",
+            "link": "/services/ivrs-and-q-sms/"
           },
           {
-            "text": "Mobile App Development"
+            "text": "Mobile App Development",
+            "link": "/services/mobile-app-development"
           },
           {
-            "text": "E-Commerce Solutions"
+            "text": "E-Commerce Solutions",
+            "link": "/services/ecommerce-solutions/"
           },
           {
-            "text": "Food tech Service"
+            "text": "Food tech Service",
+            "link": "/services/food-beverages/"
           }
         ]
       },

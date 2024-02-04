@@ -1,10 +1,10 @@
 import * as React from "react"
 import { type PageProps, graphql } from "gatsby"
-import "../styles/blog.css"
+import "../styles/blog-post.css"
 import BlogOverview from "../components/BlogOverview"
-import BlogContent from "../components/BlogContent"
 import MoreBlog from "../components/MoreBlog"
 import BaseLayout from "../layouts/BaseLayout"
+import { HTMLContent } from "../components/Content"
 
 // Step 1: Define Types
 type BlogPageType = NonNullable<Queries.BlogPageByIdQuery>["blog"]
@@ -14,6 +14,8 @@ NonNullable<Queries.BlogPageByIdQuery>["blogs"]
 >["edges"]
 
 export type BlogPageFrontmatterType = NonNullable<BlogPageType>["frontmatter"]
+
+export type BlogPageHTMLType = NonNullable<BlogPageType>["html"]
 
 // Step 2: Define your Page
 const BlogPage = ({
@@ -32,11 +34,12 @@ export const BlogPageTemplate = ({
   blog: BlogPageType
   list: BlogListType
 }): React.ReactElement => {
-  const { overview, content } = blog?.frontmatter!
+  const { overview } = blog?.frontmatter!
+  const content = blog?.html
   return (
     <BaseLayout>
       <BlogOverview {...overview!} />
-      <BlogContent {...content!} />
+      <HTMLContent className="background" content={content!} />
       <MoreBlog data={list} />
     </BaseLayout>
   )
@@ -50,6 +53,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          html
           id
           frontmatter {
             title
@@ -77,6 +81,7 @@ export const pageQuery = graphql`
     }
 
     blog: markdownRemark(id: { eq: $id }) {
+      html
       id
       frontmatter {
         title
@@ -97,9 +102,6 @@ export const pageQuery = graphql`
             topic
             profile
           }
-        }
-        content {
-          blog
         }
       }
     }

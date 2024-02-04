@@ -238,40 +238,11 @@ collections:
                       date_format: "DD.MM.YYYY",
                       time_format: "false",
                     },
-                    { label: Topic, name: topic, widget: string },
                   ]
               },
             ]
         }
-      - {
-          label: "Content",
-          name: "content",
-          widget: "object",
-          fields:
-            [
-              {label: Blog, name: blog, widget: markdown},
-            ]
-        }
-
-      # - {
-      #     label: "More Blogs",
-      #     name: "moreblogs",
-      #     widget: "object",
-      #     fields:
-      #       [
-      #         { label: Title, name: title, widget: string },
-      #         { label: Title highlight, name: titleHighlight, widget: string },
-      #         { label: BLogList, name: blogsList, widget: relation, collection: blogs, value_field: "title", search_fields: ["title"] },
-      #         # { label: Blogs, name: blogs, widget: list,
-      #         #   fields: 
-      #         #     [
-      #         #       { label: Title, name: title, widget: string },
-      #         #       { label: Details, name: details, widget: string },
-      #         #       { labe: Image, name: image, widget: image },
-      #         #     ]
-      #         # },
-      #       ]
-      #   }
+      - { label: "Body", name: "body", widget: markdown}
      
   - name: "common"
     label: "Common"
@@ -326,7 +297,11 @@ collections:
                           label: Elements,
                           name: elements,
                           widget: list,
-                          fields: [{ label: Text, name: text, widget: string }],
+                          fields: 
+                            [
+                              { label: Text, name: text, widget: string },
+                              { label: Link, name: link, widget: string, required: false },
+                            ],
                         },
                       ],
                   },

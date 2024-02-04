@@ -18,46 +18,44 @@ overview:
     discoveries, and tips. Stay connected with the latest in IT solutions and
     innovation, simplified just for you.
   image: /images/image-2139.svg
-content:
-  blog: >-
-    **Background and Motivation**
 
-
-    The original version of our staging system can be traced back to the Martin Garrix project where we had a need for ensuring that the preview environment for the client was behind a secure login to ensure the project would not leak before the release date. We threw together a quick prototype that we continuously used during the project.
-
-
-    When we extended its use to another client project, the feedback was overwhelmingly positive. The prototype succeeded in addressing security concerns and the gaps in our deployment process became evident. It wasn’t just a tool; it was a solution that filled a significant gap in our workflow.
-
-
-    Recognizing its potential, we made the decision to evolve this prototype into a full-fledged system. Our aim? To make it a cornerstone of our deployment process, ensuring security, efficiency and consistency in every project we undertook.
-
-
-    **The Evolution of our Staging Server**
-
-
-    The original version of our staging system can be traced back to the Martin Garrix project where we had a need for ensuring that the preview environment for the client was behind a secure login to ensure the project would not leak before the release date. We threw together a quick prototype that we continuously used during the project
-
-
-    When we extended its use to another client project, the feedback was overwhelmingly positive. The prototype succeeded in addressing security concerns and the gaps in our deployment process became evident. It wasn’t just a tool; it was a solution that filled a significant gap in our workflow.
-
-
-    Recognizing its potential, we made the decision to evolve this prototype into a full-fledged system. Our aim? To make it a cornerstone of our deployment process, ensuring security, efficiency and consistency in every project we undertook
-
-
-    ![Blog Image](/images/image-34.svg)
-
-
-    **Tech Stacks and Intergration**
-
-
-    The original version of our staging system can be traced back to the Martin Garrix project where we had a need for ensuring that the preview environment for the client was behind a secure login to ensure the project would not leak before the release date. We threw together a quick prototype that we continuously used during the project.
-
-
-    **Automated Processes**
-
-
-    The original version of our staging system can be traced back to the Martin Garrix project where we had a need for ensuring that the preview environment for the client was behind a secure login to ensure the project would not leak before the release date. We threw together a quick prototype that we continuously used during the project.
-
-
-    When we extended its use to another client project, the feedback was overwhelmingly positive. The prototype succeeded in addressing security concerns and the gaps in our deployment process became evident. It wasn’t just a tool; it was a solution that filled a significant gap in our workflow.
 ---
+**Background and Motivation**
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tortor auctor, consequat augue nec, ultricies nisl. Integer vel urna eu augue efficitur vulputate. Sed imperdiet, nunc sit amet tristique vulputate, ligula turpis bibendum odio, ac volutpat elit elit vel mauris. Quisque malesuada velit eu dui faucibus fermentum.
+
+
+Fusce auctor turpis sit amet ligula malesuada, vel fringilla quam suscipit. Phasellus vel ligula eu dolor scelerisque auctor. Sed vel quam auctor, fringilla purus vel, volutpat odio. Aliquam erat volutpat.
+
+
+Mauris vel odio id libero commodo efficitur. Nullam nec lectus sed nulla facilisis hendrerit. Sed interdum arcu eu tincidunt aliquam. Vivamus euismod, odio eu tincidunt bibendum, justo odio feugiat ex, ut varius tortor nisl quis nulla. Etiam consectetur bibendum augue, in feugiat urna laoreet nec.
+
+
+**The Evolution of our Staging Server**
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tortor auctor, consequat augue nec, ultricies nisl. Integer vel urna eu augue efficitur vulputate. Sed imperdiet, nunc sit amet tristique vulputate, ligula turpis bibendum odio, ac volutpat elit elit vel mauris. Quisque malesuada velit eu dui faucibus fermentum.
+
+
+Fusce auctor turpis sit amet ligula malesuada, vel fringilla quam suscipit. Phasellus vel ligula eu dolor scelerisque auctor. Sed vel quam auctor, fringilla purus vel, volutpat odio. Aliquam erat volutpat.
+
+
+Mauris vel odio id libero commodo efficitur. Nullam nec lectus sed nulla facilisis hendrerit. Sed interdum arcu eu tincidunt aliquam. Vivamus euismod, odio eu tincidunt bibendum, justo odio feugiat ex, ut varius tortor nisl quis nulla. Etiam consectetur bibendum augue, in feugiat urna laoreet nec.
+
+
+![Blog Image](/images/image-34.svg)
+
+
+**Tech Stacks and Intergration**
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tortor auctor, consequat augue nec, ultricies nisl. Integer vel urna eu augue efficitur vulputate. Sed imperdiet, nunc sit amet tristique vulputate, ligula turpis bibendum odio, ac volutpat elit elit vel mauris. Quisque malesuada velit eu dui faucibus fermentum.
+
+
+**Automated Processes**
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tortor auctor, consequat augue nec, ultricies nisl. Integer vel urna eu augue efficitur vulputate. Sed imperdiet, nunc sit amet tristique vulputate, ligula turpis bibendum odio, ac volutpat elit elit vel mauris.
+
+
+Quisque malesuada velit eu dui faucibus fermentum. Fusce auctor turpis sit amet ligula malesuada, vel fringilla quam suscipit. Phasellus vel ligula eu dolor scelerisque auctor. Sed vel quam auctor, fringilla purus vel, volutpat odio. Aliquam erat volutpat. Mauris vel odio id libero commodo efficitur. Nullam nec lectus sed nulla facilisis hendrerit.

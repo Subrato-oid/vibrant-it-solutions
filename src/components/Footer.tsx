@@ -1,5 +1,6 @@
 import * as React from "react"
 import useCommon from "../hooks/useCommon"
+import { Link } from "gatsby"
 const Footer = (): React.ReactElement => {
   const { footer } = useCommon()
   return (
@@ -39,7 +40,7 @@ const Footer = (): React.ReactElement => {
                       key={`footer-list-item-${i}`}
                       className="footer-list-item"
                     >
-                      {el?.text}
+                      <Link to={`${el?.link}`}>{el?.text}</Link>
                     </li>
                   ))}
                 </ul>

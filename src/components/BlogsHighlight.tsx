@@ -26,8 +26,8 @@ const BlogsHighlight = ({
             {item.node.frontmatter?.overview?.details?.author}
             <div id="ellipse"></div>
             {item.node.frontmatter?.overview?.details?.publishDate}
-            <div id="ellipse"></div>
-            {item.node.frontmatter?.overview?.details?.topic}
+            {/* <div id="ellipse"></div>
+            {item.node.frontmatter?.overview?.details?.topic} */}
           </div>
         </div>
       ))}
