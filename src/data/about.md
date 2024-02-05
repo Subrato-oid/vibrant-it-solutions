@@ -9,6 +9,8 @@ about:
     services, including software development, cybersecurity, cloud solutions,
     and IT consulting. We collaborate globally and provide 24/7 customer
     support.
+  titleUp: Where Business Meets
+  titleDown: Top Notch
 aboutCollage:
   images:
     - image: /images/image-26.svg

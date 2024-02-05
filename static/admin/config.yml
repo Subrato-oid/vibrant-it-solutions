@@ -262,7 +262,11 @@ collections:
                     label: NavItems,
                     name: navItems,
                     widget: list,
-                    fields: [{ label: Item, name: item, widget: string }],
+                    fields: 
+                      [
+                        { label: Item, name: item, widget: string },
+                        { label: Link, name: link, widget: string },
+                      ],
                   },
                 ],
             }
@@ -566,7 +570,8 @@ collections:
               fields:
                 [
                   { label: Kicker, name: kicker, widget: string},
-                  { label: Title, name: title, widget: string },
+                  { label: TitleUp, name: titleUp, widget: string },
+                  { label: TitleDown, name: titleDown, widget: string },
                   { label: Title Highlight, name: titleHighlight, widget: string },
                   { label: Description, name: description, widget: text },
                 ]

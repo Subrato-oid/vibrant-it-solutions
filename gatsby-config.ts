@@ -19,19 +19,13 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
 
   plugins: [
-    // "gatsby-plugin-postcss",
+    "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-transformer-json",
     "gatsby-transformer-remark",
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [require(`tailwindcss`)],
-      },
-    },
     {
       resolve: "gatsby-plugin-breakpoints",
       options: {

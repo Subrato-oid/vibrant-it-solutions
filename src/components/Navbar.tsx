@@ -1,7 +1,7 @@
 import * as React from "react"
 import useCommon from "../hooks/useCommon"
 import { Link } from "gatsby"
-import Dropdown from "./Dropdown"
+import DropMenu from "./DropMenu"
 
 const Navbar = (): React.ReactElement => {
   const { header, services, milestone } = useCommon()
@@ -18,17 +18,20 @@ const Navbar = (): React.ReactElement => {
       <nav>
         <ul>
           {header.navItems!.map((el) => (
-            <li key={`navitem-${el!.item}`}>
+            <li
+              key={`navitem-${el!.item}`}
+              style={{ display: "flex", alignItems: "center" }}
+            >
               {el?.item === "Services" ? (
-                <Dropdown items={services} />
-              ) // <Example items={services}/>
-                : el?.item === "Our Works" ? (
+                // <Dropdown items={services} />
+                <DropMenu items={services} />
+              ) : el?.item === "Our Works" ? (
                 <Link to="/works/tuple">{el.item}</Link>
-                ) : el?.item === "Contact Us" ? (
+              ) : el?.item === "Contact Us" ? (
                 <Link to="/contact">{el.item}</Link>
-                ) : (
+              ) : (
                 <Link to={`/${el!.item?.toLowerCase()}`}>{el!.item}</Link>
-                )}
+              )}
               {/* <a href={`/${el!.item?.toLowerCase()}`}>{el!.item}</a>
               {el?.item === "Services" && <Dropdown items={services} />} */}
             </li>
