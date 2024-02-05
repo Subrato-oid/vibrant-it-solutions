@@ -4,6 +4,8 @@ import { Swiper, type SwiperRef, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination } from "swiper/modules"
 import "swiper/css"
 import BlogNavButton from "./BlogNavButton"
+import { Link } from "gatsby"
+import _ from "lodash"
 
 type MoreBlogProps = NonNullable<BlogListType>
 
@@ -21,7 +23,7 @@ const MoreBlog = ({ data }: { data: MoreBlogProps }): React.ReactElement => {
   }, [])
 
   return (
-    <div className="filter">
+    <div className="blog-post-filter">
       <BlogNavButton clickPrev={clickPrev} clickNext={clickNext} />
       <div className="blog-post-story-slide">
         <Swiper
@@ -33,21 +35,23 @@ const MoreBlog = ({ data }: { data: MoreBlogProps }): React.ReactElement => {
         >
           {data.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="blog-post-story">
-                <img src={item.node.frontmatter?.thumbnail!} alt="" />
-                <h4>{item.node.frontmatter?.title}</h4>
-                <p id="author">
-                  <img
-                    src={item.node.frontmatter?.overview?.details?.profile!}
-                    alt=""
-                  />
-                  {item.node.frontmatter?.overview?.details?.author}
-                  <img src="media/blog/Ellipse 14.svg" alt="" />
-                  {item.node.frontmatter?.overview?.details?.publishDate}
-                  {/* <img src="media/blog/Ellipse 14.svg" alt="" />
+              <Link to={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}>
+                <div className="blog-post-story">
+                  <img src={item.node.frontmatter?.thumbnail!} alt="" />
+                  <h4>{item.node.frontmatter?.title}</h4>
+                  <p id="author">
+                    <img
+                      src={item.node.frontmatter?.overview?.details?.profile!}
+                      alt=""
+                    />
+                    {item.node.frontmatter?.overview?.details?.author}
+                    <img src="media/blog/Ellipse 14.svg" alt="" />
+                    {item.node.frontmatter?.overview?.details?.publishDate}
+                    {/* <img src="media/blog/Ellipse 14.svg" alt="" />
                   {item.node.frontmatter?.overview?.details?.topic} */}
-                </p>
-              </div>
+                  </p>
+                </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

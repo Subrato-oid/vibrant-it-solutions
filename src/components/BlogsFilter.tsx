@@ -2,6 +2,11 @@ import * as React from "react"
 import { type BlogListType } from "../pages/blogs"
 import _ from "lodash"
 import { format, parseISO } from "date-fns"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Autoplay, Navigation, Pagination } from "swiper/modules"
+import "swiper/css"
+import { Link } from "gatsby"
 
 type BlogsFilterProps = NonNullable<BlogListType>
 
@@ -17,6 +22,8 @@ const BlogsFilter = ({
   )
 
   const [slides, setSlides] = React.useState<BlogsFilterProps>([])
+
+  const breakpoints = useBreakpoint()
 
   React.useEffect(() => {
     if (tag === "All") {
@@ -44,53 +51,71 @@ const BlogsFilter = ({
           </button>
         ))}
       </div>
-      {
+
+      {breakpoints.sm ? (
+        <Swiper
+          modules={[Pagination, Navigation, Autoplay]}
+          navigation
+          slidesPerView={2}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+        >
+          <div className="story-slide">
+            {slides.map((item, index) => (
+              <div key={index} className="story">
+                <SwiperSlide>
+                  <img src={item.node.frontmatter?.thumbnail!} alt="" />
+                  <h4>{item.node.frontmatter?.title!}</h4>
+                  <p>{item.node.frontmatter?.overview?.description}</p>
+                  <div id="author">
+                    <img
+                      src={item.node.frontmatter?.overview?.details?.profile!}
+                      alt=""
+                    />
+                    {item.node.frontmatter?.overview?.details?.author}
+                    <div id="ellipse"></div>
+                    {format(
+                      parseISO(
+                        item.node.frontmatter?.overview?.details?.publishDate!
+                      ),
+                      "dd MMM, yyyy"
+                    )}
+                  </div>
+                </SwiperSlide>
+              </div>
+            ))}
+          </div>
+        </Swiper>
+      ) : (
         <div className="story-slide">
           {slides.map((item, index) => (
-            <div key={index} className="story">
-              <img src={item.node.frontmatter?.thumbnail!} alt="" />
-              <h4>{item.node.frontmatter?.title!}</h4>
-              <p>{item.node.frontmatter?.overview?.description}</p>
-              <div id="author">
-                <img
-                  src={item.node.frontmatter?.overview?.details?.profile!}
-                  alt=""
-                />
-                {item.node.frontmatter?.overview?.details?.author}
-                <div id="ellipse"></div>
-                {format(
-                  parseISO(
-                    item.node.frontmatter?.overview?.details?.publishDate!
-                  ),
-                  "dd MMM, yyyy"
-                )}
+            <Link
+              key={index}
+              to={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}
+            >
+              <div className="story">
+                <img src={item.node.frontmatter?.thumbnail!} alt="" />
+                <h4>{item.node.frontmatter?.title!}</h4>
+                <p>{item.node.frontmatter?.overview?.description}</p>
+                <div id="author">
+                  <img
+                    src={item.node.frontmatter?.overview?.details?.profile!}
+                    alt=""
+                  />
+                  {item.node.frontmatter?.overview?.details?.author}
+                  <div id="ellipse"></div>
+                  {format(
+                    parseISO(
+                      item.node.frontmatter?.overview?.details?.publishDate!
+                    ),
+                    "dd MMM, yyyy"
+                  )}
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-      }
-      {/* <div className="story-slide" id="slide2">
-        {slide2
-          .slice(3, 6)
-          .map((item, index) => (
-            <div key={index} className="story">
-              <img src={item.node.frontmatter?.thumbnail!} alt="" />
-              <h4>{item.node.frontmatter?.title!}</h4>
-              <p>{item.node.frontmatter?.overview?.description}</p>
-              <div id="author">
-                <img
-                  src={item.node.frontmatter?.overview?.details?.profile!}
-                  alt=""
-                />
-                {item.node.frontmatter?.overview?.details?.author}
-                <div id="ellipse"></div>
-                {item.node.frontmatter?.overview?.details?.publishDate}
-                <div id="ellipse"></div>
-                {item.node.frontmatter?.overview?.details?.topic}
-              </div>
-            </div>
-          ))}
-      </div> */}
+      )}
     </div>
   )
 }

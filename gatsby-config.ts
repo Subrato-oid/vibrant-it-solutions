@@ -1,4 +1,13 @@
 import type { GatsbyConfig } from "gatsby"
+
+const myCustomQueries = {
+  xs: "(max-width: 320px)",
+  sm: "(max-width: 768px)",
+  md: "(max-width: 1024px)",
+  l: "(max-width: 1536px)",
+  portrait: "(orientation: portrait)",
+}
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: "Vibrant_IT_Solutions",
@@ -8,6 +17,7 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
+
   plugins: [
     // "gatsby-plugin-postcss",
     "gatsby-plugin-image",
@@ -20,6 +30,12 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-postcss`,
       options: {
         postCssPlugins: [require(`tailwindcss`)],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-breakpoints",
+      options: {
+        queries: myCustomQueries,
       },
     },
     {

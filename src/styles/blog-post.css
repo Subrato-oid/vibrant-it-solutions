@@ -258,7 +258,7 @@ h4 {
 }
 
 /* <!---- MORE READS SECTION ----> */
-.filter {
+.blog-post-filter {
   display: flex;
   flex-direction: column;
   padding: 4.5rem 0;
@@ -569,7 +569,7 @@ footer {
   }
 
   /* <!---- MORE READS SECTION ----> */
-  .filter {
+  .blog-post-filter {
     padding: 4.5vw 0;
     gap: 4vw;
   }
@@ -873,7 +873,7 @@ footer {
   }
 
   /* <!---- MORE READS SECTION ----> */
-  .filter {
+  .blog-post-filter {
     display: flex;
     flex-direction: column;
     padding: 4.5rem 0 4.5rem 1rem;

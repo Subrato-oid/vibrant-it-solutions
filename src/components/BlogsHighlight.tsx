@@ -1,5 +1,7 @@
 import * as React from "react"
 import { type BlogListType } from "../templates/blog"
+import { Link } from "gatsby"
+import _ from "lodash"
 
 type BlogsHighlightProps = NonNullable<BlogListType>
 
@@ -14,22 +16,27 @@ const BlogsHighlight = ({
     </div>
     <div className="H-story-slide" id="H-slide">
       {data.slice(0, 5).map((item, i) => (
-        <div key={i} className="H-story">
-          <img src={item.node.frontmatter?.thumbnail!} alt="" />
-          <h4>{item.node.frontmatter?.title}</h4>
-          <p>{item.node.frontmatter?.overview?.description}</p>
-          <div id="author">
-            <img
-              src={item.node.frontmatter?.overview?.details?.profile!}
-              alt=""
-            />
-            {item.node.frontmatter?.overview?.details?.author}
-            <div id="ellipse"></div>
-            {item.node.frontmatter?.overview?.details?.publishDate}
-            {/* <div id="ellipse"></div>
+        <Link
+          key={i}
+          to={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}
+        >
+          <div key={i} className="H-story">
+            <img src={item.node.frontmatter?.thumbnail!} alt="" />
+            <h4>{item.node.frontmatter?.title}</h4>
+            <p>{item.node.frontmatter?.overview?.description}</p>
+            <div id="author">
+              <img
+                src={item.node.frontmatter?.overview?.details?.profile!}
+                alt=""
+              />
+              {item.node.frontmatter?.overview?.details?.author}
+              <div id="ellipse"></div>
+              {item.node.frontmatter?.overview?.details?.publishDate}
+              {/* <div id="ellipse"></div>
             {item.node.frontmatter?.overview?.details?.topic} */}
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   </>
