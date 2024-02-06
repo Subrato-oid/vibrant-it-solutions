@@ -7,7 +7,7 @@ import "swiper/css/autoplay"
 import { Link } from "gatsby"
 import _ from "lodash"
 
-type BlogCarouselProps = NonNullable<BlogListType>
+type BlogCarouselProps = BlogListType
 
 const BlogCarousel = ({
   data,

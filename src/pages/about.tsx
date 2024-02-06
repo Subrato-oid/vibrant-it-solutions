@@ -45,7 +45,8 @@ export const pageQuery = graphql`
         templateKey
         about {
           kicker
-          title
+          titleUp
+          titleDown
           titleHighlight
           description
         }

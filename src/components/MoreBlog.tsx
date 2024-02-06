@@ -6,11 +6,14 @@ import "swiper/css"
 import BlogNavButton from "./BlogNavButton"
 import { Link } from "gatsby"
 import _ from "lodash"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
+import { format, parseISO } from "date-fns"
 
 type MoreBlogProps = NonNullable<BlogListType>
 
 const MoreBlog = ({ data }: { data: MoreBlogProps }): React.ReactElement => {
   const sliderRef = React.useRef<SwiperRef>(null)
+  const breakpoint = useBreakpoint()
 
   const clickPrev = React.useCallback(() => {
     if (!sliderRef.current) return
@@ -30,7 +33,7 @@ const MoreBlog = ({ data }: { data: MoreBlogProps }): React.ReactElement => {
           ref={sliderRef}
           modules={[Pagination, Navigation]}
           navigation
-          slidesPerView={3}
+          slidesPerView={breakpoint.sm ? 1.2 : 3}
           spaceBetween={"50rem"}
         >
           {data.map((item, index) => (
@@ -46,7 +49,13 @@ const MoreBlog = ({ data }: { data: MoreBlogProps }): React.ReactElement => {
                     />
                     {item.node.frontmatter?.overview?.details?.author}
                     <img src="media/blog/Ellipse 14.svg" alt="" />
-                    {item.node.frontmatter?.overview?.details?.publishDate}
+                    {format(
+                      parseISO(
+                        item.node.frontmatter?.overview?.details?.publishDate!
+                      ),
+                      "dd MMM, yyyy"
+                    )}
+
                     {/* <img src="media/blog/Ellipse 14.svg" alt="" />
                   {item.node.frontmatter?.overview?.details?.topic} */}
                   </p>

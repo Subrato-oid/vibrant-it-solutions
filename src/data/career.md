@@ -51,4 +51,6 @@ applyNow:
   button:
     buttonText: Email Your Portfolio
     icon: /images/button-icon.svg
+  titleUp: Okay Enough About Us,
+  titleDown: Let's Talk
 ---

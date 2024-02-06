@@ -979,8 +979,9 @@ footer {
   /* <!---- HEADER SECTION ----> */
   header {
     padding: 0 1rem;
-    margin-top: 1rem;
+    margin-top: 0rem;
     align-items: center;
+    padding-top: 2rem;
   }
   header img {
     width: 5.6875rem;
@@ -992,7 +993,7 @@ footer {
   }
 
   .close {
-    display: none;
+    display: block;
     position: absolute;
     right: -1rem;
     top: 2rem;

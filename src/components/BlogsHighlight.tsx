@@ -2,8 +2,9 @@ import * as React from "react"
 import { type BlogListType } from "../templates/blog"
 import { Link } from "gatsby"
 import _ from "lodash"
+import { format, parseISO } from "date-fns"
 
-type BlogsHighlightProps = NonNullable<BlogListType>
+type BlogsHighlightProps = BlogListType
 
 const BlogsHighlight = ({
   data,
@@ -31,7 +32,12 @@ const BlogsHighlight = ({
               />
               {item.node.frontmatter?.overview?.details?.author}
               <div id="ellipse"></div>
-              {item.node.frontmatter?.overview?.details?.publishDate}
+              {format(
+                parseISO(
+                  item.node.frontmatter?.overview?.details?.publishDate!
+                ),
+                "dd MMM, yyyy"
+              )}
               {/* <div id="ellipse"></div>
             {item.node.frontmatter?.overview?.details?.topic} */}
             </div>

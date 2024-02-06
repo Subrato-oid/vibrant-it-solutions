@@ -16,7 +16,10 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
       </h2>
       <div className="Scontainer">
         {props?.service?.map((item, index) => (
-          <Link key={index} to={`/services/${_.kebabCase(item?.title!)}`}>
+          <Link
+            key={`ser~${index}`}
+            to={`/services/${_.kebabCase(item?.title!)}`}
+          >
             <div
               className="box"
               onMouseOver={() => {

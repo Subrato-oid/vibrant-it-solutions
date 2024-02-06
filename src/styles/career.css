@@ -796,8 +796,9 @@ footer {
   /* <!---- HEADER SECTION ----> */
   header {
     padding: 0 1rem;
-    margin-top: 2rem;
+    margin-top: 0rem;
     align-items: center;
+    padding-top: 2rem;
   }
   header img {
     width: 5.6875rem;

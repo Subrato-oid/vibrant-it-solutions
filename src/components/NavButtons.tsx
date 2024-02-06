@@ -15,6 +15,7 @@ const NavButtons: React.FC<NavButtonsProps> = ({ clickPrev, clickNext }) => {
         gap: "20px",
         position: "relative",
         marginTop: "20px",
+        paddingRight: "10px",
       }}
     >
       <button

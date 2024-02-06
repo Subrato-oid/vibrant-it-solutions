@@ -4,23 +4,31 @@
     "logo": "/images/Group 20.svg",
     "navItems": [
       {
-        "item": "About"
+        "item": "About",
+        "link": "/about"
       },
       {
-        "item": "Services"
+        "item": "Services",
+        "link": "/#"
       },
       {
-        "item": "Our Works"
+        "item": "Our Works",
+        "link": "/works/tuple"
       },
       {
-        "item": "Career"
+        "item": "Career",
+        "link": "/career"
       },
       {
-        "item": "Blogs"
+        "item": "Blogs",
+        "link": "/blogs"
       },
       {
-        "item": "Contact Us"
+        "item": "Contact Us",
+        "link": "/contact"
       }
-    ]
+    ],
+    "Weblogo": "/images/Group 20.svg",
+    "Moblogo": "/images/Navbar.svg"
   }
 }

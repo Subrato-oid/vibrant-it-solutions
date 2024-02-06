@@ -75,7 +75,8 @@ export const pageQuery = graphql`
           }
         }
         applyNow {
-          title
+          titleUp
+          titleDown
           titleHighlight
           heading
           description

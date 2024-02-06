@@ -4,7 +4,7 @@ import _ from "lodash"
 import { format, parseISO } from "date-fns"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, Navigation, Pagination } from "swiper/modules"
+import { Navigation, Pagination } from "swiper/modules"
 import "swiper/css"
 import { Link } from "gatsby"
 
@@ -53,39 +53,44 @@ const BlogsFilter = ({
       </div>
 
       {breakpoints.sm ? (
-        <Swiper
-          modules={[Pagination, Navigation, Autoplay]}
-          navigation
-          slidesPerView={2}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-        >
-          <div className="story-slide">
+        <div style={{ width: "100vw" }}>
+          <Swiper
+            modules={[Pagination, Navigation]}
+            navigation
+            spaceBetween={"16px"}
+            autoplay={{ delay: 100000000 }}
+            slidesPerView={1.2}
+            pagination={{ clickable: true }}
+          >
             {slides.map((item, index) => (
-              <div key={index} className="story">
-                <SwiperSlide>
-                  <img src={item.node.frontmatter?.thumbnail!} alt="" />
-                  <h4>{item.node.frontmatter?.title!}</h4>
-                  <p>{item.node.frontmatter?.overview?.description}</p>
-                  <div id="author">
-                    <img
-                      src={item.node.frontmatter?.overview?.details?.profile!}
-                      alt=""
-                    />
-                    {item.node.frontmatter?.overview?.details?.author}
-                    <div id="ellipse"></div>
-                    {format(
-                      parseISO(
-                        item.node.frontmatter?.overview?.details?.publishDate!
-                      ),
-                      "dd MMM, yyyy"
-                    )}
-                  </div>
-                </SwiperSlide>
-              </div>
+              <SwiperSlide key={item.node.frontmatter?.title}>
+                {/* <div className="story-slide"> */}
+                <img
+                  src={item.node.frontmatter?.thumbnail!}
+                  alt=""
+                  width={"100%"}
+                />
+                <h4>{item.node.frontmatter?.title!}</h4>
+                {/* <p>{item.node.frontmatter?.overview?.description}</p> */}
+                <div id="author">
+                  <img
+                    src={item.node.frontmatter?.overview?.details?.profile!}
+                    alt=""
+                  />
+                  {item.node.frontmatter?.overview?.details?.author}
+                  <div id="ellipse"></div>
+                  {format(
+                    parseISO(
+                      item.node.frontmatter?.overview?.details?.publishDate!
+                    ),
+                    "dd MMM, yyyy"
+                  )}
+                </div>
+                {/* </div> */}
+              </SwiperSlide>
             ))}
-          </div>
-        </Swiper>
+          </Swiper>
+        </div>
       ) : (
         <div className="story-slide">
           {slides.map((item, index) => (

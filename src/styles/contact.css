@@ -208,6 +208,45 @@ h1 .line2 {
   font-size: 1rem;
 }
 
+.input-group {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1.25rem;
+  color: #333;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+label {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  font-size: 1.25rem;
+  color: #777;
+  transform-origin: 0 0;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+}
+
+input:focus,
+input:valid {
+  border-color: var(--colors-brand-primary);
+}
+
+input:focus + label,
+input:valid + label {
+  transform: translateY(-200%);
+  font-size: 0.625rem;
+  color: var(--colors-brand-primary);
+}
 .button {
   display: flex;
   width: 12.5rem;
@@ -468,6 +507,7 @@ footer {
     font-family: Golos Text;
     font-size: 1vw;
   }
+
   .button {
     display: flex;
     width: 12.5vw;
@@ -564,8 +604,9 @@ footer {
   /* <!---- HEADER SECTION ----> */
   header {
     padding: 0 1rem;
-    margin-top: 2rem;
+    margin-top: 0rem;
     align-items: center;
+    padding-top: 2rem;
   }
   header img {
     width: 5.6875rem;
@@ -715,48 +756,9 @@ footer {
     margin-bottom: 1rem;
   }
 
-  .input-group {
-    position: relative;
-    margin-bottom: 1.25rem;
-  }
-
-  input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 0.875rem;
-    color: #333;
-    background: transparent;
-    border: 0;
-    border-bottom: 2px solid #ccc;
-    outline: none;
-    transition: border-color 0.3s;
-  }
-
-  label {
-    position: absolute;
-    top: 1.5rem;
-    left: 0;
-    font-size: 0.75rem;
-    color: #777;
-    transform-origin: 0 0;
-    transform: translateY(-50%);
-    transition: all 0.3s;
-  }
-
-  input:focus,
-  input:valid {
-    border-color: var(--colors-brand-primary);
-  }
-
-  input:focus + label,
-  input:valid + label {
-    transform: translateY(-200%);
-    font-size: 0.625rem;
-    color: var(--colors-brand-primary);
-  }
-
   .button {
     display: flex;
+    border: none;
     width: 10.5rem;
     padding: 0.875rem 1.875rem;
     justify-content: center;

@@ -26,9 +26,11 @@ const useCommon = (): CommonType => {
         }
         header: commonJson(_xtype: { eq: "header" }) {
           node: header {
-            logo
+            Weblogo
+            Moblogo
             navItems {
               item
+              link
             }
           }
         }

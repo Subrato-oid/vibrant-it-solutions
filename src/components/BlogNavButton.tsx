@@ -12,7 +12,7 @@ const BlogNavButton: React.FC<BlogNavButtonProps> = ({
   return (
     <div className="reads">
       <h2>
-        <span className="head1">More</span>
+        <span className="head1">More</span>&nbsp;
         <span className="head2">Reads</span>
       </h2>
       <div className="icons">

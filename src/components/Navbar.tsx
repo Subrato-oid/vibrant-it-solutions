@@ -1,52 +1,76 @@
 import * as React from "react"
 import useCommon from "../hooks/useCommon"
 import { Link } from "gatsby"
-import DropMenu from "./DropMenu"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
+import MobMenu from "./MobMenu"
+import DeskMenu from "./DeskMenu"
+import { Popover } from "@headlessui/react"
 
 const Navbar = (): React.ReactElement => {
-  const { header, services, milestone } = useCommon()
-  // TODO: User services list in header
+  const { header } = useCommon()
 
-  console.log(services)
-  console.log(milestone)
+  const breakpoint = useBreakpoint()
 
   return (
-    <header>
-      <Link to="/">
-        <img src={header.logo!} alt="Logo" />
-      </Link>
-      <nav>
-        <ul>
-          {header.navItems!.map((el) => (
-            <li
-              key={`navitem-${el!.item}`}
-              style={{ display: "flex", alignItems: "center" }}
+    <Popover>
+      {({ open }) => (
+        <div
+          style={
+            breakpoint.sm && open
+              ? {
+                  height: "100vh",
+                  background:
+                    "linear-gradient(157deg, #080F1F 22%, #093B9E 159.75%)",
+                  overflow: "hidden",
+                }
+              : {}
+          }
+        >
+          <header>
+            {breakpoint.sm ? (
+              <Link to="/">
+                <img
+                  src={open ? header.Moblogo! : header.Weblogo!}
+                  alt="Logo"
+                />
+              </Link>
+            ) : (
+              <Link to="/">
+                <img src={header.Weblogo!} alt="Logo" />
+              </Link>
+            )}
+
+            {!breakpoint.sm && <DeskMenu />}
+
+            <div className="ham">
+              <Popover.Button style={{ border: "none", background: "unset" }}>
+                {!open ? (
+                  <div className="menu">
+                    <img src="/images/menu.svg" alt="" />
+                  </div>
+                ) : (
+                  <div className="close">
+                    <img src="/images/x-white.svg" alt="" />
+                  </div>
+                )}
+              </Popover.Button>
+            </div>
+          </header>
+
+          {breakpoint.sm && (
+            <Popover.Panel
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
             >
-              {el?.item === "Services" ? (
-                // <Dropdown items={services} />
-                <DropMenu items={services} />
-              ) : el?.item === "Our Works" ? (
-                <Link to="/works/tuple">{el.item}</Link>
-              ) : el?.item === "Contact Us" ? (
-                <Link to="/contact">{el.item}</Link>
-              ) : (
-                <Link to={`/${el!.item?.toLowerCase()}`}>{el!.item}</Link>
-              )}
-              {/* <a href={`/${el!.item?.toLowerCase()}`}>{el!.item}</a>
-              {el?.item === "Services" && <Dropdown items={services} />} */}
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div className="ham">
-        <div className="menu">
-          <img src="/images/menu.svg" alt="" />
+              <MobMenu open={open} />
+            </Popover.Panel>
+          )}
         </div>
-        <div className="close">
-          <img src="/images/x.svg" alt="" />
-        </div>
-      </div>
-    </header>
+      )}
+    </Popover>
   )
 }
 export default Navbar

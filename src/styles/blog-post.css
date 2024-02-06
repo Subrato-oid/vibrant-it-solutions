@@ -267,7 +267,7 @@ h4 {
 .reads {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
 }
 .icons {
@@ -679,8 +679,9 @@ footer {
   /* <!---- HEADER SECTION ----> */
   header {
     padding: 0 1rem;
-    margin-top: 2rem;
+    margin-top: 0rem;
     align-items: center;
+    padding-top: 2rem;
   }
   header img {
     width: 5.6875rem;
@@ -883,7 +884,7 @@ footer {
   .reads {
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
   }
   .icons {
