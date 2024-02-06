@@ -6,9 +6,14 @@ type LayoutProp = {
   children: React.ReactNode
 }
 const BaseLayout = ({ children }: LayoutProp): React.ReactElement => {
+  const [mobileMenuActive, setMobileMenuActive] = React.useState<boolean>(false)
+
   return (
-    <div id="main">
-      <Navbar />
+    <div
+      id="main"
+      style={mobileMenuActive ? { position: "fixed", inset: "0px" } : {}}
+    >
+      <Navbar setMobileMenuActive={setMobileMenuActive} />
       <div>{children}</div>
       <Footer />
     </div>

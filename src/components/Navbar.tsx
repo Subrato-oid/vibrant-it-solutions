@@ -6,70 +6,78 @@ import MobMenu from "./MobMenu"
 import DeskMenu from "./DeskMenu"
 import { Popover } from "@headlessui/react"
 
-const Navbar = (): React.ReactElement => {
+const Navbar = ({
+  setMobileMenuActive,
+}: {
+  setMobileMenuActive: React.Dispatch<React.SetStateAction<boolean>>
+}): React.ReactElement => {
   const { header } = useCommon()
-
   const breakpoint = useBreakpoint()
 
   return (
     <Popover>
-      {({ open }) => (
-        <div
-          style={
-            breakpoint.sm && open
-              ? {
-                  height: "100vh",
-                  background:
-                    "linear-gradient(157deg, #080F1F 22%, #093B9E 159.75%)",
-                  overflow: "hidden",
-                }
-              : {}
-          }
-        >
-          <header>
-            {breakpoint.sm ? (
+      {({ open }) => {
+        React.useEffect(() => {
+          setMobileMenuActive(open)
+        }, [open])
+        return (
+          <div
+            style={
+              breakpoint.sm && open
+                ? {
+                    height: "100vh",
+                    background:
+                      "linear-gradient(157deg, #080F1F 22%, #093B9E 159.75%)",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    position: "fixed",
+                    inset: "0px",
+                    zIndex: "1000",
+                  }
+                : {}
+            }
+          >
+            <header>
               <Link to="/">
                 <img
-                  src={open ? header.Moblogo! : header.Weblogo!}
+                  src={
+                    open && breakpoint.sm ? header.Moblogo! : header.Weblogo!
+                  }
                   alt="Logo"
                 />
               </Link>
-            ) : (
-              <Link to="/">
-                <img src={header.Weblogo!} alt="Logo" />
-              </Link>
-            )}
 
-            {!breakpoint.sm && <DeskMenu />}
+              {!breakpoint.sm && <DeskMenu />}
 
-            <div className="ham">
-              <Popover.Button style={{ border: "none", background: "unset" }}>
-                {!open ? (
-                  <div className="menu">
-                    <img src="/images/menu.svg" alt="" />
-                  </div>
-                ) : (
-                  <div className="close">
-                    <img src="/images/x-white.svg" alt="" />
-                  </div>
-                )}
+              <Popover.Button
+                as="div"
+                className="ham"
+                style={{ border: "none", background: "unset" }}
+              >
+                <img
+                  className={"menu"}
+                  src={open ? "/images/x-white.svg" : "/images/menu.svg"}
+                  alt=""
+                />
               </Popover.Button>
-            </div>
-          </header>
+            </header>
 
-          {breakpoint.sm && (
-            <Popover.Panel
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
-              <MobMenu open={open} />
-            </Popover.Panel>
-          )}
-        </div>
-      )}
+            {breakpoint.sm && (
+              <Popover.Panel
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  flex: 1,
+                }}
+              >
+                <MobMenu open={open} />
+              </Popover.Panel>
+            )}
+          </div>
+        )
+      }}
     </Popover>
   )
 }
