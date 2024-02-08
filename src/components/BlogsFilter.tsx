@@ -62,7 +62,7 @@ const BlogsFilter = ({
             slidesPerView={1.2}
             pagination={{ clickable: true }}
           >
-            {slides.map((item, index) => (
+            {slides.map((item) => (
               <SwiperSlide key={item.node.frontmatter?.title}>
                 {/* <div className="story-slide"> */}
                 <img

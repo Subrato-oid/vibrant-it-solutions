@@ -456,7 +456,7 @@ footer {
   }
 
   .close {
-    display: none;
+    display: block;
     position: absolute;
     right: -1rem;
     top: 2rem;

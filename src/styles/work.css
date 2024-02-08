@@ -264,7 +264,8 @@ h2 .head1 {
 }
 
 .project {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   margin-top: 4rem;
 }
@@ -615,7 +616,7 @@ footer {
   }
 
   .close {
-    display: none;
+    display: block;
     position: absolute;
     right: -1rem;
     top: 2rem;

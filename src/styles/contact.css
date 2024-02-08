@@ -213,11 +213,11 @@ h1 .line2 {
   margin-bottom: 1.25rem;
 }
 
-input {
+.input-group input {
   width: 100%;
   padding: 10px 0;
   font-size: 1.25rem;
-  color: #333;
+  color: #676a70;
   background: transparent;
   border: 0;
   border-bottom: 2px solid #ccc;
@@ -225,29 +225,75 @@ input {
   transition: border-color 0.3s;
 }
 
-label {
+.input-group textarea {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1.25rem;
+  color: #676a70;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group select {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1.25rem;
+  color: #676a70;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group select option:hover {
+  background-color: var(--colors-brand-primary);
+}
+
+.input-group label {
   position: absolute;
   top: 1.5rem;
   left: 0;
   font-size: 1.25rem;
-  color: #777;
+  color: #676a70;
   transform-origin: 0 0;
   transform: translateY(-50%);
   transition: all 0.3s;
 }
 
-input:focus,
-input:valid {
+.input-group input:focus,
+.input-group input:valid {
   border-color: var(--colors-brand-primary);
 }
 
-input:focus + label,
-input:valid + label {
-  transform: translateY(-200%);
+.input-group input:focus + label,
+.input-group input:valid + label {
+  transform: translateY(-250%);
   font-size: 0.625rem;
   color: var(--colors-brand-primary);
 }
+
+.input-group textarea:focus,
+.input-group textarea:valid {
+  border-color: var(--colors-brand-primary);
+}
+
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+  transform: translateY(-300%);
+  font-size: 0.625rem;
+  color: var(--colors-brand-primary);
+}
+
+.input-group select:focus {
+  border-color: var(--colors-brand-primary);
+}
+
 .button {
+  border: none;
   display: flex;
   width: 12.5rem;
   padding: 1.125rem 2.5rem;
@@ -509,6 +555,7 @@ footer {
   }
 
   .button {
+    border: none;
     display: flex;
     width: 12.5vw;
     padding: 1.125vw 2.5vw;
@@ -595,7 +642,7 @@ footer {
 }
 
 /* -----------for small screen devices------------ */
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 768px) {
   #main {
     padding: 0;
     margin: 0;
@@ -618,7 +665,7 @@ footer {
   }
 
   .close {
-    display: none;
+    display: block;
     position: absolute;
     right: -1rem;
     top: 2rem;
@@ -755,8 +802,34 @@ footer {
     font-size: 0.875rem;
     margin-bottom: 1rem;
   }
-
+  .input-group {
+    width: 100%;
+  }
+  .input-group input {
+    font-size: 0.875rem;
+    color: #090a0d;
+  }
+  .input-group label {
+    font-size: 0.875rem;
+    color: #090a0d;
+  }
+  .input-group textarea {
+    width: 92vw;
+    margin-right: 1rem;
+    font-size: 0.875rem;
+    color: #090a0d;
+  }
+  .input-group select,
+  .input-group span {
+    font-size: 0.875rem;
+    color: #090a0d;
+  }
+  .input-group select option:checked,
+  .input-group select option:focus {
+    background-color: var(--colors-brand-primary);
+  }
   .button {
+    border: none;
     display: flex;
     border: none;
     width: 10.5rem;

@@ -28,7 +28,7 @@ const Navbar = ({
                     height: "100vh",
                     background:
                       "linear-gradient(157deg, #080F1F 22%, #093B9E 159.75%)",
-                    overflow: "hidden",
+                    overflow: "scroll",
                     display: "flex",
                     flexDirection: "column",
                     position: "fixed",
@@ -50,13 +50,10 @@ const Navbar = ({
 
               {!breakpoint.sm && <DeskMenu />}
 
-              <Popover.Button
-                as="div"
-                className="ham"
-                style={{ border: "none", background: "unset" }}
-              >
+              <Popover.Button as="div" className="ham">
                 <img
                   className={"menu"}
+                  style={{ width: "fit-content" }}
                   src={open ? "/images/x-white.svg" : "/images/menu.svg"}
                   alt=""
                 />
@@ -70,6 +67,7 @@ const Navbar = ({
                   flexDirection: "column",
                   justifyContent: "space-between",
                   flex: 1,
+                  marginBottom: "5rem",
                 }}
               >
                 <MobMenu open={open} />

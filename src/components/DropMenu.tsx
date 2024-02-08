@@ -9,14 +9,14 @@ type DropMenuProps = {
 }
 const DropMenu: React.FC<DropMenuProps> = ({ items }) => {
   return (
-    <Popover>
+    <Popover style={{ zIndex: "100" }}>
       {({ open }) => (
         <>
           <Popover.Button
             className="dropdown-button"
             style={{ display: "flex", alignItems: "center" }}
           >
-            Solutions
+            Services
             <ChevronDownIcon
               className={open ? "rotate-down" : ""}
               style={{ height: "18px", width: "18px" }}
@@ -30,8 +30,8 @@ const DropMenu: React.FC<DropMenuProps> = ({ items }) => {
             enterFrom="dropdown-menu-transition intial"
             enterTo="dropdown-menu-transition final"
             leave="dropdown-menu-transition leave"
-            leaveFrom="dropdown-menu-transition final"
-            leaveTo="dropdown-menu-transition intial"
+            leaveFrom="dropdown-menu-transition initial"
+            leaveTo="dropdown-menu-transition final"
           >
             <Popover.Panel>
               <div className="dropdown-menu">
@@ -72,8 +72,6 @@ const DropMenu: React.FC<DropMenuProps> = ({ items }) => {
                           <img
                             className="dropdown-arrow"
                             src="/images/down-right 1.svg"
-                            width={1}
-                            height={1}
                             alt="down-arrow"
                           />
                         </li>

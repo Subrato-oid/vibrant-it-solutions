@@ -43,7 +43,7 @@ const Process = (props: NonNullable<ProcessProps>): React.ReactElement => {
         ref={sliderRef}
         modules={[Pagination, Navigation]}
         slidesPerView={breakpoint.sm ? 1 : 2.3}
-        spaceBetween={50}
+        spaceBetween={64}
         pagination={{ type: "progressbar" }}
       >
         <div className="process-container">

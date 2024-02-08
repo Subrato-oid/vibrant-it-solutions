@@ -13,7 +13,7 @@ const Solution = (props: NonNullable<SolutionProps>): React.ReactElement => (
         <span className="head2">{props.titleHighlight}</span>
       </h2>
       <p>{props.description}</p>
-      <a href="#" className="Cbutton">
+      <a href="/contact" className="Cbutton">
         {props.button?.buttonText} <img src={props.button?.icon!} alt="" />
       </a>
     </div>
