@@ -269,6 +269,8 @@ h1 .line2 {
   border-color: var(--colors-brand-primary);
 }
 
+/* .input-group input:valid + label */
+
 .input-group input:focus + label,
 .input-group input:valid + label {
   transform: translateY(-250%);

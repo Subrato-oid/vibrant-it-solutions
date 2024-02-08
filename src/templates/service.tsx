@@ -9,30 +9,45 @@ import CommonLayout from "../layouts/CommonLayout"
 // Step 1: Define Types
 type ServicePageType = NonNullable<Queries.ServicePageByIdQuery>["service"]
 
+type ServiceWorkType = NonNullable<Queries.ServicePageByIdQuery>["works"]
+
 export type ServicePageFrontmatterType =
   NonNullable<ServicePageType>["frontmatter"]
+
+export type ServiceWorkEdgeType = NonNullable<ServiceWorkType>["edges"]
 
 // Step 2: Define your Page
 const ServicePage = ({
   data,
 }: PageProps<Queries.ServicePageByIdQuery>): React.ReactElement => {
   console.log("service", data.service)
-  return <ServicePageTemplate service={data.service} />
+  return (
+    <ServicePageTemplate service={data.service} workList={data.works.edges} />
+  )
 }
 export default ServicePage
 
 // Step 3: Define your Page Template
 export const ServicePageTemplate = ({
   service,
+  workList,
 }: {
   service: ServicePageType
+  workList: ServiceWorkEdgeType
 }): React.ReactElement => {
   const { hero, expertise, project } = service?.frontmatter!
+  const { titleBefore, titleHighlight, titleAfter } = project!
+  console.log(workList)
   return (
     <CommonLayout>
       <SoftwareSolution {...hero!} />
       <Expertise {...expertise!} />
-      <Project {...project!} />
+      <Project
+        titleBefore={titleBefore!}
+        titleHighlight={titleHighlight!}
+        titleAfter={titleAfter!}
+        workList={workList}
+      />
     </CommonLayout>
   )
 }
@@ -72,6 +87,20 @@ export const pageQuery = graphql`
             title
             description
             image
+          }
+        }
+      }
+    }
+    works: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "work-page" } } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            description
+            thumbnail
           }
         }
       }

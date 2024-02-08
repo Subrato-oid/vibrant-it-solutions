@@ -3,7 +3,7 @@ templateKey: work-page
 title: Descates
 description: We helped Descates reach for the stars with a redesigned,
   expressive brand to match their ambitions for years to come.
-thumbnail: /images/image-12.svg
+thumbnail: /images/frame-76.svg
 introduction:
   image: /images/frame-85.svg
   description: >-

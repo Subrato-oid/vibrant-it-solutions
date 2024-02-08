@@ -54,7 +54,7 @@ const ContactForm = (props: ContactFormProps): React.ReactElement => {
               <label>Name</label>
             </div>
             <div className="input-group">
-              <input type="email" name="Email" placeholder=" " required />
+              <input type="text" name="Email" placeholder=" " required />
               <label>Email address</label>
             </div>
 

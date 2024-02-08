@@ -3,7 +3,7 @@ templateKey: work-page
 title: Wonder
 description: We're more than an IT Solutions Company; we infuse every project
   with passion and purpose.
-thumbnail: /images/image-10.svg
+thumbnail: /images/frame-71.svg
 introduction:
   image: /images/frame-85.svg
   description: >-
