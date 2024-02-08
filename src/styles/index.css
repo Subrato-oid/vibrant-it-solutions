@@ -43,7 +43,7 @@ body {
   margin: 0 auto;
 }
 a:link {
-  color: unset;
+  color: inherit;
 }
 .rotate-down {
   transform: rotate(180deg);
@@ -1531,7 +1531,7 @@ footer {
     margin: 0;
   }
   a:link {
-    color: unset;
+    color: inherit;
   }
 
   /* <!---- HEADER SECTION ----> */
