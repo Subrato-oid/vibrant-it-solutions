@@ -25,7 +25,9 @@ const DeskMenu = (): React.ReactElement => {
                 // <Dropdown items={services} />
                 <DropMenu items={services} />
               ) : (
-                <Link to={el?.link!}>{el?.item}</Link>
+                <Link style={{ color: "inherit" }} to={el?.link!}>
+                  {el?.item}
+                </Link>
               )}
               {/* <a href={`/${el!.item?.toLowerCase()}`}>{el!.item}</a>
               {el?.item === "Services" && <Dropdown items={services} />} */}
