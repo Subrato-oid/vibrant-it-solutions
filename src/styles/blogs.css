@@ -255,7 +255,9 @@ h4 {
   scrollbar-width: none; /* Firefox */
 }
 .H-story img {
-  width: 22.3125rem;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  width: 100%;
 }
 
 .H-story {
@@ -487,12 +489,12 @@ h2 .head2 {
   flex-direction: row;
   width: 36.68rem;
 }
-form {
+.subscription-container form {
   display: flex;
   width: 100%;
   gap: 1.5rem;
 }
-.email-input {
+.subscription-container .email-input {
   display: flex;
   width: 100%;
   padding: 0.8125rem 1.5rem;
@@ -508,7 +510,8 @@ form {
   line-height: 1.9375rem;
 }
 
-.button {
+.subscription-container .sub-button {
+  border: none;
   display: flex;
   padding: 1.25rem 2.5rem;
   justify-content: center;
@@ -525,7 +528,7 @@ form {
   text-transform: capitalize;
 }
 
-.button:hover {
+.subscription-container .sub-button:hover {
   background-color: #45a049;
 }
 
@@ -717,7 +720,10 @@ footer {
     padding: 0 0 0 0vw;
   }
   .H-story img {
-    width: 25.3125vw;
+    /* width: 25.3125vw; */
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    width: 100%;
   }
 
   .H-story {
@@ -863,12 +869,12 @@ footer {
     flex-direction: row;
     width: 36.68vw;
   }
-  form {
+  .subscription-container form {
     display: flex;
     width: 100%;
     gap: 1.5vw;
   }
-  .email-input {
+  .subscription-container .email-input {
     display: flex;
     width: 100%;
     padding: 0.8125vw 1.5vw;
@@ -876,7 +882,7 @@ footer {
     line-height: 1.9375vw;
   }
 
-  .button {
+  .subscription-container .sub-button {
     padding: 1.25vw 2.5vw;
     gap: 0.5vw;
     font-size: 1vw;
@@ -887,7 +893,7 @@ footer {
     text-transform: capitalize;
   }
 
-  .button:hover {
+  .subscription-container .sub-button:hover {
     background-color: #45a049;
   }
 
@@ -1332,14 +1338,14 @@ footer {
     flex-direction: row;
     width: 100%;
   }
-  form {
+  .subscription-container form {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     gap: 1rem;
   }
-  .email-input {
+  .subscription-container .email-input {
     display: flex;
     width: 100%;
     padding: 0.8125rem 1.5rem;
@@ -1354,7 +1360,7 @@ footer {
     line-height: 160%;
   }
 
-  .button {
+  .subscription-container .sub-button {
     width: 13.6875rem;
     height: 3rem;
     display: flex;
@@ -1373,7 +1379,7 @@ footer {
     text-transform: capitalize;
   }
 
-  .button:hover {
+  .subscription-container .sub-button:hover {
     background-color: #45a049;
   }
 

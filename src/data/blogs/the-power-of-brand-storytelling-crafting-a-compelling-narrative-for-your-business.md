@@ -4,7 +4,7 @@ title: "The Power of Brand Storytelling: Crafting a Compelling Narrative for
   Your Business"
 tag: Branding
 featured: true
-thumbnail: /images/image-31-1-.svg
+thumbnail: /images/image-34.svg
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z
@@ -19,7 +19,6 @@ overview:
     tortor auctor, consequat augue nec, ultricies nisl. Integer vel urna eu
     augue efficitur vulputate.
   image: /images/image-2139.svg
-
 ---
 **Background and Motivation**
 

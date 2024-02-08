@@ -34,7 +34,7 @@ const NewsLetter = (): React.ReactElement => {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="form-name" value="subscription" />
+          <input type="hidden" name="form-name" value="Subscription" />
           <input
             type="email"
             name="Email"
@@ -42,7 +42,7 @@ const NewsLetter = (): React.ReactElement => {
             placeholder="Enter your email"
             required
           />
-          <button type="submit" className="button" onClick={notify}>
+          <button type="submit" className="sub-button" onClick={notify}>
             Subscribe
           </button>
         </form>

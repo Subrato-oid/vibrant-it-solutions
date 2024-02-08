@@ -48,7 +48,7 @@ const MoreBlog = ({ data }: { data: MoreBlogProps }): React.ReactElement => {
                       alt=""
                     />
                     {item.node.frontmatter?.overview?.details?.author}
-                    <img src="media/blog/Ellipse 14.svg" alt="" />
+                    <div id="ellipse"></div>
                     {format(
                       parseISO(
                         item.node.frontmatter?.overview?.details?.publishDate!

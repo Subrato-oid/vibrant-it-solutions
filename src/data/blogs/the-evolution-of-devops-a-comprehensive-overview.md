@@ -3,7 +3,7 @@ templateKey: blog-page
 title: "The Evolution of DevOps: A Comprehensive Overview"
 tag: Dev
 featured: true
-thumbnail: /images/image-31-1-.svg
+thumbnail: /images/frame-69.svg
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z
@@ -19,7 +19,6 @@ overview:
     cover how DevOps has transformed software development processes, fostering
     collaboration between development and operations teams.
   image: /images/image-2139.svg
-
 ---
 **Background and Motivation**
 

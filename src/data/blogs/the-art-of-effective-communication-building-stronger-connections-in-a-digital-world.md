@@ -4,7 +4,7 @@ title: "The Art of Effective Communication: Building Stronger Connections in a
   Digital World"
 tag: People
 featured: true
-thumbnail: /images/image-31-1-.svg
+thumbnail: /images/image-28.svg
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z

@@ -1,5 +1,6 @@
 import * as React from "react"
 import { type BlogPageFrontmatterType } from "../templates/blog"
+import { format, parseISO } from "date-fns"
 
 type BlogOverviewProps = NonNullable<BlogPageFrontmatterType>["overview"]
 
@@ -30,7 +31,9 @@ const BlogOverview = (
         <div id="line"></div>
         <div className="written-by">
           <p>Published</p>
-          <p id="dark">{props.details?.publishDate}</p>
+          <p id="dark">
+            {format(parseISO(props.details?.publishDate!), "dd MMM, yyyy")}
+          </p>
         </div>
         <div id="line"></div>
         <div className="written-by">

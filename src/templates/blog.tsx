@@ -5,6 +5,7 @@ import BlogOverview from "../components/BlogOverview"
 import MoreBlog from "../components/MoreBlog"
 import BaseLayout from "../layouts/BaseLayout"
 import { HTMLContent } from "../components/Content"
+import he from "he"
 
 // Step 1: Define Types
 type BlogPageType = NonNullable<Queries.BlogPageByIdQuery>["blog"]
@@ -39,7 +40,7 @@ export const BlogPageTemplate = ({
   return (
     <BaseLayout>
       <BlogOverview {...overview!} />
-      <HTMLContent className="background" content={content!} />
+      <HTMLContent className="background" content={he.decode(content!)} />
       <MoreBlog data={list} />
     </BaseLayout>
   )
