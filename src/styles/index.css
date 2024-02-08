@@ -122,10 +122,6 @@ body {
   margin: 0 !important;
 }
 
-.dropdown-menu a:link {
-  color: unset;
-}
-
 .dropdown-container:hover .dropdown-menu {
   /* display: flex;
   transform: scaleY(1); */
