@@ -1,6 +1,6 @@
 import * as React from "react"
 import { type PageProps, graphql } from "gatsby"
-import "../styles/work.css"
+import "../styles/work.scss"
 import BaseLayout from "../layouts/BaseLayout"
 import WorkOverview from "../components/WorkOverview"
 import WorkDetail from "../components/WorkDetail"
@@ -51,7 +51,7 @@ export const WorkPageTemplate = ({
     image: introImage,
   } = work?.frontmatter?.introduction!
   return (
-    <BaseLayout>
+    <BaseLayout pageName="work">
       <WorkOverview
         title={title!}
         description={description!}

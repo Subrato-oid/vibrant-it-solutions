@@ -6,11 +6,15 @@ import useCommon from "../hooks/useCommon"
 
 type LayoutProp = {
   children: React.ReactNode
+  pageName: string
 }
-const CommonLayout = ({ children }: LayoutProp): React.ReactElement => {
+const CommonLayout = ({
+  children,
+  pageName,
+}: LayoutProp): React.ReactElement => {
   const { solution, testimonials } = useCommon()
   return (
-    <BaseLayout>
+    <BaseLayout pageName={pageName}>
       {children}
       <Testimonial data={testimonials} />
       <Solution {...solution} />

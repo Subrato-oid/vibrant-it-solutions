@@ -1,6 +1,6 @@
 import * as React from "react"
 import { type PageProps, graphql } from "gatsby"
-import "../styles/blog-post.css"
+import "../styles/blog-post.scss"
 import BlogOverview from "../components/BlogOverview"
 import MoreBlog from "../components/MoreBlog"
 import BaseLayout from "../layouts/BaseLayout"
@@ -38,7 +38,7 @@ export const BlogPageTemplate = ({
   const { overview } = blog?.frontmatter!
   const content = blog?.html
   return (
-    <BaseLayout>
+    <BaseLayout pageName="blog-post">
       <BlogOverview {...overview!} />
       <HTMLContent className="background" content={he.decode(content!)} />
       <MoreBlog data={list} />

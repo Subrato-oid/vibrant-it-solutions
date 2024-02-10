@@ -6,7 +6,7 @@ import About from "../components/About"
 import Success from "../components/Success"
 import Service from "../components/Services"
 import Process from "../components/Process"
-import "../styles/index.css"
+import "../styles/index.scss"
 import CommonLayout from "../layouts/CommonLayout"
 
 // Step 1: Define Types
@@ -34,7 +34,7 @@ export const IndexPageTemplate = ({
 
   const { hero, client, about, services, process } = frontmatter!
   return (
-    <CommonLayout>
+    <CommonLayout pageName="index">
       <Hero {...hero!} />
       <Clients {...client!} />
       <About {...about!} />

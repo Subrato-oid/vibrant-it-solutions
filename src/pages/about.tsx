@@ -1,6 +1,6 @@
 import * as React from "react"
 import { type PageProps, graphql } from "gatsby"
-import "../styles/about.css"
+import "../styles/about.scss"
 import AboutUs from "../components/AboutUs"
 import AboutImage from "../components/AboutImage"
 import Mission from "../components/Mission"
@@ -27,7 +27,7 @@ export const AboutPageTemplate = ({
 }): React.ReactElement => {
   const { about, aboutCollage, mission } = frontmatter!
   return (
-    <CommonLayout>
+    <CommonLayout pageName={"about"}>
       <AboutUs {...about!} />
       <AboutImage {...aboutCollage!} />
       <Mission {...mission!} />

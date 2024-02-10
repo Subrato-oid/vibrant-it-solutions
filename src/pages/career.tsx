@@ -1,5 +1,5 @@
 import * as React from "react"
-import "../styles/career.css"
+import "../styles/career.scss"
 import JobOpening from "../components/JobOpening"
 import JoinSection from "../components/JoinSection"
 import Career from "../components/Career"
@@ -30,7 +30,7 @@ export const CareerPageTemplate = ({
   const { career, openings, perks, applyNow } = frontmatter!
 
   return (
-    <CommonLayout>
+    <CommonLayout pageName="career">
       <Career {...career!} />
       <CareerImage image={career?.image!} />
       <JobOpening {...openings!} />

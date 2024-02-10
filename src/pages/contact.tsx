@@ -1,5 +1,5 @@
 import * as React from "react"
-import "../styles/contact.css"
+import "../styles/contact.scss"
 import { type PageProps, graphql } from "gatsby"
 import ContactForm from "../components/ContactForm"
 import BaseLayout from "../layouts/BaseLayout"
@@ -24,7 +24,7 @@ export const ContactPageTemplate = ({
   frontmatter: ContactPageFrontmatterType
 }): React.ReactElement => {
   return (
-    <BaseLayout>
+    <BaseLayout pageName="contact">
       <ContactForm {...frontmatter!} />
     </BaseLayout>
   )

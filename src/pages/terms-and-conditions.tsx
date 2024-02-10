@@ -1,5 +1,5 @@
 import * as React from "react"
-import "../styles/terms-and-conditions.css"
+import "../styles/terms-and-conditions.scss"
 import TandC from "../components/TandC"
 import { type PageProps, graphql } from "gatsby"
 import BaseLayout from "../layouts/BaseLayout"
@@ -36,7 +36,7 @@ export const TermsConditionsPageTemplate = ({
 }): React.ReactElement => {
   const { terms_Conditions } = frontmatter!
   return (
-    <BaseLayout>
+    <BaseLayout pageName="terms-and-conditions">
       <TandC {...terms_Conditions!} body={body!} />
     </BaseLayout>
   )

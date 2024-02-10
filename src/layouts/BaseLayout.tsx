@@ -4,13 +4,15 @@ import Navbar from "../components/Navbar"
 
 type LayoutProp = {
   children: React.ReactNode
+  pageName: string
 }
-const BaseLayout = ({ children }: LayoutProp): React.ReactElement => {
+const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
   const [mobileMenuActive, setMobileMenuActive] = React.useState<boolean>(false)
 
   return (
     <div
       id="main"
+      className={pageName}
       style={mobileMenuActive ? { position: "fixed", inset: "0px" } : {}}
     >
       <Navbar setMobileMenuActive={setMobileMenuActive} />
