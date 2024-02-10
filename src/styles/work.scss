@@ -1,11 +1,5 @@
-@import "reset.scss";
-@import "header.scss";
-@import "footer.scss";
-
-#main {
-  padding: 0;
-}
 #main.work {
+  padding: 0;
   .tuple {
     margin-top: 9.88rem;
     padding: 0 9.5rem;
@@ -348,6 +342,9 @@
 /* -----------for small screen devices------------ */
 @media only screen and (max-width: 768px) {
   #main.work {
+    &:after {
+      display: none;
+    }
     .tuple {
       margin-top: 2.54rem;
       padding: 0 1rem;
@@ -388,6 +385,17 @@
       gap: 3.94rem;
       align-items: center;
       justify-content: space-between;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100vw;
+        height: 768px;
+        z-index: -1;
+        background-image: url("/images/blue-tint/backdropMob.png");
+        background-repeat: no-repeat;
+        left: 0;
+      }
     }
     .intro {
       max-width: 100%;

@@ -6,7 +6,6 @@ import About from "../components/About"
 import Success from "../components/Success"
 import Service from "../components/Services"
 import Process from "../components/Process"
-import "../styles/index.scss"
 import CommonLayout from "../layouts/CommonLayout"
 
 // Step 1: Define Types

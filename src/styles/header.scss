@@ -159,7 +159,7 @@ nav a:hover {
   display: none;
 }
 
-@media screen and (max-width: 1440px) and (min-width: 769px) {
+@media screen and (max-width: 1440px) and (min-width: 768px) {
   /* <!---- DropDown Menu ----> */
   .dropdown-button {
     margin-left: 2vw;
@@ -214,7 +214,7 @@ nav a:hover {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   #blue-bg img {
     display: none;
   }
@@ -229,7 +229,6 @@ nav a:hover {
     padding: 0 1rem;
     margin-top: 0rem;
     align-items: center;
-    padding-top: 2rem;
   }
   header img {
     width: 5.6875rem;

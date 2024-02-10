@@ -1,8 +1,14 @@
-@import "reset.scss";
-@import "header.scss";
-@import "footer.scss";
-
 #main.service {
+  &:after {
+    position: absolute;
+    background-image: url("/images/blue-tint/backdrop.png");
+    right: unset;
+    left: 0;
+    height: 200vh;
+    overflow: hidden;
+    width: 100%;
+    background-position: top left;
+  }
   /* <!---- SOFTWARE SOLUTION SECTION ----> */
   .software-solution {
     display: flex;
@@ -571,6 +577,16 @@
 /* -----------for small screen devices------------ */
 @media only screen and (max-width: 768px) {
   #main.service {
+    &:after {
+      top: 0;
+      right: 0;
+      left: unset;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("/images/blue-tint/R-backdropM.png");
+      background-position: top right;
+    }
+
     /* <!---- SOFTWARE SOLUTION SECTION ----> */
 
     .software-solution {

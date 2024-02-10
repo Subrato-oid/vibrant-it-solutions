@@ -50,28 +50,56 @@ const ContactForm = (props: ContactFormProps): React.ReactElement => {
           >
             <input type="hidden" name="form-name" value="contact" />
             <div className="input-group">
-              <input type="text" name="Name" placeholder=" " required />
-              <label>Name</label>
+              <input
+                id="contact-name"
+                type="text"
+                name="Name"
+                placeholder=""
+                required
+              />
+              <label htmlFor="contact-name">Name</label>
             </div>
             <div className="input-group">
-              <input type="text" name="Email" placeholder=" " required />
-              <label>Email address</label>
+              <input
+                id="contact-email"
+                type="email"
+                name="Email"
+                placeholder=""
+                required
+              />
+              <label htmlFor="contact-email">Email address</label>
             </div>
 
-            <div className="input-group">
-              <span>YOUR INDUSTRY</span>
-              <select value={selectedOption} onChange={handleChange} required>
+            <div
+              className="input-group"
+              style={{ display: "flex", flexDirection: "column-reverse" }}
+            >
+              <select
+                id="contact-industry"
+                name="industry"
+                value={selectedOption}
+                onChange={handleChange}
+                required
+              >
                 {options.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
                   </option>
                 ))}
               </select>
+              <label htmlFor="contact-industry">YOUR INDUSTRY</label>
             </div>
 
             <div className="input-group">
-              <textarea name="Message" placeholder="" required />
-              <label>What else we should know before responding ?</label>
+              <textarea
+                id="contact-message"
+                name="Message"
+                placeholder=""
+                required
+              />
+              <label htmlFor="contact-message">
+                What else we should know before responding ?
+              </label>
             </div>
 
             <button type="submit" className="button">

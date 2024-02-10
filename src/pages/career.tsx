@@ -1,5 +1,4 @@
 import * as React from "react"
-import "../styles/career.scss"
 import JobOpening from "../components/JobOpening"
 import JoinSection from "../components/JoinSection"
 import Career from "../components/Career"

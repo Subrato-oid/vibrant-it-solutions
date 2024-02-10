@@ -1,6 +1,5 @@
 import * as React from "react"
 import { type PageProps, graphql } from "gatsby"
-import "../styles/blog-post.scss"
 import BlogOverview from "../components/BlogOverview"
 import MoreBlog from "../components/MoreBlog"
 import BaseLayout from "../layouts/BaseLayout"

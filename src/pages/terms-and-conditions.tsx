@@ -1,5 +1,4 @@
 import * as React from "react"
-import "../styles/terms-and-conditions.scss"
 import TandC from "../components/TandC"
 import { type PageProps, graphql } from "gatsby"
 import BaseLayout from "../layouts/BaseLayout"

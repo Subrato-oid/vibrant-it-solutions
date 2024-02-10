@@ -1,7 +1,3 @@
-@import "reset.scss";
-@import "header.scss";
-@import "footer.scss";
-
 #main.terms-and-conditions {
   /* <!---- CAREERS SECTION ----> */
   .tc-tech-tales {
@@ -127,11 +123,8 @@
 
 /* -----------for small screen devices------------ */
 @media screen and (max-width: 1440px) and (min-width: 769px) {
-  #main {
-    padding: 0 3.5vw;
-  }
-
   #main.terms-and-conditions {
+    padding: 0 3.5vw;
     /* <!---- CAREERS SECTION ----> */
     .tc-tech-tales {
       margin-top: 6.75vw;
@@ -177,16 +170,9 @@
 
 /* -----------for small screen devices------------ */
 @media only screen and (max-width: 768px) {
-  #main {
-    padding: 0 1rem;
-  }
   #main.terms-and-conditions {
-    #blue-bg img {
-      height: 31.25rem;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
+    padding: 0 1rem;
+
     /* <!---- HEADER SECTION ----> */
     // header {
     //   margin-top: 0rem;

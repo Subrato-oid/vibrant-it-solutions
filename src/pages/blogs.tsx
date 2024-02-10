@@ -1,6 +1,5 @@
 import * as React from "react"
 import { type PageProps, graphql } from "gatsby"
-import "../styles/blogs.scss"
 import BaseLayout from "../layouts/BaseLayout"
 import BlogsIntro from "../components/BlogsIntro"
 import BlogCarousel from "../components/BlogCarousel"

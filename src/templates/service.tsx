@@ -1,6 +1,5 @@
 import * as React from "react"
 import { type PageProps, graphql } from "gatsby"
-import "../styles/service.scss"
 import SoftwareSolution from "../components/SoftwareSolution"
 import Project from "../components/Projects"
 import Expertise from "../components/Expertise"
