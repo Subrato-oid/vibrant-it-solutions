@@ -34,6 +34,9 @@ const WorkOverview = ({
         <h2>{introTitle}</h2>
         <p>{introDescription}</p>
       </div>
+      <div id="blue-bgM">
+        <img src="/images/blue-tint/backdropMob.png" alt="" />
+      </div>
       <div className="intro-pic">
         <img src={introImage} alt="" />
       </div>

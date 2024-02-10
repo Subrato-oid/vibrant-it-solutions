@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Golos Text", sans-serif;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+:root {
+  --colors-gray-primary-text: #090a0d;
+  --colors-gray-secondary-text: #676a70;
+  --colors-gradient-gradient: linear-gradient(
+    90deg,
+    #3f6fea 0%,
+    #3f70ea 6.67%,
+    #3e72e9 13.33%,
+    #3d77e9 20%,
+    #3c7de7 26.67%,
+    #3b85e6 33.33%,
+    #398fe4 40%,
+    #3799e2 46.67%,
+    #34a4e1 53.33%,
+    #32afdf 60%,
+    #30b8dd 66.67%,
+    #2fc1dc 73.33%,
+    #2ec7da 80%,
+    #2dcbda 86.67%,
+    #2cced9 93.33%,
+    #2ccfd9 100%
+  );
+  --colors-brand-primary: #4070ea;
+  --colors-brand-secondary: #080f1f;
+}
+#main {
+  max-width: 90rem;
+  padding: 0 3.5rem;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+  #main {
+    padding: 0;
+    margin: 0;
+  }
+}

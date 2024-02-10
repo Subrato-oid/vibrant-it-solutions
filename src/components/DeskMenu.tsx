@@ -1,7 +1,7 @@
 import * as React from "react"
 import DropMenu from "./DropMenu"
-import { Link } from "gatsby"
 import useCommon from "../hooks/useCommon"
+import { Link } from "gatsby"
 
 // type DeskMenuProps = {
 //   navItems: {
@@ -27,8 +27,6 @@ const DeskMenu = (): React.ReactElement => {
               ) : (
                 <Link to={el?.link!}>{el?.item}</Link>
               )}
-              {/* <a href={`/${el!.item?.toLowerCase()}`}>{el!.item}</a>
-              {el?.item === "Services" && <Dropdown items={services} />} */}
             </li>
           ))}
         </ul>

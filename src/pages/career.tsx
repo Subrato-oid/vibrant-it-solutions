@@ -6,7 +6,7 @@ import Career from "../components/Career"
 import CareerImage from "../components/CareerImage"
 import Apply from "../components/Apply"
 import { type PageProps, graphql } from "gatsby"
-import CommonLayout from "../layouts/CommonLayout"
+import BaseLayout from "../layouts/BaseLayout"
 
 // Step 1: Define Types
 export type CareerPageFrontmatterType = NonNullable<
@@ -30,13 +30,13 @@ export const CareerPageTemplate = ({
   const { career, openings, perks, applyNow } = frontmatter!
 
   return (
-    <CommonLayout pageName="career">
+    <BaseLayout pageName="career">
       <Career {...career!} />
       <CareerImage image={career?.image!} />
       <JobOpening {...openings!} />
       <JoinSection {...perks!} />
       <Apply {...applyNow!} />
-    </CommonLayout>
+    </BaseLayout>
   )
 }
 

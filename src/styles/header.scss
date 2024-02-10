@@ -1,3 +1,259 @@
+/* <!---- DropDown Menu ----> */
+
+.dropdown-menu-transition.enter {
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-timing-function: ease-in;
+  transition-duration: 300ms;
+  /* transition-duration: 200ms;  */
+}
+
+.dropdown-menu-transition.intial {
+  /* transform: translate(0, 0%);  */
+  translate: 0, 0%;
+  /* opacity: 0; */
+}
+.dropdown-menu-transition.final {
+  /* transform: translate(0, 100%); */
+  translate: 0, 100%;
+  /* opacity: 1; */
+}
+.dropdown-menu-transition.leave {
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-timing-function: ease-in;
+  transition-duration: 300ms;
+  /* transition-duration: 150ms;  */
+  /* transition-timing-function: cubic-bezier(0.4, 0, 1, 1);  */
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+  transition: height 10s ease;
+}
+
+.dropdown-button {
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  border: none;
+  margin-left: 2rem;
+  font-size: 0.875rem;
+  font-family: "Golos Text";
+  font-weight: 400;
+}
+
+.dropdown-menu {
+  display: flex;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  height: fit-content;
+  transition: height 10s ease;
+}
+.dropdown-menu a {
+  margin: 0 !important;
+}
+
+.dropdown-container:hover .dropdown-menu {
+  /* display: flex;
+transform: scaleY(1); */
+  height: max-content;
+}
+
+.dropdown-item {
+  font-size: 1.125rem;
+  padding: 0.5rem;
+  padding-right: 60px;
+  color: #333;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.dropdown-arrow {
+  width: 1vw;
+  height: 1vw;
+}
+
+.dropdown-item:hover {
+  color: #fff;
+  background: var(--colors-gradient-gradient);
+}
+.dropdown-item:hover .dropdown-arrow {
+  filter: invert(100%);
+}
+.active {
+  color: #fff;
+  background: var(--colors-gradient-gradient);
+}
+
+/* <!---- BACKGROUND ----> */
+#blue-bg img {
+  width: 72rem;
+  height: 72rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -10;
+}
+#blue-bgM {
+  display: none;
+}
+
+/* <!---- HEADER SECTION ----> */
 header {
-  background: green !important;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+header img {
+  width: 7.24069rem;
+  height: 2.5rem;
+}
+#slide {
+  display: none;
+}
+.ham {
+  display: none;
+}
+.menu {
+  display: none;
+}
+.close {
+  display: none;
+}
+nav {
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--colors-gray-primary-text);
+  margin-left: 2rem;
+  font-family: Golos Text;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+nav a:hover {
+  color: var(--colors-brand-primary);
+}
+/* <!---- MENU(MOBILE) SECTION ----> */
+#Menu {
+  display: none;
+}
+
+@media screen and (max-width: 1440px) and (min-width: 769px) {
+  /* <!---- DropDown Menu ----> */
+  .dropdown-button {
+    margin-left: 2vw;
+    font-size: 0.875vw;
+  }
+  .dropdown-menu {
+    top: 4rem;
+  }
+  .dropdown-item {
+    padding: 10px;
+    font-size: 12;
+  }
+
+  #blue-bg img {
+    width: 72vw;
+    height: 72vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -10;
+  }
+  #blue-bgM {
+    display: none;
+  }
+
+  header {
+    margin-top: 2vw;
+  }
+  header img {
+    width: 7.24069vw;
+    height: 2.5vw;
+  }
+  #slide {
+    display: none;
+  }
+  .ham {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .close {
+    display: none;
+  }
+
+  nav a {
+    margin-left: 2vw;
+    font-size: 0.875vw;
+  }
+  nav a:hover {
+    color: var(--colors-brand-primary);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #blue-bg img {
+    display: none;
+  }
+  #blue-bgM {
+    display: block;
+    position: absolute;
+    right: 0;
+    z-index: -10;
+  }
+
+  header {
+    padding: 0 1rem;
+    margin-top: 0rem;
+    align-items: center;
+    padding-top: 2rem;
+  }
+  header img {
+    width: 5.6875rem;
+    height: 1.9637rem;
+  }
+  .menu {
+    display: block;
+    position: relative;
+  }
+  .ham {
+    display: block;
+  }
+  .close {
+    display: block;
+    position: absolute;
+    right: -1rem;
+    top: 2rem;
+  }
+  .menu img {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+  }
+  nav ul {
+    display: none;
+  }
 }

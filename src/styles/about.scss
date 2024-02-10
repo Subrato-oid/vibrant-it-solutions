@@ -1,90 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  font-family: "Golos Text", sans-serif;
-  text-decoration: none;
-  scroll-behavior: smooth;
-}
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
-:root {
-  --colors-gray-primary-text: #090a0d;
-  --colors-gray-secondary-text: #676a70;
-  --colors-gradient-gradient: linear-gradient(
-    90deg,
-    #3f6fea 0%,
-    #3f70ea 6.67%,
-    #3e72e9 13.33%,
-    #3d77e9 20%,
-    #3c7de7 26.67%,
-    #3b85e6 33.33%,
-    #398fe4 40%,
-    #3799e2 46.67%,
-    #34a4e1 53.33%,
-    #32afdf 60%,
-    #30b8dd 66.67%,
-    #2fc1dc 73.33%,
-    #2ec7da 80%,
-    #2dcbda 86.67%,
-    #2cced9 93.33%,
-    #2ccfd9 100%
-  );
-  --colors-brand-primary: #4070ea;
-  --colors-brand-secondary: #080f1f;
-}
-#main {
-  max-width: 90rem;
-  padding: 0 3.5rem;
-  margin: 0 auto;
-  /* gap: 8.75rem; */
-}
+@import "reset.scss";
+@import "header.scss";
+@import "footer.scss";
 
 #main.about {
-  /* <!---- HEADER SECTION ----> */
-  header {
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
-  }
-  header img {
-    width: 7.24069rem;
-    height: 2.5rem;
-  }
-  .menu {
-    display: none;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: var(--colors-gray-primary-text);
-    margin-left: 2rem;
-    font-family: Golos Text;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-  }
-  nav a:hover {
-    color: var(--colors-brand-primary);
-  }
-
   /* <!---- CLIENTS SECTION ----> */
   .inspire {
     display: flex;
@@ -301,7 +219,7 @@ body {
     margin-top: 4rem;
     background: linear-gradient(
       131deg,
-      #4070ea -79.06%,
+      #4070ea -350.06%,
       rgba(255, 255, 255, 0) 98.97%
     );
     backdrop-filter: blur(2px);
@@ -609,118 +527,14 @@ body {
     width: 1.25rem;
     height: 1.25rem;
   }
-
-  /* <!---- FOOTER SECTION ----> */
-  footer {
-    color: #fff;
-    border-top: 0.0625rem solid #dfe1e5;
-    padding-top: 3.56rem;
-    margin-top: 4.5rem;
-  }
-  .footer-section {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    border-bottom: 0.0625rem solid #dfe1e5;
-  }
-
-  .footer-column {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 5.75rem;
-    justify-self: flex-end;
-  }
-  .footer-logo {
-    width: 10.861rem;
-    height: 3.75rem;
-    flex-shrink: 0;
-    margin-bottom: 2.5rem;
-  }
-  .footer-social {
-    width: 7.5rem;
-    height: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-  }
-  .footer-column1 p {
-    margin-bottom: 1rem;
-    margin-top: 0;
-    width: 13rem;
-    color: var(--colors-gray-secondary-text);
-    font-family: Golos Text;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-    text-align: left;
-  }
-  .footer-heading {
-    color: var(--colors-gray-primary-text);
-    font-family: Golos Text;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.9375rem;
-    margin-bottom: 1.19rem;
-  }
-  .footer-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    color: var(--colors-gray-secondary-text);
-    font-family: Golos Text;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-  }
-  .footer-list li {
-    margin-bottom: 0.75rem;
-    color: var(--colors-gray-secondary-text);
-    font-family: Golos Text;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-  }
-  .footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 5.25rem;
-    color: var(--colors-gray-secondary-text);
-    font-family: Golos Text;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-  }
 }
 
 /* -----------for small screen devices------------ */
-@media screen and (max-width: 1440px) and (min-width: 781px) {
+@media screen and (max-width: 1440px) and (min-width: 769px) {
   #main {
     padding: 0 3.5vw;
   }
   #main.about {
-    /* <!---- HEADER SECTION ----> */
-    header {
-      margin-top: 2vw;
-    }
-    header img {
-      width: 7.24069vw;
-      height: 2.5vw;
-    }
-
-    nav a {
-      margin-left: 2vw;
-      font-size: 0.875vw;
-    }
-
     /* <!---- CLIENTS SECTION ----> */
     .inspire {
       margin-top: 6.75vw;
@@ -918,99 +732,12 @@ body {
       width: 1.25vw;
       height: 1.25vw;
     }
-
-    /* <!---- FOOTER SECTION ----> */
-    footer {
-      border-top: 0.0625vw solid #dfe1e5;
-      padding-top: 3.56vw;
-      margin-top: 4.5vw;
-    }
-    .footer-section {
-      border-bottom: 0.0625vw solid #dfe1e5;
-    }
-
-    .footer-column {
-      gap: 5.75vw;
-    }
-    .footer-logo {
-      width: 10.861vw;
-      height: 3.75vw;
-      margin-bottom: 2.5vw;
-    }
-    .footer-social {
-      width: 7.5vw;
-      height: 1.5vw;
-    }
-    .footer-social img {
-      width: 1.5vw;
-      height: 1.5vw;
-    }
-    .footer-column1 p {
-      margin-bottom: 1vw;
-      margin-top: 0;
-      width: 13vw;
-      font-size: 0.875vw;
-    }
-
-    .footer-heading {
-      font-size: 1.25vw;
-      line-height: 1.9375vw;
-      margin-bottom: 1.19vw;
-    }
-
-    .footer-list {
-      font-size: 1vw;
-    }
-    .footer-list li {
-      margin-bottom: 0.75vw;
-      font-size: 1vw;
-    }
-    .footer-bottom {
-      height: 5.25vw;
-      font-size: 0.875vw;
-    }
   }
 }
 
 /* -----------for small screen devices------------ */
 @media only screen and (max-width: 768px) {
-  #main {
-    padding: 0;
-    margin: 0;
-  }
-
   #main.about {
-    /* <!---- HEADER SECTION ----> */
-    header {
-      padding: 0 1rem;
-      margin-top: 0rem;
-      align-items: center;
-      padding-top: 2rem;
-    }
-    header img {
-      width: 5.6875rem;
-      height: 1.9637rem;
-    }
-    .menu {
-      display: block;
-      position: relative;
-    }
-
-    .close {
-      display: block;
-      position: absolute;
-      right: -1rem;
-      top: 2rem;
-    }
-    .menu img {
-      width: 1.5rem;
-      height: 1.5rem;
-      flex-shrink: 0;
-    }
-    nav ul {
-      display: none;
-    }
-
     /* <!---- CLIENTS SECTION ----> */
     .inspire {
       display: flex;
@@ -1237,7 +964,7 @@ body {
       margin-top: 0;
       background: linear-gradient(
         131deg,
-        #4070ea -79.06%,
+        #4070ea -350.06%,
         rgba(255, 255, 255, 0) 98.97%
       );
       backdrop-filter: blur(2px);
@@ -1355,31 +1082,6 @@ body {
 
     .sright {
       width: 100%;
-    }
-    /* <!---- FOOTER SECTION ----> */
-    footer {
-      width: 100%;
-      padding: 2.5rem 1rem 0;
-      margin-top: 4rem;
-    }
-    .footer-logo {
-      width: 7.5rem;
-      height: 2.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .footer-section {
-      flex-direction: column;
-      padding-bottom: 4.6rem;
-      gap: 2rem;
-    }
-
-    .footer-column {
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    #fn {
-      display: none;
     }
   }
 }

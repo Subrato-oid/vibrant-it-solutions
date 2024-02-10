@@ -10,7 +10,7 @@ const Career = (props: CareerProps): React.ReactElement => (
       <h1>
         <span className={"line1"}>{props?.titleUp}</span>
         <br />
-        <span className={"line1"}>{props?.titleDown}</span>
+        <span className={"line1"}>{props?.titleDown}</span>&nbsp;
         <span className={"line2"}>{props?.titleHighlight}</span>
       </h1>
       <p>{props?.description}</p>
