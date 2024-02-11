@@ -57,13 +57,7 @@ const Navbar = ({
     setServiceMenuOpen(false)
   }, 500)
   const headerRef = React.useRef<HTMLElement>(null)
-  const [headerBounds, setHeaderBounds] = React.useState<LayoutBounds>({
-    height: 40,
-    margin: {
-      top: 28,
-      bottom: 28,
-    },
-  })
+  const [headerBounds, setHeaderBounds] = React.useState<LayoutBounds>({})
 
   const calculateBounds = (): void => {
     if (headerRef.current) {
@@ -148,7 +142,8 @@ const Navbar = ({
                     flexDirection: "row",
                     width: "100%",
                     paddingTop: `${
-                      headerBounds.height! + 2 * headerBounds.margin?.top!
+                      (headerBounds.height ?? 40) +
+                      2 * (headerBounds.margin?.top ?? 28)
                     }px`,
                   }}
                 >
