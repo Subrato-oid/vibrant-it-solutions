@@ -7,6 +7,45 @@ import DeskMenu from "./DeskMenu"
 import { Popover } from "@headlessui/react"
 import _, { debounce } from "lodash"
 
+export type LayoutBounds = {
+  height?: number
+  width?: number
+  margin?: {
+    left?: number
+    right?: number
+    top?: number
+    bottom?: number
+  }
+  padding?: {
+    left?: number
+    right?: number
+    top?: number
+    bottom?: number
+  }
+}
+
+export const calcauteLayoutBounds = (
+  el: HTMLElement
+): LayoutBounds | undefined => {
+  const styles = window.getComputedStyle(el)
+  return {
+    height: Number.parseInt(styles.height.replace("px", "")),
+    width: Number.parseInt(styles.width.replace("px", "")),
+    margin: {
+      left: Number.parseInt(styles.marginLeft.replace("px", "")),
+      right: Number.parseInt(styles.marginRight.replace("px", "")),
+      top: Number.parseInt(styles.marginTop.replace("px", "")),
+      bottom: Number.parseInt(styles.marginBottom.replace("px", "")),
+    },
+    padding: {
+      left: Number.parseInt(styles.paddingLeft.replace("px", "")),
+      right: Number.parseInt(styles.paddingRight.replace("px", "")),
+      top: Number.parseInt(styles.paddingTop.replace("px", "")),
+      bottom: Number.parseInt(styles.paddingBottom.replace("px", "")),
+    },
+  }
+}
+
 const Navbar = ({
   setMobileMenuActive,
 }: {
@@ -17,6 +56,32 @@ const Navbar = ({
   const debouncedMouseLeave = debounce(() => {
     setServiceMenuOpen(false)
   }, 500)
+  const headerRef = React.useRef<HTMLElement>(null)
+  const [headerBounds, setHeaderBounds] = React.useState<LayoutBounds>({
+    height: 40,
+    margin: {
+      top: 28,
+      bottom: 28,
+    },
+  })
+
+  const calculateBounds = (): void => {
+    if (headerRef.current) {
+      const bounds = calcauteLayoutBounds(headerRef.current)
+      if (bounds) setHeaderBounds(bounds)
+    }
+  }
+
+  React.useLayoutEffect(() => {
+    calculateBounds()
+  }, [])
+
+  React.useEffect(() => {
+    window.addEventListener("resize", calculateBounds)
+    return () => {
+      window.removeEventListener("resize", calculateBounds)
+    }
+  }, [])
 
   const [serviceMenuOpen, setServiceMenuOpen] = React.useState<boolean | null>(
     null
@@ -45,7 +110,7 @@ const Navbar = ({
                 : {}
             }
           >
-            <header>
+            <header ref={headerRef}>
               <Link to="/">
                 <img
                   src={
@@ -81,24 +146,27 @@ const Navbar = ({
                   style={{
                     display: "flex",
                     flexDirection: "row",
-                    paddingTop: "100px",
+                    width: "100%",
+                    paddingTop: `${
+                      headerBounds.height! + 2 * headerBounds.margin?.top!
+                    }px`,
                   }}
                 >
-                  <img
-                    src="/images/Homepage/dropdown1.png"
+                  <div
                     style={{
-                      height: "100%",
-                      objectFit: "cover",
-                      width: "45%",
+                      display: "flex",
+                      backgroundImage: "url('/images/Homepage/dropdown1.png')",
+                      flexGrow: "1",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center center",
+                      backgroundRepeat: "no-repeat",
                     }}
-                  ></img>
+                  ></div>
                   <ul
                     style={{
                       display: "flex",
                       flexDirection: "column",
-                      flexGrow: "1",
-                      flexShrink: "0",
-                      flexBasis: "1",
+                      width: "55%",
                     }}
                   >
                     {services.map((item, index) => (

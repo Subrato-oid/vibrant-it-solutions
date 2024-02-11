@@ -749,18 +749,6 @@
 /* -----------for small screen devices------------ */
 @media screen and (max-width: 1440px) and (min-width: 769px) {
   #main.index {
-    /* <!---- DropDown Menu ----> */
-    .dropdown-button {
-      margin-left: 2vw;
-      font-size: 0.875vw;
-    }
-    .dropdown-menu {
-      top: 4rem;
-    }
-    .dropdown-item {
-      padding: 10px;
-      font-size: 12;
-    }
     /* <!---- HEADER SECTION ----> */
     header {
       margin-top: 2vw;

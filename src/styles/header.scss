@@ -31,7 +31,7 @@
 
   100% {
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translateY(-750px);
+    transform: translateY(-100%);
   }
 }
 
@@ -170,9 +170,7 @@ nav a:hover {
     margin-left: 2vw;
     font-size: 0.875vw;
   }
-  .dropdown-menu {
-    top: 4rem;
-  }
+
   .dropdown-item {
     padding: 10px;
     font-size: 12;

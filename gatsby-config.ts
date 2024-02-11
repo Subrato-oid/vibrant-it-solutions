@@ -68,9 +68,6 @@ const config: GatsbyConfig = {
     },
     {
       resolve: "gatsby-plugin-decap-cms",
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.ts`,
-      },
     },
     {
       resolve: "gatsby-plugin-typescript",
