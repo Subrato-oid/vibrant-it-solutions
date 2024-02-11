@@ -3,7 +3,7 @@ import * as React from "react"
 type WorkOverviewProps = {
   title: string
   description: string
-  image: string
+  heroImage: string
   introTitle: string
   introDescription: string
   introImage: string
@@ -12,7 +12,7 @@ type WorkOverviewProps = {
 const WorkOverview = ({
   title,
   description,
-  image,
+  heroImage,
   introTitle,
   introDescription,
   introImage,
@@ -25,7 +25,7 @@ const WorkOverview = ({
       <p>{description}</p>
     </div>
     <div className="truck">
-      <img src={image} alt="" id="web-view" />
+      <img src={heroImage} alt="" id="web-view" />
       <img src="/images/work/image 9 (1).svg" alt="" id="mob-view" />
     </div>
 

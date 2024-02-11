@@ -38,7 +38,7 @@ export const WorkPageTemplate = ({
   const {
     title,
     description,
-    image,
+    heroImage,
     details,
     achievemnets,
     sampleWork,
@@ -54,7 +54,7 @@ export const WorkPageTemplate = ({
       <WorkOverview
         title={title!}
         description={description!}
-        image={image!}
+        heroImage={heroImage!}
         introTitle={introTitle!}
         introDescription={introDescription!}
         introImage={introImage!}
@@ -91,7 +91,7 @@ export const pageQuery = graphql`
         title
         templateKey
         description
-        image
+        heroImage
         introduction {
           title
           description

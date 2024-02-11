@@ -7,7 +7,7 @@ type JobOpeningProps = NonNullable<CareerPageFrontmatterType>["openings"]
 const JobOpening = (props: JobOpeningProps): React.ReactElement => (
   <div className={"job-opening"}>
     <h2>
-      <span className={"head2"}>{props?.title}</span>
+      <span className={"head2"}>{props?.title}</span>&nbsp;
       <span className={"head1"}>{props?.titleHighlight}</span>
     </h2>
     <div className={"post"}>

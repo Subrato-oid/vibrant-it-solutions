@@ -28,7 +28,12 @@ const BlogCarousel = ({
             <h2>
               <span className="head1">{item.node.frontmatter?.title}</span>
             </h2>
-            <p>{item.node.frontmatter?.overview?.description}</p>
+            <p>
+              {(item.node.frontmatter?.overview?.description + " ").padEnd(
+                60,
+                "\u00a0 "
+              )}
+            </p>
           </div>
         </Link>
       </SwiperSlide>

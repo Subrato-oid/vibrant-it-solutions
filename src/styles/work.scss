@@ -1,4 +1,7 @@
 #main.work {
+  header {
+    padding: 0 3.5rem;
+  }
   padding: 0;
   .tuple {
     margin-top: 9.88rem;
@@ -186,6 +189,9 @@
     gap: 2rem;
     margin-top: 4rem;
   }
+  .project a:-webkit-any-link {
+    color: inherit;
+  }
   .project h3 {
     display: flex;
     align-items: center;
@@ -208,6 +214,9 @@
 /* -----------for small screen devices------------ */
 @media screen and (max-width: 1440px) and (min-width: 769px) {
   #main.work {
+    header {
+      padding: 0 3.5vw;
+    }
     .tuple {
       margin-top: 9.88vw;
       padding: 0 9.5vw;
@@ -337,11 +346,17 @@
       height: 1.5vw;
       flex-shrink: 0;
     }
+    footer {
+      padding: 3.56vw 3.5vw 0;
+    }
   }
 }
 /* -----------for small screen devices------------ */
 @media only screen and (max-width: 768px) {
   #main.work {
+    header {
+      padding: 0 1rem;
+    }
     &:after {
       display: none;
     }
@@ -506,6 +521,9 @@
       font-weight: 400;
       line-height: 160%;
       margin-top: 0.5rem;
+    }
+    footer {
+      padding: 2.5rem 1rem 0;
     }
   }
 }

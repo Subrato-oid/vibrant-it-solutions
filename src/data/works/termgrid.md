@@ -4,6 +4,7 @@ title: Termgrid
 description: We helped Termgrid reach for the stars with a redesigned,
   expressive brand to match their ambitions for years to come.
 thumbnail: /images/frame-74.svg
+heroImage: /images/truck.svg
 introduction:
   image: /images/frame-85.svg
   description: >-

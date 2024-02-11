@@ -4,6 +4,7 @@ title: Wonder
 description: We're more than an IT Solutions Company; we infuse every project
   with passion and purpose.
 thumbnail: /images/frame-71.svg
+heroImage: /images/truck.svg
 introduction:
   image: /images/frame-85.svg
   description: >-

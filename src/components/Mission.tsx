@@ -12,7 +12,6 @@ const Mission = (props: NonNullable<MissionProps>): React.ReactElement => (
           text || (
             <div key={`br-mission-${i}`}>
               <br />
-              <br />
             </div>
           )
       )}

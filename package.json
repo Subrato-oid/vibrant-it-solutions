@@ -51,6 +51,8 @@
     "react-icons": "^4.12.0",
     "react-toastify": "^10.0.4",
     "sass": "^1.70.0",
+    "smooth-scrollbar": "^8.8.4",
+    "smooth-scrollbar-react": "^2.4.1",
     "swiper": "^11.0.5"
   },
   "devDependencies": {

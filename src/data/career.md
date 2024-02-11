@@ -10,8 +10,8 @@ career:
     to advance in your career.
   image: /images/frame-69.svg
 openings:
-  titleHighlight: Job
-  title: Openings
+  titleHighlight: Openings
+  title: Job
   opening:
     - title: Front-End Developer
       description: Learn by developing meaningful products

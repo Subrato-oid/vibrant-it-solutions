@@ -4,6 +4,7 @@ title: Tuple
 description: We helped Tuple reach for the stars with a redesigned, expressive
   brand to match their ambitions for years to come.
 thumbnail: /images/frame-71.svg
+heroImage: /images/truck.svg
 introduction:
   image: /images/frame-85.svg
   description: >-

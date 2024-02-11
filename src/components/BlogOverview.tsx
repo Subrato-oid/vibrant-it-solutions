@@ -14,8 +14,12 @@ const BlogOverview = (
         <h1>
           <span className="line1">{props.titleTop}</span>
           <br />
-          <span className="line1">{props.titleDown}</span>
-          <br />
+          {!!(props.titleDown ?? "") && (
+            <>
+              <span className="line1">{props.titleDown}</span>
+              <br />
+            </>
+          )}
           <span className="line2">{props.titleHighlight}</span>
         </h1>
         <p>{props.description}</p>

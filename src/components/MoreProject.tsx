@@ -16,7 +16,7 @@ const MoreProject = ({
   return (
     <div className="more-projects">
       <h2>
-        <span className="head2">More</span>
+        <span className="head2">More</span>&nbsp;
         <span className="head1">Projects</span>
       </h2>
       <div className="project">
@@ -47,23 +47,3 @@ const MoreProject = ({
 }
 
 export default MoreProject
-
-// {<div className="recent-projects">
-// <img src="/images/work/image 10.svg" alt="" />
-// <h3>Wonder<img src="/images/work/arrow-right.svg" alt="" /></h3>
-// <p>We're more than an IT Solutions Company; we infuse every project with passion and purpose.</p>
-// </div>
-// <div className="recent-projects">
-// <div className="recent-projects">
-//   <img src="/images/work/image 11.svg" alt="" />
-//   <h3>Termgrid <img src="/images/work/arrow-right.svg" alt="" /></h3>
-//   <p>We're more than an IT Solutions Company; we infuse every project with passion and purpose.</p>
-// </div>
-// </div>
-// <div className="recent-projects">
-// <div className="recent-projects">
-//   <img src="/images/work/image 12.svg" alt="" />
-//   <h3>Descates <img src="/images/work/arrow-right.svg" alt="" /></h3>
-//   <p>We're more than an IT Solutions Company; we infuse every project with passion and purpose.</p>
-// </div>
-// </div>}

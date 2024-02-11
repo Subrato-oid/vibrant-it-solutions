@@ -93,6 +93,7 @@
     flex-direction: column;
     gap: 2.5rem;
     width: 35rem;
+    margin-top: 8.438rem;
     /* padding: 3.14rem 0; */
   }
   .form {
@@ -117,7 +118,6 @@
 
   .input-group {
     position: relative;
-    margin-bottom: 1.25rem;
   }
 
   .input-group input {
@@ -127,7 +127,7 @@
     color: #676a70;
     background: transparent;
     border: 0;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid #ccc;
     outline: none;
     transition: border-color 0.3s;
   }
@@ -139,7 +139,7 @@
     color: #676a70;
     background: transparent;
     border: 0;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid #ccc;
     outline: none;
     transition: border-color 0.3s;
   }
@@ -151,7 +151,7 @@
     color: #676a70;
     background: transparent;
     border: 0;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid #ccc;
     outline: none;
     transition: border-color 0.3s;
   }
@@ -329,6 +329,7 @@
       flex-direction: column;
       gap: 2.5vw;
       width: 35vw;
+      margin-top: 8.438vw;
     }
     .form {
       font-size: 1.25vw;
@@ -348,6 +349,22 @@
     .container-2 p {
       font-family: Golos Text;
       font-size: 1vw;
+    }
+
+    .input-group select {
+      font-size: 1.25vw;
+    }
+
+    .input-group textarea {
+      font-size: 1.25vw;
+    }
+
+    .input-group input {
+      font-size: 1.25vw;
+    }
+
+    .input-group label {
+      font-size: 1.25vw;
     }
 
     .button {

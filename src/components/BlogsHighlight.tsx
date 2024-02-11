@@ -40,7 +40,9 @@ const BlogsHighlight = ({
                   to={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}
                 >
                   <img src={item.node.frontmatter?.thumbnail!} alt="" />
-                  <h4>{item.node.frontmatter?.title}</h4>
+                  <h4>
+                    {(item.node.frontmatter?.title + " ").padEnd(60, "\u00a0 ")}
+                  </h4>
                   <div id="author">
                     <img
                       src={item.node.frontmatter?.overview?.details?.profile!}
@@ -54,6 +56,8 @@ const BlogsHighlight = ({
                       ),
                       "dd MMM, yyyy"
                     )}
+                    <div id="ellipse"></div>
+                    {item.node.frontmatter?.tag}
                   </div>
                 </Link>
               </SwiperSlide>
@@ -69,7 +73,9 @@ const BlogsHighlight = ({
             >
               <div key={i} className="H-story">
                 <img src={item.node.frontmatter?.thumbnail!} alt="" />
-                <h4>{item.node.frontmatter?.title}</h4>
+                <h4>
+                  {(item.node.frontmatter?.title + " ").padEnd(60, "\u00a0 ")}
+                </h4>
                 <p>{item.node.frontmatter?.overview?.description}</p>
                 <div id="author">
                   <img
@@ -84,8 +90,8 @@ const BlogsHighlight = ({
                     ),
                     "dd MMM, yyyy"
                   )}
-                  {/* <div id="ellipse"></div>
-          {item.node.frontmatter?.overview?.details?.topic} */}
+                  <div id="ellipse"></div>
+                  {item.node.frontmatter?.tag}
                 </div>
               </div>
             </Link>

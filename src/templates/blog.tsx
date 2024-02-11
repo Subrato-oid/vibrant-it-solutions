@@ -39,7 +39,7 @@ export const BlogPageTemplate = ({
   return (
     <BaseLayout pageName="blog-post">
       <BlogOverview {...overview!} />
-      <HTMLContent className="background" content={he.decode(content!)} />
+      <HTMLContent className="" content={he.decode(content!)} />
       <MoreBlog data={list} />
     </BaseLayout>
   )

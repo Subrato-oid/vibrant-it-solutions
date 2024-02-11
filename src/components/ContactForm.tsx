@@ -67,7 +67,7 @@ const ContactForm = (props: ContactFormProps): React.ReactElement => {
                 placeholder=""
                 required
               />
-              <label htmlFor="contact-email">Email address</label>
+              <label htmlFor="contact-email">Email*</label>
             </div>
 
             <div

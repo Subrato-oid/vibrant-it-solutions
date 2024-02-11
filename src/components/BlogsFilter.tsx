@@ -54,42 +54,60 @@ const BlogsFilter = ({
 
       {breakpoints.sm ? (
         <div style={{ width: "100vw" }}>
-          <Swiper
-            modules={[Pagination, Navigation]}
-            navigation
-            spaceBetween={"16px"}
-            autoplay={{ delay: 100000000 }}
-            slidesPerView={1.2}
-            pagination={{ clickable: true }}
-          >
-            {slides.map((item) => (
-              <SwiperSlide key={item.node.frontmatter?.title}>
-                {/* <div className="story-slide"> */}
-                <img
-                  src={item.node.frontmatter?.thumbnail!}
-                  alt=""
-                  width={"100%"}
-                />
-                <h4>{item.node.frontmatter?.title!}</h4>
-                {/* <p>{item.node.frontmatter?.overview?.description}</p> */}
-                <div id="author">
-                  <img
-                    src={item.node.frontmatter?.overview?.details?.profile!}
-                    alt=""
-                  />
-                  {item.node.frontmatter?.overview?.details?.author}
-                  <div id="ellipse"></div>
-                  {format(
-                    parseISO(
-                      item.node.frontmatter?.overview?.details?.publishDate!
-                    ),
-                    "dd MMM, yyyy"
-                  )}
-                </div>
-                {/* </div> */}
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="story-slide">
+            <Swiper
+              modules={[Pagination, Navigation]}
+              navigation
+              spaceBetween={"16px"}
+              autoplay={{ delay: 100000000 }}
+              slidesPerView={1.2}
+              pagination={{ clickable: true }}
+            >
+              {slides.map((item, index) => (
+                <SwiperSlide key={item.node.frontmatter?.title}>
+                  <div className="story">
+                    <Link
+                      key={index}
+                      to={`/blogs/${_.kebabCase(
+                        item.node.frontmatter?.title!
+                      )}`}
+                    >
+                      <img
+                        src={item.node.frontmatter?.thumbnail!}
+                        alt=""
+                        width={"100%"}
+                      />
+                      <h4>
+                        {(item.node.frontmatter?.title! + " ").padEnd(
+                          60,
+                          "\u00a0 "
+                        )}
+                      </h4>
+                      <div id="author">
+                        <img
+                          src={
+                            item.node.frontmatter?.overview?.details?.profile!
+                          }
+                          alt=""
+                        />
+                        {item.node.frontmatter?.overview?.details?.author}
+                        <div id="ellipse"></div>
+                        {format(
+                          parseISO(
+                            item.node.frontmatter?.overview?.details
+                              ?.publishDate!
+                          ),
+                          "dd MMM, yyyy"
+                        )}
+                        <div id="ellipse"></div>
+                        {item.node.frontmatter?.tag}
+                      </div>
+                    </Link>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       ) : (
         <div className="story-slide">
@@ -100,7 +118,9 @@ const BlogsFilter = ({
             >
               <div className="story">
                 <img src={item.node.frontmatter?.thumbnail!} alt="" />
-                <h4>{item.node.frontmatter?.title!}</h4>
+                <h4>
+                  {(item.node.frontmatter?.title! + " ").padEnd(60, "\u00a0 ")}
+                </h4>
                 <p>{item.node.frontmatter?.overview?.description}</p>
                 <div id="author">
                   <img
@@ -115,6 +135,8 @@ const BlogsFilter = ({
                     ),
                     "dd MMM, yyyy"
                   )}
+                  <div id="ellipse"></div>
+                  {item.node.frontmatter?.tag}
                 </div>
               </div>
             </Link>

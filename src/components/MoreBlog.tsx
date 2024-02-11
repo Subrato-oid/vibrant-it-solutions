@@ -34,14 +34,16 @@ const MoreBlog = ({ data }: { data: MoreBlogProps }): React.ReactElement => {
           modules={[Pagination, Navigation]}
           navigation
           slidesPerView={breakpoint.sm ? 1.2 : 3}
-          spaceBetween={"50rem"}
+          spaceBetween={32}
         >
           {data.map((item, index) => (
             <SwiperSlide key={index}>
               <Link to={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}>
                 <div className="blog-post-story">
                   <img src={item.node.frontmatter?.thumbnail!} alt="" />
-                  <h4>{item.node.frontmatter?.title}</h4>
+                  <h4>
+                    {(item.node.frontmatter?.title + " ").padEnd(60, "\u00a0 ")}
+                  </h4>
                   <p id="author">
                     <img
                       src={item.node.frontmatter?.overview?.details?.profile!}
@@ -55,9 +57,8 @@ const MoreBlog = ({ data }: { data: MoreBlogProps }): React.ReactElement => {
                       ),
                       "dd MMM, yyyy"
                     )}
-
-                    {/* <img src="media/blog/Ellipse 14.svg" alt="" />
-                  {item.node.frontmatter?.overview?.details?.topic} */}
+                    <div id="ellipse"></div>
+                    {item.node.frontmatter?.tag!}
                   </p>
                 </div>
               </Link>
