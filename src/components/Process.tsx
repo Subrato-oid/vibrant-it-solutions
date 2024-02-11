@@ -6,8 +6,6 @@ import "swiper/css"
 import "swiper/css/pagination"
 import NavButtons from "./NavButtons"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
-// import "swiper/css/pagination"
-// import "swiper/css/navigation"
 
 type ProcessProps = NonNullable<IndexPageFrontmatterType>["process"]
 
@@ -43,7 +41,7 @@ const Process = (props: NonNullable<ProcessProps>): React.ReactElement => {
         id="process-swiper"
         ref={sliderRef}
         modules={[Pagination, Navigation]}
-        slidesPerView={breakpoint.sm ? 1 : 2}
+        slidesPerView={breakpoint.sm ? 1.25 : "auto"}
         spaceBetween={breakpoint.sm ? 40 : 64}
         pagination={{ type: "progressbar" }}
       >

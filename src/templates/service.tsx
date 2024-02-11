@@ -19,7 +19,6 @@ export type ServiceWorkEdgeType = NonNullable<ServiceWorkType>["edges"]
 const ServicePage = ({
   data,
 }: PageProps<Queries.ServicePageByIdQuery>): React.ReactElement => {
-  console.log("service", data.service)
   return (
     <ServicePageTemplate service={data.service} workList={data.works.edges} />
   )
@@ -36,7 +35,6 @@ export const ServicePageTemplate = ({
 }): React.ReactElement => {
   const { hero, expertise, project } = service?.frontmatter!
   const { titleBefore, titleHighlight, titleAfter } = project!
-  console.log(workList)
   return (
     <CommonLayout pageName="service">
       <SoftwareSolution {...hero!} />

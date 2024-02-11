@@ -3,8 +3,6 @@ import useCommon from "../hooks/useCommon"
 
 const Milestones = (): React.ReactElement => {
   const { milestone } = useCommon()
-  console.log(milestone)
-
   return (
     <div className={"about-milestones"}>
       <h2>

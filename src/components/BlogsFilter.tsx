@@ -31,8 +31,6 @@ const BlogsFilter = ({
     } else {
       setSlides(data.filter((item) => item.node.frontmatter?.tag === tag))
     }
-    console.log(slides)
-    console.log(tag)
   }, [tag])
 
   return (

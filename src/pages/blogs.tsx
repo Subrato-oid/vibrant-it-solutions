@@ -39,8 +39,6 @@ export const BlogPageTemplate = ({
   data: BlogListType
   frontmatter: BlogsFrontmatterType
 }): React.ReactElement => {
-  console.log("data", frontmatter)
-
   return (
     <BaseLayout pageName={"blogs"}>
       <BlogsIntro {...frontmatter!} />

@@ -8,7 +8,6 @@ type Prop = {
 }
 const ServicePagePreview = ({ entry }: Prop): React.ReactElement => {
   const serviceData = entry.getIn(["data"]).toJS()
-  console.log(serviceData)
   if (serviceData === null) return <div>Loading...</div>
   return <ServicePageTemplate serviceNode={serviceData} />
 }

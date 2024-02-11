@@ -21,7 +21,6 @@ export type BlogPageHTMLType = NonNullable<BlogPageType>["html"]
 const BlogPage = ({
   data,
 }: PageProps<Queries.BlogPageByIdQuery>): React.ReactElement => {
-  console.log("work", data.blog)
   return <BlogPageTemplate blog={data.blog} list={data.blogs.edges} />
 }
 export default BlogPage

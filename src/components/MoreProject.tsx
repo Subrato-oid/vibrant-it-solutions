@@ -11,7 +11,6 @@ const MoreProject = ({
   data: NonNullable<MoreProjectProps>
 }): React.ReactElement => {
   const location = useLocation()
-  console.log(location)
 
   return (
     <div className="more-projects">

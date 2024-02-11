@@ -29,8 +29,6 @@ export const IndexPageTemplate = ({
 }: {
   frontmatter: IndexPageFrontmatterType
 }): React.ReactElement => {
-  console.log("data", frontmatter)
-
   const { hero, client, about, services, process } = frontmatter!
   return (
     <CommonLayout pageName="index">

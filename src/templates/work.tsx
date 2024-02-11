@@ -21,8 +21,6 @@ export type WorkPageFrontmatterType = NonNullable<WorkPageType>["frontmatter"]
 const WorkPage = ({
   data,
 }: PageProps<Queries.WorkPageByIdQuery>): React.ReactElement => {
-  console.log("work", data.work)
-  console.log("works", data.works.edges)
   return <WorkPageTemplate work={data.work} list={data.works.edges} />
 }
 export default WorkPage
