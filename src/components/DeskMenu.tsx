@@ -36,7 +36,7 @@ const DeskMenu = ({
                 >
                   Services
                   <ChevronDownIcon
-                    className={serviceMenuOpen! ? "rotate-down" : ""}
+                    className={serviceMenuOpen ? "rotate-down" : ""}
                     style={{ height: "18px", width: "18px" }}
                     aria-hidden="true"
                   />
