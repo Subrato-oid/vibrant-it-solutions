@@ -14,7 +14,9 @@ const Navbar = ({
 }): React.ReactElement => {
   const { header, services } = useCommon()
   const breakpoint = useBreakpoint()
-  const debouncedMouseLeave = debounce(() => { setServiceMenuOpen(false) }, 500)
+  const debouncedMouseLeave = debounce(() => {
+    setServiceMenuOpen(false)
+  }, 500)
 
   const [serviceMenuOpen, setServiceMenuOpen] = React.useState<boolean | null>(
     null
