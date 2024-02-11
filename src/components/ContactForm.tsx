@@ -1,9 +1,12 @@
 import * as React from "react"
 import { type ContactPageFrontmatterType } from "../pages/contact"
+import { NetlifyForm, Honeypot } from "react-netlify-forms"
 
 type ContactFormProps = NonNullable<ContactPageFrontmatterType>
 
-const ContactForm = (props: ContactFormProps): React.ReactElement => {
+const ContactForm = (
+  props: NonNullable<ContactFormProps>
+): React.ReactElement => {
   const [selectedOption, setSelectedOption] = React.useState<string>("")
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -29,7 +32,7 @@ const ContactForm = (props: ContactFormProps): React.ReactElement => {
     <>
       <div className="contact-tech-tales">
         <div className="contact-tales">
-          <h5>{props.kicker}</h5>
+          <h5>{props?.kicker}</h5>
           <h1>
             <span className="line1">{props.title}</span> <br />
             <span className="line2">{props.titleHighlight}</span>
@@ -40,73 +43,88 @@ const ContactForm = (props: ContactFormProps): React.ReactElement => {
 
       <div className="container">
         <div className="form-container">
-          <form
-            id="contact"
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            className="flex flex-col max-w-md mx-auto"
-          >
-            <input type="hidden" name="form-name" value="contact" />
-            <div className="input-group">
-              <input
-                id="contact-name"
-                type="text"
-                name="Name"
-                placeholder=""
-                required
-              />
-              <label htmlFor="contact-name">Name</label>
-            </div>
-            <div className="input-group">
-              <input
-                id="contact-email"
-                type="email"
-                name="Email"
-                placeholder=""
-                required
-              />
-              <label htmlFor="contact-email">Email*</label>
-            </div>
+          {/* <form
+          id="contact"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          className="flex flex-col max-w-md mx-auto"
+        >
+          <input type="hidden" name="form-name" value="contact" /> */}
 
-            <div
-              className="input-group"
-              style={{ display: "flex", flexDirection: "column-reverse" }}
-            >
-              <select
-                id="contact-industry"
-                name="industry"
-                value={selectedOption}
-                onChange={handleChange}
-                required
-              >
-                {options.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-              <label htmlFor="contact-industry">YOUR INDUSTRY</label>
-            </div>
+          <NetlifyForm name="Contact" action="/thanks" honeypotName="bot-field">
+            {({ success, error }: { success: boolean, error: boolean }) => (
+              <>
+                <Honeypot />
+                {success && <p>Thanks for contacting us!</p>}
+                {error && (
+                  <p>
+                    Sorry, we could not reach our servers. Please try again
+                    later.
+                  </p>
+                )}
+                <div className="input-group">
+                  <input
+                    id="contact-name"
+                    type="text"
+                    name="Name"
+                    placeholder=""
+                    required
+                  />
+                  <label htmlFor="contact-name">Name</label>
+                </div>
+                <div className="input-group">
+                  <input
+                    id="contact-email"
+                    type="email"
+                    name="Email"
+                    placeholder=""
+                    required
+                  />
+                  <label htmlFor="contact-email">Email*</label>
+                </div>
 
-            <div className="input-group">
-              <textarea
-                id="contact-message"
-                name="Message"
-                placeholder=""
-                required
-              />
-              <label htmlFor="contact-message">
-                What else we should know before responding ?
-              </label>
-            </div>
+                <div
+                  className="input-group"
+                  style={{ display: "flex", flexDirection: "column-reverse" }}
+                >
+                  <select
+                    id="contact-industry"
+                    name="industry"
+                    value={selectedOption}
+                    required
+                    onChange={handleChange}
+                  >
+                    {options.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                  <label htmlFor="contact-industry">YOUR INDUSTRY</label>
+                </div>
 
-            <button type="submit" className="button">
-              {props.button?.buttonText}
-              <img src={props.button?.icon!} alt="" />
-            </button>
-          </form>
+                <div className="input-group">
+                  <textarea
+                    id="contact-message"
+                    name="Message"
+                    placeholder=""
+                    required
+                  />
+                  <label htmlFor="contact-message">
+                    What else we should know before responding ?
+                  </label>
+                </div>
+
+                <button type="submit" className="button">
+                  {props.button?.buttonText}
+                  <img src={props.button?.icon!} alt="" />
+                </button>
+              </>
+            )}
+          </NetlifyForm>
+          {/* </form> */}
         </div>
         <div className="image-container">
           <img src="/images/contact-us/Group 34685.svg" alt="Image" />

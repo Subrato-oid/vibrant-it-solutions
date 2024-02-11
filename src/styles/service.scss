@@ -198,6 +198,10 @@
     line-height: 160%;
     border-bottom: 1px solid black;
   }
+  .view-project a:-webkit-any-link {
+    color: inherit;
+  }
+
   .view-project img {
     width: 1.5rem;
     height: 1.5rem;

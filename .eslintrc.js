@@ -47,5 +47,6 @@ module.exports = {
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/naming-convention": 0,
     "@typescript-eslint/ban-types": 0,
+    "react/prop-types": "off",
   },
 }

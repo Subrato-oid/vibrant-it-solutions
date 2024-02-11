@@ -78,7 +78,7 @@ footer {
   font-weight: 400;
   line-height: 160%;
 }
-.footer-list li a:link {
+.footer-list li a:-webkit-any-link {
   color: inherit;
 }
 

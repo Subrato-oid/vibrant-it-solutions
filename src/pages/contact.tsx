@@ -40,13 +40,6 @@ export const pageQuery = graphql`
         title
         titleHighlight
         description
-
-        contactDeatils {
-          field1
-          field2
-          field3
-          field4
-        }
         button {
           buttonText
           icon
