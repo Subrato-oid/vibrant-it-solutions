@@ -1,4 +1,7 @@
 #main.index {
+  &:after {
+    display: none;
+  }
   .rotate-down {
     transform: rotate(180deg);
   }
@@ -897,9 +900,6 @@
     .left img {
       width: 100%;
       height: auto;
-    }
-    .a-content {
-      /* max-width: 27.81vw; */
     }
     .right h2 .head2 {
       font-size: 2.5vw;

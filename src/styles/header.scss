@@ -1,30 +1,38 @@
 /* <!---- DropDown Menu ----> */
-
-.dropdown-menu-transition.enter {
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform;
-  transition-timing-function: ease-in;
-  transition-duration: 300ms;
-  /* transition-duration: 200ms;  */
+.dropdown-menu.service-none {
+  transform: translateY(-750px);
+}
+.dropdown-menu.service-false {
+  animation: dropdownRollup 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal
+    forwards;
+}
+.dropdown-menu.service-true {
+  animation: dropdownRolldown 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal
+    forwards;
 }
 
-.dropdown-menu-transition.intial {
-  /* transform: translate(0, 0%);  */
-  translate: 0, 0%;
-  /* opacity: 0; */
+@keyframes dropdownRolldown {
+  0% {
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateY(-750px);
+  }
+
+  100% {
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateY(0);
+  }
 }
-.dropdown-menu-transition.final {
-  /* transform: translate(0, 100%); */
-  translate: 0, 100%;
-  /* opacity: 1; */
-}
-.dropdown-menu-transition.leave {
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform;
-  transition-timing-function: ease-in;
-  transition-duration: 300ms;
-  /* transition-duration: 150ms;  */
-  /* transition-timing-function: cubic-bezier(0.4, 0, 1, 1);  */
+
+@keyframes dropdownRollup {
+  0% {
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateY(0);
+  }
+
+  100% {
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateY(-750px);
+  }
 }
 
 .dropdown-container {
@@ -44,25 +52,33 @@
   font-weight: 400;
 }
 
+.dropdown-button:focus-visible {
+  outline: none;
+}
+
 .dropdown-menu {
   display: flex;
   position: absolute;
-  top: 60px;
+  top: 0;
   left: 0;
   right: 0;
-  background-color: #f9f9f9;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  background-color: white;
   height: fit-content;
-  transition: height 10s ease;
+  z-index: 100;
 }
 .dropdown-menu a {
   margin: 0 !important;
+  height: 72px;
+  padding: 20px 24px;
+
+  &:first-of-type {
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
+  }
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
 }
 
 .dropdown-container:hover .dropdown-menu {
-  /* display: flex;
-transform: scaleY(1); */
   height: max-content;
 }
 
@@ -100,6 +116,8 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
+  z-index: 199;
+  position: relative;
 }
 header img {
   width: 7.24069rem;
