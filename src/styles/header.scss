@@ -1,6 +1,6 @@
 /* <!---- DropDown Menu ----> */
 .dropdown-menu.service-none {
-  transform: translateY(-750px);
+  transform: translateY(-150%);
 }
 .dropdown-menu.service-false {
   animation: dropdownRollup 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal
@@ -14,7 +14,7 @@
 @keyframes dropdownRolldown {
   0% {
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translateY(-750px);
+    transform: translateY(-150%);
   }
 
   100% {
