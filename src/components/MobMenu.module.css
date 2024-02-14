@@ -62,7 +62,7 @@
   height: 1.25rem;
 }
 
-.active-menu {
+.active-menu-item {
   background-image: var(--colors-gradient-gradient);
   background-clip: text;
   -webkit-background-clip: text;

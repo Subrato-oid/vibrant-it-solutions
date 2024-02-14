@@ -95,6 +95,10 @@ footer {
   line-height: 160%;
 }
 
+.footer-bottom a:-webkit-any-link {
+  color: inherit;
+}
+
 @media screen and (max-width: 1440px) and (min-width: 769px) {
   footer {
     color: #fff;

@@ -87,23 +87,7 @@ const Navbar = ({
           setMobileMenuActive(open)
         }, [open])
         return (
-          <div
-            style={
-              breakpoint.sm && open
-                ? {
-                    height: "100vh",
-                    background:
-                      "linear-gradient(157deg, #080F1F 22%, #093B9E 159.75%)",
-                    overflow: "scroll",
-                    display: "flex",
-                    flexDirection: "column",
-                    position: "fixed",
-                    inset: "0px",
-                    zIndex: "1000",
-                  }
-                : {}
-            }
-          >
+          <div className={breakpoint.sm && open ? "mob-menu" : ""}>
             <header ref={headerRef}>
               <Link to="/">
                 <img

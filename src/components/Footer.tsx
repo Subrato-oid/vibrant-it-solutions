@@ -52,7 +52,10 @@ const Footer = (): React.ReactElement => {
 
       <div className="footer-bottom">
         <p>&copy; 2015-2023 Vibrant IT Solutions. All rights reserved.</p>
-        <p id="fn">Terms & Conditions | Privacy Policy | Cookie Preferences</p>
+        <p id="fn">
+          <Link to="/terms-and-conditions">Terms & Conditions</Link> | Privacy
+          Policy | Cookie Preferences
+        </p>
       </div>
     </footer>
   )

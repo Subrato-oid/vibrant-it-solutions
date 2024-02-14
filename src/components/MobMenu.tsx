@@ -8,7 +8,7 @@ import {
   mobListItems,
   serviceListItems,
   menuButton,
-  activeMenu
+  activeMenuItem
 } from "./MobMenu.module.css"
 
 // type MobMenuProps = NonNullable<IndexPageFrontmatterType>["MobMenu"]
@@ -30,7 +30,7 @@ const MobMenu = ({ open }: { open: boolean }): ReactElement => {
             <Link
               to="/"
               style={{ color: "inherit" }}
-              activeClassName={activeMenu}
+              activeClassName={activeMenuItem}
             >
               Home
             </Link>
@@ -88,7 +88,7 @@ const MobMenu = ({ open }: { open: boolean }): ReactElement => {
                                 <Link
                                   to={`/services/${_.kebabCase(item)}`}
                                   style={{ color: "inherit" }}
-                                  activeClassName={activeMenu}
+                                  activeClassName={activeMenuItem}
                                 >
                                   {item}
                                 </Link>
@@ -106,7 +106,7 @@ const MobMenu = ({ open }: { open: boolean }): ReactElement => {
                 <Link
                   to={item?.link!}
                   style={{ color: "inherit" }}
-                  activeClassName={activeMenu}
+                  activeClassName={activeMenuItem}
                 >
                   {item?.item}
                 </Link>

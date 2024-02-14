@@ -236,4 +236,20 @@ nav a:hover {
   nav ul {
     display: none;
   }
+
+  /* <!---- MENU(MOBILE) SECTION ----> */
+  #Menu {
+    display: none;
+  }
+
+  .mob-menu {
+    height: 100vh;
+    background: linear-gradient(157deg, #080f1f 22%, #093b9e 159.75%);
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0px;
+    z-index: 1000;
+  }
 }

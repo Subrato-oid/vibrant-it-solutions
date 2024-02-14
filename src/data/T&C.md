@@ -39,7 +39,6 @@ Uses and Disclosures of Personal Information: We use the following Personal Info
 Uses and Disclosures of Non-Personal Information: We use Non-Personal Information we collect for Site analytics purposes. For example, we use cookies and other information derived from our Site analytics tools to analyze trends and our Users' preferences in using the Site, which helps us improve the Site and Users’ experiences on the Site. We may also disclose such Non-Personal Information to third party service providers for such purposes and as described in this Privacy Policy.
 
 Uses and Disclosures of Personal Information: We use the following Personal Information for the purposes described below:
-
 * We use names, email addresses, company/organization affiliation, your title with such company/organization and phone numbers of Users to respond to questions and comments submitted to us through a Contact Us Form.
 * We use names, email addresses, company/organization affiliation, your title with such company/organization, phone numbers, and other Personal Information you include on your CV or otherwise provide as part of a job application that you submit to us to contact you about job opening(s) and/or evaluate your candidacy for job opening(s).
 * We use IP addresses for our Site analytics purposes. We may also disclose IP addresses to third party service providers for such purposes as described in this Privacy Policy; and
