@@ -681,6 +681,7 @@ collections:
                   { label: Title Highlight, name: titleHighlight, widget: string },
                   { label: Heading, name: heading, widget: string },
                   { label: Description, name: description, widget: text },
+                  { label: Company's Recruiting Mail Id, name: email, widget: string },
                   {
                     lable: Button,
                     name: button,

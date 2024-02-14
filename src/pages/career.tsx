@@ -79,6 +79,7 @@ export const pageQuery = graphql`
           titleHighlight
           heading
           description
+          email
           button {
             buttonText
             icon

@@ -17,7 +17,7 @@ const Apply = (props: ApplyProps): React.ReactElement => (
       <h3>{props?.heading}</h3>
       <p>{props?.description}</p>
       <Link
-        to="mailto: abc@example.com"
+        to={`mailto: ${props?.email}`}
         style={{ color: "#fff" }}
         className={"button"}
       >
