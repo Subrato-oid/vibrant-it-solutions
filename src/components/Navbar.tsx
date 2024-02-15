@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import MobMenu from "./MobMenu"
 import DeskMenu from "./DeskMenu"
+import { Squash as Hamburger } from "hamburger-react"
 
 export type LayoutBounds = {
   height?: number
@@ -107,23 +108,15 @@ const Navbar = ({
         )}
 
         {breakpoint.sm && (
-          <button
-            title="hamburger menu button"
-            className="ham"
-            onClick={(e) => {
-              e.preventDefault()
+          <Hamburger
+            size={24}
+            duration={1}
+            color={mobileMenuActive ? "#ffffff" : "#676A70"}
+            toggled={mobileMenuActive!}
+            toggle={() => {
               setMobileMenuActive(!mobileMenuActive)
             }}
-          >
-            <img
-              className={"menu"}
-              style={{ width: "fit-content" }}
-              src={
-                mobileMenuActive ? "/images/x-white.svg" : "/images/menu.svg"
-              }
-              alt=""
-            />
-          </button>
+          />
         )}
       </header>
 
