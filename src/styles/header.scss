@@ -238,8 +238,8 @@
         .leave-transition {
           transition-property: transform, opacity;
           transition:
-            opacity 250ms ease-in,
-            transform 250ms cubic-bezier(0.19, 1, 0.22, 1) 250ms;
+            opacity 300ms ease-in,
+            transform 300ms cubic-bezier(0.19, 1, 0.22, 1) 250ms;
         }
 
         .final {
