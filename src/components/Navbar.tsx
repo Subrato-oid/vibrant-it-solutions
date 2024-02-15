@@ -1,11 +1,10 @@
+import { ServiceMenu } from "./ServiceMenu"
 import * as React from "react"
 import useCommon from "../hooks/useCommon"
 import { Link } from "gatsby"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import MobMenu from "./MobMenu"
 import DeskMenu from "./DeskMenu"
-import { Popover } from "@headlessui/react"
-import _, { debounce } from "lodash"
 
 export type LayoutBounds = {
   height?: number
@@ -46,16 +45,22 @@ export const calcauteLayoutBounds = (
   }
 }
 
+export type MenuProps = {
+  menuOpen: boolean | null
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean | null>>
+  headerBounds: LayoutBounds
+}
+
 const Navbar = ({
+  mobileMenuActive,
   setMobileMenuActive,
 }: {
-  setMobileMenuActive: React.Dispatch<React.SetStateAction<boolean>>
+  mobileMenuActive: boolean | null
+  setMobileMenuActive: React.Dispatch<React.SetStateAction<boolean | null>>
 }): React.ReactElement => {
-  const { header, services } = useCommon()
+  const { header } = useCommon()
   const breakpoint = useBreakpoint()
-  const debouncedMouseLeave = debounce(() => {
-    setServiceMenuOpen(false)
-  }, 500)
+
   const headerRef = React.useRef<HTMLElement>(null)
   const [headerBounds, setHeaderBounds] = React.useState<LayoutBounds>({})
 
@@ -81,119 +86,57 @@ const Navbar = ({
     null
   )
   return (
-    <Popover>
-      {({ open }) => {
-        React.useEffect(() => {
-          setMobileMenuActive(open)
-        }, [open])
-        return (
-          <div className={breakpoint.sm && open ? `mob-menu is-${open}` : ""}>
-            <header ref={headerRef}>
-              <Link to="/">
-                <img
-                  src={
-                    open && breakpoint.sm ? header.Moblogo! : header.Weblogo!
-                  }
-                  alt="Logo"
-                />
-              </Link>
+    <>
+      <header ref={headerRef}>
+        <Link to="/">
+          <img
+            src={
+              mobileMenuActive && breakpoint.sm
+                ? header.Moblogo!
+                : header.Weblogo!
+            }
+            alt="Logo"
+          />
+        </Link>
 
-              {!breakpoint.sm && (
-                <DeskMenu
-                  serviceMenuOpen={serviceMenuOpen}
-                  setServiceMenuOpen={setServiceMenuOpen}
-                />
-              )}
+        {!breakpoint.sm && (
+          <DeskMenu
+            serviceMenuOpen={serviceMenuOpen}
+            setServiceMenuOpen={setServiceMenuOpen}
+          />
+        )}
 
-              <Popover.Button as="div" className="ham">
-                <img
-                  className={"menu"}
-                  style={{ width: "fit-content" }}
-                  src={open ? "/images/x-white.svg" : "/images/menu.svg"}
-                  alt=""
-                />
-              </Popover.Button>
-            </header>
+        {breakpoint.sm && (
+          <button
+            title="hamburger menu button"
+            className="ham"
+            onClick={(e) => {
+              e.preventDefault()
+              setMobileMenuActive(!mobileMenuActive)
+            }}
+          >
+            <img
+              className={"menu"}
+              style={{ width: "fit-content" }}
+              src={
+                mobileMenuActive ? "/images/x-white.svg" : "/images/menu.svg"
+              }
+              alt=""
+            />
+          </button>
+        )}
+      </header>
 
-            {!breakpoint.sm && (
-              <menu
-                onMouseLeave={() => debouncedMouseLeave()}
-                className={`dropdown-menu service-${serviceMenuOpen ?? "none"}`}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    width: "100%",
-                    paddingTop: `${
-                      (headerBounds.height ?? 40) +
-                      2 * (headerBounds.margin?.top ?? 28)
-                    }px`,
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      backgroundImage: "url('/images/Homepage/dropdown1.png')",
-                      flexGrow: "1",
-                      backgroundSize: "cover",
-                      backgroundPosition: "center center",
-                      backgroundRepeat: "no-repeat",
-                    }}
-                  ></div>
-                  <ul
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      width: "55%",
-                    }}
-                  >
-                    {services.map((item, index) => (
-                      <Link
-                        to={`/services/${_.kebabCase(item)}`}
-                        className="dropdown-item"
-                        style={{ width: "100%", display: "inline-block" }}
-                        key={index}
-                      >
-                        <li
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                          }}
-                        >
-                          <span>{item}</span>
+      {!breakpoint.sm && (
+        <ServiceMenu
+          setMenuOpen={setServiceMenuOpen}
+          menuOpen={serviceMenuOpen}
+          headerBounds={headerBounds}
+        />
+      )}
 
-                          <img
-                            className="dropdown-arrow"
-                            src="/images/down-right 1.svg"
-                            alt="down-arrow"
-                          />
-                        </li>
-                      </Link>
-                    ))}
-                  </ul>
-                </div>
-              </menu>
-            )}
-
-            {breakpoint.sm && (
-              <Popover.Panel
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  flex: 1,
-                  marginBottom: "5rem",
-                }}
-              >
-                <MobMenu open={open} />
-              </Popover.Panel>
-            )}
-          </div>
-        )
-      }}
-    </Popover>
+      {breakpoint.sm && <MobMenu />}
+    </>
   )
 }
 export default Navbar

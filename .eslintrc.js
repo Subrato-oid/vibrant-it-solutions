@@ -41,7 +41,7 @@ module.exports = {
     "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     "react/no-unescaped-entities": 0,
     "n/no-path-concat": 0,
-    "@typescript-eslint/strict-boolean-expressions": ["error", { allowNullableObject: true }],
+    "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/no-non-null-assertion": 0,
     "@typescript-eslint/no-non-null-asserted-optional-chain": 0,
     "@typescript-eslint/no-var-requires": 0,

@@ -8,15 +8,20 @@ type LayoutProp = {
   pageName: string
 }
 const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
-  const [mobileMenuActive, setMobileMenuActive] = React.useState<boolean>(false)
+  const [mobileMenuActive, setMobileMenuActive] = React.useState<
+  boolean | null
+  >(null)
 
   return (
     <div
       id="main"
-      className={pageName}
-      style={mobileMenuActive ? { position: "fixed", inset: "0px" } : {}}
+      className={`${pageName} mobile-menu-${mobileMenuActive ?? "none"}`}
+      style={mobileMenuActive ? {} : {}}
     >
-      <Navbar setMobileMenuActive={setMobileMenuActive} />
+      <Navbar
+        mobileMenuActive={mobileMenuActive}
+        setMobileMenuActive={setMobileMenuActive}
+      />
       <div>{children}</div>
       <Footer />
     </div>

@@ -1,137 +1,74 @@
 import { Menu, Transition } from "@headlessui/react"
 import React, { Fragment, type ReactElement } from "react"
 import useCommon from "../hooks/useCommon"
-import { PlusIcon, MinusIcon } from "@heroicons/react/20/solid"
 import { Link } from "gatsby"
 import _ from "lodash"
-import {
-  mobListItems,
-  serviceListItems,
-  menuButton,
-  activeMenuItem
-} from "./MobMenu.module.css"
+import PlusMinus from "./PlusMinus"
 
-// type MobMenuProps = NonNullable<IndexPageFrontmatterType>["MobMenu"]
-
-const MobMenu = ({ open }: { open: boolean }): ReactElement => {
+const MobMenu = (): ReactElement => {
   const { header, services } = useCommon()
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        height: "100%",
-      }}
-    >
-      <div className={mobListItems}>
+    <menu className="mobile-menu">
+      <div className="mob-list-items">
         <ul>
-          <li>
-            <Link
-              to="/"
-              style={{ color: "inherit" }}
-              activeClassName={activeMenuItem}
-            >
+          <li className="menu-item">
+            <Link to="/" activeClassName="active-menu-item">
               Home
             </Link>
+            <hr className="hr-bottom-border" />
           </li>
           {header.navItems?.map((item, i) =>
             item?.item === "Services" ? (
               <Menu key={`menu-${i}`}>
                 {({ open: serviceOpen }) => (
-                  <>
-                    <Menu.Button
-                      as="li"
-                      id="services"
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        color: "#f2f2f2",
-                        marginRight: "1.0625rem",
-                      }}
-                    >
-                      Services{" "}
-                      {/* <ChevronDownIcon
-                        className={serviceOpen ? "rotate-down" : ""}
-                        style={{ height: "18px", width: "18px" }}
-                        aria-hidden="true"
-                      /> */}
-                      {serviceOpen ? (
-                        <MinusIcon
-                          style={{ height: "18px", width: "18px" }}
-                          aria-hidden="true"
-                        />
-                      ) : (
-                        <PlusIcon
-                          style={{ height: "18px", width: "18px" }}
-                          aria-hidden="true"
-                        />
-                      )}
+                  <li className="service-menu-item menu-item">
+                    <Menu.Button className="service-menu-btn" id="services">
+                      Services
+                      <PlusMinus open={serviceOpen} />
                     </Menu.Button>
+
                     <Transition
                       as={Fragment}
-                      enter="transition ease-out duration-100"
-                      enterFrom="transform opacity-0 scale-95"
-                      enterTo="transform opacity-100 scale-100"
-                      leave="transition ease-in duration-75"
-                      leaveFrom="transform opacity-100 scale-100"
-                      leaveTo="transform opacity-0 scale-95"
+                      enter="enter-transition"
+                      enterFrom="initial"
+                      enterTo="final"
+                      leave="leave-transition"
+                      leaveFrom="final"
+                      leaveTo="initial"
                     >
-                      <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
-                        <div
-                          style={{ paddingLeft: "2rem" }}
-                          className={serviceListItems}
-                        >
-                          {services.map((item, i) => (
-                            <Menu.Item as="li" key={`service-${i}`}>
-                              {({ active }) => (
-                                <Link
-                                  to={`/services/${_.kebabCase(item)}`}
-                                  style={{ color: "inherit" }}
-                                  activeClassName={activeMenuItem}
-                                >
-                                  {item}
-                                </Link>
-                              )}
-                            </Menu.Item>
-                          ))}
-                        </div>
+                      <Menu.Items as="ul" className="service-list-items">
+                        {services.map((item, i) => (
+                          <Menu.Item as="li" key={`service-${i}`}>
+                            <Link
+                              to={`/services/${_.kebabCase(item)}`}
+                              activeClassName="active-menu-item"
+                            >
+                              {item}
+                            </Link>
+                          </Menu.Item>
+                        ))}
                       </Menu.Items>
                     </Transition>
-                  </>
+                    <hr className="hr-bottom-border" />
+                  </li>
                 )}
               </Menu>
             ) : (
-              <li key={`menu-${i}`}>
-                <Link
-                  to={item?.link!}
-                  style={{ color: "inherit" }}
-                  activeClassName={activeMenuItem}
-                >
+              <li key={`menu-${i}`} className="menu-item">
+                <Link to={item?.link!} activeClassName="active-menu-item">
                   {item?.item}
                 </Link>
+                <hr className="hr-bottom-border" />
               </li>
             )
           )}
         </ul>
       </div>
-      <a
-        href="/contact"
-        className={menuButton}
-        style={{
-          position: "fixed",
-          marginBottom: "1.5rem",
-          right: "0",
-          left: "0",
-          bottom: "0",
-          marginRight: "1.0625rem",
-          marginLeft: "1.0625rem",
-        }}
-      >
+      <Link to="/contact" className="menu-button" style={{}}>
         Lets Talk
         <img src="/images/Button Icon.svg" alt="" />{" "}
-      </a>
-    </div>
+      </Link>
+    </menu>
   )
 }
 

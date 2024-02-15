@@ -79,3 +79,15 @@ body {
     }
   }
 }
+
+// Mobile Menu
+.mobile-menu-none {
+}
+
+#main.mobile-menu-true {
+  position: fixed;
+  inset: 0px;
+}
+
+.mobile-menu-false {
+}
