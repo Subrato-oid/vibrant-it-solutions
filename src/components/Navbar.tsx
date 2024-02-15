@@ -87,7 +87,7 @@ const Navbar = ({
           setMobileMenuActive(open)
         }, [open])
         return (
-          <div className={breakpoint.sm && open ? "mob-menu" : ""}>
+          <div className={breakpoint.sm && open ? `mob-menu is-${open}` : ""}>
             <header ref={headerRef}>
               <Link to="/">
                 <img

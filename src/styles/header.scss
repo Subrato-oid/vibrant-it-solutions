@@ -252,4 +252,16 @@ nav a:hover {
     inset: 0px;
     z-index: 1000;
   }
+
+  .mob-menu.is-none {
+    transform: translateY(-150%);
+  }
+  .mob-menu.is-false {
+    animation: dropdownRollup 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal
+      forwards;
+  }
+  .mob-menu.is-true {
+    animation: dropdownRolldown 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal
+      forwards;
+  }
 }
