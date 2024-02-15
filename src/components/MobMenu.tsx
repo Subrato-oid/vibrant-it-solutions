@@ -17,51 +17,53 @@ const MobMenu = (): ReactElement => {
             </Link>
             <hr className="hr-bottom-border" />
           </li>
-          {header.navItems?.map((item, i) =>
-            item?.item === "Services" ? (
-              <Menu key={`menu-${i}`}>
-                {({ open: serviceOpen }) => (
-                  <li className="service-menu-item menu-item">
-                    <Menu.Button className="service-menu-btn" id="services">
-                      Services
-                      <PlusMinus open={serviceOpen} />
-                    </Menu.Button>
+          {header.navItems
+            ?.filter((menu) => menu !== null && menu.item !== "Contact Us")
+            .map((menu, i) =>
+              menu!.item === "Services" ? (
+                <Menu key={`menu-${i}`}>
+                  {({ open: serviceOpen }) => (
+                    <li className="service-menu-item menu-item">
+                      <Menu.Button className="service-menu-btn" id="services">
+                        Services
+                        <PlusMinus open={serviceOpen} />
+                      </Menu.Button>
 
-                    <Transition
-                      as={Fragment}
-                      enter="enter-transition"
-                      enterFrom="initial"
-                      enterTo="final"
-                      leave="leave-transition"
-                      leaveFrom="final"
-                      leaveTo="initial"
-                    >
-                      <Menu.Items as="ul" className="service-list-items">
-                        {services.map((item, i) => (
-                          <Menu.Item as="li" key={`service-${i}`}>
-                            <Link
-                              to={`/services/${_.kebabCase(item)}`}
-                              activeClassName="active-menu-item"
-                            >
-                              {item}
-                            </Link>
-                          </Menu.Item>
-                        ))}
-                      </Menu.Items>
-                    </Transition>
-                    <hr className="hr-bottom-border" />
-                  </li>
-                )}
-              </Menu>
-            ) : (
-              <li key={`menu-${i}`} className="menu-item">
-                <Link to={item?.link!} activeClassName="active-menu-item">
-                  {item?.item}
-                </Link>
-                <hr className="hr-bottom-border" />
-              </li>
-            )
-          )}
+                      <Transition
+                        as={Fragment}
+                        enter="enter-transition"
+                        enterFrom="initial"
+                        enterTo="final"
+                        leave="leave-transition"
+                        leaveFrom="final"
+                        leaveTo="initial"
+                      >
+                        <Menu.Items as="ul" className="service-list-items">
+                          {services.map((item, i) => (
+                            <Menu.Item as="li" key={`service-${i}`}>
+                              <Link
+                                to={`/services/${_.kebabCase(item)}`}
+                                activeClassName="active-menu-item"
+                              >
+                                {item}
+                              </Link>
+                            </Menu.Item>
+                          ))}
+                        </Menu.Items>
+                      </Transition>
+                      <hr className="hr-bottom-border" />
+                    </li>
+                  )}
+                </Menu>
+              ) : (
+                <li key={`menu-${i}`} className="menu-item">
+                  <Link to={menu!.link!} activeClassName="active-menu-item">
+                    {menu!.item}
+                  </Link>
+                  <hr className="hr-bottom-border" />
+                </li>
+              )
+            )}
         </ul>
       </div>
       <Link to="/contact" className="menu-button" style={{}}>
