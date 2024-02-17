@@ -433,6 +433,14 @@
 }
 
 /* <!---- HEADER SECTION ----> */
+.headroom {
+  background-color: #fff;
+  z-index: 1000;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+
 header {
   color: #fff;
   display: flex;
@@ -493,6 +501,12 @@ nav a:hover {
     font-size: 12;
   }
 
+  .headroom {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 1vw;
+  }
+
   header {
     margin-top: 2vw;
   }
@@ -520,6 +534,12 @@ nav a:hover {
 }
 
 @media only screen and (max-width: 767px) {
+  .headroom {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 1rem;
+  }
+
   header {
     padding: 0 1rem;
     margin-top: 2rem;

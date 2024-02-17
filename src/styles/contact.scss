@@ -154,6 +154,9 @@
     border-bottom: 1px solid #ccc;
     outline: none;
     transition: border-color 0.3s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   .input-group select option:hover {
