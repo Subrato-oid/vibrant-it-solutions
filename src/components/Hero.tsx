@@ -19,7 +19,7 @@ const Hero = (props: NonNullable<HeroProps>): React.ReactElement => (
         <span className="line1">{props.titleDown}</span>
       </h1>
       <p>{props.description}</p>
-      <a href="#" className="button">
+      <a href="/contact" className="button">
         {props.button?.buttonText} <img src={props.button?.icon!} alt="" />
       </a>
     </div>

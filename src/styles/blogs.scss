@@ -314,7 +314,7 @@
   .story-slide {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    gap: 4rem 2rem;
   }
   .story img {
     aspect-ratio: 17/14;
@@ -624,7 +624,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       width: 100%;
-      gap: 2vw;
+      gap: 4vw 2vw;
     }
     .story img {
       width: 100%;

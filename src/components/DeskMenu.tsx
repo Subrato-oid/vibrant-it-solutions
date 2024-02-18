@@ -42,7 +42,9 @@ const DeskMenu = ({
                   />
                 </button>
               ) : (
-                <Link to={el?.link!}>{el?.item}</Link>
+                <Link activeClassName="nav-active" to={el?.link!}>
+                  {el?.item}
+                </Link>
               )}
             </li>
           ))}

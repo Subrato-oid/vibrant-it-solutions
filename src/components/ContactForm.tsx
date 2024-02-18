@@ -89,7 +89,14 @@ const ContactForm = (
                   </option>
                 ))}
               </select>
-              <label htmlFor="contact-industry">YOUR INDUSTRY</label>
+              <label
+                htmlFor="contact-industry"
+                // style={{
+                //   fontSize: "1rem",
+                // }}
+              >
+                YOUR INDUSTRY
+              </label>
             </div>
 
             <div className="input-group">

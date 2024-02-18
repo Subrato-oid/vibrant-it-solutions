@@ -4,6 +4,8 @@ type NavButtonsProps = {
   clickPrev: Function
   clickNext: Function
 }
+// export const navigationPrevRef = React.useRef(null);
+// export const navigationNextRef = React.useRef(null);
 
 const NavButtons: React.FC<NavButtonsProps> = ({ clickPrev, clickNext }) => {
   return (
@@ -19,12 +21,14 @@ const NavButtons: React.FC<NavButtonsProps> = ({ clickPrev, clickNext }) => {
       }}
     >
       <button
+        // ref={navigationPrevRef}
         style={{ border: "none", background: "white" }}
         onClick={() => clickPrev()}
       >
         <img src="/images/work/arrow-left.svg" />
       </button>
       <button
+        // ref={navigationNextRef}
         style={{ border: "none", background: "white" }}
         onClick={() => clickNext()}
       >

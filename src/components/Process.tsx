@@ -60,7 +60,9 @@ const Process = (props: NonNullable<ProcessProps>): React.ReactElement => {
         </div>
       </Swiper>
 
-      <NavButtons clickPrev={clickPrev} clickNext={clickNext} />
+      {!breakpoint.sm && (
+        <NavButtons clickPrev={clickPrev} clickNext={clickNext} />
+      )}
     </section>
   )
 }
