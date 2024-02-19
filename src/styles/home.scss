@@ -306,6 +306,9 @@
     -webkit-filter: blur(175px);
     -moz-filter: blur(175px);
     filter: blur(175px);
+    @supports (hanging-punctuation: first) {
+      filter: blur(125px);
+    }
   }
   .success::after {
     content: "";
@@ -320,6 +323,9 @@
     -webkit-filter: blur(150px);
     -moz-filter: blur(150px);
     filter: blur(150px);
+    @supports (hanging-punctuation: first) {
+      filter: blur(100px);
+    }
   }
   .success {
     overflow: hidden;
