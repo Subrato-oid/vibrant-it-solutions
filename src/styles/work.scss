@@ -1,7 +1,13 @@
 #main.work {
   header {
-    padding: 0 3.5rem;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+    padding-top: 2rem;
   }
+  .headroom-wrapper {
+    left: -3.5rem;
+  }
+
   padding: 0;
   .tuple {
     margin-top: 9.88rem;
@@ -215,7 +221,13 @@
 @media screen and (max-width: 1440px) and (min-width: 769px) {
   #main.work {
     header {
-      padding: 0 3.5vw;
+      // padding: 0 3.5vw;
+      margin-left: 3.5vw;
+      margin-right: 3.5vw;
+      padding-top: 2vw;
+    }
+    .headroom-wrapper {
+      left: 0vw;
     }
     .tuple {
       margin-top: 9.88vw;
@@ -356,6 +368,12 @@
   #main.work {
     header {
       padding: 0 1rem;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 1.5rem;
+    }
+    .headroom-wrapper {
+      left: 0;
     }
     &:after {
       display: none;

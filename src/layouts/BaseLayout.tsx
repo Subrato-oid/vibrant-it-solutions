@@ -4,7 +4,8 @@ import Navbar from "../components/Navbar"
 import "../styles/styles.scss"
 import Headroom from "react-headroom"
 // import { Scrollbar } from "smooth-scrollbar-react"
-import { useLocation } from "@reach/router"
+// import { useLocation } from "@reach/router"
+// import Scroll from "../components/locomotiveScroll"
 
 type LayoutProp = {
   children: React.ReactNode
@@ -16,25 +17,28 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
   boolean | null
   >(null)
 
-  const pathname = useLocation()
-  React.useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname.pathname])
+  // const location = useLocation()
+
+  // const containerRef = React.useRef<HTMLDivElement>(null)
+
   return (
-    <div
-      id="main"
-      className={`${pageName} mobile-menu-${mobileMenuActive ?? "none"}`}
-      style={mobileMenuActive ? {} : {}}
-    >
+    <>
+      {/* <Scroll callbacks={location}/> */}
       <Headroom style={{ zIndex: "3" }}>
         <Navbar
           mobileMenuActive={mobileMenuActive}
           setMobileMenuActive={setMobileMenuActive}
         />
       </Headroom>
-      <div>{children}</div>
+      <main
+        id="main"
+        className={`${pageName} mobile-menu-${mobileMenuActive ?? "none"}`}
+        style={mobileMenuActive ? {} : {}}
+      >
+        <div>{children}</div>
+      </main>
       <Footer />
-    </div>
+    </>
   )
 }
 

@@ -1,13 +1,20 @@
 import * as React from "react"
 
 type NavButtonsProps = {
+  endActive: boolean
+  startActive: boolean
   clickPrev: Function
   clickNext: Function
 }
 // export const navigationPrevRef = React.useRef(null);
 // export const navigationNextRef = React.useRef(null);
 
-const NavButtons: React.FC<NavButtonsProps> = ({ clickPrev, clickNext }) => {
+const NavButtons: React.FC<NavButtonsProps> = ({
+  endActive,
+  startActive,
+  clickPrev,
+  clickNext,
+}) => {
   return (
     <div
       style={{
@@ -22,17 +29,25 @@ const NavButtons: React.FC<NavButtonsProps> = ({ clickPrev, clickNext }) => {
     >
       <button
         // ref={navigationPrevRef}
-        style={{ border: "none", background: "white" }}
+        style={{
+          border: "none",
+          background: "white",
+          color: startActive ? "#676A7066" : "#676A70",
+        }}
         onClick={() => clickPrev()}
       >
-        <img src="/images/work/arrow-left.svg" />
+        <i className="icon-arrow-left" style={{ fontSize: "24px" }}></i>
       </button>
       <button
         // ref={navigationNextRef}
-        style={{ border: "none", background: "white" }}
+        style={{
+          border: "none",
+          background: "white",
+          color: endActive ? "#676A7066" : "#676A70",
+        }}
         onClick={() => clickNext()}
       >
-        <img src="/images/work/arrow-right.svg" />
+        <i className="icon-arrow-right" style={{ fontSize: "24px" }}></i>
       </button>
     </div>
   )

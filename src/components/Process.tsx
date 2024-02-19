@@ -24,6 +24,9 @@ const Process = (props: NonNullable<ProcessProps>): React.ReactElement => {
     sliderRef.current.swiper.slideNext()
   }, [])
 
+  const [endActive, setEndActive] = React.useState(false)
+  const [startActive, setStartActive] = React.useState(true)
+
   return (
     <section>
       <div className="process">
@@ -44,6 +47,10 @@ const Process = (props: NonNullable<ProcessProps>): React.ReactElement => {
         slidesPerView={breakpoint.sm ? 1.25 : "auto"}
         spaceBetween={breakpoint.sm ? 40 : 64}
         pagination={{ type: "progressbar" }}
+        onToEdge={(swiper) => {
+          setEndActive(swiper.isEnd)
+          setStartActive(swiper.isBeginning)
+        }}
       >
         <div className="process-container">
           {processes?.map((item, index) => (
@@ -61,7 +68,12 @@ const Process = (props: NonNullable<ProcessProps>): React.ReactElement => {
       </Swiper>
 
       {!breakpoint.sm && (
-        <NavButtons clickPrev={clickPrev} clickNext={clickNext} />
+        <NavButtons
+          endActive={endActive}
+          startActive={startActive}
+          clickPrev={clickPrev}
+          clickNext={clickNext}
+        />
       )}
     </section>
   )

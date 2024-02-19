@@ -1,9 +1,15 @@
 import * as React from "react"
 import { useSwiper } from "swiper/react"
 
-// type TestimonialNavButtonsProps = {}
+type TestimonialNavButtonsProps = {
+  endActive: boolean
+  startActive: boolean
+}
 
-const TestimonialNavButtons: React.FC = () => {
+const TestimonialNavButtons: React.FC<TestimonialNavButtonsProps> = ({
+  endActive,
+  startActive,
+}) => {
   const swiper = useSwiper()
   return (
     <div className="testimonial-button">
@@ -12,6 +18,7 @@ const TestimonialNavButtons: React.FC = () => {
           onClick={() => {
             swiper.slidePrev()
           }}
+          style={startActive ? { filter: "opacity(70%)" } : {}}
           src="/images/leftArrow.svg"
           alt=""
         />
@@ -19,6 +26,7 @@ const TestimonialNavButtons: React.FC = () => {
           onClick={() => {
             swiper.slideNext()
           }}
+          style={endActive ? { filter: "opacity(70%)" } : {}}
           src="/images/rightArrow.svg"
           alt=""
         />

@@ -23,53 +23,62 @@ export const ServiceMenu = ({
           display: "flex",
           flexDirection: "row",
           width: "100%",
+          justifyContent: "center",
           paddingTop: `${
-            (headerBounds.height ?? 40) + 2 * (headerBounds.margin?.top ?? 28)
+            (headerBounds.height ?? 40) + (headerBounds.padding?.top ?? 28)
           }px`,
         }}
       >
         <div
-          style={{
-            display: "flex",
-            backgroundImage: "url('/images/Homepage/dropdown1.png')",
-            flexGrow: "1",
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></div>
-        <ul
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "55%",
-          }}
+          style={
+            {
+              // display: "flex",
+              // backgroundImage: "url('/images/dropdownImage.svg')",
+              // flexGrow: "1",
+              // backgroundSize: "cover",
+              // backgroundPosition: "center center",
+              // backgroundRepeat: "no-repeat",
+            }
+          }
+          className="dropImg"
         >
-          {services.map((item, index) => (
-            <Link
-              to={`/services/${_.kebabCase(item)}`}
-              className="dropdown-item"
-              style={{ width: "100%", display: "inline-block" }}
-              key={index}
-            >
-              <li
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
+          <img src="/images/dropdownImage.svg" alt="" />
+        </div>
+        <div className="dropItems">
+          <ul
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              // width: "55%",
+            }}
+          >
+            {services.map((item, index) => (
+              <Link
+                to={`/services/${_.kebabCase(item)}`}
+                // className="dropdown-item"
+                // className="dropItems"
+                // style={{ width: "100%", display: "inline-block" }}
+                key={index}
               >
-                <span>{item}</span>
+                <li
+                // style={{
+                //   display: "flex",
+                //   justifyContent: "space-between",
+                //   alignItems: "center",
+                // }}
+                >
+                  <span>{item}</span>
 
-                <img
-                  className="dropdown-arrow"
-                  src="/images/down-right 1.svg"
-                  alt="down-arrow"
-                />
-              </li>
-            </Link>
-          ))}
-        </ul>
+                  <img
+                    // className="dropdown-arrow"
+                    src="/images/down-right 1.svg"
+                    alt="down-arrow"
+                  />
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
       </div>
     </menu>
   )
