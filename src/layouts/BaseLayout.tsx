@@ -3,7 +3,7 @@ import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import "../styles/styles.scss"
 import Headroom from "react-headroom"
-import { Scrollbar } from "smooth-scrollbar-react"
+// import { Scrollbar } from "smooth-scrollbar-react"
 import { useLocation } from "@reach/router"
 
 type LayoutProp = {
@@ -32,9 +32,7 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
           setMobileMenuActive={setMobileMenuActive}
         />
       </Headroom>
-      <Scrollbar damping={0.1} alwaysShowTracks={true}>
-        <div>{children}</div>
-      </Scrollbar>
+      <div>{children}</div>
       <Footer />
     </div>
   )

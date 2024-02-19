@@ -3,7 +3,7 @@ footer {
   color: #fff;
   border-top: 0.0625rem solid #dfe1e5;
   padding-top: 3.56rem;
-  margin-top: 4.5rem;
+  margin-top: 8.75rem;
 }
 .footer-section {
   display: flex;
@@ -11,6 +11,7 @@ footer {
   flex-wrap: nowrap;
   align-items: flex-start;
   border-bottom: 0.0625rem solid #dfe1e5;
+  padding-bottom: 5rem;
 }
 
 .footer-column {
@@ -113,6 +114,7 @@ footer {
     align-items: flex-start;
     /* height: 34.56rem; */
     border-bottom: 0.0625vw solid #dfe1e5;
+    padding-bottom: 5vw;
   }
 
   .footer-column {
@@ -211,15 +213,22 @@ footer {
   }
   .footer-section {
     flex-direction: column;
-    padding-bottom: 4.6rem;
+    padding-bottom: 2rem;
     gap: 2rem;
   }
-
+  .footer-heading {
+    margin-bottom: 0.75rem;
+  }
+  .footer-list li {
+    margin-bottom: 0.25rem;
+  }
   .footer-column {
     flex-direction: column;
     gap: 2rem;
   }
-
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
   #fn {
     display: none;
   }
