@@ -1,9 +1,10 @@
 import * as React from "react"
 import { type IndexPageFrontmatterType } from "../pages"
 import { Swiper, type SwiperRef, SwiperSlide } from "swiper/react"
-import { Pagination, Navigation } from "swiper/modules"
+import { Pagination, Navigation, FreeMode } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/pagination"
+import "swiper/css/free-mode"
 import NavButtons from "./NavButtons"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
@@ -43,7 +44,7 @@ const Process = (props: NonNullable<ProcessProps>): React.ReactElement => {
       <Swiper
         id="process-swiper"
         ref={sliderRef}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, FreeMode]}
         slidesPerView={breakpoint.sm ? 1.25 : "auto"}
         spaceBetween={breakpoint.sm ? 40 : 64}
         pagination={{ type: "progressbar" }}
@@ -51,6 +52,7 @@ const Process = (props: NonNullable<ProcessProps>): React.ReactElement => {
           setEndActive(swiper.isEnd)
           setStartActive(swiper.isBeginning)
         }}
+        freeMode={true}
       >
         <div className="process-container">
           {processes?.map((item, index) => (

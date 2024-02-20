@@ -4,9 +4,10 @@ import { Link } from "gatsby"
 import _ from "lodash"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import { Swiper, type SwiperRef, SwiperSlide } from "swiper/react"
-import { Navigation, Pagination } from "swiper/modules"
+import { FreeMode, Navigation, Pagination } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/pagination"
+import "swiper/css/free-mode"
 
 type ServiceProps = NonNullable<IndexPageFrontmatterType>["services"]
 
@@ -18,7 +19,6 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
 
   return (
     <div className="services">
-      {"freemode"}
       <h2>
         <span className="head1">{props.title}</span>&nbsp;
         <span className="head2">{props.titleHighlight}</span>
@@ -28,7 +28,7 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
           <Swiper
             id="service-swiper"
             ref={sliderRef}
-            modules={[Pagination, Navigation]}
+            modules={[Pagination, Navigation, FreeMode]}
             slidesPerView={1.2}
             spaceBetween={16}
             pagination={{ type: "progressbar" }}
