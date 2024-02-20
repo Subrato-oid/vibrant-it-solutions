@@ -24,15 +24,15 @@ export const AboutPageTemplate = ({
 }: {
   frontmatter: AboutPageFrontmatterType
 }): React.ReactElement => {
-  const { about, aboutCollage, mission } = frontmatter!
+  const { about, aboutCollage, mission } = frontmatter
   React.useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
   return (
     <CommonLayout pageName={"about"}>
-      <AboutUs {...about!} />
-      <AboutImage {...aboutCollage!} />
-      <Mission {...mission!} />
+      <AboutUs {...about} />
+      <AboutImage {...aboutCollage} />
+      <Mission {...mission} />
       <Milestones />
     </CommonLayout>
   )

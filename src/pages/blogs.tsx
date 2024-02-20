@@ -41,7 +41,7 @@ export const BlogPageTemplate = ({
 }): React.ReactElement => {
   return (
     <BaseLayout pageName={"blogs"}>
-      <BlogsIntro {...frontmatter!} />
+      <BlogsIntro {...frontmatter} />
       <BlogCarousel data={data} />
       <BlogsHighlight data={data} />
       <BlogsFilter data={data} />

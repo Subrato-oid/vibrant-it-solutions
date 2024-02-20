@@ -26,15 +26,15 @@ export const CareerPageTemplate = ({
 }: {
   frontmatter: CareerPageFrontmatterType
 }): React.ReactElement => {
-  const { career, openings, perks, applyNow } = frontmatter!
+  const { career, openings, perks, applyNow } = frontmatter
 
   return (
     <BaseLayout pageName="career">
-      <Career {...career!} />
+      <Career {...career} />
       <CareerImage image={career?.image!} />
-      <JobOpening {...openings!} />
-      <JoinSection {...perks!} />
-      <Apply {...applyNow!} />
+      <JobOpening {...openings} />
+      <JoinSection {...perks} />
+      <Apply {...applyNow} />
     </BaseLayout>
   )
 }

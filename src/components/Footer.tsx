@@ -1,10 +1,13 @@
 import * as React from "react"
 import useCommon from "../hooks/useCommon"
 import { Link } from "gatsby"
+import _ from "lodash"
 
 type PropType = React.HTMLProps<HTMLDivElement>
+
 const Footer = (props: PropType): React.ReactElement => {
-  const { footer } = useCommon()
+  const { footer, services } = useCommon()
+
   return (
     <div className={`footer-container ${props.className}`}>
       <footer>
@@ -38,14 +41,25 @@ const Footer = (props: PropType): React.ReactElement => {
                 >
                   <div className="footer-heading">{heading}</div>
                   <ul className="footer-list">
-                    {elements?.map((el, i) => (
-                      <li
-                        key={`footer-list-item-${i}`}
-                        className="footer-list-item"
-                      >
-                        <Link to={`${el?.link}`}>{el?.text}</Link>
-                      </li>
-                    ))}
+                    {heading === "Services"
+                      ? services?.map((el, i) => (
+                          <li
+                            key={`footer-list-item-${i}`}
+                            className="footer-list-item"
+                          >
+                            <Link to={`/services/${_.kebabCase(el)}`}>
+                              {el}
+                            </Link>
+                          </li>
+                      ))
+                      : elements?.map((el, i) => (
+                          <li
+                            key={`footer-list-item-${i}`}
+                            className="footer-list-item"
+                          >
+                            <Link to={`${el?.link}`}>{el?.text}</Link>
+                          </li>
+                      ))}
                   </ul>
                 </div>
               )

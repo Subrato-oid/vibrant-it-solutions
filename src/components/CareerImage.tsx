@@ -11,7 +11,7 @@ const CareerImage = ({
   image: CareerImageProps
 }): React.ReactElement => (
   <div className={"career-image"}>
-    <img src={image!} alt="" />
+    <img src={image} alt="" />
   </div>
 )
 

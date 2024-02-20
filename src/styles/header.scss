@@ -672,6 +672,9 @@ nav a {
 nav a:hover {
   color: var(--colors-brand-primary);
 }
+nav button:hover {
+  color: var(--colors-brand-primary);
+}
 .nav-active {
   color: inherit;
   background-image: var(--colors-gradient-gradient);
@@ -775,8 +778,7 @@ nav a:hover {
     padding: 1.25vw 1.5vw;
     justify-content: space-between;
     align-items: center;
-    flex-shrink: 0;
-    border-bottom: 0.0625vw solid rgba(0, 0, 0, 0.06);
+    flex-shrink: 0;     
     color: var(--Colors-Gray-Secondary-Text, #676a70);
     font-family: "Golos Text";
     font-size: 1.25vw;
