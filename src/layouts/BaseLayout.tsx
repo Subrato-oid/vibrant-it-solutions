@@ -3,6 +3,7 @@ import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import "../styles/styles.scss"
 import Headroom from "react-headroom"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
 // import { Scrollbar } from "smooth-scrollbar-react"
 // import { useLocation } from "@reach/router"
 // import Scroll from "../components/locomotiveScroll"
@@ -17,13 +18,29 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
   boolean | null
   >(null)
 
-  // const location = useLocation()
+  const breakpoint = useBreakpoint()
 
-  // const containerRef = React.useRef<HTMLDivElement>(null)
+  // const location = useLocation();
 
-  return (
+  // const containerRef = React.useRef<HTMLDivElement>(null);
+
+  return breakpoint.sm ? (
+    <main
+      id="main"
+      className={`${pageName} mobile-menu-${mobileMenuActive ?? "none"}`}
+      style={mobileMenuActive ? {} : {}}
+    >
+      <Headroom style={{ zIndex: "3" }}>
+        <Navbar
+          mobileMenuActive={mobileMenuActive}
+          setMobileMenuActive={setMobileMenuActive}
+        />
+      </Headroom>
+      <div>{children}</div>
+      <Footer />
+    </main>
+  ) : (
     <>
-      {/* <Scroll callbacks={location}/> */}
       <Headroom style={{ zIndex: "3" }}>
         <Navbar
           mobileMenuActive={mobileMenuActive}
