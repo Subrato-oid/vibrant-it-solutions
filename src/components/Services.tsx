@@ -18,6 +18,7 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
 
   return (
     <div className="services">
+      {"freemode"}
       <h2>
         <span className="head1">{props.title}</span>&nbsp;
         <span className="head2">{props.titleHighlight}</span>
@@ -31,6 +32,7 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
             slidesPerView={1.2}
             spaceBetween={16}
             pagination={{ type: "progressbar" }}
+            freeMode={true}
           >
             {props?.service?.map((item, index) => (
               <Link
