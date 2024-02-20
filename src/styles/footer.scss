@@ -88,6 +88,9 @@ footer {
 .footer-list li a:-webkit-any-link {
   color: inherit;
 }
+.footer-list li a:hover {
+  color: var(--colors-brand-primary);
+}
 
 .footer-bottom {
   display: flex;

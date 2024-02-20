@@ -104,11 +104,11 @@
 
 // New Dropdown Menu
 .dropImg {
-  // width: 35.62rem;
-  width: fit-content;
+  width: 35.62rem;
+  // width: fit-content;
   // width: 45vw;
-  // height: 28rem;
-  height: 100%;
+  height: 28rem;  
+  // height: 100%;
   // height: fit-content;
   padding: 2rem;
   align-self: center;
@@ -121,9 +121,14 @@
   animation-delay: 0.5s;
   object-fit: cover;
 }
-.dropItems, .dropImg {
-  border-top: 0.0625px solid rgba(0, 0, 0, 0.06);
-}
+// .dropItems,
+// .dropImg {
+//   border-top: 0.0625px solid rgba(0, 0, 0, 0.06);
+// }
+// .dropImg {
+//   border-bottom: 0.0625px solid rgba(0, 0, 0, 0.06);
+// }
+
 .dropItems li {
   position: relative;
   display: flex;
@@ -184,6 +189,10 @@
 .dropItems li:hover {
   box-shadow: inset 0 -3.5rem 0 0 transparent;
   color: white;
+}
+
+.dropItems li:hover img {
+  filter: invert(1);
 }
 
 .dropItems li img {
@@ -560,6 +569,7 @@
   // padding-left: 3.5rem;
   // padding-right: 3.5rem;
   padding-bottom: 1rem;
+  margin-top: -1rem;
 }
 
 header {
@@ -635,9 +645,10 @@ nav a:hover {
   }
 
   .headroom--pinned {
-    // padding-left: 3.5vw;
-    // padding-right: 3.5vw;
+    padding-left: 3.5vw;
+    padding-right: 3.5vw;
     padding-bottom: 1vw;
+    max-width: 90rem;
   }
 
   .headroom-wrapper {
@@ -678,6 +689,84 @@ nav a:hover {
   nav a:hover {
     color: var(--colors-brand-primary);
   }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(2.5rem);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  .dropImg {
+    width: 35.62vw;
+    height: 28vw;
+    padding: 2vw;
+  }
+  .dropImg img {
+    width: 31.62vw;
+    height: 24vw;
+    // object-fit: cover;
+  }
+  .dropItems li {
+    display: flex;
+    width: 54.375vw;
+    height: 3.5vw;
+    padding: 1.25vw 1.5vw;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-bottom: 0.0625vw solid rgba(0, 0, 0, 0.06);
+    color: var(--Colors-Gray-Secondary-Text, #676a70);
+    font-family: "Golos Text";
+    font-size: 1.25vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 26px */
+  }
+  .dropItems li:hover {
+    display: flex;
+    width: 54.375vw;
+    height: 3.5vw;
+    padding: 1.25vw 1.5vw;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-bottom: 0.0625vw solid rgba(0, 0, 0, 0.06);
+    background: var(
+      --Colors-Gradient-Gradient,
+      linear-gradient(
+        90deg,
+        #3f6fea 0%,
+        #3f70ea 6.67%,
+        #3e72e9 13.33%,
+        #3d77e9 20%,
+        #3c7de7 26.67%,
+        #3b85e6 33.33%,
+        #398fe4 40%,
+        #3799e2 46.67%,
+        #34a4e1 53.33%,
+        #32afdf 60%,
+        #30b8dd 66.67%,
+        #2fc1dc 73.33%,
+        #2ec7da 80%,
+        #2dcbda 86.67%,
+        #2cced9 93.33%,
+        #2ccfd9 100%
+      )
+    );
+    color: var(--neutrals-white, #fff);
+    font-family: "Golos Text";
+    font-size: 1.25vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 1.625rem */
+  }
+
+  .dropItems ul li img {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -700,7 +789,7 @@ nav a:hover {
 
   header {
     padding: 0 1rem;
-    padding-top: 2rem;
+    padding-top: 2rem !important;
     align-items: center;
     margin-left: 0;
     margin-right: 0;

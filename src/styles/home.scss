@@ -786,15 +786,17 @@
     letter-spacing: -0.01rem;
     text-transform: capitalize;
     margin: 0;
-    box-shadow: inset 0 0 0 0 #1B2250;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    box-shadow: inset 0 0 0 0 #1b2250;
+    transition:
+      color 0.3s ease-in-out,
+      box-shadow 0.3s ease-in-out;
   }
   .Cbutton img {
     width: 1.25rem;
     height: 1.25rem;
   }
   .Cbutton:hover {
-    box-shadow: inset  0 -3.5rem 0  0  #1B2250;
+    box-shadow: inset 0 -3.5rem 0 0 #1b2250;
   }
 }
 
@@ -1041,10 +1043,10 @@
       height: 19.30413vw;
       flex-shrink: 0;
       border-radius: 19.30413rem;
-      background: #093B9E;
+      background: #093b9e;
       filter: blur(95px);
-      transition: opacity .8s ease-in-out;
-      opacity: 0; 
+      transition: opacity 0.8s ease-in-out;
+      opacity: 0;
       overflow: hidden;
     }
     .slogo {
@@ -1411,6 +1413,19 @@
       padding: 1.5rem 1rem;
       flex-direction: column;
       align-items: flex-start;
+      transition: none;
+    }
+    .box::before {
+      display: none;
+    }
+    .box:hover {
+      position: relative;
+      color: inherit;
+      overflow: hidden;
+      box-shadow: none;
+    }
+    .box:hover p {
+      color: inherit;
     }
     .slogo {
       width: 3rem;

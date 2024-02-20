@@ -20,9 +20,13 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
 
   const breakpoint = useBreakpoint()
 
-  // const location = useLocation();
+  // const path = useLocation()
 
   // const containerRef = React.useRef<HTMLDivElement>(null);
+
+  // React.useEffect(() => {
+  //   window.scrollTo(0, 0)
+  // }, [path.pathname])
 
   return breakpoint.sm ? (
     <main
@@ -41,6 +45,7 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
     </main>
   ) : (
     <>
+      {/* <Scroll callbacks={location} /> */}
       <Headroom style={{ zIndex: "3" }}>
         <Navbar
           mobileMenuActive={mobileMenuActive}

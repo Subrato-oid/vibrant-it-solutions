@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 about:
-  kicker: About US
+  kicker: About Us
   title: Where Business Meets Top Notch
   titleHighlight: IT Solutions
   description: Vibrant IT Solutions Pvt Ltd. is a certified company specializing
