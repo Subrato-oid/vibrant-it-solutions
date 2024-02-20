@@ -60,21 +60,13 @@ export const ServiceMenu = ({
                 // style={{ width: "100%", display: "inline-block" }}
                 key={index}
               >
-                <li
-                // style={{
-                //   display: "flex",
-                //   justifyContent: "space-between",
-                //   alignItems: "center",
-                // }}
-                >
+                <li>
                   <span>{item}</span>
-
-                  <img
-                    // className="dropdown-arrow"
-                    src="/images/down-right 1.svg"
-                    alt="down-arrow"
-                  />
+                  <img src="/images/down-right 1.svg" alt="down-arrow" />
                 </li>
+                {index !== services.length - 1 && (
+                  <hr className="hr-bottom-border" />
+                )}
               </Link>
             ))}
           </ul>

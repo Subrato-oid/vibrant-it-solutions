@@ -1,10 +1,12 @@
 import * as React from "react"
 import useCommon from "../hooks/useCommon"
 import { Link } from "gatsby"
-const Footer = (): React.ReactElement => {
+
+type PropType = React.HTMLProps<HTMLDivElement>
+const Footer = (props: PropType): React.ReactElement => {
   const { footer } = useCommon()
   return (
-    <div className="footer-container">
+    <div className={`footer-container ${props.className}`}>
       <footer>
         <div className="footer-section">
           <div className="footer-column1">

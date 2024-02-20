@@ -17,6 +17,9 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
   const [mobileMenuActive, setMobileMenuActive] = React.useState<
   boolean | null
   >(null)
+  const [serviceMenuOpen, setServiceMenuOpen] = React.useState<boolean | null>(
+    null
+  )
 
   const breakpoint = useBreakpoint()
 
@@ -38,6 +41,8 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
         <Navbar
           mobileMenuActive={mobileMenuActive}
           setMobileMenuActive={setMobileMenuActive}
+          serviceMenuOpen={serviceMenuOpen}
+          setServiceMenuOpen={setServiceMenuOpen}
         />
       </Headroom>
       <div>{children}</div>
@@ -50,16 +55,19 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
         <Navbar
           mobileMenuActive={mobileMenuActive}
           setMobileMenuActive={setMobileMenuActive}
+          serviceMenuOpen={serviceMenuOpen}
+          setServiceMenuOpen={setServiceMenuOpen}
         />
       </Headroom>
       <main
         id="main"
-        className={`${pageName} mobile-menu-${mobileMenuActive ?? "none"}`}
-        style={mobileMenuActive ? {} : {}}
+        className={`${pageName} mobile-menu-${mobileMenuActive ?? "none"} ${
+          serviceMenuOpen && "blur-root"
+        }`}
       >
         <div>{children}</div>
       </main>
-      <Footer />
+      <Footer className={`${serviceMenuOpen && "blur-root"}`} />
     </>
   )
 }

@@ -14,6 +14,19 @@ body {
   width: 100%;
 }
 
+.blur-root {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -ms-filter: blur(5px);
+  -o-filter: blur(5px);
+  transition: 1s filter cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition: 1s -webkit-filter cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: 1s -moz-filter cubic-bezier(0.19, 1, 0.22, 1);
+  -ms-transition: 1s -ms-filter cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: 1s -o-filter cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 :root {
   --colors-gray-primary-text: #090a0d;
   --colors-gray-secondary-text: #676a70;

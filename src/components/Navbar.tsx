@@ -55,9 +55,13 @@ export type MenuProps = {
 const Navbar = ({
   mobileMenuActive,
   setMobileMenuActive,
+  serviceMenuOpen,
+  setServiceMenuOpen,
 }: {
   mobileMenuActive: boolean | null
   setMobileMenuActive: React.Dispatch<React.SetStateAction<boolean | null>>
+  serviceMenuOpen: boolean | null
+  setServiceMenuOpen: React.Dispatch<React.SetStateAction<boolean | null>>
 }): React.ReactElement => {
   const { header } = useCommon()
   const breakpoint = useBreakpoint()
@@ -83,9 +87,6 @@ const Navbar = ({
     }
   }, [])
 
-  const [serviceMenuOpen, setServiceMenuOpen] = React.useState<boolean | null>(
-    null
-  )
   return (
     <>
       <header ref={headerRef}>
