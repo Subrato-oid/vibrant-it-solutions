@@ -2,7 +2,6 @@
 import * as React from "react"
 import useCommon from "../hooks/useCommon"
 import { Link } from "gatsby"
-import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import { useLocation } from "@reach/router"
 const DeskMenu = ({
   serviceMenuOpen,
@@ -39,11 +38,19 @@ const DeskMenu = ({
                   style={{ display: "flex", alignItems: "center" }}
                 >
                   Services
-                  <ChevronDownIcon
-                    className={serviceMenuOpen ? "rotate-down" : "rotate-up"}
+                  <i
+                    className={
+                      serviceMenuOpen
+                        ? "icon-chevron-down rotate-down"
+                        : "icon-chevron-down"
+                    }
+                    style={{ fontSize: "0.3rem", marginLeft: "0.25rem" }}
+                  ></i>
+                  {/* <ChevronDownIcon
+                    className={serviceMenuOpen ? "rotate-down" : ""}
                     style={{ height: "18px", width: "18px", color: "#090a0d" }}
                     aria-hidden="true"
-                  />
+                  /> */}
                 </button>
               ) : (
                 <Link
