@@ -2,9 +2,7 @@
   &:after {
     display: none;
   }
-  .rotate-down {
-    transform: rotate(180deg);
-  }
+
   .swiper-pagination-progressbar-fill {
     background: var(--colors-gradient-gradient);
     position: absolute;

@@ -27,6 +27,16 @@ body {
   -o-transition: 1s -o-filter cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+.rotate-down {
+  transition: 0.3s transform ease-in;
+  transform: rotate(180deg);
+}
+
+.rotate-up {
+  transition: 0.3s transform ease-in;
+  transform: rotate(0);
+}
+
 :root {
   --colors-gray-primary-text: #090a0d;
   --colors-gray-secondary-text: #676a70;

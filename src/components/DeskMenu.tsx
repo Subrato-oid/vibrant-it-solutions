@@ -40,7 +40,7 @@ const DeskMenu = ({
                 >
                   Services
                   <ChevronDownIcon
-                    className={serviceMenuOpen ? "rotate-down" : ""}
+                    className={serviceMenuOpen ? "rotate-down" : "rotate-up"}
                     style={{ height: "18px", width: "18px", color: "#090a0d" }}
                     aria-hidden="true"
                   />
