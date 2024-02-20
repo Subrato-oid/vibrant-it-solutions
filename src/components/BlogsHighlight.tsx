@@ -98,7 +98,7 @@ const BlogsHighlight = ({
               </Link>
             ))}
           </div>
-          <div className="blur-rectangle"></div>
+          {/* <div className="blur-rectangle"></div> */}
         </div>
       )}
     </>
