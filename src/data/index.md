@@ -151,7 +151,7 @@ services:
         the duo of IVRS and Q-SMS Services. We help manage calls and SMS queues
         efficiently and in organized ways.
     - icon: /images/Services Card Icon (5).svg
-      title: Mobile App Development
+      title: App Development
       description: We at VibrantIT provides comprehensive services covering the entire
         application lifecycle, from design and integration to management.
     - icon: /images/Group (3).svg
