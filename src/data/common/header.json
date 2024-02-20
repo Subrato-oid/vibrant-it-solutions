@@ -4,7 +4,7 @@
     "logo": "/images/Group 20.svg",
     "navItems": [
       {
-        "item": "About",
+        "item": "About Us",
         "link": "/about"
       },
       {
@@ -16,11 +16,11 @@
         "link": "/works/tuple"
       },
       {
-        "item": "Career",
+        "item": "Careers",
         "link": "/career"
       },
       {
-        "item": "Blogs",
+        "item": "Blog",
         "link": "/blogs"
       },
       {

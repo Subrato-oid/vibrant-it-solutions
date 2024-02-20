@@ -8,6 +8,7 @@
     overflow: hidden;
     width: 100%;
     background-position: top left;
+    background-size: contain;
   }
   /* <!---- SOFTWARE SOLUTION SECTION ----> */
   .software-solution {
@@ -391,15 +392,17 @@
     letter-spacing: -0.01rem;
     text-transform: capitalize;
     margin: 0;
-    box-shadow: inset 0 0 0 0 #1B2250;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    box-shadow: inset 0 0 0 0 #1b2250;
+    transition:
+      color 0.3s ease-in-out,
+      box-shadow 0.3s ease-in-out;
   }
   .Cbutton img {
     width: 1.25rem;
     height: 1.25rem;
   }
   .Cbutton:hover {
-    box-shadow: inset  0 -3.5rem 0  0  #1B2250;
+    box-shadow: inset 0 -3.5rem 0 0 #1b2250;
   }
 }
 
@@ -616,13 +619,13 @@
       margin: 0 4px;
       margin-top: 30px;
     }
-  
+
     .swiper-pagination-bullet-active {
       opacity: 1;
       width: 3.5rem;
       background-color: var(--colors-brand-primary);
     }
-  
+
     .swiper-pagination {
       display: flex;
       justify-content: center;
@@ -861,10 +864,10 @@
       margin-top: 4rem;
       align-items: flex-start;
     }
-    .solution h2{
+    .solution h2 {
       font-size: 2rem;
     }
-    .head1{
+    .head1 {
       font-size: 2rem;
     }
     .sleft img {
