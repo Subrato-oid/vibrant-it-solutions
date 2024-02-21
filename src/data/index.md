@@ -130,7 +130,7 @@ services:
       description: Vibrant IT Solutions Pvt. Ltd. is well known for software’s
         end-to-end development that involves everything from business analysis
         to software delivery and support.
-      title: Software Development
+      title: Software Solutions
     - icon: /images/wdi.svg
       title: Web Development
       description: VibrantIT solutions professionally create, design, and continuously
@@ -154,7 +154,7 @@ services:
       description: We at VibrantIT provides comprehensive services covering the entire
         application lifecycle, from design and integration to management.
     - icon: /images/Group (3).svg
-      title: E-Commerce Solutions
+      title: Ecommerce Solutions
       description: VibrantIT helps you create customized online shops, user-friendly
         and secure for transactions for customers.
     - icon: /images/fnb.svg
