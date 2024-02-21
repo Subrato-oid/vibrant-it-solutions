@@ -13,7 +13,7 @@ const SoftwareSolution = (
       <span className={"line1"}>{props.titleAfter}</span>
     </h1>
     <p>{props.description}</p>
-    <a href="#" className={"button"}>
+    <a href="/contact" className={"button"}>
       {props.button?.buttonText} <img src={props.button?.icon!} alt="" />{" "}
     </a>
     <img src={props.image!} alt="" id={"softwareDev"} />
