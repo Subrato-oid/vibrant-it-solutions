@@ -333,8 +333,9 @@
 
   .mob-list-items {
     display: block;
-    margin-top: 9.66rem;
+    margin-top: 8.063rem;
     margin-bottom: 6.5rem;
+    overflow: scroll;
 
     .active-menu-item {
       color: inherit;

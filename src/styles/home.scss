@@ -487,11 +487,13 @@
     -webkit-text-fill-color: transparent;
   }
   #service-swiper > .swiper-pagination {
-    margin-top: 1.5rem;
+    margin-top: 3rem;
     position: relative;
     width: calc(100vw - 2rem);
   }
-
+  #service-swiper > .swiper-pagination-progressbar {
+    color: #f0f0f0;
+  }
   .Scontainer {
     margin-top: 4rem;
     display: flex;
