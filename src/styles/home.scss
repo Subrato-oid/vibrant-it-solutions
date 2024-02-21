@@ -1425,6 +1425,9 @@
     .box:hover p {
       color: inherit;
     }
+    .box:hover img {
+      color: inherit;
+    }
     .slogo {
       width: 3rem;
       height: 3rem;
@@ -1434,9 +1437,11 @@
       font-size: 1.5rem;
       margin-bottom: 1rem;
     }
-    .box h2 img {
-      display: none;
-    }
+    // .box h2 img {
+    //   // display: none;
+    //   width: 0.875rem;
+    //   height: 0.875rem;
+    // }
     .box p {
       font-size: 0.875rem;
       font-style: normal;

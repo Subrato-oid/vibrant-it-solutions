@@ -50,18 +50,21 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
                     }}
                   >
                     <img className="slogo" src={item?.icon!} alt="Logo 1" />
-                    <h2>
-                      {item?.title}{" "}
-                      <img
-                        src={
-                          hovered === index
-                            ? "/images/down-right-1.svg"
-                            : "/images/down-right 1.svg"
-                        }
-                        alt=""
-                      />
-                    </h2>
+                    <h2>{item?.title} </h2>
                     <p>{item?.description}</p>
+                    <img
+                      style={{
+                        position: "absolute",
+                        right: "1rem",
+                        bottom: "1.5rem",
+                      }}
+                      src={
+                        hovered === index
+                          ? "/images/down-right-1.svg"
+                          : "/images/down-right 1.svg"
+                      }
+                      alt=""
+                    />
                   </div>
                 </SwiperSlide>
               </Link>
