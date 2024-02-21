@@ -47,9 +47,7 @@ const Footer = (props: PropType): React.ReactElement => {
                             key={`footer-list-item-${i}`}
                             className="footer-list-item"
                           >
-                            <Link to={`/services/${_.kebabCase(el)}`}>
-                              {el}
-                            </Link>
+                            <a href={`/services/${_.kebabCase(el)}`}>{el}</a>
                           </li>
                       ))
                       : elements?.map((el, i) => (
@@ -57,7 +55,7 @@ const Footer = (props: PropType): React.ReactElement => {
                             key={`footer-list-item-${i}`}
                             className="footer-list-item"
                           >
-                            <Link to={`${el?.link}`}>{el?.text}</Link>
+                            <a href={`${el?.link}`}>{el?.text}</a>
                           </li>
                       ))}
                   </ul>
