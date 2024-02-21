@@ -18,7 +18,6 @@ client:
     - logo: /images/bajaj-group-logo-1.svg
     - logo: /images/bindal-paper-mills-logo-1.svg
     - logo: /images/dalmia-sugar-business-150x73-2.svg
-    - logo: /images/mawana-sugar-1.svg
     - logo: /images/hdfc_bank_logo-1-1-.svg
     - logo: /images/state_bank_of_india-1.svg
     - logo: /images/wave-industries-1.svg
