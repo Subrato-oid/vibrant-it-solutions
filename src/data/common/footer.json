@@ -37,40 +37,7 @@
       },
       {
         "heading": "Services",
-        "elements": [
-          {
-            "text": "Software Development",
-            "link": "/services/software-development"
-          },
-          {
-            "text": "Web Development",
-            "link": "/services/web-development"
-          },
-          {
-            "text": "IT Outsourcing",
-            "link": "/services/it-outsourcing"
-          },
-          {
-            "text": "Software Testing",
-            "link": "/services/software-testing"
-          },
-          {
-            "text": "IVRS and QSMS",
-            "link": "/services/ivrs-and-q-sms/"
-          },
-          {
-            "text": "Mobile App Development",
-            "link": "/services/app-development"
-          },
-          {
-            "text": "E-Commerce Solutions",
-            "link": "/services/ecommerce-solutions/"
-          },
-          {
-            "text": "Food tech Service",
-            "link": "/services/food-beverages/"
-          }
-        ]
+        "elements": []
       },
       {
         "heading": "Products",
