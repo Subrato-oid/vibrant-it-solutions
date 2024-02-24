@@ -1,5 +1,6 @@
 import * as React from "react"
 import { type ContactPageFrontmatterType } from "../pages/contact"
+import { MenuItem, TextField } from "@mui/material"
 
 type ContactFormProps = NonNullable<ContactPageFrontmatterType>
 
@@ -13,7 +14,7 @@ const ContactForm = (
   }
 
   const options = [
-    { value: "", label: "Select an option" },
+    { value: "none", label: "Select an option", disabled: true },
     { value: "Entertainment", label: "Entertainment" },
     { value: "Finance", label: "Finance" },
     { value: "Medical", label: "Medical" },
@@ -61,6 +62,14 @@ const ContactForm = (
               />
               <label htmlFor="contact-name">Name</label>
             </div>
+            <TextField
+              id="standard-basic"
+              label="Name"
+              variant="standard"
+              style={{
+                width: "100%",
+              }}
+            />
             <div className="input-group">
               <input
                 id="contact-email"
@@ -98,6 +107,23 @@ const ContactForm = (
                 YOUR INDUSTRY
               </label>
             </div>
+            <TextField
+              id="outlined-select-currency-native"
+              select
+              label="YOUR INDUSTRY"
+              variant="standard"
+              defaultValue="none"
+            >
+              {options.map((option) => (
+                <MenuItem
+                  key={option.value}
+                  value={option.value}
+                  disabled={option.disabled ?? false}
+                >
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
 
             <div className="input-group">
               <textarea
@@ -110,6 +136,13 @@ const ContactForm = (
                 What else we should know before responding ?
               </label>
             </div>
+
+            <TextField
+              id="standard-basic"
+              label="What else we should know before responding ?"
+              variant="standard"
+              multiline
+            />
 
             <button type="submit" className="button">
               {props.button?.buttonText}
