@@ -4,9 +4,8 @@ import Navbar from "../components/Navbar"
 import "../styles/styles.scss"
 import Headroom from "react-headroom"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
-// import { Scrollbar } from "smooth-scrollbar-react"
-// import { useLocation } from "@reach/router"
-// import Scroll from "../components/locomotiveScroll"
+// import { type Scrollbar } from "smooth-scrollbar-react"
+// import SmoothScrollbar from "smooth-scrollbar"
 
 type LayoutProp = {
   children: React.ReactNode
@@ -22,6 +21,35 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
   )
 
   const breakpoint = useBreakpoint()
+
+  // const scrollbarRef = React.useRef<typeof Scrollbar>(null)
+  const headroomRef = React.useRef<Headroom>(null)
+
+  // React.useEffect(() => {
+  //     const scrollbar = scrollbarRef?.current;
+  //     const headroom = headroomRef.current as Headroom;
+
+  //     console.log(scrollbar);
+
+  //     console.log(headroom);
+  //     const handleScroll = () => {
+  //         // Get the scroll position from Smooth Scrollbar
+  //         const scrollY = scrollbar.tack.yAxis;
+
+  //         // Manually trigger Headroom's pin/unpin based on scroll position
+  //         if (scrollY > 100) {
+  //             headroom.unpin();
+  //         } else {
+  //             headroom.pin();
+  //         }
+  //     };
+
+  //     scrollbar?.addListener(handleScroll);
+
+  //     return () => {
+  //         scrollbar.removeListener(handleScroll);
+  //     };
+  // }, []);
 
   // const path = useLocation()
 
@@ -49,9 +77,14 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
       <Footer />
     </main>
   ) : (
+    // <Scrollbar
+    //   ref={scrollbarRef}
+    //   damping={0.06}
+    //   alwaysShowTracks
+    //   style={{ height: "100vh" }}
+    // >
     <>
-      {/* <Scroll callbacks={location} /> */}
-      <Headroom style={{ zIndex: "3" }}>
+      <Headroom style={{ zIndex: "3" }} ref={headroomRef}>
         <Navbar
           mobileMenuActive={mobileMenuActive}
           setMobileMenuActive={setMobileMenuActive}
@@ -67,7 +100,9 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
       >
         <div>{children}</div>
       </main>
+
       <Footer className={`${serviceMenuOpen && "blur-root"}`} />
+      {/* </Scrollbar> */}
     </>
   )
 }

@@ -64,7 +64,7 @@
             li {
               animation-name: mobMenuRolldownText;
               animation-direction: normal;
-              animation-duration: 1s;
+              animation-duration: 0.8s;
               animation-timing-function: ease-in;
               animation-delay: 100ms * ($x - 1);
               animation-fill-mode: forwards;
@@ -267,8 +267,6 @@
 //   margin: 0 !important;
 //   height: 72px;
 //   padding: 20px 24px;
-
-  
 
 //   border-bottom: 1px solid rgba(0, 0, 0, 0.16);
 // }
@@ -511,7 +509,7 @@
           animation-direction: normal;
           animation-duration: 1s;
           animation-timing-function: ease-in;
-          animation-delay: 100ms * ($x - 1);
+          animation-delay: 100ms * ($x - 0.5);
           animation-fill-mode: forwards;
         }
         > .hr-bottom-border {
@@ -696,7 +694,8 @@ nav button:hover {
     font-size: 12;
   }
 
-  .headroom--pinned, .headroom--unpinned {
+  .headroom--pinned,
+  .headroom--unpinned {
     padding-left: 3.5vw;
     padding-right: 3.5vw;
     padding-bottom: 1vw;
@@ -779,7 +778,7 @@ nav button:hover {
     padding: 1.25vw 1.5vw;
     justify-content: space-between;
     align-items: center;
-    flex-shrink: 0;     
+    flex-shrink: 0;
     color: var(--Colors-Gray-Secondary-Text, #676a70);
     font-family: "Golos Text";
     font-size: 1.25vw;
