@@ -1,17 +1,40 @@
 import * as React from "react"
 import { type ContactPageFrontmatterType } from "../pages/contact"
 import { MenuItem, TextField } from "@mui/material"
+import { styled } from "@mui/system"
 
 type ContactFormProps = NonNullable<ContactPageFrontmatterType>
 
 const ContactForm = (
   props: NonNullable<ContactFormProps>
 ): React.ReactElement => {
-  const [selectedOption, setSelectedOption] = React.useState<string>("")
+  // const [selectedOption, setSelectedOption] = React.useState<string>("")
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
-    setSelectedOption(event.target.value)
-  }
+  // const handleChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+  //   setSelectedOption(event.target.value)
+  // }
+
+  const CustomizedTextField = styled(TextField)(({ theme }) => ({
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "gray",
+      },
+      "&:hover fieldset": {
+        borderColor: "blue",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "green", // Border color when focused
+      },
+    },
+    "& .MuiFormLabel-root": {
+      "&.Mui-focused": {
+        transform: "translate(0, -0.5rem) scale(0.65)",
+      },
+      "&.MuiFormLabel-filled": {
+        transform: "translate(0, -0.5rem) scale(0.65)",
+      },
+    },
+  }))
 
   const options = [
     { value: "none", label: "Select an option", disabled: true },
@@ -52,7 +75,8 @@ const ContactForm = (
             className="flex flex-col max-w-md mx-auto"
           >
             <input type="hidden" name="form-name" value="Contact" />
-            <div className="input-group">
+
+            {/* <div className="input-group">
               <input
                 id="contact-name"
                 type="text"
@@ -61,16 +85,19 @@ const ContactForm = (
                 required
               />
               <label htmlFor="contact-name">Name</label>
-            </div>
-            <TextField
+            </div> */}
+
+            <CustomizedTextField
               id="standard-basic"
               label="Name"
               variant="standard"
               style={{
                 width: "100%",
               }}
+              className="field"
             />
-            <div className="input-group">
+
+            {/* <div className="input-group">
               <input
                 id="contact-email"
                 type="email"
@@ -79,9 +106,19 @@ const ContactForm = (
                 required
               />
               <label htmlFor="contact-email">Email*</label>
-            </div>
+            </div> */}
 
-            <div
+            <CustomizedTextField
+              id="standard-basic"
+              label="Email*"
+              variant="standard"
+              style={{
+                width: "100%",
+              }}
+              className="field"
+            />
+
+            {/* <div
               className="input-group"
               style={{ display: "flex", flexDirection: "column-reverse" }}
             >
@@ -106,13 +143,15 @@ const ContactForm = (
               >
                 YOUR INDUSTRY
               </label>
-            </div>
+            </div> */}
+
             <TextField
               id="outlined-select-currency-native"
               select
               label="YOUR INDUSTRY"
               variant="standard"
               defaultValue="none"
+              className="select-field"
             >
               {options.map((option) => (
                 <MenuItem
@@ -125,7 +164,7 @@ const ContactForm = (
               ))}
             </TextField>
 
-            <div className="input-group">
+            {/* <div className="input-group">
               <textarea
                 id="contact-message"
                 name="Message"
@@ -135,13 +174,14 @@ const ContactForm = (
               <label htmlFor="contact-message">
                 What else we should know before responding ?
               </label>
-            </div>
+            </div> */}
 
-            <TextField
+            <CustomizedTextField
               id="standard-basic"
               label="What else we should know before responding ?"
               variant="standard"
               multiline
+              className="field"
             />
 
             <button type="submit" className="button">

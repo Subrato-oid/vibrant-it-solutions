@@ -120,6 +120,51 @@
     position: relative;
   }
 
+  .field input {
+    width: 100%;
+    margin: 0.875rem 0;
+    font-size: 0.875rem;
+    color: #676a70;
+    background: transparent;
+    border: 0;
+    outline: none;
+  }
+
+  .field {
+    margin-top: -2rem;
+  }
+
+  .select-field label {
+    width: 100%;
+    font-size: 1.25rem;
+    margin-top: -1rem;
+    color: #676a70;
+    background: transparent;
+  }
+
+  .select-field input {
+    font-size: 1.25rem;
+  }
+
+  .select-field {
+    margin-top: 2rem;
+  }
+
+  .field textarea {
+    width: 100%;
+    padding: 1.25rem 0;
+    font-size: 1.25rem;
+    color: #676a70;
+    background: transparent;
+  }
+
+  .field label {
+    position: absolute;
+    top: 1.25rem;
+    left: 0;
+    font-size: 1.25rem;
+  }
+
   .input-group input {
     width: 100%;
     padding: 1.25rem 0;
@@ -194,14 +239,14 @@
     border-color: var(--colors-brand-primary);
   }
 
-  /* .input-group input:valid + label */
-  *:not(input.field) {    
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+  // /* .input-group input:valid + label */
+  // *:not(input.field) {    
+  //   -webkit-user-select: none;
+  //   -khtml-user-select: none;
+  //   -moz-user-select: none;
+  //   -ms-user-select: none;
+  //   user-select: none;
+  // }
 
   .input-group input:focus + label,
   .input-group input:not(:placeholder-shown) + label {
@@ -400,6 +445,32 @@
       font-size: 1.25vw;
     }
 
+    .field {
+      margin-top: -2vw;
+    }
+  
+    .select-field label {
+      font-size: 1.25vw;
+      margin-top: -1vw;
+    }
+    .field input:focus label {
+      transform: translate(0 -1.5px) scale(0.50);
+    }
+  
+    .select-field {
+      margin-top: 2vw;
+    }
+  
+    .field textarea {
+      padding: 1.25vw 0;
+      font-size: 1.25vw;
+    }
+  
+    .field label {
+      top: 1.5vw;
+      font-size: 1.25vw;
+    }
+
     .button {
       border: none;
       display: flex;
@@ -586,6 +657,31 @@
     .input-group select option:focus {
       background-color: var(--colors-brand-primary);
     }
+
+    .field {
+      margin-top: -1rem;
+    }
+  
+    .select-field label {
+      font-size: 0.875rem;
+      margin-top: -0.5rem;
+    }
+  
+    .select-field {
+      margin-top: 2rem;
+    }
+  
+    .field textarea {
+      padding: 1.25rem 0;
+      font-size: 0.875rem;
+    }
+  
+    .field label {
+      top: 1.875rem;
+      left: 0;
+      font-size: 0.875rem;
+    }
+
     .button {
       border: none;
       display: flex;

@@ -526,12 +526,10 @@
     flex-direction: column;
     background-color: #f0f0f0;
     padding: 2.12rem 2rem;
-    // box-shadow: inset 0 0 0 0 #080f1f;
-    // transition: box-shadow 0.8s ease-in-out;
     overflow: hidden;
     position: relative;
   }
-  .box::before {
+  .box::after {
     content: "";
     position: absolute;
     right: -7.65206rem;
@@ -1444,7 +1442,7 @@
       align-items: flex-start;
       transition: none;
     }
-    .box::before {
+    .box::after {
       display: none;
     }
     .box:hover {
@@ -1458,6 +1456,17 @@
     }
     .box:hover img {
       color: inherit;
+    }
+    .box:hover {
+      p {
+        animation: none;
+      }
+      h2 {
+        animation: none;
+      }
+      .slogo {
+        animation: none;
+      }
     }
     .slogo {
       width: 3rem;
