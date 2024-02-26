@@ -136,7 +136,7 @@ const ContactForm = (
 
             <CustomizedTextField
               id="standard-basic"
-              name="Name"
+              name="UserName"
               label="Name"
               variant="standard"
               style={{
@@ -148,7 +148,6 @@ const ContactForm = (
             <CustomizedTextField
               id="standard-basic"
               name="Email"
-              type="email"
               label="Email*"
               variant="standard"
               style={{
@@ -180,7 +179,6 @@ const ContactForm = (
             <CustomizedTextField
               id="standard-basic"
               name="Message"
-              type="text"
               label="What else we should know before responding ?"
               variant="standard"
               multiline
