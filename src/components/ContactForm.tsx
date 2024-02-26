@@ -86,17 +86,6 @@ const ContactForm = (
               />
               <label htmlFor="contact-name">Name</label>
             </div> */}
-
-            <CustomizedTextField
-              id="standard-basic"
-              label="Name"
-              variant="standard"
-              style={{
-                width: "100%",
-              }}
-              className="field"
-            />
-
             {/* <div className="input-group">
               <input
                 id="contact-email"
@@ -107,17 +96,6 @@ const ContactForm = (
               />
               <label htmlFor="contact-email">Email*</label>
             </div> */}
-
-            <CustomizedTextField
-              id="standard-basic"
-              label="Email*"
-              variant="standard"
-              style={{
-                width: "100%",
-              }}
-              className="field"
-            />
-
             {/* <div
               className="input-group"
               style={{ display: "flex", flexDirection: "column-reverse" }}
@@ -144,9 +122,43 @@ const ContactForm = (
                 YOUR INDUSTRY
               </label>
             </div> */}
+            {/* <div className="input-group">
+              <textarea
+                id="contact-message"
+                name="Message"
+                placeholder=""
+                required
+              />
+              <label htmlFor="contact-message">
+                What else we should know before responding ?
+              </label>
+            </div> */}
+
+            <CustomizedTextField
+              id="standard-basic"
+              name="Name"
+              label="Name"
+              variant="standard"
+              style={{
+                width: "100%",
+              }}
+              className="field"
+            />
+
+            <CustomizedTextField
+              id="standard-basic"
+              name="Email"
+              label="Email*"
+              variant="standard"
+              style={{
+                width: "100%",
+              }}
+              className="field"
+            />
 
             <TextField
               id="outlined-select-currency-native"
+              name="Industry"
               select
               label="YOUR INDUSTRY"
               variant="standard"
@@ -164,20 +176,9 @@ const ContactForm = (
               ))}
             </TextField>
 
-            {/* <div className="input-group">
-              <textarea
-                id="contact-message"
-                name="Message"
-                placeholder=""
-                required
-              />
-              <label htmlFor="contact-message">
-                What else we should know before responding ?
-              </label>
-            </div> */}
-
             <CustomizedTextField
               id="standard-basic"
+              name="Message"
               label="What else we should know before responding ?"
               variant="standard"
               multiline
