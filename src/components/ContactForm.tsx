@@ -135,9 +135,9 @@ const ContactForm = (
             </div> */}
 
             <CustomizedTextField
-              id="standard-basic"
-              name="user"
+              id="standard-basic name"
               label="Name"
+              name="user"
               variant="standard"
               style={{
                 width: "100%",
@@ -146,7 +146,7 @@ const ContactForm = (
             />
 
             <CustomizedTextField
-              id="standard-basic"
+              id="standard-basic email"
               name="Email"
               label="Email*"
               variant="standard"
@@ -177,7 +177,7 @@ const ContactForm = (
             </TextField>
 
             <CustomizedTextField
-              id="standard-basic"
+              id="standard-basic message"
               name="Message"
               label="What else we should know before responding ?"
               variant="standard"

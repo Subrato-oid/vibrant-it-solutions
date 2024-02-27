@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar"
 import "../styles/styles.scss"
 import Headroom from "react-headroom"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
-// import { Scrollbar } from "smooth-scrollbar-react"
+import { Scrollbar } from "smooth-scrollbar-react"
 // import Scroll from "../components/Scroll"
 // import SmoothScrollbar from "smooth-scrollbar"
 
@@ -78,13 +78,13 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
       <Footer />
     </main>
   ) : (
-    // <Scrollbar
-    //   // ref={scrollbarRef}
-    //   damping={0.06}
-    //   alwaysShowTracks
-    //   style={{ height: "100vh" }}
-    // >
-    <>
+    <Scrollbar
+      // ref={scrollbarRef}
+      damping={0.06}
+      alwaysShowTracks
+      style={{ height: "100vh" }}
+    >
+      {/* <> */}
       <Headroom style={{ zIndex: "3" }} ref={headroomRef}>
         <Navbar
           mobileMenuActive={mobileMenuActive}
@@ -104,8 +104,8 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
       </main>
 
       <Footer className={`${serviceMenuOpen && "blur-root"}`} />
-    </>
-    // {/* </Scrollbar> */}
+      {/* </> */}
+    </Scrollbar>
   )
 }
 
