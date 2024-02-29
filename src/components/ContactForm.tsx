@@ -139,9 +139,6 @@ const ContactForm = (
               label="Name"
               name="user"
               variant="standard"
-              style={{
-                width: "100%",
-              }}
               className="field"
             />
 
@@ -150,9 +147,6 @@ const ContactForm = (
               name="Email"
               label="Email*"
               variant="standard"
-              style={{
-                width: "100%",
-              }}
               className="field"
             />
 
@@ -175,6 +169,25 @@ const ContactForm = (
                 </MenuItem>
               ))}
             </TextField>
+
+            {/* <Select
+              id="outlined-select-currency-native"
+              name="Industry"
+              label="YOUR INDUSTRY"
+              variant="standard"
+              defaultValue="none"
+              className="select-field"
+            >
+              {options.map((option) => (
+                <MenuItem
+                  key={option.value}
+                  value={option.value}
+                  disabled={option.disabled ?? false}
+                >
+                  {option.label}
+                </MenuItem>
+              ))}
+            </Select> */}
 
             <CustomizedTextField
               id="standard-basic message"

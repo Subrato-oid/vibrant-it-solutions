@@ -37,7 +37,7 @@ const options = {
 const Scroll: React.FC = () => {
   useEffect(() => {
     Scrollbar.use(OverscrollPlugin)
-    const scrollbar = Scrollbar.init(document.querySelector("main")!, options)
+    const scrollbar = Scrollbar.init(document.body, options)
 
     return () => {
       if (scrollbar) scrollbar.destroy()

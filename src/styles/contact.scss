@@ -123,8 +123,9 @@
   .field input {
     width: 100%;
     margin: 0.875rem 0;
+    padding: 0.675rem 0;
     font-size: 0.875rem;
-    color: #676a70;
+    // color: #676a70;
     background: transparent;
     border: 0;
     outline: none;
@@ -138,11 +139,11 @@
     width: 100%;
     font-size: 1.25rem;
     margin-top: -1rem;
-    color: #676a70;
+    // color: #676a70;
     background: transparent;
   }
 
-  .select-field input {
+  .select-field {
     font-size: 1.25rem;
   }
 
@@ -154,7 +155,7 @@
     width: 100%;
     padding: 1.25rem 0;
     font-size: 1.25rem;
-    color: #676a70;
+    // color: #676a70;
     background: transparent;
   }
 
@@ -445,6 +446,12 @@
       font-size: 1.25vw;
     }
 
+    .field input {
+      margin: 0.875vw 0;
+      padding: 0.675vw 0;
+      font-size: 0.875vw;
+    }
+
     .field {
       margin-top: -2vw;
     }
@@ -452,9 +459,6 @@
     .select-field label {
       font-size: 1.25vw;
       margin-top: -1vw;
-    }
-    .field input:focus label {
-      transform: translate(0 -1.5px) scale(0.50);
     }
   
     .select-field {
@@ -656,6 +660,10 @@
     .input-group select option:checked,
     .input-group select option:focus {
       background-color: var(--colors-brand-primary);
+    }
+
+    .field input {
+      color: #090A0D;
     }
 
     .field {
