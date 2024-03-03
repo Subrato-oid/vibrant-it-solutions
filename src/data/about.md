@@ -13,10 +13,10 @@ about:
   titleDown: Top Notch
 aboutCollage:
   images:
-    - image: /images/image-26.svg
-    - image: /images/image-27.svg
-    - image: /images/image-29.svg
-    - image: /images/image-28.svg
+    - image: /images/image-26.jpg
+    - image: /images/image-27.jpg
+    - image: /images/image-29.jpg
+    - image: /images/image-28.jpg
 mission:
   title: Our Mission
   description: >-

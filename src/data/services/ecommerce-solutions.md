@@ -5,10 +5,10 @@ hero:
   titleBefore: Grow With
   titleHighlight: Ecommerce Solutions
   titleAfter: " "
-  image: /images/es.svg
+  image: /images/es.webp
   button:
     buttonText: Book A Consultation
-    icon: /images/Button Icon.svg
+    icon: /images/Button Icon.webp
   description: We offer end-to-end development that involves everything from
     business analysis to software delivery and support. We are there for you to
     help plan, design, develop, integrate, test, manage, and evolve software
@@ -39,17 +39,17 @@ project:
     - title: Wonde
       description: We're more than an IT Solutions Company; we infuse every project
         with passion and purpose.
-      image: /images/frame-71.svg
+      image: /images/frame-71.webp
     - title: Termgrid
       description: >+
         We're more than an IT Solutions Company; we infuse every project with
         passion and purpose.
 
-      image: /images/frame-74.svg
+      image: /images/frame-74.webp
     - title: Descartes
       description: >+
         We're more than an IT Solutions Company; we infuse every project with
         passion and purpose.
 
-      image: /images/frame-76.svg
+      image: /images/frame-76.webp
 ---

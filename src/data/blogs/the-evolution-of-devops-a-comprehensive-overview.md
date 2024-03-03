@@ -3,13 +3,13 @@ templateKey: blog-page
 title: "The Evolution of DevOps: A Comprehensive Overview"
 tag: Dev
 featured: true
-thumbnail: /images/frame-69.svg
+thumbnail: /images/frame-69.webp
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z
     author: Abnish Sharma
     topic: Dev
-    profile: /images/ellipse-13.svg
+    profile: /images/ellipse-13.webp
   kicker: Blog
   titleTop: "The Evolution of DevOps:"
   titleDown: ""
@@ -18,7 +18,7 @@ overview:
     discussing key milestones, principles, and best practices. It could also
     cover how DevOps has transformed software development processes, fostering
     collaboration between development and operations teams.
-  image: /images/image-2139.svg
+  image: /images/image-2139.webp
 ---
 &#x3C;div class=&#x22;background&#x22;&#x3E;
 #### Background and Motivation
@@ -48,7 +48,7 @@ Mauris vel odio id libero commodo efficitur. Nullam nec lectus sed nulla facilis
 &#x3C;/div&#x3E;
 &#x3C;div class=&#x22;img-container&#x22;&#x3E;
 
-![Blog Image](/images/image-34.svg)
+![Blog Image](/images/image-34.webp)
 &#x3C;/div&#x3E;
 &#x3C;div class=&#x22;background&#x22;&#x3E;
 

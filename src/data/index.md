@@ -15,16 +15,16 @@ templateKey: index-page
 client:
   title: Clients who trust us
   logos:
-    - logo: /images/bajaj-group-logo-1.svg
-    - logo: /images/bindal-paper-mills-logo-1.svg
-    - logo: /images/dalmia-sugar-business-150x73-2.svg
-    - logo: /images/hdfc_bank_logo-1-1-.svg
-    - logo: /images/state_bank_of_india-1.svg
-    - logo: /images/wave-industries-1.svg
-    - logo: /images/zuari_logo-2.svg
-    - logo: /images/birla-sugar-1.svg
+    - logo: /images/bajaj-group-logo-1.webp
+    - logo: /images/bindal-paper-mills-logo-1.webp
+    - logo: /images/dalmia-sugar-business-150x73-2.webp
+    - logo: /images/hdfc_bank_logo-1-1-.webp
+    - logo: /images/state_bank_of_india-1.webp
+    - logo: /images/wave-industries-1.webp
+    - logo: /images/zuari_logo-2.webp
+    - logo: /images/birla-sugar-1.webp
 header:
-  logo: /images/Group 20.svg
+  logo: /images/Group 20.webp
   navItems:
     - item: About Us
     - item: Services
@@ -47,7 +47,7 @@ about:
     We're more than an IT Solutions Company; we infuse every project with passion and purpose. Join us in creating a future where technology harmonizes with humanity.
   button:
     buttonText: Learn More
-    icon: /images/Button Icon.svg
+    icon: /images/Button Icon.webp
 process:
   title: Our
   titleHighlight: Process
@@ -76,29 +76,29 @@ process:
         for customers to use.
   button:
     buttonText: Contact Now
-    icon: /images/phone.svg
+    icon: /images/phone.webp
 solution:
   title: Reach for
   titleHighlight: Solution
-  image: /images/obejct.svg
+  image: /images/obejct.webp
   description: |+
     Get solutions for your business from the most innovative hands in tech.
 
   button:
     buttonText: Contact now
-    icon: /images/phone.svg
+    icon: /images/phone.webp
 hero:
   titleUp: "Techify Your "
   titleHighlight: "Business "
   titleDown: With Us
-  image: /images/Homepage/HeroImg.svg
+  image: /images/Homepage/HeroImg.webp
   description: Vibrant IT Solutions guides its clients in identifying each
     client's mistakes in their IT plans. We build actionable plans for
     advancement and optimize ITSM processes and infrastructures for the ultimate
     efficiency of your business.
   button:
     buttonText: Get Solution Now
-    icon: /images/Button Icon.svg
+    icon: /images/Button Icon.webp
 footer:
   column:
     - heading: Company
@@ -125,38 +125,38 @@ services:
   title: Our
   titleHighlight: Services
   service:
-    - icon: /images/sd.svg
+    - icon: /images/sd.webp
       description: Vibrant IT Solutions Pvt. Ltd. is well known for software’s
         end-to-end development that involves everything from business analysis
         to software delivery and support.
       title: Software Solutions
-    - icon: /images/wdi.svg
+    - icon: /images/wdi.webp
       title: Web Development
       description: VibrantIT solutions professionally create, design, and continuously
         provide customer support. We make different kinds of web software that
         people love using.
-    - icon: /images/Services Card Icon (2).svg
+    - icon: /images/Services Card Icon (2).webp
       title: Software Testing
       description: Our team has skilled testers who are always ready to take your
         project and test every bit of your project.
-    - icon: /images/it.svg
+    - icon: /images/it.webp
       title: IT Outsourcing
       description: VibrantIT Solutions manages the IT jobs you need help with and also
         collaborates with vendors you deliver those services.
-    - icon: /images/Services Card Icon (4).svg
+    - icon: /images/Services Card Icon (4).webp
       title: IVRS and Q-SMS
       description: VibrantIT Solutions offers improved communications services with
         the duo of IVRS and Q-SMS Services. We help manage calls and SMS queues
         efficiently and in organized ways.
-    - icon: /images/Services Card Icon (5).svg
+    - icon: /images/Services Card Icon (5).webp
       title: App Development
       description: We at VibrantIT provides comprehensive services covering the entire
         application lifecycle, from design and integration to management.
-    - icon: /images/Group (3).svg
+    - icon: /images/Group (3).webp
       title: Ecommerce Solutions
       description: VibrantIT helps you create customized online shops, user-friendly
         and secure for transactions for customers.
-    - icon: /images/fnb.svg
+    - icon: /images/fnb.webp
       title: Food & Beverages
       description: At Vibrant Solutions Pvt Ltd, we specialize in using new technology
         to make special software and apps for the food and drink industry.
@@ -166,5 +166,5 @@ testimonial:
     making them stand out from their competitors. That’s our goal.
   name: Aayush Agarwal
   bio: CTO, Parle Inc.
-  image: /images/parle-logo-500x281-1.svg
+  image: /images/parle-logo-500x281-1.webp
 ---

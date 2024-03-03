@@ -5,14 +5,14 @@ hero:
   titleHighlight: IT Needs
   titleBefore: Outsource Your
   titleAfter: " "
-  image: /images/ito.svg
+  image: /images/ito.webp
   description: We offer end-to-end development that involves everything from
     business analysis to software delivery and support. We are there for you to
     help plan, design, develop, integrate, test, manage, and evolve software
     solutions.
   button:
     buttonText: Book A Consultation
-    icon: /images/button-icon.svg
+    icon: /images/button-icon.webp
 expertise:
   titleBefore: Sneak peek into our
   titleHighlight: impactful
@@ -41,17 +41,17 @@ project:
     - title: Wonde
       description: We're more than an IT Solutions Company; we infuse every project
         with passion and purpose.
-      image: /images/frame-71.svg
+      image: /images/frame-71.webp
     - title: Termgrid
       description: >+
         We're more than an IT Solutions Company; we infuse every project with
         passion and purpose.
 
-      image: /images/frame-74.svg
+      image: /images/frame-74.webp
     - title: Descartes
       description: >+
         We're more than an IT Solutions Company; we infuse every project with
         passion and purpose.
 
-      image: /images/frame-76.svg
+      image: /images/frame-76.webp
 ---

@@ -34,15 +34,15 @@ export const ServicePageTemplate = ({
   workList: ServiceWorkEdgeType
 }): React.ReactElement => {
   const { hero, expertise, project } = service?.frontmatter!
-  const { titleBefore, titleHighlight, titleAfter } = project!
+  const { titleBefore, titleHighlight, titleAfter } = project
   return (
     <CommonLayout pageName="service">
-      <SoftwareSolution {...hero!} />
-      <Expertise {...expertise!} />
+      <SoftwareSolution {...hero} />
+      <Expertise {...expertise} />
       <Project
-        titleBefore={titleBefore!}
-        titleHighlight={titleHighlight!}
-        titleAfter={titleAfter!}
+        titleBefore={titleBefore}
+        titleHighlight={titleHighlight}
+        titleAfter={titleAfter}
         workList={workList}
       />
     </CommonLayout>

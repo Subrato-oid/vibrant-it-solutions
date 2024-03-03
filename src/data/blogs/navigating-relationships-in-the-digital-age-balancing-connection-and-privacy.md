@@ -4,13 +4,13 @@ title: "Building a Strong Company Culture: Keys to Employee Engagement and
   Satisfaction"
 tag: Company
 featured: true
-thumbnail: /images/image-31.svg
+thumbnail: /images/image-31.webp
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z
     author: Abnish Sharma
     topic: Dev
-    profile: /images/ellipse-13.svg
+    profile: /images/ellipse-13.webp
   kicker: Blog
   titleTop: "Building a Strong Company Culture:"
   titleDown: ""
@@ -18,7 +18,7 @@ overview:
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
     tortor auctor, consequat augue nec, ultricies nisl. Integer vel urna eu
     augue efficitur vulputate.
-  image: /images/image-2139.svg
+  image: /images/image-2139.webp
 ---
 &#x3C;div class=&#x22;background&#x22;&#x3E;
 #### Background and Motivation
@@ -48,7 +48,7 @@ Mauris vel odio id libero commodo efficitur. Nullam nec lectus sed nulla facilis
 &#x3C;/div&#x3E;
 &#x3C;div class=&#x22;img-container&#x22;&#x3E;
 
-![Blog Image](/images/image-34.svg)
+![Blog Image](/images/image-34.webp)
 &#x3C;/div&#x3E;
 &#x3C;div class=&#x22;background&#x22;&#x3E;
 

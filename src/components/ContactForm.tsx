@@ -1,6 +1,6 @@
 import * as React from "react"
 import { type ContactPageFrontmatterType } from "../pages/contact"
-import { MenuItem, TextField } from "@mui/material"
+import { MenuItem, TextField, colors } from "@mui/material"
 import { styled } from "@mui/system"
 
 type ContactFormProps = NonNullable<ContactPageFrontmatterType>
@@ -33,6 +33,47 @@ const ContactForm = (
       "&.MuiFormLabel-filled": {
         transform: "translate(0, -0.5rem) scale(0.65)",
       },
+    },
+  }))
+
+  const CustomizedSelectField = styled(TextField)(({ theme }) => ({
+    "& .MuiSelect-root": {
+      paddingTop: theme.spacing(0),
+      paddingBottom: theme.spacing(0),
+
+      "&:focus": {
+        backgroundColor: "transparent", // Prevent the background color change on focus
+      },
+    },
+    "& .MuiOutlinedInput-input": {
+      padding: `${theme.spacing(1)} !important`, // Adjust input padding
+      responsiveFontSizes: true, // Make font responsive
+      color: "red",
+      background: "black",
+    },
+    "& .MuiSelect-select-MuiInputBase-input-MuiInput-input": {
+      padding: "10px 14px",
+      borderRadius: "4px",
+      backgroundColor: "black",
+      border: `2px solid ${colors.grey[200]}`,
+      fontSize: "0.25rem",
+      color: colors.grey[700],
+    },
+    "& .MuiInputLabel-root": {
+      // transform: 'translate(0, -0.5rem) scale(0.75)', // Adjust label position
+      fontSize: "1rem", // Default font size for select options
+      "@media (max-width: 600px)": {
+        fontSize: "0.8rem", // Adjust font size for screens smaller than 600px
+      },
+      "@media (min-width: 1200px)": {
+        fontSize: "1.2rem", // Adjust font size for screens larger than 1200px
+      },
+    },
+    "& .MuiInput-underline:before": {
+      // borderBottom: 'none', // Remove the underline
+    },
+    "& .MuiInput-underline:after": {
+      // borderBottom: 'none', // Remove the underline
     },
   }))
 
@@ -150,7 +191,7 @@ const ContactForm = (
               className="field"
             />
 
-            <TextField
+            <CustomizedSelectField
               id="outlined-select-currency-native"
               name="Industry"
               select
@@ -168,7 +209,7 @@ const ContactForm = (
                   {option.label}
                 </MenuItem>
               ))}
-            </TextField>
+            </CustomizedSelectField>
 
             {/* <Select
               id="outlined-select-currency-native"

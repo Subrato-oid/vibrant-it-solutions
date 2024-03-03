@@ -20,6 +20,13 @@ const config: GatsbyConfig = {
 
   plugins: [
     // "gatsby-plugin-postcss",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/static/images/`,
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
@@ -55,19 +62,38 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: `${__dirname}/static/images/`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: "data",
         path: `${__dirname}/src/data/`,
       },
     },
     {
       resolve: "gatsby-plugin-decap-cms",
+    },
+    // {
+    //   resolve: "gatsby-remark-images",
+    //   options: {
+    //     maxWidth: 1440,
+    //   },
+    // },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          "gatsby-remark-relative-images",
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1440,
+            },
+          },
+          {
+            resolve: "gatsby-remark-copy-linked-files",
+            options: {
+              destinationDir: "static",
+            },
+          },
+        ],
+      },
     },
     {
       resolve: "gatsby-plugin-typescript",
