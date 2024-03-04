@@ -6,6 +6,8 @@ import "swiper/css"
 import "swiper/css/autoplay"
 import { Link } from "gatsby"
 import _ from "lodash"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 type BlogCarouselProps = BlogListType
 
@@ -24,7 +26,11 @@ const BlogCarousel = ({
       <SwiperSlide key={index}>
         <Link to={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}>
           <div className="staging-future">
-            <img src={item.node.frontmatter?.thumbnail!} alt="" />
+            <LazyLoadImage
+              src={item.node.frontmatter?.thumbnail!}
+              effect="blur"
+              alt=""
+            />
             <h2>
               <span className="head1">{item.node.frontmatter?.title}</span>
             </h2>

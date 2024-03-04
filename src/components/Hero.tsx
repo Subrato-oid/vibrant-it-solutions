@@ -1,5 +1,7 @@
 import React from "react"
 import { type IndexPageFrontmatterType } from "../pages"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 type HeroProps = NonNullable<IndexPageFrontmatterType>["hero"]
 
@@ -24,7 +26,11 @@ const Hero = (props: NonNullable<HeroProps>): React.ReactElement => (
       </a>
     </div>
     <div className="image">
-      <img src={props.image!} alt="Description of your image" />
+      <LazyLoadImage
+        src={props.image!}
+        effect="blur"
+        alt="Description of your image"
+      />
     </div>
   </div>
 )

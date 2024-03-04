@@ -24,7 +24,7 @@ export const ContactPageTemplate = ({
 }): React.ReactElement => {
   return (
     <BaseLayout pageName="contact">
-      <ContactForm {...frontmatter} />
+      <ContactForm {...frontmatter!} />
     </BaseLayout>
   )
 }

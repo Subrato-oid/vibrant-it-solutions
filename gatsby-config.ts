@@ -20,26 +20,8 @@ const config: GatsbyConfig = {
 
   plugins: [
     // "gatsby-plugin-postcss",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: `${__dirname}/static/images/`,
-      },
-    },
-    "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    "gatsby-transformer-json",
-    "gatsby-transformer-remark",
+
     "gatsby-plugin-sass",
-    {
-      resolve: "gatsby-plugin-breakpoints",
-      options: {
-        queries: myCustomQueries,
-      },
-    },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -62,8 +44,49 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        name: "images",
+        path: `${__dirname}/static/images/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         name: "data",
         path: `${__dirname}/src/data/`,
+      },
+    },
+
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-transformer-json",
+    "gatsby-transformer-remark",
+
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     plugins: [
+    //       "gatsby-remark-relative-images",
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           maxWidth: 1440,
+    //         },
+    //       },
+    //       {
+    //         resolve: "gatsby-remark-copy-linked-files",
+    //         options: {
+    //           destinationDir: "static",
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
+    {
+      resolve: "gatsby-plugin-breakpoints",
+      options: {
+        queries: myCustomQueries,
       },
     },
     {
@@ -75,26 +98,7 @@ const config: GatsbyConfig = {
     //     maxWidth: 1440,
     //   },
     // },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          "gatsby-remark-relative-images",
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1440,
-            },
-          },
-          {
-            resolve: "gatsby-remark-copy-linked-files",
-            options: {
-              destinationDir: "static",
-            },
-          },
-        ],
-      },
-    },
+
     {
       resolve: "gatsby-plugin-typescript",
       options: {

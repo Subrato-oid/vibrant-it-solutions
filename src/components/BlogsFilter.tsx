@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination } from "swiper/modules"
 import "swiper/css"
 import { Link } from "gatsby"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 type BlogsFilterProps = NonNullable<BlogListType>
 
@@ -70,8 +71,9 @@ const BlogsFilter = ({
                         item.node.frontmatter?.title!
                       )}`}
                     >
-                      <img
+                      <LazyLoadImage
                         src={item.node.frontmatter?.thumbnail!}
+                        effect="blur"
                         alt=""
                         width={"100%"}
                       />
@@ -115,7 +117,11 @@ const BlogsFilter = ({
               to={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}
             >
               <div className="story">
-                <img src={item.node.frontmatter?.thumbnail!} alt="" />
+                <LazyLoadImage
+                  effect="blur"
+                  src={item.node.frontmatter?.thumbnail!}
+                  alt=""
+                />
                 <h4>
                   {(item.node.frontmatter?.title! + " ").padEnd(60, "\u00a0 ")}
                 </h4>

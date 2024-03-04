@@ -95,6 +95,7 @@ export const pageQuery = graphql`
           description
           image
         }
+        image
         details {
           mobImage
           webImage

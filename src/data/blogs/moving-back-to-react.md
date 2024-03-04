@@ -3,13 +3,13 @@ templateKey: blog-page
 title: Moving Back to React
 tag: Dev
 featured: true
-thumbnail: /images/image-31-2-.webp
+thumbnail: /images/image-31-2-.svg
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z
     author: Abnish Sharma
     topic: Dev
-    profile: /images/ellipse-13.webp
+    profile: /images/ellipse-13.svg
   kicker: Blog
   titleTop: Moving back to
   titleDown: ""
@@ -17,7 +17,7 @@ overview:
   description: Dive into our friendly blog space. Explore insightful tech tales,
     discoveries, and tips. Stay connected with the latest in IT solutions and
     innovation, simplified just for you.
-  image: /images/image-2139.webp
+  image: /images/image-2139.svg
 
 ---
 &#x3C;div class=&#x22;background&#x22;&#x3E;
@@ -48,7 +48,7 @@ Mauris vel odio id libero commodo efficitur. Nullam nec lectus sed nulla facilis
 &#x3C;/div&#x3E;
 &#x3C;div class=&#x22;img-container&#x22;&#x3E;
 
-![Blog Image](/images/image-34.webp)
+![Blog Image](/images/image-34.svg)
 &#x3C;/div&#x3E;
 &#x3C;div class=&#x22;background&#x22;&#x3E;
 

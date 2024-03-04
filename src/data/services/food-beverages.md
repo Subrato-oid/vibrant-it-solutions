@@ -5,14 +5,14 @@ hero:
   titleHighlight: Food & Beverages
   titleBefore: Innovate
   titleAfter: With IT
-  image: /images/f-b.webp
+  image: /images/f-b.svg
   description: We offer end-to-end development that involves everything from
     business analysis to software delivery and support. We are there for you to
     help plan, design, develop, integrate, test, manage, and evolve software
     solutions.
   button:
     buttonText: Book A Consultation
-    icon: /images/button-icon.webp
+    icon: /images/button-icon.svg
 expertise:
   titleBefore: Sneak peek into our
   titleHighlight: impactful
@@ -34,17 +34,17 @@ project:
     - title: Wonde
       description: We're more than an IT Solutions Company; we infuse every project
         with passion and purpose.
-      image: /images/frame-71.webp
+      image: /images/frame-71.svg
     - title: Termgrid
       description: >+
         We're more than an IT Solutions Company; we infuse every project with
         passion and purpose.
 
-      image: /images/frame-74.webp
+      image: /images/frame-74.svg
     - title: Descartes
       description: >+
         We're more than an IT Solutions Company; we infuse every project with
         passion and purpose.
 
-      image: /images/frame-76.webp
+      image: /images/frame-76.svg
 ---

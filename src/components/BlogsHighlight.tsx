@@ -7,6 +7,8 @@ import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination } from "swiper/modules"
 import "swiper/css"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 type BlogsHighlightProps = BlogListType
 
@@ -39,13 +41,18 @@ const BlogsHighlight = ({
                   key={i}
                   to={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}
                 >
-                  <img src={item.node.frontmatter?.thumbnail!} alt="" />
+                  <LazyLoadImage
+                    src={item.node.frontmatter?.thumbnail!}
+                    effect="blur"
+                    alt=""
+                  />
                   <h4>
                     {(item.node.frontmatter?.title + " ").padEnd(60, "\u00a0 ")}
                   </h4>
                   <div id="author">
-                    <img
+                    <LazyLoadImage
                       src={item.node.frontmatter?.overview?.details?.profile!}
+                      effect="blur"
                       alt=""
                     />
                     {item.node.frontmatter?.overview?.details?.author}
@@ -73,7 +80,11 @@ const BlogsHighlight = ({
                 to={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}
               >
                 <div key={i} className="H-story">
-                  <img src={item.node.frontmatter?.thumbnail!} alt="" />
+                  <LazyLoadImage
+                    src={item.node.frontmatter?.thumbnail!}
+                    effect="blur"
+                    alt=""
+                  />
                   <h4>
                     {(item.node.frontmatter?.title + " ").padEnd(60, "\u00a0 ")}
                   </h4>

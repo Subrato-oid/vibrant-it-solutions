@@ -3,13 +3,13 @@ templateKey: blog-page
 title: "Designing for Accessibility: Inclusive Practices for a Diverse Audience"
 tag: Design
 featured: true
-thumbnail: /images/image-31.webp
+thumbnail: /images/image-31.svg
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z
     author: Abnish Sharma
     topic: Dev
-    profile: /images/ellipse-13.webp
+    profile: /images/ellipse-13.svg
   kicker: Blog
   titleTop: "Designing for Accessibility: "
   titleDown: ""
@@ -17,7 +17,7 @@ overview:
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
     tortor auctor, consequat augue nec, ultricies nisl. Integer vel urna eu
     augue efficitur vulputate.
-  image: /images/image-2139.webp
+  image: /images/image-2139.svg
 ---
 &#x3C;div class=&#x22;background&#x22;&#x3E;
 #### Background and Motivation
@@ -47,7 +47,7 @@ Mauris vel odio id libero commodo efficitur. Nullam nec lectus sed nulla facilis
 &#x3C;/div&#x3E;
 &#x3C;div class=&#x22;img-container&#x22;&#x3E;
 
-![Blog Image](/images/image-34.webp)
+![Blog Image](/images/image-34.svg)
 &#x3C;/div&#x3E;
 &#x3C;div class=&#x22;background&#x22;&#x3E;
 
