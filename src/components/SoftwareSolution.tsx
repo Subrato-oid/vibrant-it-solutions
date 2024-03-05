@@ -1,5 +1,7 @@
 import React from "react"
 import { type ServicePageFrontmatterType } from "../templates/service"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 type SoftwareSolutionProps = NonNullable<ServicePageFrontmatterType>["hero"]
 
@@ -16,7 +18,13 @@ const SoftwareSolution = (
     <a href="/contact" className={"button"}>
       {props.button?.buttonText} <img src={props.button?.icon!} alt="" />{" "}
     </a>
-    <img src={props.image!} alt="" id={"softwareDev"} />
+    <LazyLoadImage
+      placeholderSrc={props.image!}
+      effect="blur"
+      src={props.image!}
+      alt=""
+      id={"softwareDev"}
+    />
   </div>
 )
 

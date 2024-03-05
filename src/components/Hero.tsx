@@ -29,6 +29,7 @@ const Hero = (props: NonNullable<HeroProps>): React.ReactElement => (
       <LazyLoadImage
         src={props.image!}
         effect="blur"
+        placeholderSrc={props.image!}
         alt="Description of your image"
       />
     </div>

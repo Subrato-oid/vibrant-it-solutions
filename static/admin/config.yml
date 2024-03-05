@@ -260,6 +260,7 @@ collections:
                 [
                   { label: WebLogo, name: Weblogo, widget: image },
                   { label: MobLogo, name: Moblogo, widget: image },
+                  { label: DropDownImage, name: DropDownImage, widget: image },
                   {
                     label: NavItems,
                     name: navItems,

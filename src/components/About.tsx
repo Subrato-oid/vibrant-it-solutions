@@ -1,12 +1,19 @@
 import * as React from "react"
 import { type IndexPageFrontmatterType } from "../pages"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 type AboutProps = NonNullable<IndexPageFrontmatterType>["about"]
 
 const About = (props: NonNullable<AboutProps>): React.ReactElement => (
   <div className="about">
     <div className="left">
-      <img src={props.image!} alt="" />
+      <LazyLoadImage
+        src={props.image!}
+        effect="blur"
+        placeholderSrc={props.image!}
+        alt=""
+      />
     </div>
     <div className="right">
       <div className="a-content">

@@ -46,11 +46,6 @@ const DeskMenu = ({
                     }
                     style={{ fontSize: "0.3rem", marginLeft: "0.25rem" }}
                   ></i>
-                  {/* <ChevronDownIcon
-                    className={serviceMenuOpen ? "rotate-down" : ""}
-                    style={{ height: "18px", width: "18px", color: "#090a0d" }}
-                    aria-hidden="true"
-                  /> */}
                 </button>
               ) : (
                 <Link

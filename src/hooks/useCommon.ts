@@ -28,6 +28,7 @@ const useCommon = (): CommonType => {
           node: header {
             Weblogo
             Moblogo
+            DropDownImage
             navItems {
               item
               link

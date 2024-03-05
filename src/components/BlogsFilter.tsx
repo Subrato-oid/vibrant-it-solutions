@@ -74,6 +74,7 @@ const BlogsFilter = ({
                       <LazyLoadImage
                         src={item.node.frontmatter?.thumbnail!}
                         effect="blur"
+                        placeholderSrc={item.node.frontmatter?.thumbnail!}
                         alt=""
                         width={"100%"}
                       />
@@ -120,6 +121,12 @@ const BlogsFilter = ({
                 <LazyLoadImage
                   effect="blur"
                   src={item.node.frontmatter?.thumbnail!}
+                  placeholder={
+                    <div style={{ width: "100%", height: "100%" }}>
+                      Loading...
+                    </div>
+                  }
+                  placeholderSrc={item.node.frontmatter?.thumbnail!}
                   alt=""
                 />
                 <h4>

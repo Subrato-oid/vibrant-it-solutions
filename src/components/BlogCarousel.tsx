@@ -29,6 +29,7 @@ const BlogCarousel = ({
             <LazyLoadImage
               src={item.node.frontmatter?.thumbnail!}
               effect="blur"
+              placeholderSrc={item.node.frontmatter?.thumbnail!}
               alt=""
             />
             <h2>

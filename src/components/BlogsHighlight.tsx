@@ -44,6 +44,7 @@ const BlogsHighlight = ({
                   <LazyLoadImage
                     src={item.node.frontmatter?.thumbnail!}
                     effect="blur"
+                    placeholderSrc={item.node.frontmatter?.thumbnail!}
                     alt=""
                   />
                   <h4>
@@ -53,6 +54,9 @@ const BlogsHighlight = ({
                     <LazyLoadImage
                       src={item.node.frontmatter?.overview?.details?.profile!}
                       effect="blur"
+                      placeholderSrc={
+                        item.node.frontmatter?.overview?.details?.profile!
+                      }
                       alt=""
                     />
                     {item.node.frontmatter?.overview?.details?.author}
@@ -83,6 +87,7 @@ const BlogsHighlight = ({
                   <LazyLoadImage
                     src={item.node.frontmatter?.thumbnail!}
                     effect="blur"
+                    placeholderSrc={item.node.frontmatter?.thumbnail!}
                     alt=""
                   />
                   <h4>

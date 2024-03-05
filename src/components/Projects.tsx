@@ -5,6 +5,8 @@ import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination } from "swiper/modules"
 import "swiper/css"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 // type ProjectProp = NonNullable<ServicePageFrontmatterType>["project"]
 
@@ -86,7 +88,8 @@ const Project = ({
                   </Link>
                 </span>
               </div>
-              <img
+              <LazyLoadImage
+                effect="blur"
                 className={"project-image"}
                 src={item.node.frontmatter?.thumbnail!}
                 alt={`Image ${index + 1}`}

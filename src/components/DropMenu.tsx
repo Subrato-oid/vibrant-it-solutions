@@ -3,11 +3,16 @@ import { Popover, Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import { Link } from "gatsby"
 import _ from "lodash"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
+import useCommon from "../hooks/useCommon"
 
 type DropMenuProps = {
   items: string[]
 }
 const DropMenu: React.FC<DropMenuProps> = ({ items }) => {
+  const { header } = useCommon()
+
   return (
     <Popover style={{ zIndex: "100" }}>
       {({ open }) => (
@@ -36,14 +41,16 @@ const DropMenu: React.FC<DropMenuProps> = ({ items }) => {
             <Popover.Panel>
               <div className="dropdown-menu">
                 <div style={{ display: "flex", flexDirection: "row" }}>
-                  <img
-                    src="/images/Homepage/dropdown1.png"
+                  <LazyLoadImage
+                    src={header.DropDownImage!}
+                    effect="blur"
+                    placeholderSrc={header.DropDownImage!}
                     style={{
                       height: "100%",
                       objectFit: "cover",
                       width: "45%",
                     }}
-                  ></img>
+                  />
                   <ul
                     style={{
                       display: "flex",
