@@ -2,6 +2,8 @@ import * as React from "react"
 import { type ContactPageFrontmatterType } from "../pages/contact"
 import { MenuItem, TextField, colors } from "@mui/material"
 import { styled } from "@mui/system"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 type ContactFormProps = NonNullable<ContactPageFrontmatterType>
 
@@ -246,7 +248,12 @@ const ContactForm = (
           </form>
         </div>
         <div className="image-container">
-          <img src="/images/contact-us/Group 34685.svg" alt="Image" />
+          <LazyLoadImage
+            placeholderSrc={props.image!}
+            src={props.image!}
+            effect="blur"
+            alt="Image"
+          />
         </div>
       </div>
     </>

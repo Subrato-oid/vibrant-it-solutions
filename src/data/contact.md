@@ -5,6 +5,7 @@ title: Always On-hand
 titleHighlight: Contact Us
 description: We're excited to be your go-to for all your IT needs. Whether you
   need advice, support or a tech upgrade, we're here to help.
+image: /images/group-34685.svg
 contactDeatils:
   field1: Name
   field2: Email

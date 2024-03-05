@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { type WorkListType } from "../pages/works"
 import { Link } from "gatsby"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 const OurWork = ({ list }: { list: WorkListType }): React.ReactElement => {
   const [listItem, setListItem] = useState<WorkListType>([])
@@ -22,7 +24,12 @@ const OurWork = ({ list }: { list: WorkListType }): React.ReactElement => {
         <div className="project">
           {listItem.map((item, i) => (
             <div className="recent-projects" key={`work-${i}`}>
-              <img src={item.node.frontmatter?.thumbnail!} alt="" />
+              <LazyLoadImage
+                placeholderSrc={item.node.frontmatter?.thumbnail!}
+                src={item.node.frontmatter?.thumbnail!}
+                effect="blur"
+                alt=""
+              />
               <h3>{item.node.frontmatter?.title}</h3>
               <p className="workP">
                 {item.node.frontmatter?.description}{" "}

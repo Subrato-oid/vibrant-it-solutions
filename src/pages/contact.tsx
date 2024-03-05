@@ -40,6 +40,7 @@ export const pageQuery = graphql`
         title
         titleHighlight
         description
+        image
         button {
           buttonText
           icon

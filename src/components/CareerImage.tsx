@@ -1,5 +1,7 @@
 import * as React from "react"
 import { type CareerPageFrontmatterType } from "../pages/career"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 type CareerImageProps = NonNullable<
 NonNullable<CareerPageFrontmatterType>["career"]
@@ -11,7 +13,7 @@ const CareerImage = ({
   image: CareerImageProps
 }): React.ReactElement => (
   <div className={"career-image"}>
-    <img src={image!} alt="" />
+    <LazyLoadImage src={image!} placeholderSrc={image!} effect="blur" alt="" />
   </div>
 )
 

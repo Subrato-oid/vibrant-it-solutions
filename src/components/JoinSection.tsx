@@ -1,5 +1,7 @@
 import * as React from "react"
 import { type CareerPageFrontmatterType } from "../pages/career"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 type JoinSectionProps = NonNullable<CareerPageFrontmatterType>["perks"]
 
@@ -47,7 +49,12 @@ const JoinSection = (
         </div> */}
       </div>
       <div className={"right"}>
-        <img src={props.image!} alt="" />
+        <LazyLoadImage
+          src={props.image!}
+          placeholderSrc={props.image!}
+          effect="blur"
+          alt=""
+        />
       </div>
     </div>
   </>
