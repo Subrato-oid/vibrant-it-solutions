@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import _, { debounce } from "lodash"
 import { type MenuProps } from "./Navbar"
 import useCommon from "../hooks/useCommon"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 export const ServiceMenu = ({
   menuOpen,
@@ -12,7 +13,7 @@ export const ServiceMenu = ({
   const debouncedMouseLeave = debounce(() => {
     setMenuOpen(false)
   }, 500)
-  const { services } = useCommon()
+  const { services, header } = useCommon()
   return (
     <menu
       onMouseLeave={() => debouncedMouseLeave()}
@@ -42,7 +43,11 @@ export const ServiceMenu = ({
           }
           className="dropImg"
         >
-          <img src="/images/dropdownImage.svg" alt="" />
+          <LazyLoadImage
+            placeholderSrc={header.DropDownImage!}
+            src={header.DropDownImage!}
+            alt=""
+          />
         </div>
         <div className="dropItems">
           <ul
