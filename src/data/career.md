@@ -8,7 +8,7 @@ career:
   description: We're a talented group of software developers who create new things
     using innovative ideas and modern technology. Join us for more opportunities
     to advance in your career.
-  image: /images/frame-69.svg
+  image: /images/frame-69.png
 openings:
   titleHighlight: Openings
   title: Job
@@ -29,7 +29,7 @@ perks:
     clients, and we constantly consider their development. We grow along with
     you. Our key principles focus on Work Freedom, Growth, and Excellence,
     promoting constant growth for you, our company, and our clients.
-  image: /images/frame-65.svg
+  image: /images/frame-65.png
   perk:
     - title: International Clients
       description: We help clients worldwide, so you'll have the chance to collaborate

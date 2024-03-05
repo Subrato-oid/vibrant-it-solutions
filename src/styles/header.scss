@@ -37,7 +37,7 @@
 }
 /* <!---- DropDown Menu ----> */
 .dropdown-menu.service-none {
-  transform: translateY(-150%);
+  transform: translateY(-155%);
 }
 .dropdown-menu.service-false {
   animation: dropdownRollup 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal
@@ -64,7 +64,7 @@
             li {
               animation-name: mobMenuRolldownText;
               animation-direction: normal;
-              animation-duration: 0.8s;
+              animation-duration: 0.6s;
               animation-timing-function: ease-in;
               animation-delay: 100ms * ($x - 1);
               animation-fill-mode: forwards;
