@@ -3,7 +3,7 @@ templateKey: blog-page
 title: "The Evolution of DevOps: A Comprehensive Overview"
 tag: Dev
 featured: true
-thumbnail: /images/frame-69.svg
+thumbnail: /images/image-31-3.png
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z

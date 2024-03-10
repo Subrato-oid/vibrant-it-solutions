@@ -3,7 +3,7 @@ templateKey: blog-page
 title: "Building Scalable and Robust APIs: Best Practices for Developers"
 tag: Dev
 featured: true
-thumbnail: /images/frame-69.svg
+thumbnail: /images/image-31-5.png
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z

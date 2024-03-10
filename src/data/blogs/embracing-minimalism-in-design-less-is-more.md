@@ -3,7 +3,7 @@ templateKey: blog-page
 title: "Navigating the Research Process: A Step-by-Step Guide for Beginners"
 tag: Research
 featured: true
-thumbnail: /images/image-34.svg
+thumbnail: /images/image-31-4.png
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z

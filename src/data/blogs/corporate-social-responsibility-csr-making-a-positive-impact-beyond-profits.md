@@ -4,7 +4,7 @@ title: "Corporate Social Responsibility (CSR): Making a Positive Impact Beyond
   Profits"
 tag: Company
 featured: true
-thumbnail: /images/image-2139.svg
+thumbnail: /images/image-31-9.png
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z

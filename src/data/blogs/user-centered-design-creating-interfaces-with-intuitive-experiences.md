@@ -3,7 +3,7 @@ templateKey: blog-page
 title: "User-Centered Design: Creating Interfaces with Intuitive Experiences"
 tag: Design
 featured: true
-thumbnail: /images/image-31-8-.svg
+thumbnail: /images/image-31-8.png
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z

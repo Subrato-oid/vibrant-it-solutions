@@ -3,7 +3,7 @@ templateKey: blog-page
 title: "Ethical Considerations in Research: A Guide for Responsible Inquiry"
 tag: Research
 featured: true
-thumbnail: /images/image-2139.svg
+thumbnail: /images/image-31-9.png
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z

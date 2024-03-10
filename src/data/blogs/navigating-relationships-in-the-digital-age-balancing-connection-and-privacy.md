@@ -4,7 +4,7 @@ title: "Building a Strong Company Culture: Keys to Employee Engagement and
   Satisfaction"
 tag: Company
 featured: true
-thumbnail: /images/image-31.svg
+thumbnail: /images/image-31.png
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z

@@ -3,7 +3,7 @@ templateKey: blog-page
 title: "The Role of Typography in Graphic Design: A Comprehensive Guide"
 tag: Design
 featured: true
-thumbnail: /images/image-31-7-.svg
+thumbnail: /images/image-31-7.png
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z

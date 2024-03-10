@@ -3,7 +3,7 @@ templateKey: blog-page
 title: "Innovation in the Workplace: How Companies Foster Creativity and Stay Ahead"
 tag: Company
 featured: true
-thumbnail: /images/image-31-7-.svg
+thumbnail: /images/image-31-7.png
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z

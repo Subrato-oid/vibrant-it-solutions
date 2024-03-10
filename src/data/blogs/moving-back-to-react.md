@@ -3,7 +3,7 @@ templateKey: blog-page
 title: Moving Back to React
 tag: Dev
 featured: true
-thumbnail: /images/image-31-2-.svg
+thumbnail: /images/image-31-2.png
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z

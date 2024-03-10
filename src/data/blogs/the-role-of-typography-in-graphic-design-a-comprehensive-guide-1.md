@@ -3,7 +3,7 @@ templateKey: blog-page
 title: "Designing for Accessibility: Inclusive Practices for a Diverse Audience"
 tag: Design
 featured: true
-thumbnail: /images/image-31.svg
+thumbnail: /images/image-31.png
 overview:
   details:
     publishDate: 2023-12-23T18:30:00.000Z
