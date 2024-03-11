@@ -4,18 +4,13 @@ import { MenuItem, TextField, colors } from "@mui/material"
 import { styled } from "@mui/system"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
+import { toast } from "react-toastify"
 
 type ContactFormProps = NonNullable<ContactPageFrontmatterType>
 
 const ContactForm = (
   props: NonNullable<ContactFormProps>
 ): React.ReactElement => {
-  // const [selectedOption, setSelectedOption] = React.useState<string>("")
-
-  // const handleChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
-  //   setSelectedOption(event.target.value)
-  // }
-
   const CustomizedTextField = styled(TextField)(({ theme }) => ({
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
@@ -50,7 +45,6 @@ const ContactForm = (
     "& .MuiOutlinedInput-input": {
       padding: `${theme.spacing(1)} !important`, // Adjust input padding
       responsiveFontSizes: true, // Make font responsive
-      color: "red",
       background: "black",
     },
     "& .MuiSelect-select-MuiInputBase-input-MuiInput-input": {
@@ -65,10 +59,10 @@ const ContactForm = (
       // transform: 'translate(0, -0.5rem) scale(0.75)', // Adjust label position
       fontSize: "1rem", // Default font size for select options
       "@media (max-width: 600px)": {
-        fontSize: "0.8rem", // Adjust font size for screens smaller than 600px
+        fontSize: "5rem", // Adjust font size for screens smaller than 600px
       },
       "@media (min-width: 1200px)": {
-        fontSize: "1.2rem", // Adjust font size for screens larger than 1200px
+        fontSize: "8rem", // Adjust font size for screens larger than 1200px
       },
     },
     "& .MuiInput-underline:before": {
@@ -94,6 +88,41 @@ const ContactForm = (
     { value: "Advertising", label: "Advertising" },
   ]
 
+  const notify = (): void => {
+    toast.success("Submitted Successfully!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    })
+  }
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault()
+
+    const myForm = event.target as HTMLFormElement
+    const formData = new FormData(myForm)
+
+    const urlEncodedData = new URLSearchParams()
+    formData.forEach((value, key) => {
+      if (typeof value === "string") {
+        urlEncodedData.append(key, value)
+      }
+    })
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: urlEncodedData.toString(),
+    })
+      .then(notify)
+      .catch((error) => { alert(error) })
+  }
+
   return (
     <>
       <div className="contact-tech-tales">
@@ -116,66 +145,9 @@ const ContactForm = (
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             className="flex flex-col max-w-md mx-auto"
+            onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value="Contact" />
-
-            {/* <div className="input-group">
-              <input
-                id="contact-name"
-                type="text"
-                name="Name"
-                placeholder=""
-                required
-              />
-              <label htmlFor="contact-name">Name</label>
-            </div> */}
-            {/* <div className="input-group">
-              <input
-                id="contact-email"
-                type="email"
-                name="Email"
-                placeholder=""
-                required
-              />
-              <label htmlFor="contact-email">Email*</label>
-            </div> */}
-            {/* <div
-              className="input-group"
-              style={{ display: "flex", flexDirection: "column-reverse" }}
-            >
-              <select
-                id="contact-industry"
-                name="industry"
-                value={selectedOption}
-                required
-                onChange={handleChange}
-              >
-                {options.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-              <label
-                htmlFor="contact-industry"
-                // style={{
-                //   fontSize: "1rem",
-                // }}
-              >
-                YOUR INDUSTRY
-              </label>
-            </div> */}
-            {/* <div className="input-group">
-              <textarea
-                id="contact-message"
-                name="Message"
-                placeholder=""
-                required
-              />
-              <label htmlFor="contact-message">
-                What else we should know before responding ?
-              </label>
-            </div> */}
 
             <CustomizedTextField
               id="standard-basic name"
@@ -212,25 +184,6 @@ const ContactForm = (
                 </MenuItem>
               ))}
             </CustomizedSelectField>
-
-            {/* <Select
-              id="outlined-select-currency-native"
-              name="Industry"
-              label="YOUR INDUSTRY"
-              variant="standard"
-              defaultValue="none"
-              className="select-field"
-            >
-              {options.map((option) => (
-                <MenuItem
-                  key={option.value}
-                  value={option.value}
-                  disabled={option.disabled ?? false}
-                >
-                  {option.label}
-                </MenuItem>
-              ))}
-            </Select> */}
 
             <CustomizedTextField
               id="standard-basic message"
