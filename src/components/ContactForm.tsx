@@ -4,7 +4,7 @@ import { MenuItem, TextField, colors } from "@mui/material"
 import { styled } from "@mui/system"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
-import { toast } from "react-toastify"
+// import { toast } from "react-toastify"
 
 type ContactFormProps = NonNullable<ContactPageFrontmatterType>
 
@@ -88,40 +88,40 @@ const ContactForm = (
     { value: "Advertising", label: "Advertising" },
   ]
 
-  const notify = (): void => {
-    toast.success("Submitted Successfully!", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    })
-  }
+  // const notify = (): void => {
+  //   toast.success("Submitted Successfully!", {
+  //     position: "top-right",
+  //     autoClose: 5000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: "light",
+  //   })
+  // }
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
-    event.preventDefault()
+  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+  //   event.preventDefault()
 
-    const myForm = event.target as HTMLFormElement
-    const formData = new FormData(myForm)
+  //   const myForm = event.target as HTMLFormElement
+  //   const formData = new FormData(myForm)
 
-    const urlEncodedData = new URLSearchParams()
-    formData.forEach((value, key) => {
-      if (typeof value === "string") {
-        urlEncodedData.append(key, value)
-      }
-    })
+  //   const urlEncodedData = new URLSearchParams()
+  //   formData.forEach((value, key) => {
+  //     if (typeof value === "string") {
+  //       urlEncodedData.append(key, value)
+  //     }
+  //   })
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: urlEncodedData.toString(),
-    })
-      .then(notify)
-      .catch((error) => { alert(error) })
-  }
+  //   fetch("/", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //     body: urlEncodedData.toString(),
+  //   })
+  //     .then(notify)
+  //     .catch((error) => { alert(error) })
+  // }
 
   return (
     <>
@@ -145,7 +145,6 @@ const ContactForm = (
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             className="flex flex-col max-w-md mx-auto"
-            onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value="Contact" />
 
