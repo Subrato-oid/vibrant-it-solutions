@@ -153,8 +153,8 @@
 
   .field textarea {
     width: 100%;
-    padding: 1.25rem 0;
-    font-size: 1.25rem;
+    padding: 0.875rem 0;
+    font-size: 0.875rem;
     // color: #676a70;
     background: transparent;
   }
@@ -241,7 +241,7 @@
   }
 
   // /* .input-group input:valid + label */
-  // *:not(input.field) {    
+  // *:not(input.field) {
   //   -webkit-user-select: none;
   //   -khtml-user-select: none;
   //   -moz-user-select: none;
@@ -455,21 +455,21 @@
     .field {
       margin-top: -2vw;
     }
-  
+
     .select-field label {
       font-size: 1.25vw;
       margin-top: -1vw;
     }
-  
+
     .select-field {
       margin-top: 2vw;
     }
-  
+
     .field textarea {
-      padding: 1.25vw 0;
-      font-size: 1.25vw;
+      padding: 0.875vw 0;
+      font-size: 0.875vw;
     }
-  
+
     .field label {
       top: 1.5vw;
       font-size: 1.25vw;
@@ -663,27 +663,27 @@
     }
 
     .field input {
-      color: #090A0D;
+      color: #090a0d;
     }
 
     .field {
       margin-top: -1rem;
     }
-  
+
     .select-field label {
       font-size: 0.875rem;
       margin-top: -0.5rem;
     }
-  
+
     .select-field {
       margin-top: 2rem;
     }
-  
+
     .field textarea {
       padding: 1.25rem 0;
       font-size: 0.875rem;
     }
-  
+
     .field label {
       top: 1.875rem;
       left: 0;

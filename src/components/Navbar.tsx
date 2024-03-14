@@ -65,7 +65,6 @@ const Navbar = ({
 }): React.ReactElement => {
   const { header } = useCommon()
   const breakpoint = useBreakpoint()
-
   const headerRef = React.useRef<HTMLElement>(null)
   const [headerBounds, setHeaderBounds] = React.useState<LayoutBounds>({})
 

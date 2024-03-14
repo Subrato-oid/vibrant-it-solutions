@@ -499,8 +499,6 @@
     margin-top: 4rem;
     display: flex;
     width: 100%;
-    /* width: 82.9375rem;
-    height: 66.5rem; */
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 2rem;
@@ -528,7 +526,10 @@
     padding: 2.12rem 2rem;
     overflow: hidden;
     position: relative;
+    box-shadow: inset 0 0 0 0 #080f1f;
+    transition: box-shadow 0.8s ease-in-out;
   }
+
   .box::after {
     content: "";
     position: absolute;
@@ -540,7 +541,7 @@
     border-radius: 19.30413rem;
     background: #093b9e;
     filter: blur(95px);
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
     opacity: 0;
     overflow: hidden;
   }
@@ -550,22 +551,21 @@
     color: #f2f8fb;
     overflow: hidden;
     box-shadow: inset 0 -23.5rem 0 0 #080f1f;
-    transition: box-shadow 0.8s ease-in-out;
   }
   .box:hover p {
     color: #cecece;
   }
-  .box:hover {
-    p {
-      animation: slideUp2 1s ease-in-out;
-    }
-    h2 {
-      animation: slideUp2 1s ease-in-out;
-    }
-    .slogo {
-      animation: slideUp2 1s ease-in-out;
-    }
-  }
+  // .box:hover {
+  //   p {
+  //     animation: slideUp2 1s ease-in-out;
+  //   }
+  //   h2 {
+  //     animation: slideUp2 1s ease-in-out;
+  //   }
+  //   .slogo {
+  //     animation: slideUp2 1s ease-in-out;
+  //   }
+  // }
   .box:hover::after {
     opacity: 1;
     transition-delay: 0.3s;
@@ -596,7 +596,7 @@
     display: flex;
     align-self: flex-end;
     justify-self: flex-end;
-    // z-index: 3;
+    z-index: 1;
   }
   .box p {
     color: var(--colors-gray-secondary-text);
