@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import * as React from "react"
 import useCommon from "../hooks/useCommon"
-import { Link } from "gatsby"
 import { useLocation } from "@reach/router"
 const DeskMenu = ({
   serviceMenuOpen,
@@ -48,16 +47,18 @@ const DeskMenu = ({
                   ></i>
                 </button>
               ) : (
-                <Link
-                  activeClassName="nav-active"
-                  to={el?.link!}
+                <a
+                  className={
+                    path.pathname.includes(el?.link!) ? "nav-active" : ""
+                  }
+                  href={el?.link!}
                   onMouseEnter={(e) => {
                     e.preventDefault()
                     if (serviceMenuOpen) setServiceMenuOpen(false)
                   }}
                 >
                   {el?.item}
-                </Link>
+                </a>
               )}
             </li>
           ))}

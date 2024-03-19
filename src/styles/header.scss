@@ -89,7 +89,7 @@
 
   100% {
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translateY(0);
+    transform: translateY(0%);
   }
 }
 
@@ -603,14 +603,25 @@
   // left: -7rem;
 }
 
+.headroom--scrolled {
+  transition: transform 200ms ease-in-out;
+}
+.headroom--unpinned {
+  position: fixed;
+  transform: translateY(-100%);
+}
+
 .headroom--unfixed {
-  // background-color: aqua;
+  position: relative;
+  transform: translateY(0);
   padding-left: 3.5rem;
   padding-right: 3.5rem;
   padding-bottom: 1rem;
 }
 
 .headroom--pinned {
+  position: relative;
+  transform: translateY(0%);
   background-color: #fff;
   z-index: 1000;
   padding-left: 3.5rem;

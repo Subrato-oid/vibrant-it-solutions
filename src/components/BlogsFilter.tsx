@@ -113,9 +113,9 @@ const BlogsFilter = ({
       ) : (
         <div className="story-slide">
           {slides.map((item, index) => (
-            <Link
+            <a
               key={index}
-              to={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}
+              href={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}
             >
               <div className="story">
                 <LazyLoadImage
@@ -145,7 +145,7 @@ const BlogsFilter = ({
                   {item.node.frontmatter?.tag}
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       )}

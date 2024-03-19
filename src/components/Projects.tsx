@@ -1,6 +1,5 @@
 import React from "react"
 import { type ServiceWorkEdgeType } from "../templates/service"
-import { Link } from "gatsby"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination } from "swiper/modules"
@@ -53,12 +52,12 @@ const Project = ({
                       {item.node.frontmatter?.description}
                     </p>
                     <span className={"view-project"}>
-                      <Link
-                        to={`/works/${item.node.frontmatter?.title?.toLowerCase()}`}
+                      <a
+                        href={`/works/${item.node.frontmatter?.title?.toLowerCase()}`}
                       >
                         View Project{" "}
                         <img src="/images/arrow-right.svg" alt="" />
-                      </Link>
+                      </a>
                     </span>
                   </div>
                   <img
@@ -81,11 +80,11 @@ const Project = ({
                   {item.node.frontmatter?.description}
                 </p>
                 <span className={"view-project"}>
-                  <Link
-                    to={`/works/${item.node.frontmatter?.title?.toLowerCase()}`}
+                  <a
+                    href={`/works/${item.node.frontmatter?.title?.toLowerCase()}`}
                   >
                     View Project <img src="/images/arrow-right.svg" alt="" />
-                  </Link>
+                  </a>
                 </span>
               </div>
               <LazyLoadImage

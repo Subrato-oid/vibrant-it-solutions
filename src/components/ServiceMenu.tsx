@@ -1,5 +1,4 @@
 import React, { type ReactElement } from "react"
-import { Link } from "gatsby"
 import _, { debounce } from "lodash"
 import { type MenuProps } from "./Navbar"
 import useCommon from "../hooks/useCommon"
@@ -58,8 +57,8 @@ export const ServiceMenu = ({
             }}
           >
             {services.map((item, index) => (
-              <Link
-                to={`/services/${_.kebabCase(item)}`}
+              <a
+                href={`/services/${_.kebabCase(item)}`}
                 // className="dropdown-item"
                 // className="dropItems"
                 // style={{ width: "100%", display: "inline-block" }}
@@ -72,7 +71,7 @@ export const ServiceMenu = ({
                 {index !== services.length - 1 && (
                   <hr className="hr-bottom-border" />
                 )}
-              </Link>
+              </a>
             ))}
           </ul>
         </div>

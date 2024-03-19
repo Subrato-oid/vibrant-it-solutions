@@ -1,6 +1,5 @@
 import * as React from "react"
 import { type WorkListType } from "../templates/work"
-import { Link } from "gatsby"
 import { useLocation } from "@reach/router"
 
 type MoreProjectProps = NonNullable<WorkListType>
@@ -26,9 +25,9 @@ const MoreProject = ({
               location.pathname
           )
           .map((item, i) => (
-            <Link
+            <a
               key={`wrok-${i}`}
-              to={`/works/${item.node.frontmatter?.title!.toLowerCase()}`}
+              href={`/works/${item.node.frontmatter?.title!.toLowerCase()}`}
             >
               <div className="recent-projects">
                 <img src={item.node.frontmatter?.thumbnail!} alt="" />
@@ -38,7 +37,7 @@ const MoreProject = ({
                 </h3>
                 <p>{item.node.frontmatter?.description}</p>
               </div>
-            </Link>
+            </a>
           ))}
       </div>
     </div>

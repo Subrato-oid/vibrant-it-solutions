@@ -1,7 +1,6 @@
 import { ServiceMenu } from "./ServiceMenu"
 import * as React from "react"
 import useCommon from "../hooks/useCommon"
-import { Link } from "gatsby"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import MobMenu from "./MobMenu"
 import DeskMenu from "./DeskMenu"
@@ -89,7 +88,7 @@ const Navbar = ({
   return (
     <>
       <header ref={headerRef}>
-        <Link to="/">
+        <a href="/">
           <img
             src={
               mobileMenuActive && breakpoint.sm
@@ -98,7 +97,7 @@ const Navbar = ({
             }
             alt="Logo"
           />
-        </Link>
+        </a>
 
         {!breakpoint.sm && (
           <DeskMenu

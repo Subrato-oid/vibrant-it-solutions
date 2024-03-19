@@ -1,6 +1,5 @@
 import * as React from "react"
 import { type CareerPageFrontmatterType } from "../pages/career"
-import { Link } from "gatsby"
 
 type JobOpeningProps = NonNullable<CareerPageFrontmatterType>["openings"]
 
@@ -15,9 +14,9 @@ const JobOpening = (props: JobOpeningProps): React.ReactElement => (
         <div key={i} className={"role"}>
           <h4>{item?.title}</h4>
           <p>{item?.description}</p>
-          <Link to={item?.link!}>
+          <a href={item?.link!}>
             <img src="/images/Career/arrow-right.svg" alt="" />
-          </Link>
+          </a>
         </div>
       ))}
     </div>

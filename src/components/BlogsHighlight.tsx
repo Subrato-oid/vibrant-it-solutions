@@ -79,9 +79,9 @@ const BlogsHighlight = ({
         <div className="blur-effect">
           <div className="H-story-slide" id="H-slide">
             {data.slice(0, 5).map((item, i) => (
-              <Link
+              <a
                 key={i}
-                to={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}
+                href={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}
               >
                 <div key={i} className="H-story">
                   <LazyLoadImage
@@ -111,7 +111,7 @@ const BlogsHighlight = ({
                     {item.node.frontmatter?.tag}
                   </div>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
           {/* <div className="blur-rectangle"></div> */}

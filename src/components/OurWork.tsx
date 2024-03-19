@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import { type WorkListType } from "../pages/works"
-import { Link } from "gatsby"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
 
@@ -34,13 +33,13 @@ const OurWork = ({ list }: { list: WorkListType }): React.ReactElement => {
               <p className="workP">
                 {item.node.frontmatter?.description}{" "}
                 <span className="view-project">
-                  <Link
+                  <a
                     key={`work-${i}`}
-                    to={`/works/${item.node.frontmatter?.title!.toLowerCase()}`}
+                    href={`/works/${item.node.frontmatter?.title!.toLowerCase()}`}
                   >
                     View Project{" "}
                     <img src="/images/work/arrow-right.svg" alt="" />
-                  </Link>
+                  </a>
                 </span>
               </p>
             </div>

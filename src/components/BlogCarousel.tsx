@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Autoplay } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/autoplay"
-import { Link } from "gatsby"
 import _ from "lodash"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
@@ -24,7 +23,7 @@ const BlogCarousel = ({
   >
     {data.slice(0, 3).map((item, index) => (
       <SwiperSlide key={index}>
-        <Link to={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}>
+        <a href={`/blogs/${_.kebabCase(item.node.frontmatter?.title!)}`}>
           <div className="staging-future">
             <LazyLoadImage
               src={item.node.frontmatter?.thumbnail!}
@@ -42,7 +41,7 @@ const BlogCarousel = ({
               )}
             </p>
           </div>
-        </Link>
+        </a>
       </SwiperSlide>
     ))}
   </Swiper>

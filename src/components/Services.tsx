@@ -74,9 +74,9 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
       ) : (
         <div className="Scontainer">
           {props?.service?.map((item, index) => (
-            <Link
+            <a
               key={`ser~${index}`}
-              to={`/services/${_.kebabCase(item?.title!)}`}
+              href={`/services/${_.kebabCase(item?.title!)}`}
             >
               <div
                 className="box"
@@ -101,7 +101,7 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
                 </h2>
                 <p>{item?.description}</p>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       )}

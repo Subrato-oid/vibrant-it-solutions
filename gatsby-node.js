@@ -99,6 +99,21 @@ exports.createPages = async ({ actions, graphql }) => {
   })
 }
 
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html" || stage === "develop-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /locomotive-scroll/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
+
 // exports.onCreateNode = ({ node, actions, getNode }) => {
 //   const { createNodeField } = actions
 

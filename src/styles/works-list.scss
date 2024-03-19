@@ -105,11 +105,14 @@
     gap: 0.75rem;
   }
   .view-project a {
+    display: flex;
+    gap: 3px;
     padding-bottom: 0.438rem;
     border-bottom: 1px solid black;
   }
 
   .view-project img {
+    align-self: center;
     width: 1.25rem;
     height: 1.25rem;
   }
@@ -406,7 +409,7 @@
     &:after {
       top: 0;
       width: 100vw;
-    //   height: 100vh;
+      //   height: 100vh;
       background-image: url("/images/blue-tint/our-work-mob.png");
       background-size: cover;
     }
@@ -486,6 +489,7 @@
       gap: 0.75rem;
     }
     .view-project img {
+      align-self: center;
       width: 1.25rem;
       height: 1.25rem;
     }

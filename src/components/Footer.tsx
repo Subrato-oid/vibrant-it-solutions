@@ -1,6 +1,5 @@
 import * as React from "react"
 import useCommon from "../hooks/useCommon"
-import { Link } from "gatsby"
 import _ from "lodash"
 
 type PropType = React.HTMLProps<HTMLDivElement>
@@ -9,7 +8,7 @@ const Footer = (props: PropType): React.ReactElement => {
   const { footer, services } = useCommon()
 
   return (
-    <div className={`footer-container ${props.className}`}>
+    <div data-scroll-section className={`footer-container ${props.className}`}>
       <footer>
         <div className="footer-section">
           <div className="footer-column1">
@@ -68,7 +67,7 @@ const Footer = (props: PropType): React.ReactElement => {
         <div className="footer-bottom">
           <p>&copy; 2015-2023 Vibrant IT Solutions. All rights reserved.</p>
           <p id="fn">
-            <Link to="/terms-and-conditions">Terms & Conditions</Link> | Privacy
+            <a href="/terms-and-conditions">Terms & Conditions</a> | Privacy
             Policy | Cookie Preferences
           </p>
         </div>
