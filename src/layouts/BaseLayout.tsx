@@ -40,7 +40,7 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
       <Footer />
     </main>
   ) : (
-    <>
+    <div className="wrapper">
       {typeof window !== "undefined" && <Scroll callbacks={location} />}
 
       <div data-scroll-section id="blue-tint"></div>
@@ -63,7 +63,7 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
       </main>
 
       <Footer className={`${serviceMenuOpen && "blur-root"}`} />
-    </>
+    </div>
   )
 }
 

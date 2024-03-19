@@ -76,19 +76,19 @@ body {
 //   background-size: contain;
 // }
 
-// #blue-tint {
-//   width: 72rem;
-//   height: 72rem;
-//   position: absolute;
-//   right: 0;
-//   top: 0;
-//   z-index: -1;
-//   background-image: url("/images/blue-tint/Ellipse 11.png");
-//   background-repeat: no-repeat;
-//   background-position: top right;
-//   background-size: contain;
-//   position: fixed;
-// }
+#blue-tint {
+  width: 72rem;
+  height: 72rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  background-image: url("/images/blue-tint/Ellipse 11.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: contain;
+  position: fixed;
+}
 
 #main {
   max-width: 90rem;
@@ -117,6 +117,10 @@ body {
       width: 72vw;
       height: 72vw;
     }
+  }
+  #blue-tint {
+    width: 72vw;
+    height: 72vw;
   }
 }
 
