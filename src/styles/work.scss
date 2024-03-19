@@ -1,4 +1,7 @@
 #main.work {
+  &:after {
+    display: none;
+  }
   header {
     margin-left: 3.5rem;
     margin-right: 3.5rem;

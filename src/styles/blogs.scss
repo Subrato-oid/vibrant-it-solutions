@@ -1,4 +1,7 @@
 #main.blogs {
+  &:after {
+    display: none;
+  }
   .swiper-pagination-bullet {
     width: 2rem;
     height: 5px;

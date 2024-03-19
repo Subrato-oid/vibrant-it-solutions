@@ -1,4 +1,7 @@
 #main.blog-post {
+  &:after {
+    display: none;
+  }
   /* <!---- CAREERS SECTION ----> */
   .tech-tales {
     display: flex;

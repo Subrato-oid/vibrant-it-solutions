@@ -1,15 +1,18 @@
 #main.works {
   &:after {
-    position: absolute;
-    background-image: url("/images/blue-tint/backdrop.png");
-    right: unset;
-    left: 0;
-    height: 200vh;
-    overflow: hidden;
-    width: 100%;
-    background-position: top left;
-    background-size: contain;
+    display: none;
   }
+  // &:after {
+  //   position: absolute;
+  //   background-image: url("/images/blue-tint/backdrop.png");
+  //   right: unset;
+  //   left: 0;
+  //   height: 200vh;
+  //   overflow: hidden;
+  //   width: 100%;
+  //   background-position: top left;
+  //   background-size: contain;
+  // }
   h1 .line1 {
     color: var(--colors-gray-primary-text, #090a0d);
     font-family: Golos Text;

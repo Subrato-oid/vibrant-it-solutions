@@ -1,14 +1,19 @@
+#blue-tint-services {
+  position: absolute;
+  background-image: url("/images/blue-tint/backdrop.png");
+  right: unset;
+  left: 0;
+  height: 200vh;
+  overflow: hidden;
+  width: 100%;
+  background-position: top left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 #main.service {
   &:after {
-    position: absolute;
-    background-image: url("/images/blue-tint/backdrop.png");
-    right: unset;
-    left: 0;
-    height: 200vh;
-    overflow: hidden;
-    width: 100%;
-    background-position: top left;
-    background-size: contain;
+    display: none;
   }
   /* <!---- SOFTWARE SOLUTION SECTION ----> */
   .software-solution {

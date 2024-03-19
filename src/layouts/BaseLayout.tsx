@@ -5,6 +5,7 @@ import "../styles/styles.scss"
 import Headroom from "react-headroom"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import Scroll from "../components/LocomotiveScroll"
+import { useLocation } from "@reach/router"
 
 type LayoutProp = {
   children: React.ReactNode
@@ -21,6 +22,7 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
 
   const breakpoint = useBreakpoint()
   const headroomRef = React.useRef(null)
+  const path = useLocation()
 
   return breakpoint.sm ? (
     <main
@@ -43,7 +45,20 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
     <div id="wrapper">
       {typeof window !== "undefined" && <Scroll callbacks={location} />}
 
-      <div data-scroll-section id="blue-tint"></div>
+      <div
+        data-scroll-section
+        id={
+          path.pathname.includes("/services") ||
+          path.pathname.includes("/works")
+            ? "blue-tint-services"
+            : path.pathname.includes("/about") ||
+                path.pathname.includes("/career") ||
+                path.pathname.includes("/blogs") ||
+                path.pathname.includes("/contact")
+              ? "blue-tint"
+              : ""
+        }
+      ></div>
       <Headroom style={{ zIndex: "3" }} ref={headroomRef} disableInlineStyles>
         <Navbar
           mobileMenuActive={mobileMenuActive}

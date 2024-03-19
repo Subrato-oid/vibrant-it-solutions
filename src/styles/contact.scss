@@ -1,4 +1,7 @@
 #main.contact {
+  &:after {
+    display: none;
+  }
   /* <!---- CAREERS SECTION ----> */
   .contact-tech-tales {
     display: flex;

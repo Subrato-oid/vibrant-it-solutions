@@ -1,4 +1,7 @@
 #main.career {
+  &:after {
+    display: none;
+  }
   /* <!---- CAREERS SECTION ----> */
   .inspire {
     display: flex;
