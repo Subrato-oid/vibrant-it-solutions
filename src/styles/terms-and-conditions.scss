@@ -1,4 +1,7 @@
 #main.terms-and-conditions {
+  &:after {
+    display: none;
+  }
   /* <!---- CAREERS SECTION ----> */
   .tc-tech-tales {
     display: flex;
@@ -174,7 +177,6 @@
 @media only screen and (max-width: 768px) {
   #main.terms-and-conditions {
     padding: 0 1rem;
-
     /* <!---- HEADER SECTION ----> */
     // header {
     //   margin-top: 0rem;
@@ -204,7 +206,9 @@
     // nav ul {
     //   display: none;
     // }
-
+    &:after {
+      display: block;
+    }
     /* <!---- CAREERS SECTION ----> */
     .tc-tech-tales {
       display: flex;

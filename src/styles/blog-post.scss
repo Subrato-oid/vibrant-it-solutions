@@ -436,6 +436,9 @@
 /* -----------for small screen devices------------ */
 @media only screen and (max-width: 768px) {
   #main.blog-post {
+    &:after {
+      display: block;
+    }
     /* <!---- CAREERS SECTION ----> */
     .tech-tales {
       display: flex;

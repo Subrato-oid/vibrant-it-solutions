@@ -412,9 +412,10 @@
     &:after {
       top: 0;
       width: 100vw;
-      //   height: 100vh;
+      height: 150vh;
       background-image: url("/images/blue-tint/our-work-mob.png");
       background-size: cover;
+      display: block;
     }
     .work {
       margin-top: 3.29rem;

@@ -789,6 +789,9 @@
 /* -----------for small screen devices------------ */
 @media only screen and (max-width: 768px) {
   #main.blogs {
+    &:after {
+      display: block;
+    }
     /* <!---- CAREERS SECTION ----> */
     .blogs-tech-tales {
       display: flex;

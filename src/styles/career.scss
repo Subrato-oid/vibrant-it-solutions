@@ -513,6 +513,9 @@
 /* -----------for small screen devices------------ */
 @media only screen and (max-width: 768px) {
   #main.career {
+    &:after {
+      display: block;
+    }
     /* <!---- CAREERS SECTION ----> */
     .inspire {
       display: flex;

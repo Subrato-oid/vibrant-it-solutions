@@ -742,6 +742,9 @@
 /* -----------for small screen devices------------ */
 @media only screen and (max-width: 768px) {
   #main.about {
+    &:after {
+      display: block;
+    }
     /* <!---- CLIENTS SECTION ----> */
     .inspire {
       display: flex;
