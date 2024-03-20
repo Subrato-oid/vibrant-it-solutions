@@ -604,7 +604,7 @@
 }
 
 .headroom--scrolled {
-  transition: transform 200ms ease-in-out;
+  transition: transform 400ms ease-in-out;
 }
 .headroom--unpinned {
   position: fixed;
@@ -627,7 +627,7 @@
   padding-left: 3.5rem;
   padding-right: 3.5rem;
   padding-bottom: 1rem;
-  margin-top: -1rem;
+  // margin-top: -1rem;
 }
 
 header {
@@ -636,7 +636,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
   z-index: 199;
   position: relative;
   // margin-left: 3.5rem;
@@ -862,7 +862,7 @@ nav button:hover {
 
   header {
     padding: 0 1rem;
-    padding-top: 2rem !important;
+    padding-top: 1rem !important;
     align-items: center;
     margin-left: 0;
     margin-right: 0;

@@ -527,24 +527,24 @@
     overflow: hidden;
     position: relative;
     box-shadow: inset 0 0 0 0 #080f1f;
-    transition: box-shadow 0.8s ease-in-out;
+    transition: box-shadow 0.5s ease-in-out;
   }
 
-  .box::after {
-    content: "";
-    position: absolute;
-    right: -7.65206rem;
-    top: -9.08956rem;
-    width: 19.30413rem;
-    height: 19.30413rem;
-    flex-shrink: 0;
-    border-radius: 19.30413rem;
-    background: #093b9e;
-    filter: blur(95px);
-    transition: opacity 0.8s ease-in-out;
-    opacity: 0;
-    overflow: hidden;
-  }
+  // .box::after {
+  //   content: "";
+  //   position: absolute;
+  //   right: -7.65206rem;
+  //   top: -9.08956rem;
+  //   width: 19.30413rem;
+  //   height: 19.30413rem;
+  //   flex-shrink: 0;
+  //   border-radius: 19.30413rem;
+  //   background: #093b9e;
+  //   filter: blur(95px);
+  //   transition: opacity 0.5s ease-in-out;
+  //   opacity: 0;
+  //   overflow: hidden;
+  // }
 
   .box:hover {
     position: relative;
@@ -1061,21 +1061,21 @@
       height: 20.8125vw;
       padding: 2.12vw 2vw;
     }
-    .box::after {
-      content: "";
-      position: absolute;
-      right: -7.65206vw;
-      top: -9.08956vw;
-      width: 19.30413vw;
-      height: 19.30413vw;
-      flex-shrink: 0;
-      border-radius: 19.30413rem;
-      background: #093b9e;
-      filter: blur(95px);
-      transition: opacity 0.8s ease-in-out;
-      opacity: 0;
-      overflow: hidden;
-    }
+    // .box::after {
+    //   content: "";
+    //   position: absolute;
+    //   right: -7.65206vw;
+    //   top: -9.08956vw;
+    //   width: 19.30413vw;
+    //   height: 19.30413vw;
+    //   flex-shrink: 0;
+    //   border-radius: 19.30413rem;
+    //   background: #093b9e;
+    //   filter: blur(95px);
+    //   transition: opacity 0.8s ease-in-out;
+    //   opacity: 0;
+    //   overflow: hidden;
+    // }
     .slogo {
       width: 3vw;
       margin-bottom: 2.5vw;
