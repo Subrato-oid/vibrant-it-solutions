@@ -1641,14 +1641,3 @@
     width: fit-content !important;
   }
 }
-
-@supports (hanging-punctuation: first) and (-webkit-appearance: none) {
-  .safari-only {
-    .success::before {
-      filter: blur(125px);
-    }
-    .success::after {
-      filter: blur(100px);
-    }
-  }
-}

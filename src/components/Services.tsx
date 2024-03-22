@@ -29,7 +29,7 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
             id="service-swiper"
             ref={sliderRef}
             modules={[Pagination, Navigation, FreeMode]}
-            slidesPerView={1.2}
+            slidesPerView={"auto"}
             spaceBetween={16}
             pagination={{ type: "progressbar" }}
             freeMode={true}
@@ -59,9 +59,11 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
                         bottom: "1.5rem",
                       }}
                       src={
-                        hovered === index
-                          ? "/images/down-right-1.svg"
-                          : "/images/down-right 1.svg"
+                        breakpoint.sm
+                          ? "/images/down-right 1.svg"
+                          : hovered === index
+                            ? "/images/down-right-1.svg"
+                            : "/images/down-right 1.svg"
                       }
                       alt=""
                     />
