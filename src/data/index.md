@@ -21,7 +21,7 @@ client:
     - logo: /images/hdfc_bank_logo-1-1-.svg
     - logo: /images/state_bank_of_india-1.svg
     - logo: /images/wave-industries-1.svg
-    - logo: /images/zuari_logo-2.svg
+    - logo: /images/zuari_logo 3.svg
     - logo: /images/birla-sugar-1.svg
 header:
   logo: /images/Group 20.svg
