@@ -4,10 +4,11 @@ import { Link } from "gatsby"
 import _ from "lodash"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import { Swiper, type SwiperRef, SwiperSlide } from "swiper/react"
-import { FreeMode, Navigation, Pagination } from "swiper/modules"
+import { FreeMode, Scrollbar } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/free-mode"
+import "swiper/css/scrollbar"
 
 type ServiceProps = NonNullable<IndexPageFrontmatterType>["services"]
 
@@ -28,27 +29,30 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
           <Swiper
             id="service-swiper"
             ref={sliderRef}
-            modules={[Pagination, Navigation, FreeMode]}
+            // modules={[Pagination, FreeMode]}
+            modules={[Scrollbar, FreeMode]}
             slidesPerView={"auto"}
             spaceBetween={16}
-            pagination={{ type: "progressbar" }}
+            // pagination={{ type: "progressbar", clickable: true }}
+            scrollbar={{ draggable: true, hide: false }}
             freeMode={true}
           >
             {props?.service?.map((item, index) => (
-              <Link
-                key={`ser~${index}`}
-                to={`/services/${_.kebabCase(item?.title!)}`}
+              <SwiperSlide
+                style={{ width: "fit-content" }}
+                key={`service-${index}`}
               >
-                <SwiperSlide style={{ width: "fit-content" }}>
-                  <div
-                    className="box"
-                    onMouseOver={() => {
-                      setHovered(index)
-                    }}
-                    onMouseOut={() => {
-                      setHovered(null)
-                    }}
-                  >
+                <div
+                  className="box"
+                  // onMouseOver={() => {
+                  //   setHovered(index)
+                  // }}
+                  // onMouseOut={() => {
+                  //   setHovered(null)
+                  // }}
+                  onClick={() => { console.log("Slide", index) }}
+                >
+                  <Link to={`/services/${_.kebabCase(item?.title!)}`}>
                     <img className="slogo" src={item?.icon!} alt="Logo 1" />
                     <h2>{item?.title} </h2>
                     <p>{item?.description}</p>
@@ -67,9 +71,9 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
                       }
                       alt=""
                     />
-                  </div>
-                </SwiperSlide>
-              </Link>
+                  </Link>
+                </div>
+              </SwiperSlide>
             ))}
           </Swiper>
         </div>

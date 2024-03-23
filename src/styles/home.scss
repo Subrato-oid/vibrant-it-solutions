@@ -492,9 +492,48 @@
     position: relative;
     width: calc(100vw - 2rem);
   }
+  .swiper-scrollbar-drag {
+    height: 0.15rem;
+    background: (#2ccfd9) !important;
+  }
+  .swiper-scrollbar-drag::before {
+    content: "";
+    height: 0.15rem;
+    background: linear-gradient(
+      90deg,
+      #3f6fea 0%,
+      #3f70ea 6.67%,
+      #3e72e9 13.33%,
+      #3d77e9 20%,
+      #3c7de7 26.67%,
+      #3b85e6 33.33%,
+      #398fe4 40%,
+      #3799e2 46.67%,
+      #34a4e1 53.33%,
+      #32afdf 60%,
+      #30b8dd 66.67%,
+      #2fc1dc 73.33%,
+      #2ec7da 80%,
+      #2dcbda 100%
+    );
+    left: -99vw;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100vw;
+    z-index: 999;
+  }
   // #service-swiper > .swiper-pagination-progressbar {
   //   background-color: #DFE1E5;
   // }
+  #service-swiper > .swiper-scrollbar-horizontal {
+    margin-top: 3rem;
+    height: 0.15rem;
+    position: relative;
+    width: calc(100vw - 2rem);
+  }
+
   .Scontainer {
     margin-top: 4rem;
     display: flex;
