@@ -67,7 +67,7 @@
     "sass": "^1.70.0",
     "smooth-scrollbar": "^8.8.4",
     "smooth-scrollbar-react": "^2.4.1",
-    "swiper": "^11.0.5"
+    "swiper": "^11.0.7"
   },
   "devDependencies": {
     "@graphql-eslint/eslint-plugin": "^3.20.1",
