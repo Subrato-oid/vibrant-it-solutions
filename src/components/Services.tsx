@@ -42,16 +42,7 @@ const Service = (props: NonNullable<ServiceProps>): React.ReactElement => {
                 style={{ width: "fit-content" }}
                 key={`service-${index}`}
               >
-                <div
-                  className="box"
-                  // onMouseOver={() => {
-                  //   setHovered(index)
-                  // }}
-                  // onMouseOut={() => {
-                  //   setHovered(null)
-                  // }}
-                  onClick={() => { console.log("Slide", index) }}
-                >
+                <div className="box">
                   <Link to={`/services/${_.kebabCase(item?.title!)}`}>
                     <img className="slogo" src={item?.icon!} alt="Logo 1" />
                     <h2>{item?.title} </h2>

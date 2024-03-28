@@ -1,23 +1,23 @@
 import * as React from "react"
-import { Slide, toast } from "react-toastify"
+// import { Slide, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 // type NewsLetterProps = NonNullable<IndexPageFrontmatterType>["NewsLetter"]
 
 const NewsLetter = (): React.ReactElement => {
-  const notify = (): void => {
-    toast.success("Submitted !", {
-      position: "bottom-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Slide,
-    })
-  }
+  // const notify = (): void => {
+  //   toast.success("Submitted !", {
+  //     position: "bottom-center",
+  //     autoClose: 3000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: "light",
+  //     transition: Slide,
+  //   })
+  // }
 
   return (
     <div className="newsletter">
@@ -42,7 +42,7 @@ const NewsLetter = (): React.ReactElement => {
             placeholder="Enter your email"
             required
           />
-          <button type="submit" className="sub-button" onClick={notify}>
+          <button type="submit" className="sub-button">
             Subscribe
           </button>
         </form>

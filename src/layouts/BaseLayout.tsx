@@ -6,6 +6,7 @@ import Headroom from "react-headroom"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import Scroll from "../components/LocomotiveScroll"
 import { useLocation } from "@reach/router"
+import { ToastContainer } from "react-toastify"
 
 type LayoutProp = {
   children: React.ReactNode
@@ -40,6 +41,7 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
       </Headroom>
       <div>{children}</div>
       <Footer />
+      <ToastContainer />
     </main>
   ) : (
     <div id="wrapper">
@@ -78,6 +80,7 @@ const BaseLayout = ({ children, pageName }: LayoutProp): React.ReactElement => {
       </main>
 
       <Footer className={`${serviceMenuOpen && "blur-root"}`} />
+      <ToastContainer />
     </div>
   )
 }
