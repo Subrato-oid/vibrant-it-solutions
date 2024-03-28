@@ -151,7 +151,7 @@ const ContactForm = (
             <CustomizedTextField
               id="standard-basic name"
               label="Name"
-              name="user"
+              name="Name"
               variant="standard"
               className="field"
             />
