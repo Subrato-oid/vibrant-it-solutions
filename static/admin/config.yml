@@ -735,18 +735,18 @@ collections:
           - { label: Title Highlight, name: titleHighlight, widget: string }
           - { label: Description, name: description, widget: text }
           - { label: Image, name: image, widget: image }
-          - {
-              label: "Contact Details",
-              name: "contactDeatils",
-              widget: "object",
-              fields:
-                [
-                  { label: Field1, name: field1, widget: string },
-                  { label: Field2, name: field2, widget: string },
-                  { label: Field3, name: field3, widget: string }, 
-                  { label: Field4, name: field4, widget: string },
-                ],
-            }
+          # - {
+          #     label: "Contact Details",
+          #     name: "contactDeatils",
+          #     widget: "object",
+          #     fields:
+          #       [
+          #         { label: Field1, name: field1, widget: string },
+          #         { label: Field2, name: field2, widget: string },
+          #         { label: Field3, name: field3, widget: string }, 
+          #         { label: Field4, name: field4, widget: string },
+          #       ],
+          #   }
           - {
               lable: Button,
               name: button,
